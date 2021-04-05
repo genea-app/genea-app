@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Genea.app</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Dependencies -->
+    <script src="resources/vuejs/vue.js"></script>
+    <script src="resources/wasm/index.min.js"></script>
+    <script>
+        var hpccWasm = window["@hpcc-js/wasm"];
+    </script>
+    <link href="resources/googlefonts/materialicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="resources/materialize/css/materialize.min.css">
+    <!-- Genea.app -->
+    <script type="application/javascript" src="js/gedcom.js"></script>
+    <script type="application/javascript" src="js/stamboom.js"></script>
+    <script type="application/javascript" src="components/personaldetails.js"></script>
+    <script type="application/javascript" src="components/relations.js"></script>
+    <script type="application/javascript" src="components/debug.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div id="genea">
+
+        <!-- App -->
+        <header v-show="Object.keys(person).length > 0">
+            <!-- <div class="container"> -->
+            <a data-target="nav-mobile" class="top-nav sidenav-trigger btn-floating btn-large teal lighten-3 waves-effect waves-light hide-on-large-only" style="margin: 15px;"><i class="material-icons">menu</i></a>
+            <!-- </div> -->
+            <ul id="nav-mobile" class="sidenav sidenav-fixed">
+                <li>
+                    <div class="user-view">
+                        <div class="background teal lighten-3"></div>
+                        <img src="img/unknown.png" style="max-width: 100px; max-height: 100px;" />
+                        <span class="white-text name">
+                            {{person.name}}
+                        </span>
+                        <span class="white-text email">
+                            {{person.birth}}
+                            -
+                            {{person.death}}
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="row" style="margin-top: 0; margin-bottom: 0;">
+                        <div class="input-field col s11 offset-s1" style="margin-top: 0; margin-bottom: 0;">
+                            <i class="material-icons" style="position: absolute; display: inline-block; right: 24px; top: 15px;">search</i>
+                            <input id="search" placeholder="Find Person" class="autocomplete" style="font-weight: 300; color: #777; border: 0;" />
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <a class="subheader">View</a>
+                </li>
+                <li class="bold sidenav-close" :class="{active: page=='chart'}">
+                    <a @click="page='chart'" href="#" class="waves-effect waves-teal"><i class="material-icons">account_tree</i>Family Tree</a>
+                </li>
+                <li class="bold sidenav-close" :class="{active: page=='details'}">
+                    <a @click="page='details'" href="#" class="waves-effect waves-teal"><i class="material-icons">person</i>Personal Details</a>
+                </li>
+                <li class="bold sidenav-close" :class="{active: page=='relations'}">
+                    <a @click="page='relations'" href="#" class="waves-effect waves-teal"><i class="material-icons">people</i>Relations and Children</a>
+                </li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <a class="subheader">Actions</a>
+                </li>
+                <li class="bold sidenav-close">
+                    <a @click="saveFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">save_alt</i>Save GEDCOM</a>
+                </li>
+                <li class="bold sidenav-close">
+                    <a @click="page='start'; person={};" href="#" class="waves-effect waves-teal"><i class="material-icons">swap_horiz</i>Load GEDCOM</a>
+                </li>
+                <li v-if="isDebug()">
+                    <div class="divider"></div>
+                </li>
+                <li v-if="isDebug()">
+                    <a class="subheader">Development</a>
+                </li>
+                <li class="bold sidenav-close" :class="{active: page=='debug'}" v-if="isDebug()">
+                    <a @click="page='debug';debugUpdate();" href="#" class="waves-effect waves-teal"><i class="material-icons">adb</i>Debug</a>
+                </li>
+            </ul>
+        </header>
+
+        <main v-show="page=='chart'">
+            <div id="chartcontainer">
+                <div id="chart"></div>
+            </div>
+        </main>
+
+        <main v-show="page=='details'" class="container">
+            <div id="index-banner">
+                <personaldetails :person="person" />
+            </div>
+        </main>
+
+        <main v-show="page=='relations'" class="container">
+            <div id="index-banner">
+                <relations :person="person" />
+            </div>
+        </main>
+
+        <main v-show="page=='debug'" class="container">
+            <div id="index-banner">
+                <debug :debug="debug" />
+            </div>
+        </main>
+
+        <!-- Start -->
+        <div id="overlay" v-if="page=='start'" class="container" style="max-width: 600px;">
+            <h1 class="header">Genea.app</h1>
+            <div class="section">
+                <h4 class="light">Build and edit your family tree; completely free!</h4>
+                <p style="text-align: justify;">
+                    Genea is a <a href="https://en.wikipedia.org/wiki/Privacy_by_design" target="_blank">privacy by design</a> and <a href="https://github.com/genea-app/genea-web" target="_blank">open source</a> tool anyone can use to author or edit their
+                    family tree. Your data is formatted following the <a href="https://www.gedcom.org/" target="_blank">GEDCOM</a> specifications so it can be exchanged with other genealogy services. All processing is done in the browser, leaving you
+                    in control on where to save your data.
+                </p>
+                <p style="text-align: justify;">
+                    You can use Genea both on your mobile devices as well as on your desktop. The changes you make are persistently stored on your device. To transfer the data between devices, be sure to save the GEDCOM file when you are done and exchange it for example
+                    via e-mail or using a cloud service like Dropbox.
+                </p>
+            </div>
+            <div class="section" v-if="isLocalStorage()">
+                <button class="btn-large waves-effect waves-light" v-on:click="page='chart'; loadLocalStorage()">
+                    <i class="material-icons left">sync</i>
+                    Continue with current family tree
+                </button>
+            </div>
+            <div class="section">
+                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('new')">
+                    <i class="material-icons left">create</i>
+                    Start new family tree
+                </button>
+                <label class="btn-large waves-effect waves-light">
+					<i class="material-icons left">get_app</i>
+					Load GEDCOM
+					<input type="file" style="display: none;" v-on:change="loadFile">
+				</label>
+            </div>
+            <div class="section">
+                <h4 class="light">Examples</h4>
+                <p>
+                    Explore Genea using these sample trees.
+                </p>
+            </div>
+            <div class="section">
+                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('royal92')">Royal '92</button>
+                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('pres2020')">Presidents 2020</button>
+                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('harrypotter')">Harry Potter</button>
+            </div>
+            <div class="section" v-if="isDebug()">
+                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('gedcom1')">Debug Example 1</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="application/javascript">
+        // Bind stamboom
+        var stamboom = new Stamboom({
+            chart: document.getElementById("chart")
+        });
+
+        // Register to stamboom events
+        stamboom.onclick(function(id) {
+            stamboom.select(id);
+        });
+        stamboom.onselect(function(id) {
+            genea.selectedPerson = id;
+            genea.person = stamboom.getPerson(id);
+            genea.person.relations = stamboom.getRelations(id);
+            if (genea.isDebug()) {
+                console.log("Person:", genea.person);
+                console.log("Relations:", genea.person.relations);
+            }
+        });
+
+        // DOM bindings
+        var genea = new Vue({
+            el: "#genea",
+            data: {
+                page: "",
+                debug: {
+                    dot: "",
+                    gedcom: ""
+                },
+                person: {}
+            },
+            mounted: function() {
+                if (this.isLocalStorage()) {
+                    this.page = "chart";
+                    window.setTimeout(function() {
+                        genea.loadLocalStorage();
+                    }, 200);
+                } else {
+                    this.page = "start";
+                }
+            },
+            watch: {
+                person: {
+                    handler: function(val, oldVal) {
+                        window.clearTimeout(window.autoSaveTimeout);
+                        window.autoSaveTimeout = window.setTimeout(function() {
+                            genea.saveLocalStorage();
+                        }, 1000);
+                    },
+                    deep: true
+                }
+            },
+            methods: {
+                loadExample: function(example) {
+                    genea.page = "chart";
+                    if (example == "new") {
+                        fetch("sample/empty.ged").then(function(response) {
+                            return response.text();
+                        }).then(function(data) {
+                            stamboom.load(data);
+                            stamboom.select();
+                        });
+                    }
+                    if (example == "gedcom1") {
+                        fetch("sample/gedcom1.ged").then(function(response) {
+                            return response.text();
+                        }).then(function(data) {
+                            stamboom.load(data);
+                            stamboom.select("@I3@");
+                        });
+                    }
+                    if (example == "royal92") {
+                        fetch("sample/royal92.ged").then(function(response) {
+                            return response.text();
+                        }).then(function(data) {
+                            stamboom.load(data);
+                            stamboom.select("@I52@");
+                        });
+                    }
+                    if (example == "pres2020") {
+                        fetch("sample/pres2020.ged").then(function(response) {
+                            return response.text();
+                        }).then(function(data) {
+                            stamboom.load(data);
+                            stamboom.select("@I2185@");
+                        });
+                    }
+                    if (example == "harrypotter") {
+                        fetch("sample/harrypotter.ged").then(function(response) {
+                            return response.text();
+                        }).then(function(data) {
+                            stamboom.load(data);
+                            stamboom.select("@ind00001@");
+                        });
+                    }
+                },
+                loadFile: function(event) {
+                    let file = event.srcElement.files[0];
+                    let reader = new FileReader();
+                    reader.readAsText(file);
+                    reader.onload = function() {
+                        genea.page = "chart";
+                        stamboom.load(reader.result);
+                        stamboom.select();
+                    };
+                    reader.onerror = function() {
+                        alert("Error reading selected file.");
+                    };
+                },
+                saveFile: function() {
+                    const a = document.createElement("a");
+                    const file = new Blob([stamboom.save()], {
+                        type: "text/plain"
+                    });
+                    a.href = URL.createObjectURL(file);
+                    a.download = stamboom.getFilename();
+                    a.click();
+                    URL.revokeObjectURL(a.href);
+                },
+                isLocalStorage: function() {
+                    return window.localStorage.getItem("selectedPerson");
+                },
+                loadLocalStorage: function() {
+                    var data = window.localStorage.getItem("stamboom");
+                    var selectedPerson = window.localStorage.getItem("selectedPerson");
+                    stamboom.load(data);
+                    stamboom.select(selectedPerson);
+                    window.addEventListener('storage', function(e) {
+                        if (e.key == "stamboom") {
+                            stamboom.load(e.newValue);
+                            stamboom.select(genea.person.id);
+                        }
+                    });
+                },
+                saveLocalStorage: function() {
+                    var data = stamboom.save();
+                    window.localStorage.setItem("stamboom", data);
+                    window.localStorage.setItem("selectedPerson", genea.selectedPerson);
+                },
+                debugUpdate: function() {
+                    this.debug.dot = stamboom.debug();
+                    this.debug.gedcom = stamboom.save();
+                },
+                isDebug: function() {
+                    if (window.sessionStorage.getItem("isDebug") != "on") {
+                        // This function will detect whether Dev Tools are on, and if so, enable debug mode for the session
+                        var t1 = new Date();
+                        debugger;
+                        if (new Date() - t1 > 200) {
+                            window.sessionStorage.setItem("isDebug", "on");
+                        } else {
+                            window.sessionStorage.setItem("isDebug", "off");
+                        }
+                    }
+                    return (window.sessionStorage.getItem("isDebug") == "on" ? true : false);
+                }
+            }
+        });
+    </script>
+
+    <!-- Dependencies -->
+    <script type="application/javascript" src="resources/materialize/js/materialize.min.js"></script>
+    <script type="application/javascript">
+        M.AutoInit();
+        M.Sidenav.init(document.querySelector('.sidenav'));
+        window.setTimeout(function() {
+            M.Autocomplete.init(document.querySelector('#search'), {
+                data: (function() {
+                    var persons = stamboom.getPersons();
+                    persons = Object.fromEntries(persons.map(person => [person.caption]));
+                    return persons;
+                })(),
+                onAutocomplete: function(selection) {
+                    var person = stamboom.getPersons().find(person => person.caption == selection);
+                    if (person && person.id) {
+                        genea.page = 'chart';
+                        stamboom.select(person.id);
+                    } else {
+                        alert("Person not found.");
+                    }
+                    this.el.value = "";
+                }
+            });
+        }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,7017 @@
+0 HEAD
+1 SOUR GenoPro
+2 NAME GenoPro® - Picture Your Family Tree!(TM)
+2 VERS 2.0.1.1
+2 CORP GenoPro
+2 ADDR http://www.genopro.com
+1 DATE 28 SEP 2007
+1 CHAR UTF-8
+1 GEDC
+2 VERS 5.5
+2 FORM LINAGE-LINKED
+0 GLOBAL 
+1 NAME 
+2 FULL 
+3 FORMAT %T %F (%N) %M %L (%L2) %S
+2 DISPLAY 
+3 FORMAT %F %M %L (%L2)
+3 LINES 3
+1 FONT Arial
+1 DISPLAY 
+2 TAG YoB_YoD
+2 COLORS 
+3 GENDER 
+4 SYMBOL #000000
+4 TEXT #000000
+4 FILL #FFFFFF
+4 FILL 
+5 TOP 
+6 LEFT #FF0000
+6 RIGHT #FF0000
+5 BOTTOM 
+6 LEFT #FF0000
+6 RIGHT #FF0000
+3 BORDER 
+4 OUTLINE #000080
+4 FILL #FFFF80
+3 LABEL 
+4 TOP #000000
+4 BOTTOM #000000
+4 FILL 
+5 TOP #FFFFFF
+5 BOTTOM #FFFFFF
+1 TAGS 
+2 ID Individual
+2 TAGDATA 
+3 NAME BloodPurity
+3 DISPLAYNAME Blood Purity
+2 TAGDATA 
+3 NAME Allegiance
+3 DISPLAYNAME Allegiance
+2 TAGDATA 
+3 NAME FilmPortrayal
+3 DISPLAYNAME Film Portrayal
+2 TAGDATA 
+3 NAME House
+3 DISPLAYNAME House
+2 DIALOGLAYOUT 
+3 NAME Custom Tags
+3 DESCRIPTION A custom tag is a generic placeholder to record additional information
+4 CONC  specific to your document.
+3 TAGS BloodPurity,Allegiance,FilmPortrayal,House
+1 TAGS 
+2 ID SocialEntity
+2 TAGDATA 
+3 NAME Colours
+3 DISPLAYNAME Colours
+2 TAGDATA 
+3 NAME Head_of_house
+3 DISPLAYNAME Head_of_house
+2 TAGDATA 
+3 NAME House_ghost
+3 DISPLAYNAME House_ghost
+2 TAGDATA 
+3 NAME Values
+3 DISPLAYNAME Values
+2 TAGDATA 
+3 NAME Emblematic_animal
+3 DISPLAYNAME Emblematic_animal
+2 TAGDATA 
+3 NAME Location
+3 DISPLAYNAME Location
+2 DIALOGLAYOUT 
+3 NAME Custom Tags
+3 DESCRIPTION A custom tag is a generic placeholder to record additional information
+4 CONC .
+4 CONT You can customize those tags by clicking on the Customize button.
+3 TAGS Colours,Emblematic_animal,Head_of_house,House_ghost,Values,Location
+1 DOCUMENT 
+2 TITL Harry Potter Family Tree
+2 DESCRIPTION Genogram of main characters found in the Harry Potter series, by famil
+3 CONC ies and houses at Hogwarts.
+1 ACTIVEGENOMAP Potter
+0 GENOMAP 
+1 NAME Potter
+1 POSITION 8,-133
+1 BOUNDARYRECT -399,216,415,-483
+1 SELECTION ind00001
+0 GENOMAP 
+1 NAME Weasley
+1 POSITION -91,131
+1 BOUNDARYRECT -419,466,237,-203
+0 GENOMAP 
+1 NAME Black
+1 ZOOM 50
+1 POSITION 152,1178
+1 BOUNDARYRECT -772,1654,1077,703
+0 GENOMAP 
+1 NAME Gaunt
+1 POSITION 29,87
+1 BOUNDARYRECT -129,296,187,-122
+0 GENOMAP 
+1 NAME Hogwarts
+1 POSITION -79,-225
+1 BOUNDARYRECT -624,364,465,-815
+1 SELECTION ind00166
+0 @ind00001@ INDI
+1 NAME Harry /Potter/
+2 DISPLAY Harry Potter
+2 GIVN Harry
+2 SURN Potter
+1 PICTURES @pic00019@, @pic00020@, @pic00021@, @pic00022@, @pic00023@
+2 PRIMARY @pic00021@
+1 POSITION 0,-70
+2 SIZE X
+2 BOUNDARYRECT -42,-14,42,-151
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE bt
+1 SEX M
+1 BIRT 
+2 DATE 31 JUL 1980
+2 NOTE Harry Potter's parents were killed by Lord Voldemort when he was one, 
+3 CONC but he survived somehow, protected by his mother's love. This attack l
+3 CONC eft him with a thunderbolt-shaped scar on his forehead.
+2 BAPTISM 
+3 GODFATHER Sirius Black
+1 NOTE Harry Potter is the central character of the Harry Potter series. He i
+2 CONC s a young wizard studying at Hogwarts School of Magic and Wizardry. 
+2 CONT 
+2 CONT He has brilliant green eyes, the same as his mother’s, black hair, per
+2 CONC petually messy, sticks up in the back, same as his father's. He wears 
+2 CONC round glasses; he is short and thin, with knobbly knees. He has a ligh
+2 CONC tning-bolt scar on forehead.
+1 OCCUPATIONS @occu00001@
+1 EDUCATIONS @edu00015@
+1 BLOODPURITY Half-blood
+1 ALLEGIANCE Dumbledore's Army, Order of the Phoenix
+1 FILMPORTRAYAL Daniel Radcliffe
+1 HOUSE Gryffindor
+1 FAMC @fam00001@
+1 FAMC @fam00002@
+0 @ind00002@ INDI
+1 NAME Vernon /Dursley/
+2 DISPLAY Vernon Dursley
+2 GIVN Vernon
+2 SURN Dursley
+1 PICTURES @pic00002@, @pic00039@
+2 PRIMARY @pic00002@
+1 POSITION -210,90
+2 BOUNDARYRECT -236,116,-183,43
+1 SEX M
+1 NOTE Described as a big, beefy man, with hardly any neck, and a large musta
+2 CONC che. He detests all magical things, especially his nephew Harry. He an
+2 CONC d his wife, Petunia, have grudgingly raised Harry from an early age, d
+2 CONC enying him any information about the magical world, including his pare
+2 CONC nts. He reads the Daily Mail newspaper.
+2 CONT 
+1 OCCUPATIONS @occu00011@
+1 EDUCATIONS @edu00001@
+1 BLOODPURITY Muggle born
+1 ALLEGIANCE None
+1 FILMPORTRAYAL Richard Griffiths
+1 FAMS @fam00001@
+1 FAMC @fam00005@
+0 @ind00003@ INDI
+1 NAME Petunia /Evans/
+2 DISPLAY Petunia Evans (Dursley)
+2 GIVN Petunia
+2 SURN Evans
+2 LAST2 Dursley
+1 PICTURES @pic00004@
+2 PRIMARY @pic00004@
+1 POSITION -120,90
+2 BOUNDARYRECT -150,116,-89,29
+1 SEX F
+1 NOTE Is described as being a blonde woman, with bony hands, a horsey face a
+2 CONC nd a very long neck, which she uses to spy on her neighbours. Was bitt
+2 CONC er and jealous that her parents were proud to have a witch in the fami
+2 CONC ly.
+1 OCCUPATIONS @occu00012@
+1 BLOODPURITY Muggle born
+1 ALLEGIANCE None
+1 FILMPORTRAYAL Fiona Shaw
+1 FAMS @fam00001@
+1 FAMC @fam00004@
+0 @ind00004@ INDI
+1 NAME Dudley /Dursley/
+2 DISPLAY Dudley Dursley
+2 GIVN Dudley
+2 SURN Dursley
+1 PICTURES @pic00003@
+2 PRIMARY @pic00003@
+1 POSITION -170,-30
+2 BOUNDARYRECT -196,-4,-143,-77
+1 SEX M
+1 NOTE Harry's only cousin, he is described as a large blonde boy. He is comp
+2 CONC letely spoiled, and he gets a horrible delight in bullying smaller kid
+2 CONC s, and shows a complete lack of sensitivity; he is also a glutton.
+2 CONT 
+2 CONT Dudley has been thoroughly spoiled since birth, getting mountains of b
+2 CONC irthday and Christmas presents and then throwing a tantrum because he 
+2 CONC wanted more, being given two bedrooms in the house, never using one, a
+2 CONC nd then screaming when it is given to Harry and generally given his wa
+2 CONC y in almost everything. He shows the symptoms of a brat from his first
+2 CONC  year itself, when a disgusted Professor McGonagall tells Dumbledore h
+2 CONC ow she saw the toddler Dudley kicking his mother and screaming for swe
+2 CONC ets.
+2 CONT 
+2 CONT A rude, belligerent and selfish boy, Dudley is quite an unlikable char
+2 CONC acter, although he knows how to be polite when he wants to make an imp
+2 CONC ression (notably when his father's business associate came for dinner 
+2 CONC one evening). It can be inferred that he and Harry went to a private p
+2 CONC rep school in Surrey together, where Dudley and his gang of bullies ru
+2 CONC led the school, and where the rest of the students shunned Harry as th
+2 CONC ey knew Dudley hated him. With each passing year Dudley was overindulg
+2 CONC ed in every way by his parents, which eventually made his morbidly obe
+2 CONC se and a careless student (he had reached the height and weight of a y
+2 CONC oung killer whale at the beginning of the fourth book). Throughout the
+2 CONC ir childhood together, Dudley would take any opportunity he could to h
+2 CONC umiliate and torment his cousin, Harry. Unlike his cousin, however, Du
+2 CONC dley has no powers outside of his brutishness.
+1 EDUCATIONS @edu00002@
+1 BLOODPURITY Muggle born
+1 ALLEGIANCE None
+1 FILMPORTRAYAL Harry Melling
+1 FAMC @fam00001@
+0 @ind00005@ INDI
+1 NAME Tom Marvolo /Riddle/
+2 DISPLAY Lord Voldemort
+3 FORMAT %N
+2 GIVN Tom
+2 MIDDLE Marvolo
+2 SURN Riddle
+2 NICK Lord Voldemort
+1 PICTURES @pic00038@
+2 PRIMARY @pic00038@
+1 POSITION 360,80
+2 BOUNDARYRECT 328,113,393,33
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX M
+1 BIRT 
+2 DATE 31 DEC 1926
+1 NOTE Evil wizard, chief antagonist. He desires above all things to secure u
+2 CONC nmatched power and immortality though Dark magic.  Most wizards fear t
+2 CONC o speak his name and call him "You-Know-Who" or "He-Who-Must-Not-Be-Na
+2 CONC med".
+1 EDUCATIONS @edu00003@
+1 FILMPORTRAYAL Richard Bremmer (1), Christian Coulson (2), Ralph Fiennes (4-5)
+0 @ind00006@ INDI
+1 NAME James /Potter/
+2 DISPLAY James Potter
+2 GIVN James
+2 SURN Potter
+1 POSITION 50,80
+2 BOUNDARYRECT 13,113,87,33
+1 SEX M
+1 BIRT 
+2 DATE 1960
+1 DEAT Y
+2 DATE 31 OCT 1981
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Order of the Phoenix, Marauders
+1 HOUSE Gryffindor
+1 FAMS @fam00002@
+0 @ind00007@ INDI
+1 NAME Lily /Evans/
+2 DISPLAY Lily Evans
+3 FORMAT %F %L
+2 GIVN Lily
+2 SURN Evans
+2 LAST2 Potter
+1 POSITION 140,80
+2 BOUNDARYRECT 103,113,177,33
+1 SEX F
+1 BIRT 
+2 DATE 1960
+1 DEAT Y
+2 DATE 31 OCT 1981
+1 ISDEAD Y
+1 NOTE She has bright green almond-shaped eyes.
+1 BLOODPURITY Muggle born witch
+1 ALLEGIANCE Order of the Phoenix
+1 HOUSE Gryffindor
+1 FAMS @fam00002@
+1 FAMC @fam00004@
+0 @ind00008@ INDI
+1 NAME Albus Perceval Wulfric Brian /Dumbledore/
+2 DISPLAY Albus Dumbledore
+3 FORMAT %F %L
+2 GIVN Albus
+2 MIDDLE Perceval Wulfric Brian
+2 SURN Dumbledore
+1 PICTURES @pic00001@, @pic00040@, @pic00041@
+2 PRIMARY @pic00001@
+1 POSITION -100,-310
+2 BOUNDARYRECT -136,-277,-63,-357
+1 SEX M
+1 BIRT 
+2 DATE 1840
+1 NOTE Dumbledore  is one of the most respected men in the Wizarding world. H
+2 CONC arry Potter looks to him as his protector and guide.
+2 CONT 
+2 CONT Dumbledore is described as tall and thin, with long white hair and a l
+2 CONC ong beard. He has blue eyes, a very long and crooked nose (looking as 
+2 CONC if it had been broken at least twice) and long fingers. He wears half-
+2 CONC moon spectacles. He claims to have a scar above his left knee, its pro
+2 CONC venance unknown, which happens to be a perfect map of the London Under
+2 CONC ground.
+2 CONT 
+2 CONT 
+1 OCCUPATIONS @occu00002@
+1 FILMPORTRAYAL Richard Harris (1-2), Michael Gambon (3-5)
+1 HOUSE Gryffindor
+0 @ind00009@ INDI
+1 NAME Sirius /Black/
+2 DISPLAY Sirius Black
+2 GIVN Sirius
+2 SURN Black
+1 PICTURES @pic00025@
+2 PRIMARY @pic00025@
+1 POSITION -20,80
+2 BOUNDARYRECT -57,113,17,33
+1 SEX M
+1 BIRT 
+2 DATE 7 AUG 1959
+1 DEAT Y
+2 CHILDLESS Y
+2 DATE JUN 1996
+1 ISDEAD Y
+1 NOTE Sirius was best friends with James Potter, Harry's father, and was als
+2 CONC o friends with Remus Lupin and Peter Pettigrew. When the group discove
+2 CONC red that Lupin was a werewolf, they studied secretly to become Animagi
+2 CONC  in solidarity with Lupin, to keep him company during his transformati
+2 CONC ons.
+2 CONT 
+2 CONT When the Potters went into hiding from Voldemort, they wanted to make 
+2 CONC Sirius their Secret-Keeper, but at the last minute he convinced them t
+2 CONC o appoint Pettigrew to the task instead, since no one would suspect su
+2 CONC ch a move. Pettigrew immediately betrayed the Potters to Voldemort, an
+2 CONC d during the subsequent confrontation with Sirius, caused an explosion
+2 CONC  to fake his own death, killing twelve nearby Muggle bystanders in the
+2 CONC  process. Sirius was left framed for Pettigrew's "murder" and those of
+2 CONC  the bystanders, as well as the Potters' betrayal. In light of the ove
+2 CONC rwhelming evidence against him, his guilt was assumed so completely (i
+2 CONC n particular by the ruthless Barty Crouch) that he was sent straight t
+2 CONC o Azkaban without trial and imprisoned there for twelve years, during 
+2 CONC which he endured relentless mental torture at the hands of the Azkaban
+2 CONC  guards, the dementors.
+2 CONT 
+2 CONT His later escape from prison led to the widest manhunt ever in the wiz
+2 CONC arding world (being the first person known to have escaped Azkaban, th
+2 CONC ough in reality, he is second to Barty Crouch, Jr.), and he fled Europ
+2 CONC e for a time, only to return on Dumbledore's orders in The Order of th
+2 CONC e Phoenix, where he was forced to stay in his old family home, Grimmau
+2 CONC ld Place. It was impossible for The Order to reveal his location and p
+2 CONC rove him innocent for various reasons. His death at the end of The Ord
+2 CONC er of the Phoenix, in the Ministry itself, led to Dumbledore explainin
+2 CONC g his story to the Minister of Magic. Tragically, Sirius was only reco
+2 CONC gnized as innocent after his death.
+1 EDUCATIONS @edu00003@
+1 BLOODPURITY Pure blood, Werewolf
+1 ALLEGIANCE Order of the Phoenix, Marauders
+1 FILMPORTRAYAL Gary Oldman (3-5)
+1 HOUSE Gryffindor
+0 @ind00010@ INDI
+1 NAME Rubeus /Hagrid/
+2 DISPLAY Rubeus Hagrid
+2 GIVN Rubeus
+2 SURN Hagrid
+1 PICTURES @pic00017@
+2 PRIMARY @pic00017@
+1 POSITION 0,-360
+2 BOUNDARYRECT -26,-327,27,-407
+1 SEX M
+1 BIRT 
+2 DATE 6 DEC 1928
+1 NOTE Hagrid is twice as tall as the average man and nearly three times as w
+2 CONC ide. He loves animals and magical creatures, particularly those that a
+2 CONC re unusual or dangerous. Hagrid is known for his thick West country ac
+2 CONC cent.
+2 CONT 
+2 CONT Hagrid is romantically interested with Madame Maxime -- a half-giantes
+2 CONC s and headmistress of the French magic school Beauxbatons. Hagrid also
+2 CONC  has a half-brother, a giant named Grawp.
+1 OCCUPATIONS @occu00003@, @occu00034@
+1 EDUCATIONS @edu00034@
+1 BLOODPURITY Half-Giant, Half-Human Half-blood
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Robbie Coltrane
+1 HOUSE Gryffindor
+0 @ind00016@ INDI
+1 NAME Ronald Bilius /Weasley/
+2 DISPLAY Ron Weasley
+3 FORMAT %N %L
+2 GIVN Ronald
+2 MIDDLE Bilius
+2 SURN Weasley
+2 NICK Ron
+1 PICTURES @pic00007@, @pic00037@
+2 PRIMARY @pic00007@
+1 POSITION -270,-150
+2 BOUNDARYRECT -299,-117,-241,-197
+1 SEX M
+1 BIRT 
+2 DATE 1 MAR 1980
+1 NOTE Ron has the trademark flaming red hair of the Weasleys and blue eyes. 
+2 CONC He is described as being tall, thin and gangly, with freckles, a long 
+2 CONC nose and big hands and feet. He is Harry Potter's best friend, a const
+2 CONC ant companion throughout their adventures.
+2 CONT 
+2 CONT 
+1 EDUCATIONS @edu00013@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Dumbledore's Army, Order of the Phoenix
+1 FILMPORTRAYAL Rupert Grint
+1 HOUSE Gryffindor
+0 @ind00018@ INDI
+1 NAME Hermione /Granger/
+2 DISPLAY Hermione Granger
+2 GIVN Hermione
+2 SURN Granger
+1 PICTURES @pic00013@, @pic00014@
+2 PRIMARY @pic00013@
+1 POSITION -270,-230
+2 BOUNDARYRECT -300,-197,-239,-277
+1 SEX F
+1 BIRT 
+2 DATE 19 SEP 1979
+1 NOTE Hermione is best friends with Harry Potter and Ron Weasley. She is ver
+2 CONC y smart and she applies herself to her studies, which makes her the be
+2 CONC st student in her class.  
+2 CONT 
+2 CONT She has a cat name Crookshank, it is part Kneazle.
+1 EDUCATIONS @edu00016@
+1 BLOODPURITY Muggle born witch
+1 FILMPORTRAYAL Emma Watson
+1 HOUSE Gryffindor
+0 @ind00021@ INDI
+1 NAME  /Evans/
+2 DISPLAY Evans
+2 SURN Evans
+2 NPFX Mr
+1 POSITION -30,190
+2 BOUNDARYRECT -56,216,-4,157
+1 SEX M
+1 NOTE They were said to be proud to have a witch in the family.  Showed up i
+2 CONC n the mirror of Erised.
+1 BLOODPURITY Muggle born
+1 FAMS @fam00004@
+0 @ind00022@ INDI
+1 NAME  /Evans/
+2 DISPLAY Evans
+2 SURN Evans
+2 NPFX Ms
+1 POSITION 70,190
+2 BOUNDARYRECT 44,216,96,157
+1 SEX F
+1 NOTE They were said to be proud to have a witch in the family.  Showed up i
+2 CONC n the mirror of Erised.
+1 BLOODPURITY Muggle born
+1 FAMS @fam00004@
+0 @ind00023@ INDI
+1 NAME Severus /Snape/
+2 DISPLAY Severus Snape
+2 GIVN Severus
+2 SURN Snape
+1 PICTURES @pic00018@
+2 PRIMARY @pic00018@
+1 POSITION 140,-140
+2 BOUNDARYRECT 112,-107,169,-187
+1 SEX M
+1 BIRT 
+2 DATE 9 JAN 1960
+1 OCCUPATIONS @occu00008@, @occu00027@, @occu00029@
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Alan Rickman
+1 HOUSE Slytherin
+0 @ind00024@ INDI
+1 NAME Neville /Longbottom/
+2 DISPLAY Neville Longbottom
+2 GIVN Neville
+2 SURN Longbottom
+1 PICTURES @pic00015@, @pic00016@, @pic00079@
+2 PRIMARY @pic00079@
+1 POSITION -270,-310
+2 BOUNDARYRECT -306,-277,-234,-357
+1 SEX M
+1 BIRT 
+2 DATE 30 JUL 1980
+2 NOTE Son of Frank and Alice Longbottom.
+1 NOTE Neville is a plump, rather bumbling, Gryffindor student in Harry's yea
+2 CONC r. He has a notoriously bad memory. 
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Dumbledore's Army, Order of the Phoenix
+1 FILMPORTRAYAL Matthew Lewis
+1 HOUSE Gryffindor
+0 @ind00025@ INDI
+1 NAME Marjorie /Dursley/
+2 DISPLAY Marge Dursley
+3 FORMAT %N %L
+2 GIVN Marjorie
+2 SURN Dursley
+2 NICK Marge
+1 PICTURES @pic00012@, @pic00024@
+2 PRIMARY @pic00012@
+1 POSITION -270,90
+2 BOUNDARYRECT -296,116,-243,43
+1 SEX F
+1 NOTE Marjorie "Marge" Dursley is Vernon Dursley's sister and is described a
+2 CONC s being just like him, a large woman with hardly any neck and even a m
+2 CONC oustache. 
+2 CONT 
+2 CONT Aunt Marge usually brings her dog Ripper with her to Privet Drive – he
+2 CONC  pines when he is away from her – and treats him better than she treat
+2 CONC s most humans. While Aunt Marge is gone, Colonel Fubster takes care of
+2 CONC  her other dogs.
+2 CONT 
+2 CONT 
+2 CONT Terrorizes Harry Potter when she comes to visit.
+1 OCCUPATIONS @occu00010@
+1 BLOODPURITY Muggle born
+1 ALLEGIANCE None
+1 FILMPORTRAYAL Pam Ferris
+1 FAMC @fam00005@
+0 @ind00026@ INDI
+1 NAME  /Dursley/
+2 DISPLAY Dursley
+2 SURN Dursley
+2 NPFX Mr
+1 POSITION -290,190
+2 BOUNDARYRECT -316,216,-263,157
+1 SEX M
+1 BLOODPURITY Muggle born
+1 FAMS @fam00005@
+0 @ind00027@ INDI
+1 NAME  /Dursley/
+2 DISPLAY Dursley
+2 SURN Dursley
+2 NPFX Ms
+1 POSITION -200,190
+2 BOUNDARYRECT -226,216,-173,157
+1 SEX F
+1 BLOODPURITY Muggle born
+1 FAMS @fam00005@
+0 @ind00028@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00016@
+1 NAME 
+2 DISPLAY Ron Weasley
+3 FORMAT %N %L
+1 POSITION 134,-19
+2 GENOMAP Weasley
+2 BOUNDARYRECT 105,14,163,-66
+1 FAMC @fam00006@
+0 @ind00029@ INDI
+1 NAME Arthur /Weasley/
+2 DISPLAY Arthur Weasley
+2 GIVN Arthur
+2 SURN Weasley
+1 PICTURES @pic00011@, @pic00032@
+2 PRIMARY @pic00011@
+1 POSITION -120,154
+2 GENOMAP Weasley
+2 BOUNDARYRECT -149,187,-91,107
+1 SEX M
+1 BIRT 
+2 DATE 6 FEB 1940
+1 NOTE Arthur is described as being tall and thin, with red hair.
+1 OCCUPATIONS @occu00004@, @occu00018@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Order of the Phoenix, Ministry of Magic
+1 FILMPORTRAYAL Mark Williams
+1 HOUSE Gryffindor
+1 FAMS @fam00006@
+1 FAMC @fam00030@
+0 @ind00030@ INDI
+1 NAME Molly /Prewett/
+2 DISPLAY Molly Prewett
+3 FORMAT %F %L
+2 GIVN Molly
+2 SURN Prewett
+2 LAST2 Weasley
+1 PICTURES @pic00033@
+2 PRIMARY @pic00033@
+1 POSITION -12,154
+2 GENOMAP Weasley
+2 BOUNDARYRECT -39,187,15,107
+1 SEX F
+1 BIRT 
+2 DATE 30 OCT 1950
+1 NOTE Her youngest children, Ron and Ginny, are best friends with Harry Pott
+2 CONC er and Hermione Granger. Molly seems to have taken Harry and Hermione,
+2 CONC  both of them without magical families, under her wing and treats them
+2 CONC  with motherly affection as unofficial members of her family. Harry es
+2 CONC pecially is treated with her over-protective tendencies, because he is
+2 CONC  an orphan and his real adoptive family mistreats him. 
+1 OCCUPATIONS @occu00017@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Julie Walters
+1 HOUSE Gryffindor
+1 FAMS @fam00006@
+1 FAMC @fam00026@
+0 @ind00031@ INDI
+1 NAME Percival Ignatius /Weasley/
+2 DISPLAY Percy Weasley
+3 FORMAT %N %L
+2 GIVN Percival
+2 MIDDLE Ignatius
+2 SURN Weasley
+2 NICK Percy
+1 PICTURES @pic00010@
+2 PRIMARY @pic00010@
+1 POSITION -88,-19
+2 GENOMAP Weasley
+2 BOUNDARYRECT -117,14,-59,-66
+1 SEX M
+1 BIRT 
+2 DATE 22 AUG 1976
+1 OCCUPATIONS @occu00007@
+1 EDUCATIONS @edu00010@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Ministry of Magic
+1 FILMPORTRAYAL Chris Rankin
+1 HOUSE Gryffindor
+1 FAMC @fam00006@
+0 @ind00032@ INDI
+1 NAME Frederic /Weasley/
+2 DISPLAY Fred Weasley
+3 FORMAT %N %L
+2 GIVN Frederic
+2 SURN Weasley
+2 NICK Fred
+1 PICTURES @pic00008@, @pic00036@
+2 PRIMARY @pic00036@
+1 POSITION -14,-19
+2 GENOMAP Weasley
+2 BOUNDARYRECT -43,14,15,-66
+1 SEX M
+1 BIRT 
+2 DATE 1 APR 1978
+1 NOTE He has flaming red hair and is described as being on the shorter, stoc
+2 CONC kier side.
+1 OCCUPATIONS @occu00019@
+1 EDUCATIONS @edu00011@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Dumbledore's Army, Order of the Phoenix
+1 FILMPORTRAYAL James Phelps
+1 HOUSE Gryffindor
+1 FAMC @fam00006@
+0 @ind00033@ INDI
+1 NAME George /Weasley/
+2 DISPLAY George Weasley
+2 GIVN George
+2 SURN Weasley
+1 PICTURES @pic00008@, @pic00036@
+2 PRIMARY @pic00008@
+1 POSITION 60,-19
+2 GENOMAP Weasley
+2 BOUNDARYRECT 31,14,89,-66
+1 SEX M
+1 BIRT 
+2 DATE 1 APR 1978
+1 NOTE He has flaming red hair and is described as being on the shorter, stoc
+2 CONC kier side
+1 OCCUPATIONS @occu00019@
+1 EDUCATIONS @edu00011@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Dumbledore's Army, Order of the Phoenix
+1 FILMPORTRAYAL Oliver Phelps
+1 HOUSE Gryffindor
+1 FAMC @fam00006@
+0 @ind00034@ INDI
+1 NAME Ginevra /Weasley/
+2 DISPLAY Ginny Weasley
+3 FORMAT %N %L
+2 GIVN Ginevra
+2 SURN Weasley
+2 NICK Ginny
+1 PICTURES @pic00005@, @pic00006@
+2 PRIMARY @pic00006@
+1 POSITION 208,-19
+2 GENOMAP Weasley
+2 BOUNDARYRECT 179,14,237,-66
+1 SEX F
+1 BIRT 
+2 DATE 11 AUG 1981
+1 NOTE First girl in seven generations, seventh child of the Weasley family, 
+2 CONC both her first and last name have 7 letters. 
+2 CONT She is small, with vivid red hair and bright brown eyes. She is a tale
+2 CONC nted witch, especially noted for her skill with the Bat-Bogey Hex. She
+2 CONC  also tends to get obsessed with things, such as Harry, her diary, her
+2 CONC  boyfriends, or her dislike of Fleur.
+2 CONT 
+1 EDUCATIONS @edu00014@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Dumbledore's Army, Order of the Phoenix
+1 FILMPORTRAYAL Bonnie Wright
+1 HOUSE Gryffindor
+1 FAMC @fam00006@
+0 @ind00035@ INDI
+1 NAME William /Weasley/
+2 DISPLAY Bill Weasley
+3 FORMAT %N %L
+2 GIVN William
+2 SURN Weasley
+2 NICK Bill
+1 POSITION -390,-124
+2 GENOMAP Weasley
+2 BOUNDARYRECT -419,-91,-361,-171
+1 SEX M
+1 BIRT 
+2 DATE 29 NOV 1970
+1 NOTE He is a good looking young man and has long red hair tied back in a po
+2 CONC nytail and single fang earring.
+2 CONT Bill fought bravely in the Battle of Hogwarts, but did not escape unsc
+2 CONC athed. The werewolf Fenrir Greyback savaged Bill, albeit in his human 
+2 CONC form, and caused lycanthropy contamination to an unknown, partial exte
+2 CONC nt. According to Remus Lupin, who is also a werewolf, this was not eno
+2 CONC ugh to cause actual transformations, though Bill has apparently develo
+2 CONC ped a liking for extremely rare steaks and is left with a deeply scarr
+2 CONC ed face. His and Fleur Delacour's plans to marry are unchanged.
+1 OCCUPATIONS @occu00005@
+1 EDUCATIONS @edu00009@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Richard Fish (cameo)
+1 HOUSE Gryffindor
+1 FAMC @fam00006@
+1 FAMS @fam00027@
+0 @ind00036@ INDI
+1 NAME Charles /Weasley/
+2 DISPLAY Charlie Weasley
+3 FORMAT %N %L
+2 GIVN Charles
+2 SURN Weasley
+2 NICK Charlie
+1 POSITION -162,-19
+2 GENOMAP Weasley
+2 BOUNDARYRECT -191,14,-133,-66
+1 SEX M
+1 BIRT 
+2 DATE 12 DEC 1972
+1 NOTE Is described as having broad, good-natured, weather-beaten face with s
+2 CONC o many freckles that it looks almost tanned. Charlie's build, like his
+2 CONC  twin brothers Fred and George, is shorter and stockier than Percy and
+2 CONC  Ron's, who are long and lanky.
+2 CONT 
+1 OCCUPATIONS @occu00006@
+1 EDUCATIONS @edu00005@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Alex Crockford (cameo)
+1 HOUSE Gryffindor
+1 FAMC @fam00006@
+0 @ind00037@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00009@
+1 NAME 
+2 DISPLAY Sirius Black
+1 POSITION -575,863
+2 GENOMAP Black
+2 BOUNDARYRECT -612,896,-538,816
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 FAMC @fam00007@
+0 @ind00038@ INDI
+1 NAME Orion /Black/
+2 DISPLAY Orion Black
+2 GIVN Orion
+2 SURN Black
+1 POSITION -565,1006
+2 GENOMAP Black
+2 BOUNDARYRECT -602,1039,-528,959
+1 SEX M
+1 BIRT 
+2 DATE 1929
+1 DEAT Y
+2 DATE 1979
+2 AGE 50
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMS @fam00007@
+1 FAMC @fam00008@
+0 @ind00039@ INDI
+1 NAME Walburga /Black/
+2 DISPLAY Walburga Black
+2 GIVN Walburga
+2 SURN Black
+1 POSITION -475,1006
+2 GENOMAP Black
+2 BOUNDARYRECT -512,1039,-438,959
+1 SEX F
+1 BIRT 
+2 DATE 1925
+1 DEAT Y
+2 DATE 1985
+2 AGE 60
+1 ISDEAD Y
+1 NOTE Her hair was grey and messy, her eyes popping and rolling.
+2 CONT She died in 1985, but her portrait remained at 12 Grimmauld Place, whe
+2 CONC re it screamed insults at the various members of The Order of the Phoe
+2 CONC nix, including her son Sirius, after they made the house their headqua
+2 CONC rters. In the portrait she appears as an hysterical woman in a black c
+2 CONC ap whose eyes are rolling and whose yellow-skinned face is stretched t
+2 CONC aught. Her unpleasant appearance may be more the result of her unpleas
+2 CONC ant attitude than of the natural aging process.
+1 OCCUPATIONS @occu00016@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE The House of Black
+1 HOUSE Slytherin
+1 FAMS @fam00007@
+1 FAMC @fam00015@
+0 @ind00040@ INDI
+1 NAME Regulus Arcturus /Black/
+2 DISPLAY Regulus Arcturus Black
+2 GIVN Regulus
+2 MIDDLE Arcturus
+2 SURN Black
+1 POSITION -485,863
+2 GENOMAP Black
+2 BOUNDARYRECT -522,896,-448,802
+1 SEX M
+1 BIRT 
+2 DATE 1961
+1 DEAT Y
+2 DATE 1979
+2 AGE 18
+2 CAUSE Murder
+3 DESCRIPTION Murdered by Voldemort or on Voldemort's orders when he wanted out of t
+4 CONC he Death Eaters
+1 ISDEAD Y
+1 NOTE Could be the person who signed the locket containing a message signed 
+2 CONC with the initials R.A.B. 
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Formely Death Eaters
+1 HOUSE Slytherin
+1 FAMC @fam00007@
+0 @ind00041@ INDI
+1 NAME Arcturus /Black/
+2 DISPLAY Arcturus Black
+2 GIVN Arcturus
+2 SURN Black
+1 POSITION -645,1149
+2 GENOMAP Black
+2 BOUNDARYRECT -682,1182,-608,1102
+1 SEX M
+1 BIRT 
+2 DATE 1901
+1 DEAT Y
+2 DATE 1991
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMS @fam00008@
+1 FAMC @fam00010@
+0 @ind00042@ INDI
+1 NAME Melania /McMillan/
+2 DISPLAY Melania McMillan
+3 FORMAT %F %L
+2 GIVN Melania
+2 SURN McMillan
+2 LAST2 Black
+1 POSITION -564,1149
+2 GENOMAP Black
+2 BOUNDARYRECT -592,1175,-536,1102
+1 SEX F
+1 BLOODPURITY Pure blood
+1 FAMS @fam00008@
+0 @ind00043@ INDI
+1 NAME Lucretia /Black/
+2 DISPLAY Lucretia Black
+2 GIVN Lucretia
+2 SURN Black
+1 POSITION -665,1006
+2 GENOMAP Black
+2 BOUNDARYRECT -702,1039,-628,959
+1 SEX F
+1 BIRT 
+2 DATE 1925
+1 DEAT Y
+2 DATE 1992
+2 AGE 67
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMC @fam00008@
+1 FAMS @fam00009@
+0 @ind00044@ INDI
+1 NAME Ignatus /Prewett/
+2 DISPLAY Ignatus Prewett
+2 GIVN Ignatus
+2 SURN Prewett
+1 POSITION -745,1006
+2 GENOMAP Black
+2 BOUNDARYRECT -772,1032,-718,959
+1 SEX M
+1 BLOODPURITY Pure blood
+1 FAMS @fam00009@
+0 @ind00045@ INDI
+1 NAME Sirius /Black/
+2 DISPLAY Sirius Black
+2 GIVN Sirius
+2 SURN Black
+1 POSITION -505,1292
+2 GENOMAP Black
+2 BOUNDARYRECT -542,1325,-468,1245
+1 SEX M
+1 BIRT 
+2 DATE 1877
+1 DEAT Y
+2 DATE 1952
+2 AGE 75
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMS @fam00010@
+1 FAMC @fam00011@
+0 @ind00046@ INDI
+1 NAME Hesper /Gamp/
+2 FORMAT %F %M %L (%L2)
+2 DISPLAY Hesper Gamp
+3 FORMAT %F %L
+2 GIVN Hesper
+2 SURN Gamp
+2 LAST2 Black
+1 POSITION -426,1292
+2 GENOMAP Black
+2 BOUNDARYRECT -452,1318,-400,1245
+1 SEX F
+1 FAMS @fam00010@
+0 @ind00047@ INDI
+1 NAME Lycoris /Black/
+2 DISPLAY Lycoris Black
+2 GIVN Lycoris
+2 SURN Black
+1 POSITION -385,1149
+2 GENOMAP Black
+2 BOUNDARYRECT -422,1182,-348,1102
+1 SEX M
+1 BIRT 
+2 DATE 1904
+1 DEAT Y
+2 CHILDLESS Y
+2 DATE 1965
+2 AGE 61
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMC @fam00010@
+0 @ind00048@ INDI
+1 NAME Regulus /Black/
+2 DISPLAY Regulus Black
+2 GIVN Regulus
+2 SURN Black
+1 POSITION -295,1149
+2 GENOMAP Black
+2 BOUNDARYRECT -332,1182,-258,1102
+1 SEX M
+1 BIRT 
+2 DATE 1906
+1 DEAT Y
+2 CHILDLESS Y
+2 DATE 1959
+2 AGE 53
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMC @fam00010@
+0 @ind00049@ INDI
+1 NAME Phineas Nigellus /Black/
+2 DISPLAY Phineas Nigellus Black
+2 GIVN Phineas Nigellus
+2 SURN Black
+1 PICTURES @pic00026@
+2 PRIMARY @pic00026@
+1 POSITION -65,1465
+2 GENOMAP Black
+2 BOUNDARYRECT -102,1498,-28,1404
+1 SEX M
+1 BIRT 
+2 DATE 1847
+1 DEAT Y
+2 DATE 1926
+2 AGE 79
+1 ISDEAD Y
+1 NOTE Least popular headmaster Hogwarts has ever had.
+1 OCCUPATIONS @occu00013@
+1 BLOODPURITY Pure blood
+1 HOUSE Slytherin
+1 FAMS @fam00011@
+1 FAMC @fam00012@
+0 @ind00050@ INDI
+1 NAME Ursula /Flint/
+2 DISPLAY Ursula Flint
+3 FORMAT %F %L
+2 GIVN Ursula
+2 SURN Flint
+2 LAST2 Black
+1 POSITION 44,1465
+2 GENOMAP Black
+2 BOUNDARYRECT 18,1491,70,1418
+1 SEX F
+1 BLOODPURITY Pure blood
+1 FAMS @fam00011@
+0 @ind00051@ INDI
+1 NAME  /Black/
+2 DISPLAY Black
+2 SURN Black
+1 POSITION -174,1608
+2 GENOMAP Black
+2 BOUNDARYRECT -200,1634,-148,1575
+1 SEX M
+1 BLOODPURITY Pure blood
+1 FAMS @fam00012@
+0 @ind00052@ INDI
+1 NAME  //
+2 DISPLAY (Black)
+2 LAST2 Black
+1 POSITION -106,1608
+2 GENOMAP Black
+2 BOUNDARYRECT -132,1634,-80,1575
+1 SEX F
+1 BLOODPURITY Pure blood
+1 FAMS @fam00012@
+0 @ind00053@ INDI
+1 NAME Sirius /Black/
+2 DISPLAY Sirius Black
+2 GIVN Sirius
+2 SURN Black
+1 POSITION -294,1465
+2 GENOMAP Black
+2 BOUNDARYRECT -331,1498,-257,1418
+1 SEX M
+1 BIRT 
+2 DATE 1845
+1 DEAT Y
+2 CHILDLESS Y
+2 DATE 1853
+2 AGE 8
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMC @fam00012@
+0 @ind00054@ INDI
+1 NAME Elladora /Black/
+2 DISPLAY Elladora Black
+2 GIVN Elladora
+2 SURN Black
+1 POSITION 130,1460
+2 GENOMAP Black
+2 BOUNDARYRECT 93,1493,167,1413
+1 SEX F
+1 BIRT 
+2 DATE 1850
+1 DEAT Y
+2 DATE 1931
+2 AGE 81
+1 ISDEAD Y
+1 FAMC @fam00012@
+0 @ind00055@ INDI
+1 NAME Isla /Black/
+2 DISPLAY Isla Black
+2 GIVN Isla
+2 SURN Black
+1 POSITION -144,1466
+2 GENOMAP Black
+2 BOUNDARYRECT -170,1492,-118,1419
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX F
+1 NOTE Disowned for marrying Muggle Bob Higgens.
+1 FAMC @fam00012@
+1 FAMS @fam00013@
+0 @ind00056@ INDI
+1 NAME Bob /Higgens/
+2 DISPLAY Bob Higgens
+2 GIVN Bob
+2 SURN Higgens
+1 POSITION -214,1466
+2 GENOMAP Black
+2 BOUNDARYRECT -241,1492,-186,1419
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX M
+1 BLOODPURITY Muggle born
+1 FAMS @fam00013@
+0 @ind00057@ INDI
+1 NAME Phineas /Black/
+2 DISPLAY Phineas Black
+2 GIVN Phineas
+2 SURN Black
+1 POSITION -215,1293
+2 GENOMAP Black
+2 BOUNDARYRECT -242,1319,-188,1246
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX M
+1 NOTE Supported muggle rights.
+1 BLOODPURITY Pure blood
+1 FAMC @fam00011@
+0 @ind00058@ INDI
+1 NAME Cygnus /Black/
+2 DISPLAY Cygnus Black
+2 GIVN Cygnus
+2 SURN Black
+1 POSITION 730,1292
+2 GENOMAP Black
+2 BOUNDARYRECT 693,1325,767,1245
+1 SEX M
+1 BIRT 
+2 DATE 1889
+1 DEAT Y
+2 DATE 1943
+2 AGE 54
+1 ISDEAD Y
+1 FAMC @fam00011@
+1 FAMS @fam00014@
+0 @ind00059@ INDI
+1 NAME Violetta /Bulstrode/
+2 DISPLAY Violetta Bulstrode
+3 FORMAT %F %L
+2 GIVN Violetta
+2 SURN Bulstrode
+2 LAST2 Black
+1 POSITION 844,1294
+2 GENOMAP Black
+2 BOUNDARYRECT 813,1320,875,1247
+1 SEX F
+1 FAMS @fam00014@
+0 @ind00060@ INDI
+1 NAME Pollux /Black/
+2 DISPLAY Pollux Black
+2 GIVN Pollux
+2 SURN Black
+1 POSITION 620,1150
+2 GENOMAP Black
+2 BOUNDARYRECT 583,1183,657,1103
+1 SEX M
+1 BIRT 
+2 DATE 1912
+1 DEAT Y
+2 DATE 1990
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMS @fam00015@
+1 FAMC @fam00014@
+0 @ind00061@ INDI
+1 NAME Irma /Crabbe/
+2 DISPLAY Irma Crabbe
+3 FORMAT %F %L
+2 GIVN Irma
+2 SURN Crabbe
+2 LAST2 Black
+1 POSITION 696,1154
+2 GENOMAP Black
+2 BOUNDARYRECT 670,1180,722,1107
+1 SEX F
+1 BLOODPURITY Pure blood
+1 FAMS @fam00015@
+0 @ind00062@ INDI
+1 NAME Belvina /Black/
+2 DISPLAY Belvina Black
+3 FORMAT %F %L
+2 GIVN Belvina
+2 SURN Black
+2 LAST2 Burke
+1 POSITION 454,1292
+2 GENOMAP Black
+2 BOUNDARYRECT 417,1325,491,1245
+1 SEX F
+1 BIRT 
+2 DATE 1886
+1 DEAT Y
+2 DATE 1962
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMS @fam00016@
+1 FAMC @fam00011@
+0 @ind00063@ INDI
+1 NAME Hebert /Burke/
+2 DISPLAY Hebert Burke
+2 GIVN Hebert
+2 SURN Burke
+1 POSITION 375,1292
+2 GENOMAP Black
+2 BOUNDARYRECT 349,1318,401,1245
+1 SEX M
+1 BLOODPURITY Pure blood
+1 FAMS @fam00016@
+0 @ind00064@ INDI
+1 NAME  /Burke/
+2 DISPLAY Burke
+2 SURN Burke
+1 POSITION 335,1150
+2 GENOMAP Black
+2 BOUNDARYRECT 309,1176,361,1117
+1 SEX M
+1 FAMC @fam00016@
+0 @ind00065@ INDI
+1 NAME  /Burke/
+2 DISPLAY Burke
+2 SURN Burke
+1 POSITION 403,1150
+2 GENOMAP Black
+2 BOUNDARYRECT 377,1176,429,1117
+1 SEX M
+1 FAMC @fam00016@
+0 @ind00066@ INDI
+1 NAME  /Burke/
+2 DISPLAY Burke
+2 SURN Burke
+1 POSITION 471,1150
+2 GENOMAP Black
+2 BOUNDARYRECT 445,1176,497,1117
+1 SEX F
+1 FAMC @fam00016@
+0 @ind00067@ INDI
+1 NAME Arcturus /Black/
+2 DISPLAY Arcturus Black
+2 GIVN Arcturus
+2 SURN Black
+1 POSITION 74,1292
+2 GENOMAP Black
+2 BOUNDARYRECT 37,1325,111,1245
+1 SEX M
+1 BIRT 
+2 DATE 1884
+1 DEAT Y
+2 DATE 1959
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMS @fam00017@
+1 FAMC @fam00011@
+0 @ind00068@ INDI
+1 NAME Lysandra /Yaxley/
+2 DISPLAY Lysandra Yaxley
+3 FORMAT %F %L
+2 GIVN Lysandra
+2 SURN Yaxley
+2 LAST2 Black
+1 POSITION 158,1292
+2 GENOMAP Black
+2 BOUNDARYRECT 127,1318,189,1245
+1 SEX F
+1 BLOODPURITY Pure blood
+1 FAMS @fam00017@
+0 @ind00069@ INDI
+1 NAME Cassiopeia /Black/
+2 DISPLAY Cassiopeia Black
+2 GIVN Cassiopeia
+2 SURN Black
+1 POSITION 790,1141
+2 GENOMAP Black
+2 BOUNDARYRECT 753,1174,827,1094
+1 SEX F
+1 BIRT 
+2 DATE 1915
+1 DEAT Y
+2 DATE 1992
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMC @fam00014@
+0 @ind00070@ INDI
+1 NAME Marius /Black/
+2 DISPLAY Marius Black
+2 GIVN Marius
+2 SURN Black
+1 POSITION 870,1140
+2 GENOMAP Black
+2 BOUNDARYRECT 844,1166,896,1093
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX M
+1 NOTE Disowned because he was a squib
+1 BLOODPURITY Pure blood squib
+1 FAMC @fam00014@
+0 @ind00071@ INDI
+1 NAME Dorea /Black/
+2 FORMAT %F %M %L (%L2)
+2 DISPLAY Dorea Black
+3 FORMAT %F %L
+2 GIVN Dorea
+2 SURN Black
+2 LAST2 Potter
+1 POSITION 1040,1141
+2 GENOMAP Black
+2 BOUNDARYRECT 1003,1174,1077,1094
+1 SEX F
+1 BIRT 
+2 DATE 1920
+1 DEAT Y
+2 DATE 1977
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMC @fam00014@
+1 FAMS @fam00018@
+0 @ind00072@ INDI
+1 NAME Charlus /Potter/
+2 DISPLAY Charlus Potter
+2 GIVN Charlus
+2 SURN Potter
+1 POSITION 957,1141
+2 GENOMAP Black
+2 BOUNDARYRECT 931,1167,984,1094
+1 SEX M
+1 BLOODPURITY Pure blood
+1 FAMS @fam00018@
+0 @ind00073@ INDI
+1 NAME  /Potter/
+2 DISPLAY Potter
+2 SURN Potter
+1 POSITION 1000,1010
+2 GENOMAP Black
+2 BOUNDARYRECT 974,1036,1026,977
+1 SEX M
+1 FAMC @fam00018@
+0 @ind00074@ INDI
+1 NAME Callidora /Black/
+2 DISPLAY Callidora Black
+3 FORMAT %F %L
+2 GIVN Callidora
+2 SURN Black
+2 LAST2 Longbottom
+1 POSITION -46,1149
+2 GENOMAP Black
+2 BOUNDARYRECT -74,1182,-17,1102
+1 SEX F
+1 BIRT 
+2 DATE 1915
+1 BLOODPURITY Pure blood
+1 FAMC @fam00017@
+1 FAMS @fam00019@
+0 @ind00075@ INDI
+1 NAME Harfang /Longbottom/
+2 DISPLAY Harfang Longbottom
+2 GIVN Harfang
+2 SURN Longbottom
+1 POSITION -126,1149
+2 GENOMAP Black
+2 BOUNDARYRECT -162,1175,-90,1102
+1 SEX M
+1 FAMS @fam00019@
+0 @ind00076@ INDI
+1 NAME  /Longbottom/
+2 DISPLAY Longbottom
+2 SURN Longbottom
+1 POSITION -136,1007
+2 GENOMAP Black
+2 BOUNDARYRECT -172,1033,-100,974
+1 SEX M
+1 BLOODPURITY Pure blood
+1 FAMC @fam00019@
+0 @ind00077@ INDI
+1 NAME  /Longbottom/
+2 DISPLAY Longbottom
+2 SURN Longbottom
+1 POSITION -48,1007
+2 GENOMAP Black
+2 BOUNDARYRECT -84,1033,-12,974
+1 SEX F
+1 BLOODPURITY Pure blood
+1 FAMC @fam00019@
+0 @ind00079@ INDI
+1 NAME Septimus /Weasley/
+2 DISPLAY Septimus Weasley
+2 GIVN Septimus
+2 SURN Weasley
+1 POSITION 34,1150
+2 GENOMAP Black
+2 BOUNDARYRECT 4,1176,64,1103
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX M
+1 BLOODPURITY Half-blood
+1 FAMS @fam00020@
+0 @ind00080@ INDI
+1 NAME Charis /Black/
+2 DISPLAY Charis Black
+3 FORMAT %F %L
+2 GIVN Charis
+2 SURN Black
+2 LAST2 Crouch
+1 POSITION 256,1149
+2 GENOMAP Black
+2 BOUNDARYRECT 219,1182,293,1102
+1 SEX F
+1 BIRT 
+2 DATE 1919
+1 DEAT Y
+2 DATE 1973
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMC @fam00017@
+1 FAMS @fam00021@
+0 @ind00081@ INDI
+1 NAME Caspar /Crouch/
+2 DISPLAY Caspar Crouch
+2 GIVN Caspar
+2 SURN Crouch
+1 POSITION 177,1149
+2 GENOMAP Black
+2 BOUNDARYRECT 151,1175,203,1102
+1 SEX M
+1 BLOODPURITY Pure blood
+1 FAMS @fam00021@
+0 @ind00082@ INDI
+1 NAME  /Crouch/
+2 DISPLAY Crouch
+2 SURN Crouch
+1 POSITION 177,1007
+2 GENOMAP Black
+2 BOUNDARYRECT 151,1033,203,974
+1 SEX M
+1 BLOODPURITY Pure blood
+1 FAMC @fam00021@
+0 @ind00083@ INDI
+1 NAME  /Crouch/
+2 DISPLAY Crouch
+2 SURN Crouch
+1 POSITION 245,1007
+2 GENOMAP Black
+2 BOUNDARYRECT 219,1033,271,974
+1 SEX F
+1 BLOODPURITY Pure blood
+1 FAMC @fam00021@
+0 @ind00084@ INDI
+1 NAME Alphard /Black/
+2 DISPLAY Alphard Black
+2 GIVN Alphard
+2 SURN Black
+1 POSITION 859,1012
+2 GENOMAP Black
+2 BOUNDARYRECT 832,1038,886,965
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX M
+1 NOTE Disowned because he gave gold to his runaway nephew (Sirius).
+1 BLOODPURITY Pure blood
+1 FAMC @fam00015@
+0 @ind00085@ INDI
+1 NAME Cygnus /Black/
+2 DISPLAY Cygnus Black
+2 GIVN Cygnus
+2 SURN Black
+1 POSITION 630,1011
+2 GENOMAP Black
+2 BOUNDARYRECT 593,1044,667,964
+1 SEX M
+1 BIRT 
+2 DATE 1938
+1 DEAT Y
+2 DATE 1992
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMS @fam00022@
+1 FAMC @fam00015@
+0 @ind00086@ INDI
+1 NAME Druella /Rosier/
+2 DISPLAY Druella Rosier
+3 FORMAT %F %L
+2 GIVN Druella
+2 SURN Rosier
+2 LAST2 Black
+1 POSITION 739,1011
+2 GENOMAP Black
+2 BOUNDARYRECT 713,1037,765,964
+1 SEX F
+1 BLOODPURITY Pure blood
+1 FAMS @fam00022@
+0 @ind00087@ INDI
+1 NAME Bellatrix /Black/
+2 DISPLAY Bellatrix Black
+3 FORMAT %F %L
+2 GIVN Bellatrix
+2 SURN Black
+2 LAST2 Lestrange
+1 POSITION 540,868
+2 GENOMAP Black
+2 BOUNDARYRECT 513,901,567,821
+1 SEX F
+1 BIRT 
+2 DATE 1951
+1 NOTE Black hair, dark eyes, heavy lidded
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Death Eaters
+1 FILMPORTRAYAL Helen McCrory (5)
+1 HOUSE Slytherin
+1 FAMC @fam00022@
+1 FAMS @fam00023@
+0 @ind00088@ INDI
+1 NAME Rodolphus /Lestrange/
+2 DISPLAY Rodolphus Lestrange
+2 GIVN Rodolphus
+2 SURN Lestrange
+1 POSITION 463,868
+2 GENOMAP Black
+2 BOUNDARYRECT 430,894,497,821
+1 SEX M
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Death Eaters
+1 FAMS @fam00023@
+0 @ind00089@ INDI
+1 NAME Andromeda /Black/
+2 DISPLAY Andromeda Black
+3 FORMAT %F %L
+2 GIVN Andromeda
+2 SURN Black
+2 LAST2 Tonks
+1 POSITION 680,870
+2 GENOMAP Black
+2 BOUNDARYRECT 644,896,716,823
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX F
+1 NOTE Married Muggle Ted Tonks.
+2 CONT She has a talent for cleanliness that her husband and child do not sha
+2 CONC re, and that she is responsible for giving her daughter the name "Nymp
+2 CONC hadora" (which Nymphadora hates, preferring to be known simply as "Ton
+2 CONC ks").
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Order of the Phoenix
+1 HOUSE Slytherin
+1 FAMC @fam00022@
+1 FAMS @fam00024@
+0 @ind00090@ INDI
+1 NAME Narcissa /Black/
+2 DISPLAY Narcissa Black
+3 FORMAT %F %L
+2 GIVN Narcissa
+2 SURN Black
+2 LAST2 Malfoy
+2 NICK Cissy
+1 POSITION 836,868
+2 GENOMAP Black
+2 BOUNDARYRECT 807,901,866,821
+1 SEX F
+1 BIRT 
+2 DATE 1955
+1 NOTE Blonde and blue-eyed. Her nickname, at least to her sister Bellatrix, 
+2 CONC is "Cissy". She is described as having the habit of wrinkling her nose
+2 CONC  to appear disgusted around those of non-pureblood ancestry. Her snobb
+2 CONC ishness mars her beauty.
+2 CONT 
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Death Eaters
+1 HOUSE Slytherin
+1 FAMC @fam00022@
+1 FAMS @fam00025@
+0 @ind00091@ INDI
+1 NAME Ted /Tonks/
+2 DISPLAY Ted Tonks
+2 GIVN Ted
+2 SURN Tonks
+1 POSITION 609,869
+2 GENOMAP Black
+2 BOUNDARYRECT 583,895,635,822
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX M
+1 BLOODPURITY Muggle born
+1 FAMS @fam00024@
+0 @ind00092@ INDI
+1 NAME Lucius /Malfoy/
+2 DISPLAY Lucius Malfoy
+2 GIVN Lucius
+2 SURN Malfoy
+1 PICTURES @pic00030@, @pic00031@
+2 PRIMARY @pic00030@
+1 POSITION 765,868
+2 GENOMAP Black
+2 BOUNDARYRECT 739,901,791,821
+1 SEX M
+1 BIRT 
+2 DATE 1954
+1 NOTE Father was Abraxas Malfoy. 
+2 CONT He has white-blond hair and grey eyes.
+1 OCCUPATIONS @occu00015@
+1 EDUCATIONS @edu00003@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Death Eaters
+1 FILMPORTRAYAL Jason Isaacs (2, 4-5)
+1 HOUSE Slytherin
+1 FAMS @fam00025@
+0 @ind00093@ INDI
+1 NAME Draco /Malfoy/
+2 DISPLAY Draco Malfoy
+2 GIVN Draco
+2 SURN Malfoy
+1 PICTURES @pic00027@, @pic00028@, @pic00029@
+2 PRIMARY @pic00027@
+1 POSITION 789,755
+2 GENOMAP Black
+2 BOUNDARYRECT 763,788,815,708
+1 SEX M
+1 BIRT 
+2 DATE 5 JUN 1980
+1 NOTE Draco is Harry Potter's principal rival at school. The rivalry between
+2 CONC  the two is such that Harry has at times perceived Draco to be his arc
+2 CONC hnemesis. Draco is described as a pale-faced boy with white-blond hair
+2 CONC , pointed features, and cold grey eyes. Harry describes him as a spoil
+2 CONC ed, arrogant, and selfish person.
+2 CONT 
+1 EDUCATIONS @edu00006@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE The Inquisitorial Squad, Death Eaters (presumed)
+1 FILMPORTRAYAL Tom Felton
+1 HOUSE Slytherin
+1 FAMC @fam00025@
+0 @ind00094@ INDI
+1 NAME Nymphadora /Tonks/
+2 DISPLAY Nymphadora Tonks
+2 GIVN Nymphadora
+2 SURN Tonks
+1 POSITION 640,750
+2 GENOMAP Black
+2 BOUNDARYRECT 602,783,679,703
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX F
+1 BIRT 
+2 DATE 1973
+1 NOTE Her hair colour varies (usually bubble-gum pink, natural colour likely
+2 CONC  mousy brown); her eye colour also varies.
+2 CONT She is in love with Remus Lupin, but was frustrated and depressed by h
+2 CONC is refusal to pursue the romance
+2 CONT 
+1 OCCUPATIONS @occu00014@
+1 EDUCATIONS @edu00004@
+1 BLOODPURITY Half-blood
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Natalia Tena
+1 FAMC @fam00024@
+0 @ind00096@ INDI
+1 NAME  /Prewett/
+2 DISPLAY Prewett
+2 SURN Prewett
+2 NPFX Mr
+1 POSITION 22,300
+2 GENOMAP Weasley
+2 BOUNDARYRECT -5,326,49,267
+1 SEX M
+1 FAMS @fam00026@
+1 FAMC @fam00029@
+0 @ind00097@ INDI
+1 NAME  /Prewett/
+2 DISPLAY Prewett
+2 SURN Prewett
+2 NPFX Ms
+1 POSITION 93,300
+2 GENOMAP Weasley
+2 BOUNDARYRECT 66,326,120,267
+1 SEX F
+1 FAMS @fam00026@
+0 @ind00098@ INDI
+1 NAME Fleur /Delacour/
+2 DISPLAY Fleur Delacour
+2 GIVN Fleur
+2 SURN Delacour
+1 PICTURES @pic00034@, @pic00035@
+2 PRIMARY @pic00034@
+1 POSITION -316,-124
+2 GENOMAP Weasley
+2 BOUNDARYRECT -345,-91,-286,-171
+1 SEX F
+1 BIRT 
+2 DATE 1977
+2 PLAC France
+3 _XREF @place00005@
+1 NOTE Silvery-blonde hair, deep blue eyes. Due to the heritage of her Veela 
+2 CONC grandmother, many boys are immediately awestruck when they see her, an
+2 CONC d she is able to temporarily make herself almost irresistible to the o
+2 CONC pposite sex.
+2 CONT 
+2 CONT 
+1 EDUCATIONS @edu00007@
+1 BLOODPURITY Quarter-Veela
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Clémence Poésy
+1 FAMS @fam00027@
+1 FAMC @fam00028@
+0 @ind00099@ INDI
+1 NAME  /Delacour/
+2 DISPLAY Delacour
+2 SURN Delacour
+2 NPFX Mr
+1 POSITION -312,18
+2 GENOMAP Weasley
+2 BOUNDARYRECT -341,44,-282,-15
+1 SEX M
+1 FAMS @fam00028@
+0 @ind00100@ INDI
+1 NAME  /Delacour/
+2 DISPLAY Delacour
+2 SURN Delacour
+2 NPFX Mrs
+1 POSITION -237,18
+2 GENOMAP Weasley
+2 BOUNDARYRECT -266,44,-207,-15
+1 SEX F
+1 FAMS @fam00028@
+0 @ind00101@ INDI
+1 NAME Gabrielle /Delacour/
+2 DISPLAY Gabrielle Delacour
+2 GIVN Gabrielle
+2 SURN Delacour
+1 POSITION -241,-144
+2 GENOMAP Weasley
+2 BOUNDARYRECT -270,-111,-211,-191
+1 SEX F
+1 BIRT 
+2 DATE 1987
+1 NOTE She is partly non-human, with a Veela grandmother. 
+2 CONT 
+1 EDUCATIONS @edu00008@
+1 FILMPORTRAYAL Angelica Mandy
+1 FAMC @fam00028@
+0 @ind00102@ INDI
+1 NAME Gideon /Prewett/
+2 DISPLAY Gideon Prewett
+2 GIVN Gideon
+2 SURN Prewett
+1 POSITION 58,155
+2 GENOMAP Weasley
+2 BOUNDARYRECT 31,181,85,108
+1 SEX M
+1 NOTE Gideon was a member of the original Order of the Phoenix, but, accordi
+2 CONC ng to Alastor Moody he died as a hero with his brother. Both are in a 
+2 CONC picture of the original Order members that Moody shows to Harry. They 
+2 CONC were brutally killed by five Death Eaters, including Antonin Dolohov, 
+2 CONC who went to Azkaban for it.
+2 CONT 
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Order of the Phoenix
+1 FAMC @fam00026@
+0 @ind00103@ INDI
+1 NAME Fabian /Prewett/
+2 DISPLAY Fabian Prewett
+2 GIVN Fabian
+2 SURN Prewett
+1 POSITION 128,155
+2 GENOMAP Weasley
+2 BOUNDARYRECT 101,181,155,108
+1 SEX M
+1 NOTE Fabian was a member of the original Order of the Phoenix, but, accordi
+2 CONC ng to Alastor Moody he died as a hero with his brother. Both are in a 
+2 CONC picture of the original Order members that Moody shows to Harry. They 
+2 CONC were brutally killed by five Death Eaters, including Antonin Dolohov, 
+2 CONC who went to Azkaban for it.
+2 CONT 
+2 CONT 
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Order of the Phoenix
+1 FAMC @fam00026@
+0 @ind00104@ INDI
+1 NAME  //
+1 POSITION -44,440
+2 GENOMAP Weasley
+2 BOUNDARYRECT -70,466,-18,414
+1 SEX M
+1 FAMS @fam00029@
+0 @ind00105@ INDI
+1 NAME  //
+1 POSITION 24,440
+2 GENOMAP Weasley
+2 BOUNDARYRECT -2,466,50,414
+1 SEX F
+1 FAMS @fam00029@
+0 @ind00106@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00044@
+1 NAME 
+2 DISPLAY Ignatus Prewett
+1 POSITION -48,300
+2 GENOMAP Weasley
+2 BOUNDARYRECT -75,326,-21,253
+1 FAMC @fam00029@
+0 @ind00107@ INDI
+1 NAME Cedrella /Black/
+2 DISPLAY Cedrella Black
+2 GIVN Cedrella
+2 SURN Black
+1 POSITION -159,300
+2 GENOMAP Weasley
+2 BOUNDARYRECT -186,326,-131,253
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX F
+1 NOTE Disowned because she married Septimus Weasley.
+1 BLOODPURITY Pure blood
+1 FAMS @fam00030@
+0 @ind00108@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00079@
+1 NAME 
+2 DISPLAY Septimus Weasley
+1 POSITION -232,300
+2 GENOMAP Weasley
+2 BOUNDARYRECT -262,326,-202,253
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 FAMS @fam00030@
+0 @ind00109@ INDI
+1 NAME Bilius /Weasley/
+2 DISPLAY Bilius Weasley
+2 GIVN Bilius
+2 SURN Weasley
+1 POSITION -262,155
+2 GENOMAP Weasley
+2 BOUNDARYRECT -291,181,-233,108
+1 SEX M
+1 NOTE Bilius saw the Grim and died within twenty-four hours. Ron's middle na
+2 CONC me is possibly in honor of him.
+1 FAMC @fam00030@
+0 @ind00110@ INDI
+1 NAME  /Weasley/
+2 DISPLAY Weasley
+2 SURN Weasley
+2 NPFX Mr
+1 POSITION -191,155
+2 GENOMAP Weasley
+2 BOUNDARYRECT -220,181,-162,122
+1 SEX M
+1 FAMC @fam00030@
+0 @ind00111@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00005@
+1 NAME 
+2 DISPLAY Lord Voldemort
+3 FORMAT %N
+1 POSITION 100,-75
+2 GENOMAP Gaunt
+2 BOUNDARYRECT 68,-42,133,-122
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 FAMC @fam00031@
+0 @ind00112@ INDI
+1 NAME Tom /Riddle/
+2 DISPLAY Tom Riddle Sr.
+3 FORMAT %F %L %L2
+2 GIVN Tom
+2 SURN Riddle
+2 LAST2 Sr.
+1 POSITION 60,51
+2 GENOMAP Gaunt
+2 BOUNDARYRECT 23,84,97,-10
+1 SEX M
+1 BIRT 
+2 DATE 1903
+1 DEAT Y
+2 DATE 1943
+1 ISDEAD Y
+1 BLOODPURITY Muggle born
+1 FAMS @fam00031@
+0 @ind00113@ INDI
+1 NAME Merope /Gaunt/
+2 DISPLAY Merope Gaunt
+3 FORMAT %F %L
+2 GIVN Merope
+2 SURN Gaunt
+2 LAST2 Riddle
+1 POSITION 150,51
+2 GENOMAP Gaunt
+2 BOUNDARYRECT 113,84,187,4
+1 SEX F
+1 BIRT 
+2 DATE 1907
+1 DEAT Y
+2 DATE 31 DEC 1926
+2 NOTE Died one hour after giving birth to Tom.
+1 ISDEAD Y
+1 BLOODPURITY Pure blood
+1 FAMS @fam00031@
+1 FAMC @fam00032@
+0 @ind00114@ INDI
+1 NAME Marvolo /Gaunt/
+2 DISPLAY Marvolo Gaunt
+2 GIVN Marvolo
+2 SURN Gaunt
+1 POSITION 20,194
+2 GENOMAP Gaunt
+2 BOUNDARYRECT -7,227,47,147
+1 SEX M
+1 DEAT Y
+2 DATE 1927
+1 ISDEAD Y
+1 FAMS @fam00032@
+0 @ind00115@ INDI
+1 NAME  //
+1 POSITION 89,194
+2 GENOMAP Gaunt
+2 BOUNDARYRECT 63,220,115,168
+1 SEX F
+1 FAMS @fam00032@
+0 @ind00116@ INDI
+1 NAME Morphin /Gaunt/
+2 DISPLAY Morphin Gaunt
+2 GIVN Morphin
+2 SURN Gaunt
+1 POSITION -30,51
+2 GENOMAP Gaunt
+2 BOUNDARYRECT -67,84,7,4
+1 SEX M
+1 BIRT 
+2 DATE 1900
+1 DEAT Y
+2 CHILDLESS Y
+2 DATE 1970
+1 ISDEAD Y
+1 NOTE Parselmouth and sociopath. Morfin is seen dressed in rags. His thick h
+2 CONC air is so matted with dirt the color was indistinguishable. "Several o
+2 CONC f his teeth were missing. His eyes were small and dark and stared in o
+2 CONC pposite directions." 
+1 BLOODPURITY Pure blood
+1 FAMC @fam00032@
+0 @ind00117@ INDI
+1 NAME Salazar /Slytherin/
+2 DISPLAY Salazar Slytherin
+2 GIVN Salazar
+2 SURN Slytherin
+1 POSITION -100,270
+2 GENOMAP Gaunt
+2 BOUNDARYRECT -129,296,-71,223
+1 SEX M
+1 HOUSE Slytherin
+0 @ind00118@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00034@
+1 NAME 
+2 DISPLAY Ginny Weasley
+3 FORMAT %N %L
+1 POSITION -270,-390
+2 BOUNDARYRECT -299,-357,-241,-437
+0 @ind00078@ INDI
+1 NAME Cedrella /Black/
+2 DISPLAY Cedrella Black
+2 GIVN Cedrella
+2 SURN Black
+1 POSITION 107,1150
+2 GENOMAP Black
+2 BOUNDARYRECT 80,1176,135,1103
+1 DISPLAY 
+2 COLORS 
+3 GENDER 
+4 SYMBOL #800000
+1 SEX F
+1 NOTE Disowned because she married Septimus Weasley.
+1 BLOODPURITY Pure blood
+1 FAMC @fam00017@
+1 FAMS @fam00020@
+0 @ind00119@ INDI
+1 NAME Dean /Thomas/
+2 DISPLAY Dean Thomas
+2 GIVN Dean
+2 SURN Thomas
+1 PICTURES @pic00042@
+2 PRIMARY @pic00042@
+1 POSITION 180,70
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 153,96,207,23
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 EDUCATIONS @edu00017@
+1 BLOODPURITY Half-blood
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Alfred Enoch
+1 HOUSE Gryffindor
+0 @ind00120@ INDI
+1 NAME Seamus /Finnigan/
+2 DISPLAY Seamus Finnigan
+2 GIVN Seamus
+2 SURN Finnigan
+1 PICTURES @pic00043@
+2 PRIMARY @pic00043@
+1 POSITION 240,70
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 212,96,268,23
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 EDUCATIONS @edu00016@
+1 BLOODPURITY Half-blood
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Devon Murray
+1 HOUSE Gryffindor
+0 @ind00121@ INDI
+1 NAME Parvati /Patil/
+2 DISPLAY Parvati Patil
+2 GIVN Parvati
+2 SURN Patil
+1 PICTURES @pic00044@, @pic00045@
+2 PRIMARY @pic00044@
+1 POSITION 340,70
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 314,96,366,23
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Has an identical twin sister Padma in Ravenclaw.
+1 EDUCATIONS @edu00003@
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Sitara Shah, Shafali Chowdhury
+1 HOUSE Gryffindor
+0 @ind00122@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00001@
+1 NAME 
+2 DISPLAY Harry Potter
+1 POSITION 90,150
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 64,183,116,103
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+0 @ind00123@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00016@
+1 NAME 
+2 DISPLAY Ron Weasley
+3 FORMAT %N %L
+1 POSITION 150,150
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 121,183,179,103
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+0 @ind00124@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00018@
+1 NAME 
+2 DISPLAY Hermione Granger
+1 POSITION 220,150
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 190,183,251,103
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+0 @ind00125@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00024@
+1 NAME 
+2 DISPLAY Neville Longbottom
+1 POSITION 290,150
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 254,183,326,103
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+0 @ind00126@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00034@
+1 NAME 
+2 DISPLAY Ginny Weasley
+3 FORMAT %N %L
+1 POSITION 350,150
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 321,183,379,103
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+0 @ind00127@ INDI
+1 NAME Lavender /Brown/
+2 DISPLAY Lavender Brown
+2 GIVN Lavender
+2 SURN Brown
+1 PICTURES @pic00080@
+2 PRIMARY @pic00080@
+1 POSITION 290,70
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 259,96,321,23
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 EDUCATIONS @edu00016@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Jennifer Smith
+1 HOUSE Gryffindor
+0 @ind00128@ INDI
+1 NAME Oliver /Wood/
+2 DISPLAY Oliver Wood
+2 GIVN Oliver
+2 SURN Wood
+1 PICTURES @pic00047@
+2 PRIMARY @pic00047@
+1 POSITION 340,0
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 314,26,366,-47
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 EDUCATIONS @edu00018@
+1 ALLEGIANCE Puddlemere United
+1 FILMPORTRAYAL Sean Biggerstaff
+1 HOUSE Gryffindor
+0 @ind00129@ INDI
+1 NAME Angelina /Johnson/
+2 DISPLAY Angelina Johnson
+2 GIVN Angelina
+2 SURN Johnson
+1 PICTURES @pic00046@
+2 PRIMARY @pic00046@
+1 POSITION 290,0
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 261,33,319,-47
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 BIRT 
+2 DATE OCT 1977
+1 NOTE Angelina is a tall black girl with long braided hair, two years older 
+2 CONC than Harry. She has been a Chaser on the Gryffindor Quidditch team sin
+2 CONC ce her second year, and became the team captain in her seventh year.
+2 CONT 
+1 EDUCATIONS @edu00003@
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Danielle Tabor/Tiana Benjamin
+1 HOUSE Gryffindor
+0 @ind00130@ INDI
+1 NAME Alicia /Spinnet/
+2 DISPLAY Alicia Spinnet
+2 GIVN Alicia
+2 SURN Spinnet
+1 PICTURES @pic00048@
+2 PRIMARY @pic00048@
+1 POSITION 70,0
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 44,26,96,-47
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Alicia Spinnet was on the reserve team but she later joined the team. 
+2 CONC Alicia is most often the chaser who attempts penalty shots for Gryffin
+2 CONC dor when the other team commits a foul. 
+2 CONT 
+2 CONT 
+1 EDUCATIONS @edu00003@
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Leilah Sutherland, Rochelle Douglas
+1 HOUSE Gryffindor
+0 @ind00131@ INDI
+1 NAME Katie /Bell/
+2 DISPLAY Katie Bell
+2 GIVN Katie
+2 SURN Bell
+1 PICTURES @pic00049@
+2 PRIMARY @pic00049@
+1 POSITION 130,0
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 104,26,156,-47
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 EDUCATIONS @edu00019@
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Emily Dale
+1 HOUSE Gryffindor
+0 @ind00132@ INDI
+1 NAME Cormac /McLaggen/
+2 DISPLAY Cormac McLaggen
+2 GIVN Cormac
+2 SURN McLaggen
+1 POSITION 180,0
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 147,26,213,-47
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE An aggressive and arrogant character. Tried out to be the keeper in th
+2 CONC e Quidditch team. Replaced Ron as Keeper and the game was a disaster b
+2 CONC ecause he ordered the team about instead of focusing on his own positi
+2 CONC on.
+1 EDUCATIONS @edu00003@
+1 ALLEGIANCE Slug Club
+1 HOUSE Gryffindor
+0 @ind00133@ INDI
+1 NAME Colin /Creevey/
+2 DISPLAY Colin Creevey
+2 GIVN Colin
+2 SURN Creevey
+1 PICTURES @pic00050@
+2 PRIMARY @pic00050@
+1 POSITION 70,70
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 42,96,99,23
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE His brother is Dennis Creevey. He is two years older. He enjoys taking
+2 CONC  photographs of memorable people, objects and events. He indulges this
+2 CONC  habit throughout his first year at Hogwarts, often pursuing Harry for
+2 CONC  pictures to send home to his family. Harry found Colin's constant att
+2 CONC ention irksome.
+1 EDUCATIONS @edu00003@
+1 BLOODPURITY Muggle born witch
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Hugh Mitchell
+1 HOUSE Gryffindor
+0 @ind00134@ INDI
+1 NAME Dennis /Creevey/
+2 DISPLAY Dennis Creevey
+2 GIVN Dennis
+2 SURN Creevey
+1 POSITION 240,0
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 212,26,269,-47
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE His brother is Colin Creevey. He is two years younger.
+1 BLOODPURITY Muggle born witch
+1 ALLEGIANCE Dumbledore's Army
+1 HOUSE Gryffindor
+0 @ind00135@ INDI
+1 NAME Romilda /Vane/
+2 DISPLAY Romilda Vane
+2 GIVN Romilda
+2 SURN Vane
+1 POSITION 130,70
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 104,103,157,23
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 BIRT 
+2 DATE 1982
+1 NOTE Romilda has a celebrity crush on Harry throughout the sixth book, but 
+2 CONC she sometimes crosses the line. She introduces herself to Harry on the
+2 CONC  Hogwarts Express and invites him to join the group in her compartment
+2 CONC , but not without making snide remarks about Neville Longbottom and Lu
+2 CONC na Lovegood, whom she considers "uncool." Harry stands up for his frie
+2 CONC nds and refuses her invitation. Later in the year she attempts to tric
+2 CONC k Harry into taking a love potion, but while he takes the box of choco
+2 CONC lates she gives him, he is wise enough not to eat them. Several months
+2 CONC  later, Ron Weasley accidentally eats several of Romilda's doctored ch
+2 CONC ocolates and is affected by the love potion, forcing Harry to take him
+2 CONC  to Professor Slughorn for an antidote - which leads to Ron being pois
+2 CONC oned by accident. Following Gryffindor's Quidditch victory towards the
+2 CONC  end of the book, Romilda is outraged to see Harry kissing Ginny Weasl
+2 CONC ey, whom he starts dating shortly thereafter.
+1 EDUCATIONS @edu00003@
+1 HOUSE Gryffindor
+0 @ind00136@ INDI
+1 NAME Minerva /McGonagall/
+2 DISPLAY Minerva McGonagall
+2 GIVN Minerva
+2 SURN McGonagall
+1 PICTURES @pic00051@, @pic00052@
+2 PRIMARY @pic00051@
+1 POSITION 110,-430
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 74,-397,146,-477
+1 DISPLAY 
+2 COLORS 
+3 BORDER 
+4 OUTLINE #808000
+4 FILL #D20000
+2 FLAGS 
+3 ENABLE bt
+1 SEX F
+1 BIRT 
+2 DATE 4 OCT 1925
+1 NOTE McGonagall has black hair, typically drawn into a tight bun. She wears
+2 CONC  emerald green robes, and always a very prim expression. She is also o
+2 CONC ne of Albus Dumbledore's staunchest supporters 
+1 OCCUPATIONS @occu00020@, @occu00021@, @occu00031@
+1 EDUCATIONS @edu00003@
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Dame Maggie Smith
+1 HOUSE Gryffindor
+0 @ind00137@ INDI
+1 NAME Pomona /Sprout/
+2 DISPLAY Pomona Sprout
+2 GIVN Pomona
+2 SURN Sprout
+1 PICTURES @pic00053@
+2 PRIMARY @pic00053@
+1 POSITION 40,-430
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 13,-404,67,-477
+1 DISPLAY 
+2 COLORS 
+3 BORDER 
+4 OUTLINE #000000
+4 FILL #FFFF00
+2 FLAGS 
+3 ENABLE bt
+1 SEX F
+1 BIRT 
+2 DATE 15 MAY
+1 NOTE She is a dumpy, cheerful little witch. She wears shabby earth-covered 
+2 CONC robes and a patched and frayed hat over her fly-away grey hair.
+2 CONT 
+1 OCCUPATIONS @occu00022@, @occu00030@
+1 EDUCATIONS @edu00003@
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Miriam Margolyes
+1 HOUSE Hufflepuff
+0 @ind00138@ INDI
+1 NAME Cedric /Diggory/
+2 DISPLAY Cedric Diggory
+2 GIVN Cedric
+2 SURN Diggory
+1 PICTURES @pic00054@
+2 PRIMARY @pic00054@
+1 POSITION 80,-190
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 43,-157,117,-237
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 BIRT 
+2 DATE 1978
+1 DEAT Y
+2 DATE 24 JUN 1995
+2 CAUSE Murder
+2 NOTE Cedric dies during the Triwizard Tournament. During the third task, Ha
+3 CONC rry saved Diggory's life twice while in the maze, and in the race for 
+3 CONC the cup, Cedric refused to take the cup without Harry, so they grasped
+3 CONC  it together.The cup turned out to be a portkey which transported them
+3 CONC  to Voldemort and his servant Wormtail. Wormtail murdered Diggory with
+3 CONC  the Avada Kedavra curse. Harry escaped and brought Cedric's body back
+3 CONC  to his parents.
+3 CONT 
+3 CONT 
+1 ISDEAD Y
+1 NOTE Cedric was the Hufflepuff Quidditch captain and Seeker. Cedric's fathe
+2 CONC r is Amos Diggory, who works at the Ministry of Magic; his girlfriend 
+2 CONC was Cho Chang. Cedric has been described as "the strong, but silent ty
+2 CONC pe" and "extremely handsome"; as a character he showed a notable strea
+2 CONC k for modesty and fairness. He was a very good student and a Prefect f
+2 CONC or the Hufflepuff House.
+1 FILMPORTRAYAL Robert Pattinson
+1 HOUSE Hufflepuff
+0 @ind00139@ INDI
+1 NAME Filius /Flitwick/
+2 DISPLAY Filius Flitwick
+2 GIVN Filius
+2 SURN Flitwick
+1 PICTURES @pic00055@
+2 PRIMARY @pic00055@
+1 POSITION -30,-430
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -56,-404,-4,-477
+1 DISPLAY 
+2 COLORS 
+3 BORDER 
+4 OUTLINE #808000
+4 FILL #6FD0FF
+2 FLAGS 
+3 ENABLE bt
+1 SEX M
+1 BIRT 
+2 DATE 17 OCT
+1 OCCUPATIONS @occu00023@, @occu00033@
+1 BLOODPURITY Human with a dash of goblin
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Warwick Davis
+1 HOUSE Ravenclaw
+0 @ind00140@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00023@
+1 NAME 
+2 DISPLAY Severus Snape
+1 POSITION -100,-430
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -128,-397,-71,-477
+1 DISPLAY 
+2 COLORS 
+3 BORDER 
+4 OUTLINE #808080
+4 FILL #99D771
+2 FLAGS 
+3 ENABLE bt
+0 @ind00141@ INDI
+1 NAME Hannah /Abbott/
+2 DISPLAY Hannah Abbott
+2 GIVN Hannah
+2 SURN Abbott
+1 PICTURES @pic00056@
+2 PRIMARY @pic00056@
+1 POSITION 150,-190
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 124,-164,177,-237
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 EDUCATIONS @edu00020@
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Charlotte Skeoch
+1 HOUSE Hufflepuff
+0 @ind00142@ INDI
+1 NAME Susan /Bones/
+2 DISPLAY Susan Bones
+2 GIVN Susan
+2 SURN Bones
+1 PICTURES @pic00057@
+2 PRIMARY @pic00057@
+1 POSITION 210,-190
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 184,-164,236,-237
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Her aunt is Amelia Bones
+1 EDUCATIONS @edu00016@
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Eleanor Columbus
+1 HOUSE Hufflepuff
+0 @ind00143@ INDI
+1 NAME Justin /Finch-Fletchley/
+2 DISPLAY Justin Finch-Fletchley
+2 GIVN Justin
+2 SURN Finch-Fletchley
+1 PICTURES @pic00058@
+2 PRIMARY @pic00058@
+1 POSITION 280,-190
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 251,-164,310,-251
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 EDUCATIONS @edu00016@
+1 BLOODPURITY Muggle born witch
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Edward Randell
+1 HOUSE Hufflepuff
+0 @ind00144@ INDI
+1 NAME Ernie /MacMillan/
+2 DISPLAY Ernie MacMillan
+2 GIVN Ernie
+2 SURN MacMillan
+1 PICTURES @pic00059@
+2 PRIMARY @pic00059@
+1 POSITION 350,-190
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 319,-164,381,-237
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 EDUCATIONS @edu00023@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Louis Doyle
+1 HOUSE Hufflepuff
+0 @ind00145@ INDI
+1 NAME Zacharias /Smith/
+2 DISPLAY Zacharias Smith
+2 GIVN Zacharias
+2 SURN Smith
+1 POSITION 80,-270
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 48,-244,113,-317
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 EDUCATIONS @edu00024@
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Nick Shim
+1 HOUSE Hufflepuff
+0 @ind00146@ INDI
+1 NAME Cho /Chang/
+2 DISPLAY Cho Chang
+2 GIVN Cho
+2 SURN Chang
+1 PICTURES @pic00060@
+2 PRIMARY @pic00060@
+1 POSITION -580,-170
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -606,-137,-554,-217
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 BIRT 
+2 DATE 1979
+1 NOTE Described as a short, very pretty girl with long, black hair. Cho is H
+2 CONC arry's first crush and romantic interest, although things don't work o
+2 CONC ut between them.   She ends up dating Cedric Diggory, one of the other
+2 CONC  champions of the Triwizard Tournament, until Cedric is murdered by Pe
+2 CONC ter Pettigrew on Lord Voldemort's orders at the end of the book.
+1 EDUCATIONS @edu00025@
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Katie Leung
+1 HOUSE Ravenclaw
+0 @ind00147@ INDI
+1 NAME Luna /Lovegood/
+2 DISPLAY Luna Lovegood
+2 GIVN Luna
+2 SURN Lovegood
+1 POSITION -510,-170
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -542,-144,-478,-217
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Luna has straggly, waist-length dirty-blond hair and is described as h
+2 CONC aving a dazed look on her face. Her eyes are described as "silvery" an
+2 CONC d "misty", which suggests they may be pale grey. They are also describ
+2 CONC ed as "protuberant", which adds to the peculiarity of her appearance.
+1 EDUCATIONS @edu00026@
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Evanna Lynch
+1 HOUSE Ravenclaw
+0 @ind00148@ INDI
+1 NAME Roger /Davies/
+2 DISPLAY Roger Davies
+2 GIVN Roger
+2 SURN Davies
+1 PICTURES @pic00061@
+2 PRIMARY @pic00061@
+1 POSITION -440,-170
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -466,-144,-414,-217
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 EDUCATIONS @edu00027@
+1 FILMPORTRAYAL Henry Lloyd-Hughes
+1 HOUSE Ravenclaw
+0 @ind00149@ INDI
+1 NAME Terry /Boot/
+2 DISPLAY Terry Boot
+2 GIVN Terry
+2 SURN Boot
+1 POSITION -370,-170
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -396,-144,-344,-217
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 EDUCATIONS @edu00016@
+1 ALLEGIANCE Dumbledore's Army
+1 HOUSE Ravenclaw
+0 @ind00150@ INDI
+1 NAME Michael /Corner/
+2 DISPLAY Michael Corner
+2 GIVN Michael
+2 SURN Corner
+1 POSITION -310,-170
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -336,-144,-284,-217
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE Michael is best known as Ginny Weasley's first boyfriend. Later, he al
+2 CONC so dated Cho Chang, the two same girls as Harry Potter.
+1 ALLEGIANCE Dumbledore's Army
+1 HOUSE Ravenclaw
+0 @ind00151@ INDI
+1 NAME Anthony /Goldstein/
+2 DISPLAY Anthony Goldstein
+2 GIVN Anthony
+2 SURN Goldstein
+1 POSITION -240,-170
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -270,-144,-209,-217
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE Anthony was one of the D.A. members to assist Harry on the train again
+2 CONC st Draco Malfoy, Vincent Crabbe, and Gregory Goyle when they attempt t
+2 CONC o ambush Harry.
+1 EDUCATIONS @edu00031@
+1 ALLEGIANCE Dumbledore's Army
+1 HOUSE Ravenclaw
+0 @ind00152@ INDI
+1 NAME Padma /Patil/
+2 DISPLAY Padma Patil
+2 GIVN Padma
+2 SURN Patil
+1 PICTURES @pic00062@
+2 PRIMARY @pic00062@
+1 POSITION -580,-250
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -606,-224,-554,-297
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Identical twin sister to Parvati Patil in Gryffindor.
+1 EDUCATIONS @edu00028@
+1 ALLEGIANCE Dumbledore's Army
+1 FILMPORTRAYAL Afshan Azad
+1 HOUSE Ravenclaw
+0 @ind00155@ INDI
+1 NAME Marietta /Edgecombe/
+2 DISPLAY Marietta Edgecombe
+2 GIVN Marietta
+2 SURN Edgecombe
+1 POSITION -510,-250
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -546,-224,-474,-297
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Marietta has curly, reddish-blonde hair and is a friend of Cho Chang.
+2 CONT Marietta's mother is Madam Edgecombe, who helped Cornelius Fudge and D
+2 CONC olores Umbridge take control of Hogwarts. Madam Edgecombe works in the
+2 CONC  Floo Network Office, which is part of the Department of Magical Trans
+2 CONC portation in the Ministry of Magic, and she policed the Hogwarts fires
+2 CONC , except for Umbridge's, to make sure that nobody in the school made c
+2 CONC ontact with anyone the Ministry did not want them to have contact with
+2 CONC .
+1 EDUCATIONS @edu00029@
+1 ALLEGIANCE Ministry of Magic
+1 HOUSE Ravenclaw
+0 @ind00156@ INDI
+1 NAME Penelope /Clearwater/
+2 DISPLAY Penelope Clearwater
+2 GIVN Penelope
+2 SURN Clearwater
+2 NICK Penny
+1 POSITION -430,-260
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -465,-234,-395,-307
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Penelope is a tall fgirl with long black curls. She apparently began d
+2 CONC ating Percy Weasley at the end of The Philosopher's Stone, because in 
+2 CONC the following summer the other Weasley boys notice that Percy stayed s
+2 CONC hut up in his room all summer writing letters to someone. His correspo
+2 CONC ndent was later revealed to be his girlfriend Penelope.
+1 EDUCATIONS @edu00030@
+1 BLOODPURITY Muggle born witch
+1 FILMPORTRAYAL Gemma Padley
+1 HOUSE Ravenclaw
+0 @ind00157@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00093@
+1 NAME 
+2 DISPLAY Draco Malfoy
+1 POSITION -550,120
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -576,153,-524,73
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+0 @ind00158@ INDI
+1 NAME Vincent /Crabbe/
+2 DISPLAY Vincent Crabbe
+2 GIVN Vincent
+2 SURN Crabbe
+1 PICTURES @pic00063@
+2 PRIMARY @pic00063@
+1 POSITION -580,30
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -606,56,-553,-17
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE Crabbe is large, has gorilla-like arms, and wears a pudding bowl-style
+2 CONC  haircut. He is very mean and very stupid, which makes him little more
+2 CONC  than a "follower" of Malfoy.
+2 CONT His father, Crabbe Sr., is a Death Eater.
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE The Inquisitorial Squad
+1 FILMPORTRAYAL Jamie Waylett
+1 HOUSE Slytherin
+0 @ind00159@ INDI
+1 NAME Gregory /Doyle/
+2 DISPLAY Gregory Doyle
+2 GIVN Gregory
+2 SURN Doyle
+1 PICTURES @pic00064@
+2 PRIMARY @pic00064@
+1 POSITION -520,30
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -548,63,-492,-17
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 BIRT 
+2 DATE 1980
+1 NOTE He is friends with Draco Malfoy, generally following him around and do
+2 CONC ing his bidding. He seems to lack all intelligence, magical talent, an
+2 CONC d independent thought, and thus uses only his size and strength to bul
+2 CONC ly other students or scare off anyone who threatens Malfoy. Malfoy has
+2 CONC  indicated that Goyle cannot read.
+2 CONT 
+2 CONT Goyle's father is a Death Eater.
+2 CONT 
+1 EDUCATIONS @edu00003@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE The Inquisitorial Squad
+1 FILMPORTRAYAL Joshua Herdman
+1 HOUSE Slytherin
+0 @ind00160@ INDI
+1 NAME Pansy /Parkinson/
+2 DISPLAY Pansy Parkinson
+2 GIVN Pansy
+2 SURN Parkinson
+1 PICTURES @pic00065@
+2 PRIMARY @pic00065@
+1 POSITION -480,130
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -511,156,-448,83
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Pansy is described as having a hard, pug-like face and she is often se
+2 CONC en as Draco Malfoy's female counterpart, and his love interest by defa
+2 CONC ult.
+1 EDUCATIONS @edu00016@
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE The Inquisitorial Squad
+1 FILMPORTRAYAL Genevieve Gaunt
+1 HOUSE Slytherin
+0 @ind00161@ INDI
+1 NAME Milicent /Bulstrode/
+2 DISPLAY Milicent Bulstrode
+2 GIVN Milicent
+2 SURN Bulstrode
+1 POSITION -400,130
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -431,156,-369,83
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Hermione attempts to pose as Millicent in order to covertly collect in
+2 CONC formation from Draco Malfoy in the Slytherin common room. Hermione pre
+2 CONC pares some Polyjuice Potion using a hair she she found on her robes af
+2 CONC ter the Dueling Club wrestling match, assuming it was one of Millicent
+2 CONC 's, in order to take on Millicent's appearance. As it turns out, the h
+2 CONC air was from Millicent's cat, and thus Hermione takes on the appearanc
+2 CONC e of the cat instead.
+1 EDUCATIONS @edu00016@
+1 ALLEGIANCE The Inquisitorial Squad
+1 FILMPORTRAYAL Helen Stuart
+1 HOUSE Slytherin
+0 @ind00162@ INDI
+1 NAME Blaise /Zabini/
+2 DISPLAY Blaise Zabini
+2 GIVN Blaise
+2 SURN Zabini
+1 POSITION -360,40
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -386,66,-334,-7
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE Blaise is a good-looking, tall black boy with high cheekbones and long
+2 CONC , slanting eyes. He had a famously beautiful mother who has been widow
+2 CONC ed seven times (each time under suspicious circumstances, after which 
+2 CONC she acquired all her late husbands' possessions). 
+2 CONT 
+2 CONT Zabini is described as extremely vain, and like other Slytherins in hi
+2 CONC s year, has strong prejudices against Muggle-borns and "blood traitors
+2 CONC ." 
+1 EDUCATIONS @edu00016@
+1 BLOODPURITY Pure blood
+1 HOUSE Slytherin
+0 @ind00163@ INDI
+1 NAME Theodore /Nott/
+2 DISPLAY Theodore Nott
+2 GIVN Theodore
+2 SURN Nott
+1 POSITION -320,130
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -351,156,-289,83
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE His father, Nott, is a very elderly widower and Death Eater.
+2 CONT Theodore is a clever loner who does not feel the need to join any gang
+2 CONC , including Malfoy's.
+2 CONT 
+1 EDUCATIONS @edu00003@
+1 BLOODPURITY Pure blood
+1 HOUSE Slytherin
+0 @ind00164@ INDI
+1 NAME Marcus /Flint/
+2 DISPLAY Marcus Flint
+2 GIVN Marcus
+2 SURN Flint
+1 PICTURES @pic00066@
+2 PRIMARY @pic00066@
+1 POSITION -440,30
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -466,56,-414,-17
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE He is described as looking like he has some troll blood in him (which 
+2 CONC is unlikely given that trolls are Beasts, not Beings). 
+1 EDUCATIONS @edu00033@
+1 FILMPORTRAYAL Jamie Yeates
+1 HOUSE Slytherin
+0 @ind00165@ INDI
+1 NAME Eddie /Carmichael/
+2 DISPLAY Eddie Carmichael
+2 GIVN Eddie
+2 SURN Carmichael
+1 POSITION -360,-260
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -394,-234,-325,-307
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE Carmichael tries to hawk a bottle of Baruffio's Brain Elixir to Harry 
+2 CONC and Ron for twelve Galleons before their O.W.L.s. (Eddie swore the eli
+2 CONC xir was solely responsible for the nine Outstanding O.W.L.s he had ach
+2 CONC ieved the year prior.) However, the transaction was terminated by Herm
+2 CONC ione Granger, who, acting as prefect, confiscated the elixir (which wa
+2 CONC s actually doxy droppings) and disposed of it in a toilet.
+2 CONT 
+2 CONT Carmichael seems to be highly intelligent, a distinguishing characteri
+2 CONC stic of all Ravenclaws, but unscrupulous.
+2 CONT 
+2 CONT 
+1 EDUCATIONS @edu00032@
+0 @ind00166@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00008@
+1 NAME 
+2 DISPLAY Albus Dumbledore
+3 FORMAT %F %L
+1 POSITION -270,-450
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -306,-417,-233,-497
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+0 @ind00167@ INDI
+1 NAME Dolores /Umbridge/
+2 DISPLAY Dolores Umbridge
+2 GIVN Dolores
+2 SURN Umbridge
+1 POSITION -200,-440
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -230,-414,-169,-487
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Umbridge is a short, squat woman described as resembling a large toad.
+2 CONC  She often wears a black velvet bow in her hair that reminds Harry of 
+2 CONC a fly about to be caught. She has a high, girly voice that Harry descr
+2 CONC ibes as sounding like poisoned honey.
+1 OCCUPATIONS @occu00024@, @occu00025@, @occu00026@
+1 ALLEGIANCE Ministry of Magic
+1 FILMPORTRAYAL Imelda Staunton
+0 @ind00168@ INDI
+1 NAME  /Binns/
+2 DISPLAY Prof Binns
+3 FORMAT %T %F (%N) %L
+2 SURN Binns
+2 NPFX Prof
+1 POSITION 120,-640
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 94,-614,146,-687
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 OCCUPATIONS @occu00028@
+0 @ind00169@ INDI
+1 NAME Firenze //
+2 DISPLAY Firenze
+2 GIVN Firenze
+1 PICTURES @pic00070@
+2 PRIMARY @pic00070@
+1 POSITION -120,-640
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -146,-614,-94,-673
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE Firenze is a centaur, described as having white-blond hair and deep bl
+2 CONC ue eyes, and girls at the school are apparently very intrigued by his 
+2 CONC upper-half at least. His bottom half is that of a palomino horse.
+2 CONT 
+1 OCCUPATIONS @occu00036@
+1 BLOODPURITY Centaur
+1 FILMPORTRAYAL Ray Fearon
+0 @ind00170@ INDI
+1 NAME Wilhelmina /Grubby-Plank/
+2 DISPLAY Wilhelmina Grubby-Plank
+2 GIVN Wilhelmina
+2 SURN Grubby-Plank
+1 POSITION -250,-640
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -283,-614,-217,-701
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 OCCUPATIONS @occu00032@
+0 @ind00171@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00010@
+1 NAME 
+2 DISPLAY Rubeus Hagrid
+1 POSITION -320,-640
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -346,-607,-293,-687
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+0 @ind00172@ INDI
+1 NAME Argus /Filch/
+2 DISPLAY Argus Filch
+2 GIVN Argus
+2 SURN Filch
+1 PICTURES @pic00067@
+2 PRIMARY @pic00067@
+1 POSITION -330,-750
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -356,-724,-304,-797
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE While he arguably does not act maliciously, and is not an evil charact
+2 CONC er, he is certainly both short- and ill-tempered, which has made him v
+2 CONC ery unpopular with the student body. Filch's attempts to enforce the l
+2 CONC etter of rules against activities such as being outside the dorms late
+2 CONC  make life very inconvenient for Harry Potter and many of his friends.
+2 CONC  His knowledge of the secrets and shortcuts of the castle is nearly un
+2 CONC paralleled.
+1 OCCUPATIONS @occu00035@
+1 BLOODPURITY Squib
+1 FILMPORTRAYAL David Bradley
+0 @ind00173@ INDI
+1 NAME Rolanda /Hooch/
+2 DISPLAY Madam Hooch
+3 FORMAT Custom
+2 GIVN Rolanda
+2 SURN Hooch
+1 PICTURES @pic00068@
+2 PRIMARY @pic00068@
+1 POSITION -260,-750
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -286,-724,-234,-797
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Madam Hooch is described as having grey hair, cut short, and "yellow a
+2 CONC nd hawk-like" eyes. Madam Hooch learned to fly on one of the old Silve
+2 CONC r Arrows, which are now no longer made. They were considered the true 
+2 CONC forerunner of the racing broom.
+1 OCCUPATIONS @occu00037@, @occu00038@
+1 FILMPORTRAYAL Zoe Wanamaker
+0 @ind00174@ INDI
+1 NAME Gilderoy /Lockhart/
+2 DISPLAY Gilderoy Lockhart
+2 GIVN Gilderoy
+2 SURN Lockhart
+1 PICTURES @pic00069@
+2 PRIMARY @pic00069@
+1 POSITION -230,-540
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -259,-514,-201,-587
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE He is a famous wizarding celebrity, having written many books on Dark 
+2 CONC Creatures and his encounters with them. He has blond, wavy hair and pa
+2 CONC rticularly straight and shiny teeth. He is narcissistic as he always t
+2 CONC hinks about beauty for himself, self-obsessed, and something of a buff
+2 CONC oon. Despite his celebrity status amongst the wizarding community, his
+2 CONC  fan base consists mostly of middle-aged women and teenage girls.
+1 OCCUPATIONS @occu00039@
+1 ALLEGIANCE Kenneth Branagh
+0 @ind00175@ INDI
+1 NAME Remus /Lupin/
+2 DISPLAY Remus Lupin
+2 GIVN Remus
+2 SURN Lupin
+2 NICK Moony
+1 PICTURES @pic00071@
+2 PRIMARY @pic00071@
+1 POSITION -160,-540
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -186,-507,-134,-587
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 BIRT 
+2 DATE 10 MAR 1958
+1 NOTE Lupin was bitten by the vicious werewolf Fenrir Greyback as a young ch
+2 CONC ild (some believe his age to have been around 6), thus becoming a were
+2 CONC wolf himself.
+1 OCCUPATIONS @occu00040@
+1 BLOODPURITY Half-blood, Werewolf
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Davis Thewlis, James Utechin as a teenage Remus
+0 @ind00176@ INDI
+1 NAME Irma /Pince/
+2 DISPLAY Irma Pince
+2 GIVN Irma
+2 SURN Pince
+1 POSITION -190,-750
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -216,-724,-164,-797
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 OCCUPATIONS @occu00041@
+1 FILMPORTRAYAL Sally Mortamore
+0 @ind00177@ INDI
+1 NAME Poppy /Pomfrey/
+2 DISPLAY Poppy Pomfrey
+2 GIVN Poppy
+2 SURN Pomfrey
+1 PICTURES @pic00072@
+2 PRIMARY @pic00072@
+1 POSITION -130,-750
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -158,-724,-102,-797
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 OCCUPATIONS @occu00042@
+1 FILMPORTRAYAL Gemma Jones
+0 @ind00178@ INDI
+1 NAME Quirinus /Quirrell/
+2 DISPLAY Quirinus Quirrell
+2 GIVN Quirinus
+2 SURN Quirrell
+2 NPFX Prof
+1 PICTURES @pic00073@
+2 PRIMARY @pic00073@
+1 POSITION -300,-540
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -328,-514,-272,-587
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 OCCUPATIONS @occu00043@
+1 FILMPORTRAYAL Ian Hart
+0 @ind00179@ INDI
+1 NAME Aurora /Sinistra/
+2 DISPLAY Aurora Sinistra
+2 GIVN Aurora
+2 SURN Sinistra
+1 POSITION 70,-640
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 44,-614,96,-687
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 OCCUPATIONS @occu00044@
+0 @ind00180@ INDI
+1 NAME Horace /Slughorn/
+2 DISPLAY Horace Slughorn
+2 GIVN Horace
+2 SURN Slughorn
+1 POSITION -60,-640
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -89,-614,-30,-687
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE Slughorn is described as having prominent, pale-gooseberry eyes, a "sh
+2 CONC iny pate," and an "enormous, silver, walrus-like moustache." He is "en
+2 CONC ormously fat", but not very tall, reaching only up to Albus Dumbledore
+2 CONC 's chin. He considers himself to be an old man who suffers from a weak
+2 CONC , wheezy chest and rheumatism.
+1 OCCUPATIONS @occu00045@, @occu00046@, @occu00047@, @occu00048@
+1 HOUSE Slytherin
+0 @ind00181@ INDI
+1 NAME Sybill Patricia /Trelawney/
+2 DISPLAY Sybill Trelawney
+3 FORMAT %F %L
+2 GIVN Sybill
+2 MIDDLE Patricia
+2 SURN Trelawney
+1 POSITION -180,-640
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -214,-614,-146,-687
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 NOTE Her first name is spelled Sibyll in the United States.
+2 CONT 
+2 CONT Trelawney wears many gaudy bangles, cloaks and shawls, all covered wit
+2 CONC h shining sequins. She also wears thick glasses, which cause her eyes 
+2 CONC to appear greatly magnified. She affects ethereal and misty tones when
+2 CONC  speaking. Her classroom is in the North Tower of Hogwarts. A fire is 
+2 CONC always going, scented quite heavily with perfumes that often make stud
+2 CONC ents either fall asleep or make wondrous predictions of the future.
+1 OCCUPATIONS @occu00049@
+1 FILMPORTRAYAL Emma Thompson
+0 @ind00182@ INDI
+1 NAME  /Vector/
+2 DISPLAY Prof Vector
+3 FORMAT %T %F (%N) %L
+2 SURN Vector
+2 NPFX Prof
+1 POSITION 10,-640
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -16,-614,36,-687
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 OCCUPATIONS @occu00050@
+0 @ind00183@ INDI
+1 NAME Wilkie /Twycross/
+2 DISPLAY Wilkie Twycross
+2 GIVN Wilkie
+2 SURN Twycross
+2 NICK Dogbreath, Dunghead
+2 NPFX Prof
+1 POSITION -60,-750
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -93,-724,-27,-797
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 OCCUPATIONS @occu00051@
+0 @ind00184@ INDI
+1 NAME Alastor /Moody/
+2 DISPLAY Alastor Moody
+2 GIVN Alastor
+2 SURN Moody
+2 NICK Mad-Eye
+1 PICTURES @pic00074@
+2 PRIMARY @pic00074@
+1 POSITION -100,-540
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -126,-514,-74,-587
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 NOTE Moody is horribly scarred, described as looking as if he had been carv
+2 CONC ed out of wood by a person with only the crudest understanding of the 
+2 CONC human form. He has lost several body parts, including an eye, leg, and
+2 CONC  part of his nose in fighting practitioners of the Dark Arts, and is c
+2 CONC autious—some might say paranoid— he refuses to eat or drink anything w
+2 CONC hich he himself has not prepared 'as it is all too easy to poison an u
+2 CONC nattended cup.' 
+1 OCCUPATIONS @occu00052@, @occu00053@
+1 ALLEGIANCE Order of the Phoenix
+1 FILMPORTRAYAL Brendan Gleeson
+0 @ind00185@ INDI
+1 NAME Crookshanks //
+2 DISPLAY Crookshanks
+2 GIVN Crookshanks
+1 PICTURES @pic00075@
+2 PRIMARY @pic00075@
+1 POSITION -360,-230
+2 BOUNDARYRECT -399,-204,-320,-263
+1 GENDER P
+1 BIRT 
+2 NOTE Male cat
+1 NOTE Hermione bought Crookshanks from a shop in Diagon Alley out of sympath
+2 CONC y, as nobody wanted him due to his face, which looked squashed. Crooks
+2 CONC hanks had a habit of trying to hunt down the pet rat of Ron Weasley, S
+2 CONC cabbers.
+2 CONT Crookshanks is part Kneazle, giving an explanation for his higher than
+2 CONC  normal cat intelligence.
+0 @ind00186@ INDI
+1 NAME Mrs Norris //
+2 DISPLAY Mrs Norris
+2 GIVN Mrs Norris
+2 NICK My sweet
+1 POSITION -420,-750
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -446,-724,-394,-797
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 GENDER P
+1 BIRT 
+2 NOTE Female cat
+1 NOTE Mrs Norris is Filch's cat. For the students, it's the "dearest ambitio
+2 CONC n of many to give her a good kick". If Mrs Norris catches a student pu
+2 CONC tting one toe out of line, Filch will arrive in seconds. The cat has b
+2 CONC een known to follow Hagrid everywhere when he goes up to the school, a
+2 CONC pparently under Filch's orders – which suggests an extraordinary conne
+2 CONC ction between cat and owner, and makes Hagrid want to introduce her to
+2 CONC  Fang.
+2 CONT 
+2 CONT 
+0 @ind00187@ INDI
+1 NAME Pigwidgeon //
+2 DISPLAY Pigwidgeon
+2 GIVN Pigwidgeon
+2 NICK Pig
+1 POSITION -360,-150
+2 BOUNDARYRECT -396,-124,-324,-183
+1 GENDER P
+1 BIRT 
+2 NOTE Male owl
+3 CONT Pigwidgeon is an overeager, overconfident, hyperactive owl, especially
+3 CONC  compared to the more stately delivery owls. Pigwidgeon was a gift fro
+3 CONC m Sirius Black to Ron, to replace his rat, Scabbers. Pigwidgeon was na
+3 CONC med by Ron's sister, Ginny.
+3 CONT 
+3 CONT There have been various theories as to what kind of owl Pigwidgeon is,
+3 CONC  but J.K. Rowling has confirmed (on her website) that he is a Scops Ow
+3 CONC l, a tiny breed of owl with earlike feathers that she had previously m
+3 CONC entioned in an earlier book.
+3 CONT 
+3 CONT 
+0 @ind00189@ INDI
+1 NAME Barty /Crouch/
+2 DISPLAY Barty Crouch, Jr
+3 FORMAT %T %F %L %L2, %S
+2 GIVN Barty
+2 SURN Crouch
+2 NSFX Jr
+1 PICTURES @pic00077@
+2 PRIMARY @pic00077@
+1 POSITION -30,-540
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -57,-507,-3,-601
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 BIRT 
+2 DATE 1963
+2 NOTE Crouch is a Death Eater who was captured with the group responsible fo
+3 CONC r torturing Frank and Alice Longbottom, parents of Neville Longbottom.
+3 CONC  His father, who headed the Department of Magical Law Enforcement at t
+3 CONC he time, sentenced him to life imprisonment in Azkaban.
+3 CONT 
+3 CONT However, Crouch's father rescued him as a favour to his dying mother b
+3 CONC y switching their bodies. Crouch's mother later died and was buried un
+3 CONC der his name. His father kept him under control with the Imperius Curs
+3 CONC e and forced him to hide under an invisibility cloak at all times. Cro
+3 CONC uch was nursed back to health by Winky, the family's House-Elf. Bertha
+3 CONC  Jorkins discovered the truth, and years later it reached Lord Voldemo
+3 CONC rt. He rescued Crouch and put his father under the Imperius Curse. Cro
+3 CONC uch then kidnapped Mad-Eye Moody and, with the help of the polyjuice p
+3 CONC otion, took over Moody's job of teaching Defence Against the Dark Arts
+3 CONC . His father was later killed by Crouch himself.
+3 CONT 
+3 CONT Crouch planned to succeed where his master had failed, but also failed
+3 CONC  to kill Harry. Under the influence of Veritaserum, a powerful truth p
+3 CONC otion, he recounted his plan and his intentions throughout the year. H
+3 CONC e was to be watched over so that he could give his testimony later, bu
+3 CONC t instead, before he could come to trial, he had his soul sucked out b
+3 CONC y Dementor's Kiss. It is important to note that he is still technicall
+3 CONC y alive, but one would hardly dare to identify what he has been reduce
+3 CONC d to as "alive." It is never revealed what happened to him after he ha
+3 CONC d his soul sucked out, but it is assumed he either died or was sent ba
+3 CONC ck to Azkaban.
+3 CONT 
+3 CONT 
+1 BLOODPURITY Pure blood
+1 ALLEGIANCE Death Eaters
+1 FILMPORTRAYAL David Tennant
+0 @ind00190@ INDI
+1 NAME Fawkes //
+2 DISPLAY Fawkes
+2 GIVN Fawkes
+1 PICTURES @pic00078@
+2 PRIMARY @pic00078@
+1 POSITION -170,-310
+2 BOUNDARYRECT -197,-284,-142,-343
+1 GENDER P
+1 BIRT 
+2 NOTE Red and gold male Phoenix
+3 CONT Fawkes is an intensely magical creature, possessing a number of magica
+3 CONC l abilities, the precise extent of which are unknown, but which includ
+3 CONC e: carrying immensely heavy loads; his tears have healing powers; enco
+3 CONC uraging song; can regenerate by bursting into flames; can disappear an
+3 CONC d reappear elsewhere at will. Two of his tail feathers from him were u
+3 CONC sed to make wands. One for Lord Voldemort and one for Harry Potter. Ta
+3 CONC me phoenixes are very rare and he serves as proof of Albus Dumbledore'
+3 CONC s abilities and character. Fawkes is a herbivore.
+3 CONT 
+3 CONT Whenever Fawkes dies, whether it be by violence or old age, he bursts 
+3 CONC into flame and is promptly reborn out of the ashes as a baby phoenix. 
+3 CONC As an adult he's about swan-sized and quite beautiful, but his infant 
+3 CONC stage Fawkes has the appearance of a newborn chicken and in his geriat
+3 CONC ric stages he has dull, limp plumage.
+3 CONT 
+3 CONT After Albus Dumbledore's death in Half-Blood Prince, Fawkes is heard s
+3 CONC inging a lament for him. When the singing stops, Harry somehow knows t
+3 CONC hat Fawkes has left Hogwarts forever. It is not known where Fawkes has
+3 CONC  gone, or if he may perhaps appear in the final book.
+3 CONT 
+3 CONT 
+3 CONT 
+0 @ind00191@ INDI
+1 NAME Nagini //
+2 DISPLAY Nagini
+2 GIVN Nagini
+1 POSITION 360,-50
+2 BOUNDARYRECT 334,-24,386,-83
+1 GENDER P
+1 BIRT 
+2 NOTE Female snake
+3 CONT 
+1 NOTE She is a giant, twelve-foot long snake and a loyal pet of Lord Voldemo
+2 CONC rt, who as a Parselmouth, is quite capable of communicating with her.
+2 CONT 
+2 CONT Nagini seems to be the "evil" equivalent to Albus Dumbledore's phoenix
+2 CONC  Fawkes. Even more so, however, she seems to be Voldemort's spiritual 
+2 CONC familiar, sharing an intimate bond with her master.
+2 CONT 
+2 CONT In the sixth book, Dumbledore speculates that Nagini may be one of the
+2 CONC  six Horcruxes that Voldemort left behind to achieve immortality.
+0 @ind00192@ INDI
+1 NAME Trevor //
+2 DISPLAY Trevor
+2 GIVN Trevor
+1 POSITION -360,-310
+2 BOUNDARYRECT -386,-284,-334,-343
+1 GENDER P
+1 BIRT 
+2 NOTE Male toad
+1 NOTE Trevor was given to Neville by his Uncle Algie upon Neville's gaining 
+2 CONC admission to Hogwarts. Neville loses him on a regular basis.
+0 @ind00193@ INDI
+1 NAME Arnold //
+2 DISPLAY Arnold
+2 GIVN Arnold
+1 POSITION -360,-390
+2 BOUNDARYRECT -386,-364,-334,-423
+1 GENDER P
+1 BIRT 
+2 NOTE Purple Pygmy Puff, which is a miniature Puffskein (custard-coloured fu
+3 CONC r and spherical in shape; a popular pet that does not object to being 
+3 CONC cuddled or thrown about).
+0 @ind00194@ INDI
+1 NAME Aragog //
+2 DISPLAY Aragog
+2 GIVN Aragog
+1 PICTURES @pic00081@
+2 PRIMARY @pic00081@
+1 POSITION -100,-450
+2 BOUNDARYRECT -137,-417,-63,-483
+1 GENDER P
+1 BIRT 
+2 DATE 1942
+2 NOTE Male Acromantula,  an enormous sentient spider. Hagrid raised him from
+3 CONC  an egg as a Hogwarts student, supposedly keeping him inside a cupboar
+3 CONC d. The spider's discovery was partly responsible for Hagrid's expulsio
+3 CONC n.
+3 CONT 
+3 CONT While Aragog started as Hagrid's pet, after the expulsion he lived in 
+3 CONC the Forbidden Forest. Hagrid even found him a wife, Mosag, with whom A
+3 CONC ragog had many offspring and became the patriarch of an entire colony 
+3 CONC of Acromantulas. He remained grateful to Hagrid, and kept his carnivor
+3 CONC ous children from attacking him when he came to visit (the service did
+3 CONC n't extend to anyone else, as Harry, Ron and Fang found out the hard w
+3 CONC ay in Chamber of Secrets). Aragog remained in the forest for the rest 
+3 CONC of his long life, eventually growing weak, going blind, and dying of n
+3 CONC atural causes after an illness in Half-Blood Prince.
+3 CONT 
+3 CONT 
+1 DEAT Y
+2 DATE 1997
+1 ISDEAD Y
+0 @ind00195@ INDI
+1 NAME Fang //
+2 DISPLAY Fang
+2 GIVN Fang
+1 PICTURES @pic00082@
+2 PRIMARY @pic00082@
+1 POSITION -10,-450
+2 BOUNDARYRECT -36,-424,16,-483
+1 GENDER P
+1 BIRT 
+2 NOTE Male dog
+1 NOTE Fang is a large boarhound who, aside from his enormous size, appears t
+2 CONC o be an entirely ordinary dog. While Fang's appearance is intimidating
+2 CONC , he is, in Hagrid's words, "a bloody coward". Boisterous and loving w
+2 CONC ith people he knows, he seems especially fond of Harry.
+0 @ind00196@ INDI
+1 NAME Fluffy //
+2 DISPLAY Fluffy
+2 GIVN Fluffy
+1 PICTURES @pic00083@
+2 PRIMARY @pic00083@
+1 POSITION 70,-450
+2 BOUNDARYRECT 44,-424,96,-483
+1 GENDER P
+1 BIRT 
+2 NOTE Male three-headed dog
+1 NOTE Fluffy is a giant three-headed dog used by Hagrid to guard the trapdoo
+2 CONC r leading to the underground chamber where the Philosopher's Stone is 
+2 CONC hidden.
+2 CONT Music lulls him to sleep.
+0 @ind00197@ INDI
+1 NAME Norbert //
+2 DISPLAY Norbert
+2 GIVN Norbert
+1 PICTURES @pic00084@
+2 PRIMARY @pic00084@
+1 POSITION -50,-450
+2 BOUNDARYRECT -76,-424,-24,-483
+1 GENDER P
+1 BIRT 
+2 NOTE Male dragon
+1 NOTE Norbert is a Norwegian Ridgeback dragon which Hagrid acquires as an eg
+2 CONC g and hatches himself. The Ministry of Magic classifies dragon eggs as
+2 CONC  Class A Non-Tradeable Goods. After hatching, he becomes very dangerou
+2 CONC s and bigger in the weeks following, so Harry, Ron, and Hermione persu
+2 CONC ade Hagrid to give him to Ron's older brother Charlie, who's studying 
+2 CONC dragons in Romania.
+0 @ind00198@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00197@
+1 NAME 
+2 DISPLAY Norbert
+1 POSITION -210,-80
+2 GENOMAP Weasley
+2 BOUNDARYRECT -236,-54,-184,-113
+0 @ind00199@ INDI
+1 NAME Buckbeak //
+2 DISPLAY Buckbeak
+2 GIVN Buckbeak
+2 ALIA Witherwings
+1 PICTURES @pic00085@
+2 PRIMARY @pic00085@
+1 POSITION 30,-450
+2 BOUNDARYRECT -1,-424,62,-483
+1 GENDER P
+1 BIRT 
+2 NOTE Male hippogriff
+1 NOTE He is sentenced to death after an attack on Draco Malfoy, which was pr
+2 CONC ovoked by Malfoy's disrespectful behaviour, but is rescued by Harry an
+2 CONC d Hermione and goes into hiding with Sirius Black at 12 Grimmauld Plac
+2 CONC e.
+2 CONT 
+2 CONT After Sirius's death, Buckbeak returns to Hagrid's care, but is rename
+2 CONC d Witherwings to hide his identity. As with all hippogriffs, Buckbeak 
+2 CONC is fond of eating small mammals, preferably ferrets. This is irony, as
+2 CONC  Mad-Eye Moody temporarily transforms Malfoy into a ferret the year af
+2 CONC ter Draco had tried to get Buckbeak killed.
+0 @ind00200@ _INDI
+1 INDIVIDUALINTERNALHYPERLINK @ind00199@
+1 NAME 
+2 DISPLAY Buckbeak
+1 POSITION -670,830
+2 GENOMAP Black
+2 BOUNDARYRECT -701,856,-638,797
+0 @ind00201@ INDI
+1 NAME Hedwig //
+2 DISPLAY Hedwig
+2 GIVN Hedwig
+1 PICTURES @pic00086@, @pic00087@
+2 PRIMARY @pic00087@
+1 POSITION -130,-70
+2 BOUNDARYRECT -156,-44,-103,-103
+1 GENDER P
+1 BIRT 
+2 NOTE Female snowy owl.
+1 NOTE Hedwig is a gift to Harry from Hagrid in the first book of the series,
+2 CONC  purchased in Diagon Alley while shopping for supplies for Harry's fir
+2 CONC st year at Hogwarts. In the series, owls are used by witches and wizar
+2 CONC ds primarily as message and package couriers, which make owls more use
+2 CONC ful than the other pets allowed students (rats, toads and cats), so He
+2 CONC dwig is used for messages throughout the series. 
+2 CONT 
+1 OCCUPATIONS @occu00054@
+0 @ind00202@ INDI
+1 NAME Peter /Pettigrew/
+2 DISPLAY Scabbers
+3 FORMAT %A
+2 GIVN Peter
+2 SURN Pettigrew
+2 NICK Wormtail
+2 ALIA Scabbers
+1 PICTURES @pic00076@
+2 PRIMARY @pic00076@
+1 POSITION 20,-90
+2 GENOMAP Weasley
+2 BOUNDARYRECT -11,-57,52,-123
+1 GENDER P
+1 BIRT 
+2 DATE 1957
+2 NOTE Sirius and Remus Lupin reveal that Pettigrew is an Animagus who takes 
+3 CONC the form of a small rat. Called "Wormtail," he had become the secret-k
+3 CONC eeper for James Potter and his wife Lily Evans when Harry was a baby, 
+3 CONC in hopes that Lord Voldemort would pursue Black instead. However, he b
+3 CONC etrayed the Potters to Voldemort in order to gain the Dark Lord's favo
+3 CONC ur. During the confrontation with Sirius on that fateful night, it was
+3 CONC  actually Pettigrew who blasted the muggles and then transformed himse
+3 CONC lf to escape with the other rats down into the sewers. He left behind 
+3 CONC a finger, successfully faking his own death and framing Black for his 
+3 CONC and the Potters' deaths.
+3 CONT 
+3 CONT 
+3 CONT 
+1 NOTE Pettigrew had masqueraded as Scabbers, the pet rat owned at first by P
+2 CONC ercy Weasley, then by his brother Ron. It has not been revealed how Pe
+2 CONC ter, as Scabbers, managed to get into the Weasley family. However, Pet
+2 CONC tigrew used his time with them to his advantage: he remained alert for
+2 CONC  any news about Voldemort or Black. None of the Weasleys took particul
+2 CONC ar note that "Scabbers" outlived a common garden rat and had a missing
+2 CONC  toe.
+1 ALLEGIANCE Order of the Phoenix (formerly), Death Eaters (currently)
+1 FILMPORTRAYAL Timothy Spall, Charles Hughes (as teenage Peter) 
+1 HOUSE Gryffindor
+0 @ind00203@ INDI
+1 NAME Errol //
+2 DISPLAY Errol
+2 GIVN Errol
+1 POSITION -190,100
+2 GENOMAP Weasley
+2 BOUNDARYRECT -216,126,-164,67
+1 GENDER P
+1 BIRT 
+2 NOTE Male owl
+1 NOTE Errol is an old Great Grey owl belonging to the Weasley family. He has
+2 CONC  trouble carrying loads due to his advanced age, often needing help fr
+2 CONC om other owls. He is often found unconscious after crashing into thing
+2 CONC s or collapsing from sheer exhaustion.
+2 CONT 
+0 @ind00204@ INDI
+1 NAME Bloody Baron //
+2 DISPLAY Bloody Baron
+2 GIVN Bloody Baron
+1 PICTURES @pic00088@
+2 PRIMARY @pic00088@
+1 POSITION -210,210
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -236,236,-184,163
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 DEAT Y
+2 NOTE He is a ghost.
+1 ISDEAD Y
+1 NOTE He is the only person besides Dumbledore who can exert any control ove
+2 CONC r the poltergeist Peeves, given how Peeves is terrified of him for som
+2 CONC e unknown reason; Refers to him as "Your Bloodiness" and "Mr. Baron."
+2 CONT 
+2 CONT The Baron is the Slythein ghost, and he is covered with silvery blood 
+2 CONC stains.
+1 FILMPORTRAYAL Terence Bayler
+1 HOUSE Slytherin
+0 @ind00205@ INDI
+1 NAME Nicholas /de Mimsy-Porpington/
+2 FORMAT %T %F %L %L2 %S
+2 DISPLAY Nearly Headless Nick
+3 FORMAT %N
+2 GIVN Nicholas
+2 SURN de Mimsy-Porpington
+2 NICK Nearly Headless Nick
+2 NPFX Sir
+1 PICTURES @pic00089@
+2 PRIMARY @pic00089@
+1 POSITION 410,210
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 380,243,441,149
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 DEAT Y
+2 DATE 31 OCT 1492
+2 NOTE He is a ghost
+1 ISDEAD Y
+1 NOTE Nearly Headless Nick is the Gryffindor ghost whose neck was almost com
+2 CONC pletely severed in life (45 swings to the neck with a blunt axe), but 
+2 CONC not enough to join in the games of the Headless Hunt, a society of gho
+2 CONC sts who had been decapitated on earth (a source of annual vexation to 
+2 CONC the ghost). Harry Potter becomes friends with Sir Nicholas when he att
+2 CONC ends his "deathday" party (the 500th anniversary of the event) in a Ho
+2 CONC gwarts dungeon.
+1 FILMPORTRAYAL John Cleese
+1 HOUSE Gryffindor
+0 @ind00206@ INDI
+1 NAME Grey Lady //
+2 DISPLAY Grey Lady
+2 GIVN Grey Lady
+1 PICTURES @pic00090@
+2 PRIMARY @pic00090@
+1 POSITION -210,-110
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -236,-84,-184,-157
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 DEAT Y
+1 ISDEAD Y
+1 NOTE The Grey Lady is the ghost for Ravenclaw House.
+1 FILMPORTRAYAL Nina Young
+1 HOUSE Ravenclaw
+0 @ind00207@ INDI
+1 NAME Fat Friar //
+2 DISPLAY Fat Friar
+2 GIVN Fat Friar
+1 PICTURES @pic00091@
+2 PRIMARY @pic00091@
+1 POSITION 420,-100
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT 394,-74,446,-147
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 DEAT Y
+2 NOTE He is a ghost.
+1 ISDEAD Y
+1 NOTE The Fat Friar is the resident ghost of the Hufflepuff House. He is a j
+2 CONC olly man and very forgiving. 
+1 FILMPORTRAYAL Simon Fisher-Becker
+1 HOUSE Hufflepuff
+0 @ind00208@ INDI
+1 NAME Myrtle //
+2 DISPLAY Moaning Myrtle
+3 FORMAT %N
+2 GIVN Myrtle
+2 NICK Moaning Myrtle
+1 POSITION -100,300
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -128,333,-72,253
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX F
+1 DEAT Y
+2 DATE 13 JUN 1943
+2 NOTE Unlike the other Hogwarts ghosts, Myrtle is not very sociable, and is 
+3 CONC sensitive about the fact that she is dead. Her constant moping and wai
+3 CONC ling causes plumbing problems in the lavatory which she haunts. Myrtle
+3 CONC  has a peculiar affinity for dwelling in the U-bend of certain pipes. 
+3 CONC Sometimes she is accidentally flushed out into the Black Lake along wi
+3 CONC th the contents of the toilet she was in.
+3 CONT 
+3 CONT Moaning Myrtle's important role in Harry Potter and the Chamber of Sec
+3 CONC rets is to help Harry Potter, Ron Weasley and Hermione Granger find ou
+3 CONC t about the monster inside the Chamber of Secrets.
+3 CONT 
+3 CONT Myrtle also helps Harry with his second task in the Triwizard Tourname
+3 CONC nt, in Harry Potter and the Goblet of Fire. It is Myrtle who tells Har
+3 CONC ry how to solve the puzzle of the golden egg that he retrieved in the 
+3 CONC first task, by opening the egg underwater.
+3 CONT 
+3 CONT Myrtle apparently has a slight crush on Harry, whom she invites to sha
+3 CONC re her toilet in the event that he is killed while on a mission.
+3 CONT 
+1 ISDEAD Y
+1 NOTE She is a ghost who haunts the second floor girls' lavatory at Hogwarts
+2 CONC  School for Witchcraft and Wizardry. True to her nickname, Myrtle has 
+2 CONC a tendency to sob, whine, wail and complain.
+2 CONT 
+1 BLOODPURITY Muggle born witch
+1 FILMPORTRAYAL Shirley Henderson
+0 @ind00209@ INDI
+1 NAME Peeves //
+2 DISPLAY Peeves the Poltergeist
+3 FORMAT %N
+2 GIVN Peeves
+2 NICK Peeves the Poltergeist
+1 POSITION -40,300
+2 GENOMAP Hogwarts
+2 BOUNDARYRECT -73,326,-7,239
+1 DISPLAY 
+2 FLAGS 
+3 ENABLE t
+1 SEX M
+1 BIRT 
+2 NOTE He is a spirit.
+1 DEAT Y
+1 ISDEAD Y
+1 NOTE Peeves is a poltergeist living in Hogwarts. He's a spirit rather than 
+2 CONC a physical being, but highly different from the ghosts he's occasional
+2 CONC ly mistaken for. Peeves is essentially an embodiment of disorder, and 
+2 CONC is constantly causing it, with varying amounts of mischievousness and 
+2 CONC malice. In appearance he's a small old man dressed in wildly coloured 
+2 CONC clothing. He's capable of flight and intangibility, like ghosts, but c
+2 CONC an also affect solid objects and make himself invisible.
+2 CONT 
+2 CONT He's usually far more annoying than legitimately dangerous, but acts i
+2 CONC n a wildly unpredictable manner and should not be given the chance to 
+2 CONC cause serious harm. It appears that his entire purpose is to cause dis
+2 CONC order, break things, and be as annoying and disruptive as possible.
+2 CONT 
+2 CONT Peeves does not listen to Hogwarts prefects, teachers or anyone else, 
+2 CONC with the exception of Dumbledore and for some unknown reason the fears
+2 CONC ome Bloody Baron. Argus Filch, who is usually left with cleaning up th
+2 CONC e mess and the damage Peeves causes, is his nemesis and works continuo
+2 CONC usly to try to get Peeves thrown out.
+2 CONT 
+0 @fam00001@ FAM
+1 POSITION -160,20
+2 TOP 
+3 LEFT -210,20
+3 RIGHT -120,20
+1 RELATION Marriage
+1 HUSB @ind00002@
+1 WIFE @ind00003@
+1 CHIL @ind00001@
+1 CHIL @ind00004@
+0 @fam00002@ FAM
+1 DISPLAYTEXT m. 1979
+1 POSITION 100,20
+2 TOP 
+3 LEFT 50,20
+3 RIGHT 140,20
+1 RELATION Marriage
+1 UNIONS @marr00001@
+1 HUSB @ind00006@
+1 WIFE @ind00007@
+1 CHIL @ind00001@
+0 @fam00004@ FAM
+1 POSITION 20,140
+2 TOP 
+3 LEFT -30,140
+3 RIGHT 70,140
+1 RELATION Marriage
+1 HUSB @ind00021@
+1 WIFE @ind00022@
+1 CHIL @ind00007@
+1 CHIL @ind00003@
+0 @fam00005@ FAM
+1 POSITION -245,140
+2 TOP 
+3 LEFT -290,140
+3 RIGHT -200,140
+1 RELATION Marriage
+1 HUSB @ind00026@
+1 WIFE @ind00027@
+1 CHIL @ind00025@
+1 CHIL @ind00002@
+0 @fam00006@ FAM
+1 POSITION -90,90
+2 GENOMAP Weasley
+2 TOP 
+3 LEFT -120,90
+3 RIGHT -12,90
+2 BOTTOM 
+3 LEFT -390,60
+3 RIGHT 210,60
+1 RELATION Marriage
+1 HUSB @ind00029@
+1 WIFE @ind00030@
+1 CHIL @ind00035@
+1 CHIL @ind00036@
+1 CHIL @ind00031@
+1 CHIL @ind00032@
+1 CHIL @ind00033@
+1 CHIL @ind00016@
+1 CHIL @ind00034@
+0 @fam00007@ FAM
+1 POSITION -530,940
+2 GENOMAP Black
+2 TOP 
+3 LEFT -565,940
+3 RIGHT -475,940
+2 BOTTOM 
+3 LEFT -575,910
+3 RIGHT -485,910
+1 RELATION Marriage
+1 HUSB @ind00038@
+1 WIFE @ind00039@
+1 CHIL @ind00009@
+1 CHIL @ind00040@
+0 @fam00008@ FAM
+1 POSITION -610,1080
+2 GENOMAP Black
+2 TOP 
+3 LEFT -645,1080
+3 RIGHT -564,1080
+2 BOTTOM 
+3 LEFT -665,1050
+3 RIGHT -565,1050
+1 RELATION Marriage
+1 HUSB @ind00041@
+1 WIFE @ind00042@
+1 CHIL @ind00043@
+1 CHIL @ind00038@
+0 @fam00009@ FAM
+1 POSITION -710,940
+2 GENOMAP Black
+2 TOP 
+3 LEFT -745,940
+3 RIGHT -665,940
+1 RELATION Marriage
+1 HUSB @ind00044@
+1 WIFE @ind00043@
+0 @fam00010@ FAM
+1 POSITION -470,1230
+2 GENOMAP Black
+2 TOP 
+3 LEFT -505,1230
+3 RIGHT -426,1230
+2 BOTTOM 
+3 LEFT -645,1200
+3 RIGHT -295,1200
+1 RELATION Marriage
+1 HUSB @ind00045@
+1 WIFE @ind00046@
+1 CHIL @ind00041@
+1 CHIL @ind00047@
+1 CHIL @ind00048@
+0 @fam00011@ FAM
+1 POSITION -30,1360
+2 GENOMAP Black
+2 TOP 
+3 LEFT -65,1360
+3 RIGHT 44,1360
+2 BOTTOM 
+3 LEFT -505,1330
+3 RIGHT 730,1330
+1 RELATION Marriage
+1 CHILDREN 
+2 ORDER @ind00045@, @ind00057@, @ind00067@, @ind00062@, @ind00058@
+1 HUSB @ind00049@
+1 WIFE @ind00050@
+1 CHIL @ind00045@
+1 CHIL @ind00057@
+1 CHIL @ind00067@
+1 CHIL @ind00062@
+1 CHIL @ind00058@
+0 @fam00012@ FAM
+1 POSITION -140,1540
+2 GENOMAP Black
+2 TOP 
+3 LEFT -174,1540
+3 RIGHT -106,1540
+2 BOTTOM 
+3 LEFT -294,1510
+3 RIGHT 130,1510
+1 RELATION Marriage
+1 CHILDREN 
+2 ORDER @ind00053@, @ind00055@, @ind00049@, @ind00054@, @ind00067@, @ind00062@
+1 HUSB @ind00051@
+1 WIFE @ind00052@
+1 CHIL @ind00053@
+1 CHIL @ind00055@
+1 CHIL @ind00049@
+1 CHIL @ind00054@
+0 @fam00013@ FAM
+1 POSITION -180,1400
+2 GENOMAP Black
+2 TOP 
+3 LEFT -214,1400
+3 RIGHT -144,1400
+1 RELATION Marriage
+1 HUSB @ind00056@
+1 WIFE @ind00055@
+0 @fam00014@ FAM
+1 POSITION 770,1230
+2 GENOMAP Black
+2 TOP 
+3 LEFT 730,1230
+3 RIGHT 844,1230
+2 BOTTOM 768,1200
+3 LEFT 618,1200
+3 RIGHT 1040,1200
+1 RELATION Marriage
+1 CHILDREN 
+2 ORDER @ind00060@, @ind00069@, @ind00070@, @ind00071@
+1 HUSB @ind00058@
+1 WIFE @ind00059@
+1 CHIL @ind00060@
+1 CHIL @ind00069@
+1 CHIL @ind00070@
+1 CHIL @ind00071@
+0 @fam00015@ FAM
+1 POSITION 660,1090
+2 GENOMAP Black
+2 TOP 
+3 LEFT 620,1090
+3 RIGHT 700,1090
+2 BOTTOM 
+3 LEFT 530,1060
+3 RIGHT 859,1060
+2 POINTS 660,1090,660,1080,660,1060
+1 RELATION Marriage
+1 HUSB @ind00060@
+1 WIFE @ind00061@
+1 CHIL @ind00039@
+1 CHIL @ind00085@
+1 CHIL @ind00084@
+0 @fam00016@ FAM
+1 POSITION 410,1230
+2 GENOMAP Black
+2 TOP 
+3 LEFT 375,1230
+3 RIGHT 454,1230
+2 BOTTOM 
+3 LEFT 335,1200
+3 RIGHT 471,1200
+1 RELATION Marriage
+1 HUSB @ind00063@
+1 WIFE @ind00062@
+1 CHIL @ind00064@
+1 CHIL @ind00065@
+1 CHIL @ind00066@
+0 @fam00017@ FAM
+1 POSITION 100,1230
+2 GENOMAP Black
+2 TOP 
+3 LEFT 74,1230
+3 RIGHT 158,1230
+2 BOTTOM 
+3 LEFT -46,1200
+3 RIGHT 256,1200
+1 RELATION Marriage
+1 CHILDREN 
+2 ORDER @ind00074@, @ind00078@, @ind00080@
+1 HUSB @ind00067@
+1 WIFE @ind00068@
+1 CHIL @ind00074@
+1 CHIL @ind00078@
+1 CHIL @ind00080@
+0 @fam00018@ FAM
+1 POSITION 998,1080
+2 GENOMAP Black
+2 TOP 
+3 LEFT 957,1080
+3 RIGHT 1040,1080
+1 RELATION Marriage
+1 HUSB @ind00072@
+1 WIFE @ind00071@
+1 CHIL @ind00073@
+0 @fam00019@ FAM
+1 POSITION -100,1080
+2 GENOMAP Black
+2 TOP 
+3 LEFT -126,1080
+3 RIGHT -46,1080
+2 BOTTOM 
+3 LEFT -136,1050
+3 RIGHT -50,1050
+1 RELATION Marriage
+1 HUSB @ind00075@
+1 WIFE @ind00074@
+1 CHIL @ind00076@
+1 CHIL @ind00077@
+0 @fam00020@ FAM
+1 POSITION 60,1090
+2 GENOMAP Black
+2 TOP 
+3 LEFT 34,1090
+3 RIGHT 107,1090
+1 RELATION Marriage
+1 HUSB @ind00079@
+1 WIFE @ind00078@
+0 @fam00021@ FAM
+1 POSITION 210,1080
+2 GENOMAP Black
+2 TOP 
+3 LEFT 177,1080
+3 RIGHT 256,1080
+2 BOTTOM 
+3 LEFT 177,1050
+3 RIGHT 245,1050
+1 RELATION Marriage
+1 HUSB @ind00081@
+1 WIFE @ind00080@
+1 CHIL @ind00082@
+1 CHIL @ind00083@
+0 @fam00022@ FAM
+1 POSITION 690,950
+2 GENOMAP Black
+2 TOP 
+3 LEFT 630,950
+3 RIGHT 739,950
+2 BOTTOM 
+3 LEFT 540,900
+3 RIGHT 836,900
+1 RELATION Marriage
+1 CHILDREN 
+2 ORDER @ind00087@, @ind00089@, @ind00090@
+1 HUSB @ind00085@
+1 WIFE @ind00086@
+1 CHIL @ind00087@
+1 CHIL @ind00089@
+1 CHIL @ind00090@
+0 @fam00023@ FAM
+1 POSITION 490,800
+2 GENOMAP Black
+2 TOP 
+3 LEFT 463,800
+3 RIGHT 540,800
+1 RELATION Marriage
+1 HUSB @ind00088@
+1 WIFE @ind00087@
+0 @fam00024@ FAM
+1 POSITION 640,800
+2 GENOMAP Black
+2 TOP 
+3 LEFT 609,800
+3 RIGHT 680,800
+1 RELATION Marriage
+1 HUSB @ind00091@
+1 WIFE @ind00089@
+1 CHIL @ind00094@
+0 @fam00025@ FAM
+1 POSITION 800,800
+2 GENOMAP Black
+2 TOP 
+3 LEFT 765,800
+3 RIGHT 836,800
+1 RELATION Marriage
+1 HUSB @ind00092@
+1 WIFE @ind00090@
+1 CHIL @ind00093@
+0 @fam00026@ FAM
+1 POSITION 48,233
+2 GENOMAP Weasley
+2 TOP 
+3 LEFT 22,233
+3 RIGHT 93,233
+2 BOTTOM 
+3 LEFT -12,203
+3 RIGHT 128,203
+1 RELATION Marriage
+1 HUSB @ind00096@
+1 WIFE @ind00097@
+1 CHIL @ind00030@
+1 CHIL @ind00102@
+1 CHIL @ind00103@
+0 @fam00027@ FAM
+1 POSITION -360,-188
+2 GENOMAP Weasley
+2 TOP 
+3 LEFT -390,-188
+3 RIGHT -316,-188
+1 RELATION Engagement
+1 HUSB @ind00035@
+1 WIFE @ind00098@
+0 @fam00028@ FAM
+1 POSITION -286,-46
+2 GENOMAP Weasley
+2 TOP 
+3 LEFT -312,-46
+3 RIGHT -237,-46
+2 BOTTOM 
+3 LEFT -316,-76
+3 RIGHT -241,-76
+1 RELATION Marriage
+1 HUSB @ind00099@
+1 WIFE @ind00100@
+1 CHIL @ind00098@
+1 CHIL @ind00101@
+0 @fam00029@ FAM
+1 POSITION -18,378
+2 GENOMAP Weasley
+2 TOP 
+3 LEFT -44,378
+3 RIGHT 24,378
+2 BOTTOM 
+3 LEFT -48,348
+3 RIGHT 22,348
+1 RELATION Marriage
+1 HUSB @ind00104@
+1 WIFE @ind00105@
+1 CHIL @ind00044@
+1 CHIL @ind00096@
+0 @fam00030@ FAM
+1 POSITION -202,233
+2 GENOMAP Weasley
+2 TOP 
+3 LEFT -232,233
+3 RIGHT -159,233
+2 BOTTOM 
+3 LEFT -262,203
+3 RIGHT -120,203
+1 RELATION Marriage
+1 CHILDREN 
+2 ORDER @ind00109@, @ind00110@, @ind00029@
+1 HUSB @ind00079@
+1 WIFE @ind00107@
+1 CHIL @ind00109@
+1 CHIL @ind00110@
+1 CHIL @ind00029@
+0 @fam00031@ FAM
+1 DISPLAYTEXT m. Dec. 1925
+1 POSITION 90,-26
+2 GENOMAP Gaunt
+2 TOP 
+3 LEFT 60,-26
+3 RIGHT 150,-26
+1 RELATION Marriage
+1 HUSB @ind00112@
+1 WIFE @ind00113@
+1 CHIL @ind00005@
+0 @fam00032@ FAM
+1 POSITION 50,130
+2 GENOMAP Gaunt
+2 TOP 
+3 LEFT 20,130
+3 RIGHT 89,130
+2 BOTTOM 
+3 LEFT -30,100
+3 RIGHT 150,100
+1 RELATION Marriage
+1 HUSB @ind00114@
+1 WIFE @ind00115@
+1 CHIL @ind00116@
+1 CHIL @ind00113@
+0 @marr00001@ Marriage
+1 DATE 1979
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00001@
+1 INDIVIDUAL @ind00002@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00001@
+1 INDIVIDUAL @ind00003@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00001@
+1 INDIVIDUAL @ind00004@
+0 PEDIGREELINK 
+1 PEDIGREELINK Adopted
+1 FAMILY @fam00001@
+1 INDIVIDUAL @ind00001@
+1 POSITION 
+2 POINTS -210,0
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00002@
+1 INDIVIDUAL @ind00006@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00002@
+1 INDIVIDUAL @ind00007@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00002@
+1 INDIVIDUAL @ind00001@
+1 POSITION 
+2 POINTS 70,0
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00004@
+1 INDIVIDUAL @ind00022@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00004@
+1 INDIVIDUAL @ind00021@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00004@
+1 INDIVIDUAL @ind00003@
+1 POSITION 
+2 POINTS -10,120
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00004@
+1 INDIVIDUAL @ind00007@
+1 POSITION 
+2 POINTS 60,120
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00005@
+1 INDIVIDUAL @ind00026@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00005@
+1 INDIVIDUAL @ind00027@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00005@
+1 INDIVIDUAL @ind00025@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00005@
+1 INDIVIDUAL @ind00002@
+1 POSITION 
+2 POINTS -210,100
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00006@
+1 INDIVIDUAL @ind00029@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00006@
+1 INDIVIDUAL @ind00030@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00006@
+1 INDIVIDUAL @ind00031@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 TWIN @twin00001@
+1 FAMILY @fam00006@
+1 INDIVIDUAL @ind00032@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 TWIN @twin00001@
+1 FAMILY @fam00006@
+1 INDIVIDUAL @ind00033@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00006@
+1 INDIVIDUAL @ind00034@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00006@
+1 INDIVIDUAL @ind00035@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00006@
+1 INDIVIDUAL @ind00036@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00006@
+1 INDIVIDUAL @ind00028@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00007@
+1 INDIVIDUAL @ind00038@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00007@
+1 INDIVIDUAL @ind00039@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00007@
+1 INDIVIDUAL @ind00037@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00007@
+1 INDIVIDUAL @ind00040@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00008@
+1 INDIVIDUAL @ind00041@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00008@
+1 INDIVIDUAL @ind00042@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00008@
+1 INDIVIDUAL @ind00038@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00008@
+1 INDIVIDUAL @ind00043@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00009@
+1 INDIVIDUAL @ind00043@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00009@
+1 INDIVIDUAL @ind00044@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00010@
+1 INDIVIDUAL @ind00045@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00010@
+1 INDIVIDUAL @ind00046@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00010@
+1 INDIVIDUAL @ind00041@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00010@
+1 INDIVIDUAL @ind00047@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00010@
+1 INDIVIDUAL @ind00048@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00011@
+1 INDIVIDUAL @ind00049@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00011@
+1 INDIVIDUAL @ind00050@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00011@
+1 INDIVIDUAL @ind00045@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00012@
+1 INDIVIDUAL @ind00051@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00012@
+1 INDIVIDUAL @ind00052@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00012@
+1 INDIVIDUAL @ind00049@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00012@
+1 INDIVIDUAL @ind00053@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00012@
+1 INDIVIDUAL @ind00054@
+1 POSITION 
+2 POINTS 130,1480
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00012@
+1 INDIVIDUAL @ind00055@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00013@
+1 INDIVIDUAL @ind00055@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00013@
+1 INDIVIDUAL @ind00056@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00011@
+1 INDIVIDUAL @ind00057@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00011@
+1 INDIVIDUAL @ind00058@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00014@
+1 INDIVIDUAL @ind00058@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00014@
+1 INDIVIDUAL @ind00059@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00015@
+1 INDIVIDUAL @ind00060@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00015@
+1 INDIVIDUAL @ind00061@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00016@
+1 INDIVIDUAL @ind00062@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00016@
+1 INDIVIDUAL @ind00063@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00016@
+1 INDIVIDUAL @ind00064@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00016@
+1 INDIVIDUAL @ind00065@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00016@
+1 INDIVIDUAL @ind00066@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00017@
+1 INDIVIDUAL @ind00067@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00017@
+1 INDIVIDUAL @ind00068@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00011@
+1 INDIVIDUAL @ind00062@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00011@
+1 INDIVIDUAL @ind00067@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00014@
+1 INDIVIDUAL @ind00071@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00018@
+1 INDIVIDUAL @ind00071@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00018@
+1 INDIVIDUAL @ind00072@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00017@
+1 INDIVIDUAL @ind00074@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00019@
+1 INDIVIDUAL @ind00074@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00019@
+1 INDIVIDUAL @ind00075@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00019@
+1 INDIVIDUAL @ind00076@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00019@
+1 INDIVIDUAL @ind00077@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00020@
+1 INDIVIDUAL @ind00079@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00017@
+1 INDIVIDUAL @ind00080@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00021@
+1 INDIVIDUAL @ind00080@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00021@
+1 INDIVIDUAL @ind00081@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00021@
+1 INDIVIDUAL @ind00082@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00021@
+1 INDIVIDUAL @ind00083@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00015@
+1 INDIVIDUAL @ind00084@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00022@
+1 INDIVIDUAL @ind00085@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00022@
+1 INDIVIDUAL @ind00086@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00022@
+1 INDIVIDUAL @ind00087@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00023@
+1 INDIVIDUAL @ind00087@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00023@
+1 INDIVIDUAL @ind00088@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00022@
+1 INDIVIDUAL @ind00089@
+1 POSITION 
+2 POINTS 680,840
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00022@
+1 INDIVIDUAL @ind00090@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00024@
+1 INDIVIDUAL @ind00089@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00024@
+1 INDIVIDUAL @ind00091@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00025@
+1 INDIVIDUAL @ind00090@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00025@
+1 INDIVIDUAL @ind00092@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00025@
+1 INDIVIDUAL @ind00093@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00014@
+1 INDIVIDUAL @ind00069@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00014@
+1 INDIVIDUAL @ind00070@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00018@
+1 INDIVIDUAL @ind00073@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00014@
+1 INDIVIDUAL @ind00060@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00015@
+1 INDIVIDUAL @ind00039@
+1 POSITION 
+2 POINTS 530,950,-10,950,-250,950
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00015@
+1 INDIVIDUAL @ind00085@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00024@
+1 INDIVIDUAL @ind00094@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00026@
+1 INDIVIDUAL @ind00096@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00026@
+1 INDIVIDUAL @ind00097@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00026@
+1 INDIVIDUAL @ind00030@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00027@
+1 INDIVIDUAL @ind00035@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00027@
+1 INDIVIDUAL @ind00098@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00028@
+1 INDIVIDUAL @ind00099@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00028@
+1 INDIVIDUAL @ind00100@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00028@
+1 INDIVIDUAL @ind00098@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00028@
+1 INDIVIDUAL @ind00101@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00026@
+1 INDIVIDUAL @ind00102@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00026@
+1 INDIVIDUAL @ind00103@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00029@
+1 INDIVIDUAL @ind00104@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00029@
+1 INDIVIDUAL @ind00105@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00029@
+1 INDIVIDUAL @ind00096@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00029@
+1 INDIVIDUAL @ind00106@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00030@
+1 INDIVIDUAL @ind00107@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00030@
+1 INDIVIDUAL @ind00108@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00030@
+1 INDIVIDUAL @ind00029@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00030@
+1 INDIVIDUAL @ind00109@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00030@
+1 INDIVIDUAL @ind00110@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00031@
+1 INDIVIDUAL @ind00112@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00031@
+1 INDIVIDUAL @ind00113@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00031@
+1 INDIVIDUAL @ind00111@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00032@
+1 INDIVIDUAL @ind00114@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00032@
+1 INDIVIDUAL @ind00115@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00032@
+1 INDIVIDUAL @ind00113@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00032@
+1 INDIVIDUAL @ind00116@
+0 PEDIGREELINK 
+1 PEDIGREELINK Biological
+1 FAMILY @fam00017@
+1 INDIVIDUAL @ind00078@
+0 PEDIGREELINK 
+1 PEDIGREELINK Parent
+1 FAMILY @fam00020@
+1 INDIVIDUAL @ind00078@
+0 @pic00001@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Albus-Dumbledore.jpg
+2 RELATIVE pictures/Albus-Dumbledore.jpg
+2 FILEUNIQUE Albus-Dumbledore.jpg
+2 REPORT pictures/Albus-Dumbledore.jpg
+1 NAME Albus Dumbledore
+1 CACHE 
+2 FILESIZE 15338
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00002@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Uncle-Vernon.jpg
+2 RELATIVE pictures/Uncle-Vernon.jpg
+2 FILEUNIQUE Uncle-Vernon.jpg
+2 REPORT pictures/Uncle-Vernon.jpg
+1 NAME Uncle Vernon
+1 CACHE 
+2 FILESIZE 3982
+2 DIMENSION 133x100
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00003@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Dudley-Dursley.jpg
+2 RELATIVE pictures/Dudley-Dursley.jpg
+2 FILEUNIQUE Dudley-Dursley.jpg
+2 REPORT pictures/Dudley-Dursley.jpg
+1 NAME Dudley Dursley
+1 CACHE 
+2 FILESIZE 6196
+2 DIMENSION 200x166
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 96
+0 @pic00004@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Aunt-Petunia.jpg
+2 RELATIVE pictures/Aunt-Petunia.jpg
+2 FILEUNIQUE Aunt-Petunia.jpg
+2 REPORT pictures/Aunt-Petunia.jpg
+1 NAME Aunt Petunia
+1 CACHE 
+2 FILESIZE 19894
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI 72
+0 @pic00005@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Ginnie-Weasley.jpg
+2 RELATIVE pictures/Ginnie-Weasley.jpg
+2 FILEUNIQUE Ginnie-Weasley.jpg
+2 REPORT pictures/Ginnie-Weasley.jpg
+1 NAME Ginnie Weasley
+1 CACHE 
+2 FILESIZE 11410
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00006@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Ginnie-Weasley2.jpg
+2 RELATIVE pictures/Ginnie-Weasley2.jpg
+2 FILEUNIQUE Ginnie-Weasley2.jpg
+2 REPORT pictures/Ginnie-Weasley2.jpg
+1 NAME Ginny Weasley2
+1 CACHE 
+2 FILESIZE 17829
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00007@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Ron-Weasley.jpg
+2 RELATIVE pictures/Ron-Weasley.jpg
+2 FILEUNIQUE Ron-Weasley.jpg
+2 REPORT pictures/Ron-Weasley.jpg
+1 NAME Ron Weasley
+1 CACHE 
+2 FILESIZE 4476
+2 DIMENSION 118x150
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00008@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Fred-and-George-Weasley.
+2 CONC jpg
+2 RELATIVE pictures/Fred-and-George-Weasley.jpg
+2 FILEUNIQUE Fred-and-George-Weasley.jpg
+2 REPORT pictures/Fred-and-George-Weasley.jpg
+1 NAME Fred and George Weasley
+1 CACHE 
+2 FILESIZE 15262
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00010@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Percy-Weasley.jpg
+2 RELATIVE pictures/Percy-Weasley.jpg
+2 FILEUNIQUE Percy-Weasley.jpg
+2 REPORT pictures/Percy-Weasley.jpg
+1 NAME Percy Weasley
+1 CACHE 
+2 FILESIZE 13449
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00011@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Arthur-Weasley2.jpg
+2 RELATIVE pictures/Arthur-Weasley2.jpg
+2 FILEUNIQUE Arthur-Weasley2.jpg
+2 REPORT pictures/Arthur-Weasley2.jpg
+1 NAME Arthur Weasley2
+1 CACHE 
+2 FILESIZE 15244
+2 DIMENSION 300x300
+2 MEGAPIXELS 0.09
+2 BPP 24
+2 DPI 96
+0 @pic00012@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Aunt-Marge.jpg
+2 RELATIVE pictures/Aunt-Marge.jpg
+2 FILEUNIQUE Aunt-Marge.jpg
+2 REPORT pictures/Aunt-Marge.jpg
+1 NAME Aunt Marge
+1 CACHE 
+2 FILESIZE 27322
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI 72
+0 @pic00013@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Hermione-Granger2.jpg
+2 RELATIVE pictures/Hermione-Granger2.jpg
+2 FILEUNIQUE Hermione-Granger2.jpg
+2 REPORT pictures/Hermione-Granger2.jpg
+1 NAME Hermione Granger2
+1 CACHE 
+2 FILESIZE 3844
+2 DIMENSION 133x100
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00014@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Hermione-Granger.jpg
+2 RELATIVE pictures/Hermione-Granger.jpg
+2 FILEUNIQUE Hermione-Granger.jpg
+2 REPORT pictures/Hermione-Granger.jpg
+1 NAME Hermione Granger
+1 CACHE 
+2 FILESIZE 18151
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00015@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Neville-Longbottom.jpg
+2 RELATIVE pictures/Neville-Longbottom.jpg
+2 FILEUNIQUE Neville-Longbottom.jpg
+2 REPORT pictures/Neville-Longbottom.jpg
+1 NAME Neville Longbottom
+1 CACHE 
+2 FILESIZE 13015
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00016@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Neville-Longbottom2.jpg
+2 RELATIVE pictures/Neville-Longbottom2.jpg
+2 FILEUNIQUE Neville-Longbottom2.jpg
+2 REPORT pictures/Neville-Longbottom2.jpg
+1 NAME Neville Longbottom2
+1 CACHE 
+2 FILESIZE 11988
+2 DIMENSION 133x100
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00017@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Rubeus-Hagrid.jpg
+2 RELATIVE pictures/Rubeus-Hagrid.jpg
+2 FILEUNIQUE Rubeus-Hagrid.jpg
+2 REPORT pictures/Rubeus-Hagrid.jpg
+1 NAME Rubeus Hagrid
+1 CACHE 
+2 FILESIZE 13932
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00018@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Professor-Snape.jpg
+2 RELATIVE pictures/Professor-Snape.jpg
+2 FILEUNIQUE Professor-Snape.jpg
+2 REPORT pictures/Professor-Snape.jpg
+1 NAME Professor Snape
+1 CACHE 
+2 FILESIZE 14210
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00019@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Harry-Potter2.jpg
+2 RELATIVE pictures/Harry-Potter2.jpg
+2 FILEUNIQUE Harry-Potter2.jpg
+2 REPORT pictures/Harry-Potter2.jpg
+1 NAME Harry Potter2
+1 CACHE 
+2 FILESIZE 1863
+2 DIMENSION 106x79
+2 MEGAPIXELS 0.00
+2 BPP 24
+2 DPI *96
+0 @pic00020@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Harry-Potter.jpg
+2 RELATIVE pictures/Harry-Potter.jpg
+2 FILEUNIQUE Harry-Potter.jpg
+2 REPORT pictures/Harry-Potter.jpg
+1 NAME Harry Potter
+1 CACHE 
+2 FILESIZE 2613
+2 DIMENSION 87x134
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00021@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Harry-Potter4.jpg
+2 RELATIVE pictures/Harry-Potter4.jpg
+2 FILEUNIQUE Harry-Potter4.jpg
+2 REPORT pictures/Harry-Potter4.jpg
+1 NAME Harry Potter4
+1 CACHE 
+2 FILESIZE 4860
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00022@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Harry-Potter5.jpg
+2 RELATIVE pictures/Harry-Potter5.jpg
+2 FILEUNIQUE Harry-Potter5.jpg
+2 REPORT pictures/Harry-Potter5.jpg
+1 NAME Harry Potter5
+1 CACHE 
+2 FILESIZE 15541
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00023@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Harry-Potter3.jpg
+2 RELATIVE pictures/Harry-Potter3.jpg
+2 FILEUNIQUE Harry-Potter3.jpg
+2 REPORT pictures/Harry-Potter3.jpg
+1 NAME Harry Potter3
+1 CACHE 
+2 FILESIZE 4013
+2 DIMENSION 133x100
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00024@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Aunt-Marge2.jpg
+2 RELATIVE pictures/Aunt-Marge2.jpg
+2 FILEUNIQUE Aunt-Marge2.jpg
+2 REPORT pictures/Aunt-Marge2.jpg
+1 NAME Aunt Marge2
+1 CACHE 
+2 FILESIZE 5722
+2 DIMENSION 200x138
+2 MEGAPIXELS 0.02
+2 BPP 24
+2 DPI 96
+0 @pic00025@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Sirius-Black.jpg
+2 RELATIVE pictures/Sirius-Black.jpg
+2 FILEUNIQUE Sirius-Black.jpg
+2 REPORT pictures/Sirius-Black.jpg
+1 NAME Sirius Black
+1 CACHE 
+2 FILESIZE 29712
+2 DIMENSION 200x283
+2 MEGAPIXELS 0.05
+2 BPP 24
+2 DPI 72
+0 @pic00026@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Phineas-Nigellus-Black.j
+2 CONC pg
+2 RELATIVE pictures/Phineas-Nigellus-Black.jpg
+2 FILEUNIQUE Phineas-Nigellus-Black.jpg
+2 REPORT pictures/Phineas-Nigellus-Black.jpg
+1 NAME Phineas Nigellus Black
+1 CACHE 
+2 FILESIZE 33333
+2 DIMENSION 200x200
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI 72
+0 @pic00027@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Draco-Malfoy.jpg
+2 RELATIVE pictures/Draco-Malfoy.jpg
+2 FILEUNIQUE Draco-Malfoy.jpg
+2 REPORT pictures/Draco-Malfoy.jpg
+1 NAME Draco Malfoy
+1 CACHE 
+2 FILESIZE 10997
+2 DIMENSION 200x268
+2 MEGAPIXELS 0.05
+2 BPP 24
+2 DPI 100
+0 @pic00028@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Draco-Malfoy2.jpg
+2 RELATIVE pictures/Draco-Malfoy2.jpg
+2 FILEUNIQUE Draco-Malfoy2.jpg
+2 REPORT pictures/Draco-Malfoy2.jpg
+1 NAME Draco Malfoy2
+1 CACHE 
+2 FILESIZE 12105
+2 DIMENSION 200x334
+2 MEGAPIXELS 0.06
+2 BPP 24
+2 DPI 300
+0 @pic00029@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Draco-Crabbe-Goyle-Pansy
+2 CONC .jpg
+2 RELATIVE pictures/Draco-Crabbe-Goyle-Pansy.jpg
+2 FILEUNIQUE Draco-Crabbe-Goyle-Pansy.jpg
+2 REPORT pictures/Draco-Crabbe-Goyle-Pansy.jpg
+1 NAME Draco Crabbe Goyle Pansy
+1 CACHE 
+2 FILESIZE 19291
+2 DIMENSION 300x221
+2 MEGAPIXELS 0.06
+2 BPP 24
+2 DPI 100
+0 @pic00030@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Lucius-Malfoy.jpg
+2 RELATIVE pictures/Lucius-Malfoy.jpg
+2 FILEUNIQUE Lucius-Malfoy.jpg
+2 REPORT pictures/Lucius-Malfoy.jpg
+1 NAME Lucius Malfoy
+1 CACHE 
+2 FILESIZE 8479
+2 DIMENSION 200x301
+2 MEGAPIXELS 0.06
+2 BPP 24
+2 DPI 72
+0 @pic00031@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Lucius-Malfoy2.jpg
+2 RELATIVE pictures/Lucius-Malfoy2.jpg
+2 FILEUNIQUE Lucius-Malfoy2.jpg
+2 REPORT pictures/Lucius-Malfoy2.jpg
+1 NAME Lucius Malfoy2
+1 CACHE 
+2 FILESIZE 15284
+2 DIMENSION 200x279
+2 MEGAPIXELS 0.05
+2 BPP 24
+2 DPI 300
+0 @pic00032@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Arthur-Weasley.jpg
+2 RELATIVE pictures/Arthur-Weasley.jpg
+2 FILEUNIQUE Arthur-Weasley.jpg
+2 REPORT pictures/Arthur-Weasley.jpg
+1 NAME Arthur Weasley
+1 CACHE 
+2 FILESIZE 6729
+2 DIMENSION 200x153
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 96
+0 @pic00033@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Molly-Weasley.jpg
+2 RELATIVE pictures/Molly-Weasley.jpg
+2 FILEUNIQUE Molly-Weasley.jpg
+2 REPORT pictures/Molly-Weasley.jpg
+1 NAME Molly Weasley
+1 CACHE 
+2 FILESIZE 9046
+2 DIMENSION 200x189
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 96
+0 @pic00034@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Fleur-Delacour2.jpg
+2 RELATIVE pictures/Fleur-Delacour2.jpg
+2 FILEUNIQUE Fleur-Delacour2.jpg
+2 REPORT pictures/Fleur-Delacour2.jpg
+1 NAME Fleur Delacour2
+1 CACHE 
+2 FILESIZE 15410
+2 DIMENSION 300x200
+2 MEGAPIXELS 0.06
+2 BPP 24
+2 DPI 100
+0 @pic00035@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Fleur-Delacour.jpg
+2 RELATIVE pictures/Fleur-Delacour.jpg
+2 FILEUNIQUE Fleur-Delacour.jpg
+2 REPORT pictures/Fleur-Delacour.jpg
+1 NAME Fleur Delacour
+1 CACHE 
+2 FILESIZE 30744
+2 DIMENSION 180x371
+2 MEGAPIXELS 0.06
+2 BPP 24
+2 DPI 72
+0 @pic00036@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Fred-and-George-Weasley2
+2 CONC .jpg
+2 RELATIVE pictures/Fred-and-George-Weasley2.jpg
+2 FILEUNIQUE Fred-and-George-Weasley2.jpg
+2 REPORT pictures/Fred-and-George-Weasley2.jpg
+1 NAME Fred and George Weasley2
+1 CACHE 
+2 FILESIZE 5812
+2 DIMENSION 200x93
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI 96
+0 @pic00037@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Ron-Weasley2.jpg
+2 RELATIVE pictures/Ron-Weasley2.jpg
+2 FILEUNIQUE Ron-Weasley2.jpg
+2 REPORT pictures/Ron-Weasley2.jpg
+1 NAME Ron Weasley2
+1 CACHE 
+2 FILESIZE 5853
+2 DIMENSION 200x133
+2 MEGAPIXELS 0.02
+2 BPP 24
+2 DPI 100
+0 @pic00038@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Lord-Voldemort.jpg
+2 RELATIVE pictures/Lord-Voldemort.jpg
+2 FILEUNIQUE Lord-Voldemort.jpg
+2 REPORT pictures/Lord-Voldemort.jpg
+1 NAME Lord Voldemort
+1 CACHE 
+2 FILESIZE 11863
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00039@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Uncle-Vernon2.jpg
+2 RELATIVE pictures/Uncle-Vernon2.jpg
+2 FILEUNIQUE Uncle-Vernon2.jpg
+2 REPORT pictures/Uncle-Vernon2.jpg
+1 NAME Uncle Vernon2
+1 CACHE 
+2 FILESIZE 6323
+2 DIMENSION 200x146
+2 MEGAPIXELS 0.02
+2 BPP 24
+2 DPI 96
+0 @pic00040@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Albus-Dumbledore2.jpg
+2 RELATIVE pictures/Albus-Dumbledore2.jpg
+2 FILEUNIQUE Albus-Dumbledore2.jpg
+2 REPORT pictures/Albus-Dumbledore2.jpg
+1 NAME Albus Dumbledore2
+1 CACHE 
+2 FILESIZE 14473
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00041@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Albus-Dumbledore3.jpg
+2 RELATIVE pictures/Albus-Dumbledore3.jpg
+2 FILEUNIQUE Albus-Dumbledore3.jpg
+2 REPORT pictures/Albus-Dumbledore3.jpg
+1 NAME Albus Dumbledore3
+1 CACHE 
+2 FILESIZE 3956
+2 DIMENSION 133x100
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00042@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Dean-Thomas.jpg
+2 RELATIVE pictures/Dean-Thomas.jpg
+2 FILEUNIQUE Dean-Thomas.jpg
+2 REPORT pictures/Dean-Thomas.jpg
+1 NAME Dean Thomas
+1 CACHE 
+2 FILESIZE 4346
+2 DIMENSION 120x188
+2 MEGAPIXELS 0.02
+2 BPP 24
+2 DPI 96
+0 @pic00043@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Seamus-Finnigan.jpg
+2 RELATIVE pictures/Seamus-Finnigan.jpg
+2 FILEUNIQUE Seamus-Finnigan.jpg
+2 REPORT pictures/Seamus-Finnigan.jpg
+1 NAME Seamus Finnigan
+1 CACHE 
+2 FILESIZE 13301
+2 DIMENSION 200x275
+2 MEGAPIXELS 0.05
+2 BPP 24
+2 DPI 100
+0 @pic00044@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Parvati-Patil.jpg
+2 RELATIVE pictures/Parvati-Patil.jpg
+2 FILEUNIQUE Parvati-Patil.jpg
+2 REPORT pictures/Parvati-Patil.jpg
+1 NAME Parvati Patil
+1 DESCRIPTION Parvati in her Yule Ball dress, played by Shefali Chowdhury
+1 CACHE 
+2 FILESIZE 27804
+2 DIMENSION 132x244
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 72
+0 @pic00045@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Parvati-Patil2.jpg
+2 RELATIVE pictures/Parvati-Patil2.jpg
+2 FILEUNIQUE Parvati-Patil2.jpg
+2 REPORT pictures/Parvati-Patil2.jpg
+1 NAME Parvati Patil2
+1 DESCRIPTION Parvati played by Sitara Shah
+1 CACHE 
+2 FILESIZE 4344
+2 DIMENSION 140x195
+2 MEGAPIXELS 0.02
+2 BPP 24
+2 DPI 72
+0 @pic00046@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Angelina.jpg
+2 RELATIVE pictures/Angelina.jpg
+2 FILEUNIQUE Angelina.jpg
+2 REPORT pictures/Angelina.jpg
+1 NAME Angelina Johnson
+1 DESCRIPTION Angelina played by Danielle Tabor
+1 CACHE 
+2 FILESIZE 38261
+2 DIMENSION 200x200
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI *96
+0 @pic00047@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Oliver-Wood.jpg
+2 RELATIVE pictures/Oliver-Wood.jpg
+2 FILEUNIQUE Oliver-Wood.jpg
+2 REPORT pictures/Oliver-Wood.jpg
+1 NAME Oliver Wood
+1 CACHE 
+2 FILESIZE 4920
+2 DIMENSION 150x150
+2 MEGAPIXELS 0.02
+2 BPP 24
+2 DPI 300
+0 @pic00048@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Alicia-Spinnet.jpg
+2 RELATIVE pictures/Alicia-Spinnet.jpg
+2 FILEUNIQUE Alicia-Spinnet.jpg
+2 REPORT pictures/Alicia-Spinnet.jpg
+1 NAME Alicia Spinnet
+1 CACHE 
+2 FILESIZE 33090
+2 DIMENSION 200x200
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI *96
+0 @pic00049@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Katie-Bell.jpg
+2 RELATIVE pictures/Katie-Bell.jpg
+2 FILEUNIQUE Katie-Bell.jpg
+2 REPORT pictures/Katie-Bell.jpg
+1 NAME Katie Bell
+1 CACHE 
+2 FILESIZE 8049
+2 DIMENSION 200x194
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 100
+0 @pic00050@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Colin-Creevey.jpg
+2 RELATIVE pictures/Colin-Creevey.jpg
+2 FILEUNIQUE Colin-Creevey.jpg
+2 REPORT pictures/Colin-Creevey.jpg
+1 NAME Colin Creevey
+1 CACHE 
+2 FILESIZE 41375
+2 DIMENSION 212x150
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 72
+0 @pic00051@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Minerva-McGonagall.jpg
+2 RELATIVE pictures/Minerva-McGonagall.jpg
+2 FILEUNIQUE Minerva-McGonagall.jpg
+2 REPORT pictures/Minerva-McGonagall.jpg
+1 NAME Minerva McGonagall
+1 CACHE 
+2 FILESIZE 11497
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00052@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Minerva-McGonagall2.jpg
+2 RELATIVE pictures/Minerva-McGonagall2.jpg
+2 FILEUNIQUE Minerva-McGonagall2.jpg
+2 REPORT pictures/Minerva-McGonagall2.jpg
+1 NAME Minerva McGonagall2
+1 CACHE 
+2 FILESIZE 16390
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00053@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Pomona-Sprout.jpg
+2 RELATIVE pictures/Pomona-Sprout.jpg
+2 FILEUNIQUE Pomona-Sprout.jpg
+2 REPORT pictures/Pomona-Sprout.jpg
+1 NAME Pomona Sprout
+1 CACHE 
+2 FILESIZE 8983
+2 DIMENSION 250x164
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI 96
+0 @pic00054@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Cedric-Diggory.jpg
+2 RELATIVE pictures/Cedric-Diggory.jpg
+2 FILEUNIQUE Cedric-Diggory.jpg
+2 REPORT pictures/Cedric-Diggory.jpg
+1 NAME Cedric Diggory
+1 CACHE 
+2 FILESIZE 13732
+2 DIMENSION 200x284
+2 MEGAPIXELS 0.05
+2 BPP 24
+2 DPI 100
+0 @pic00055@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Filius-Flitwick.jpg
+2 RELATIVE pictures/Filius-Flitwick.jpg
+2 FILEUNIQUE Filius-Flitwick.jpg
+2 REPORT pictures/Filius-Flitwick.jpg
+1 NAME Filius Flitwick
+1 CACHE 
+2 FILESIZE 30004
+2 DIMENSION 194x269
+2 MEGAPIXELS 0.05
+2 BPP 24
+2 DPI *96
+0 @pic00056@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Hannah-Abbott.jpg
+2 RELATIVE pictures/Hannah-Abbott.jpg
+2 FILEUNIQUE Hannah-Abbott.jpg
+2 REPORT pictures/Hannah-Abbott.jpg
+1 NAME Hannah Abbott
+1 CACHE 
+2 FILESIZE 8632
+2 DIMENSION 200x203
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI 72
+0 @pic00057@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Susan-Bones.jpg
+2 RELATIVE pictures/Susan-Bones.jpg
+2 FILEUNIQUE Susan-Bones.jpg
+2 REPORT pictures/Susan-Bones.jpg
+1 NAME Susan Bones
+1 CACHE 
+2 FILESIZE 6638
+2 DIMENSION 200x200
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI 72
+0 @pic00058@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Justin.jpg
+2 RELATIVE pictures/Justin.jpg
+2 FILEUNIQUE Justin.jpg
+2 REPORT pictures/Justin.jpg
+1 NAME Justin Finch-Fletchley
+1 CACHE 
+2 FILESIZE 6079
+2 DIMENSION 200x244
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI 96
+0 @pic00059@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Ernie-Macmillan.jpg
+2 RELATIVE pictures/Ernie-Macmillan.jpg
+2 FILEUNIQUE Ernie-Macmillan.jpg
+2 REPORT pictures/Ernie-Macmillan.jpg
+1 NAME Ernie MacMillan
+1 CACHE 
+2 FILESIZE 4016
+2 DIMENSION 100x100
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI 72
+0 @pic00060@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Cho-Chang.jpg
+2 RELATIVE pictures/Cho-Chang.jpg
+2 FILEUNIQUE Cho-Chang.jpg
+2 REPORT pictures/Cho-Chang.jpg
+1 NAME Cho Chang
+1 CACHE 
+2 FILESIZE 11386
+2 DIMENSION 200x275
+2 MEGAPIXELS 0.05
+2 BPP 24
+2 DPI 100
+0 @pic00061@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Roger-Davies.jpg
+2 RELATIVE pictures/Roger-Davies.jpg
+2 FILEUNIQUE Roger-Davies.jpg
+2 REPORT pictures/Roger-Davies.jpg
+1 NAME Roger Davies
+1 DESCRIPTION Roger with Fleur Delacour at the Yule ball
+1 CACHE 
+2 FILESIZE 9057
+2 DIMENSION 200x147
+2 MEGAPIXELS 0.02
+2 BPP 24
+2 DPI 72
+0 @pic00062@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Padma-Patil.jpg
+2 RELATIVE pictures/Padma-Patil.jpg
+2 FILEUNIQUE Padma-Patil.jpg
+2 REPORT pictures/Padma-Patil.jpg
+1 NAME Padma Patil
+1 CACHE 
+2 FILESIZE 5662
+2 DIMENSION 180x200
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 198
+0 @pic00063@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Vincent-Crabbe.jpg
+2 RELATIVE pictures/Vincent-Crabbe.jpg
+2 FILEUNIQUE Vincent-Crabbe.jpg
+2 REPORT pictures/Vincent-Crabbe.jpg
+1 NAME Vincent Crabbe
+1 CACHE 
+2 FILESIZE 5186
+2 DIMENSION 150x227
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 96
+0 @pic00064@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Gregory-Goyle.jpg
+2 RELATIVE pictures/Gregory-Goyle.jpg
+2 FILEUNIQUE Gregory-Goyle.jpg
+2 REPORT pictures/Gregory-Goyle.jpg
+1 NAME Gregory Goyle
+1 CACHE 
+2 FILESIZE 4549
+2 DIMENSION 150x222
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 96
+0 @pic00065@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Pansy-Parkinson.jpg
+2 RELATIVE pictures/Pansy-Parkinson.jpg
+2 FILEUNIQUE Pansy-Parkinson.jpg
+2 REPORT pictures/Pansy-Parkinson.jpg
+1 NAME Pansy Parkinson
+1 CACHE 
+2 FILESIZE 25985
+2 DIMENSION 181x267
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI *96
+0 @pic00066@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Marcus-Flint.jpg
+2 RELATIVE pictures/Marcus-Flint.jpg
+2 FILEUNIQUE Marcus-Flint.jpg
+2 REPORT pictures/Marcus-Flint.jpg
+1 NAME Marcus Flint
+1 CACHE 
+2 FILESIZE 6409
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI 72
+0 @pic00067@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Argus-Filtch.jpg
+2 RELATIVE pictures/Argus-Filtch.jpg
+2 FILEUNIQUE Argus-Filtch.jpg
+2 REPORT pictures/Argus-Filtch.jpg
+1 NAME Argus Filtch
+1 CACHE 
+2 FILESIZE 22755
+2 DIMENSION 321x240
+2 MEGAPIXELS 0.07
+2 BPP 24
+2 DPI 72
+0 @pic00068@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Madame-Hooch.jpg
+2 RELATIVE pictures/Madame-Hooch.jpg
+2 FILEUNIQUE Madame-Hooch.jpg
+2 REPORT pictures/Madame-Hooch.jpg
+1 NAME Madame Hooch
+1 CACHE 
+2 FILESIZE 15788
+2 DIMENSION 250x250
+2 MEGAPIXELS 0.06
+2 BPP 24
+2 DPI 100
+0 @pic00069@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Gilderoy-Lockhart.jpg
+2 RELATIVE pictures/Gilderoy-Lockhart.jpg
+2 FILEUNIQUE Gilderoy-Lockhart.jpg
+2 REPORT pictures/Gilderoy-Lockhart.jpg
+1 NAME Gilderoy Lockhart
+1 CACHE 
+2 FILESIZE 11111
+2 DIMENSION 302x202
+2 MEGAPIXELS 0.06
+2 BPP 24
+2 DPI 300
+0 @pic00070@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Firenze.jpg
+2 RELATIVE pictures/Firenze.jpg
+2 FILEUNIQUE Firenze.jpg
+2 REPORT pictures/Firenze.jpg
+1 NAME Firenze
+1 CACHE 
+2 FILESIZE 20848
+2 DIMENSION 294x327
+2 MEGAPIXELS 0.09
+2 BPP 24
+2 DPI 100
+0 @pic00071@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Remus-Lupin.jpg
+2 RELATIVE pictures/Remus-Lupin.jpg
+2 FILEUNIQUE Remus-Lupin.jpg
+2 REPORT pictures/Remus-Lupin.jpg
+1 NAME Remus Lupin
+1 CACHE 
+2 FILESIZE 6243
+2 DIMENSION 200x202
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI 96
+0 @pic00072@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Poppy-Pomfrey.jpg
+2 RELATIVE pictures/Poppy-Pomfrey.jpg
+2 FILEUNIQUE Poppy-Pomfrey.jpg
+2 REPORT pictures/Poppy-Pomfrey.jpg
+1 NAME Poppy Pomfrey
+1 CACHE 
+2 FILESIZE 12567
+2 DIMENSION 200x138
+2 MEGAPIXELS 0.02
+2 BPP 24
+2 DPI 72
+0 @pic00073@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Quirinus-Quirrell.jpg
+2 RELATIVE pictures/Quirinus-Quirrell.jpg
+2 FILEUNIQUE Quirinus-Quirrell.jpg
+2 REPORT pictures/Quirinus-Quirrell.jpg
+1 NAME Quirinus Quirrell
+1 CACHE 
+2 FILESIZE 9164
+2 DIMENSION 250x187
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI 72
+0 @pic00074@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Alastor-Moody.jpg
+2 RELATIVE pictures/Alastor-Moody.jpg
+2 FILEUNIQUE Alastor-Moody.jpg
+2 REPORT pictures/Alastor-Moody.jpg
+1 NAME Alastor Moody
+1 CACHE 
+2 FILESIZE 19799
+2 DIMENSION 220x241
+2 MEGAPIXELS 0.05
+2 BPP 24
+2 DPI 100
+0 @pic00075@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Crookshanks.jpg
+2 RELATIVE pictures/Crookshanks.jpg
+2 FILEUNIQUE Crookshanks.jpg
+2 REPORT pictures/Crookshanks.jpg
+1 NAME Crookshanks
+1 CACHE 
+2 FILESIZE 15729
+2 DIMENSION 300x350
+2 MEGAPIXELS 0.10
+2 BPP 24
+2 DPI *96
+0 @pic00076@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Peter-Pettigrew.jpg
+2 RELATIVE pictures/Peter-Pettigrew.jpg
+2 FILEUNIQUE Peter-Pettigrew.jpg
+2 REPORT pictures/Peter-Pettigrew.jpg
+1 NAME Peter Pettigrew
+1 CACHE 
+2 FILESIZE 32028
+2 DIMENSION 361x240
+2 MEGAPIXELS 0.08
+2 BPP 24
+2 DPI *96
+0 @pic00077@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Barty-Crouch.jpg
+2 RELATIVE pictures/Barty-Crouch.jpg
+2 FILEUNIQUE Barty-Crouch.jpg
+2 REPORT pictures/Barty-Crouch.jpg
+1 NAME Barty Crouch
+1 CACHE 
+2 FILESIZE 16661
+2 DIMENSION 200x314
+2 MEGAPIXELS 0.06
+2 BPP 24
+2 DPI 96
+0 @pic00078@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Fawkes.jpg
+2 RELATIVE pictures/Fawkes.jpg
+2 FILEUNIQUE Fawkes.jpg
+2 REPORT pictures/Fawkes.jpg
+1 NAME Fawkes
+1 CACHE 
+2 FILESIZE 56413
+2 DIMENSION 200x234
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI 72
+0 @pic00079@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Neville-Longbottom.jpg
+2 RELATIVE pictures/Neville-Longbottom.jpg
+2 FILEUNIQUE Neville-Longbottom.jpg
+2 REPORT pictures/Neville-Longbottom.jpg
+1 NAME Neville Longbottom
+1 CACHE 
+2 FILESIZE 13015
+2 DIMENSION 125x125
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI *96
+0 @pic00080@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Lavender-Brown.jpg
+2 RELATIVE pictures/Lavender-Brown.jpg
+2 FILEUNIQUE Lavender-Brown.jpg
+2 REPORT pictures/Lavender-Brown.jpg
+1 NAME Lavender Brown
+1 CACHE 
+2 FILESIZE 6439
+2 DIMENSION 156x156
+2 MEGAPIXELS 0.02
+2 BPP 24
+2 DPI 72
+0 @pic00081@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Aragog.jpg
+2 RELATIVE pictures/Aragog.jpg
+2 FILEUNIQUE Aragog.jpg
+2 REPORT pictures/Aragog.jpg
+1 NAME Aragog
+1 CACHE 
+2 FILESIZE 14082
+2 DIMENSION 250x164
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI 100
+0 @pic00082@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Fang.jpg
+2 RELATIVE pictures/Fang.jpg
+2 FILEUNIQUE Fang.jpg
+2 REPORT pictures/Fang.jpg
+1 NAME Fang
+1 CACHE 
+2 FILESIZE 8772
+2 DIMENSION 200x246
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI 80
+0 @pic00083@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Fluffy.jpg
+2 RELATIVE pictures/Fluffy.jpg
+2 FILEUNIQUE Fluffy.jpg
+2 REPORT pictures/Fluffy.jpg
+1 NAME Fluffy
+1 CACHE 
+2 FILESIZE 17632
+2 DIMENSION 200x123
+2 MEGAPIXELS 0.02
+2 BPP 24
+2 DPI 72
+0 @pic00084@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Norbert.jpg
+2 RELATIVE pictures/Norbert.jpg
+2 FILEUNIQUE Norbert.jpg
+2 REPORT pictures/Norbert.jpg
+1 NAME Norbert
+1 CACHE 
+2 FILESIZE 12497
+2 DIMENSION 300x163
+2 MEGAPIXELS 0.04
+2 BPP 24
+2 DPI 300
+0 @pic00085@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Buckbeak.jpg
+2 RELATIVE pictures/Buckbeak.jpg
+2 FILEUNIQUE Buckbeak.jpg
+2 REPORT pictures/Buckbeak.jpg
+1 NAME Buckbeak
+1 CACHE 
+2 FILESIZE 13707
+2 DIMENSION 300x117
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 100
+0 @pic00086@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Hedwig.jpg
+2 RELATIVE pictures/Hedwig.jpg
+2 FILEUNIQUE Hedwig.jpg
+2 REPORT pictures/Hedwig.jpg
+1 NAME Hedwig
+1 CACHE 
+2 FILESIZE 10562
+2 DIMENSION 180x180
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 100
+0 @pic00087@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Hedwig2.jpg
+2 RELATIVE pictures/Hedwig2.jpg
+2 FILEUNIQUE Hedwig2.jpg
+2 REPORT pictures/Hedwig2.jpg
+1 NAME Hedwig2
+1 CACHE 
+2 FILESIZE 12791
+2 DIMENSION 320x215
+2 MEGAPIXELS 0.06
+2 BPP 24
+2 DPI 100
+0 @pic00088@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Bloody-Baron.jpg
+2 RELATIVE pictures/Bloody-Baron.jpg
+2 FILEUNIQUE Bloody-Baron.jpg
+2 REPORT pictures/Bloody-Baron.jpg
+1 NAME Bloody Baron
+1 CACHE 
+2 FILESIZE 6731
+2 DIMENSION 184x185
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI *96
+0 @pic00089@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Nearly-Headless-Nick.jpg
+2 RELATIVE pictures/Nearly-Headless-Nick.jpg
+2 FILEUNIQUE Nearly-Headless-Nick.jpg
+2 REPORT pictures/Nearly-Headless-Nick.jpg
+1 NAME Nearly Headless Nick
+1 CACHE 
+2 FILESIZE 7875
+2 DIMENSION 200x193
+2 MEGAPIXELS 0.03
+2 BPP 24
+2 DPI 96
+0 @pic00090@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Grey-Lady.jpg
+2 RELATIVE pictures/Grey-Lady.jpg
+2 FILEUNIQUE Grey-Lady.jpg
+2 REPORT pictures/Grey-Lady.jpg
+1 NAME Grey Lady
+1 CACHE 
+2 FILESIZE 13504
+2 DIMENSION 200x492
+2 MEGAPIXELS 0.09
+2 BPP 24
+2 DPI 72
+0 @pic00091@ Picture
+1 PATH C:\Program Files\GenoPro\SampleFiles\pictures\Fat-Friar.jpg
+2 RELATIVE pictures/Fat-Friar.jpg
+2 FILEUNIQUE Fat-Friar.jpg
+2 REPORT pictures/Fat-Friar.jpg
+1 NAME Fat Friar
+1 CACHE 
+2 FILESIZE 3491
+2 DIMENSION 110x140
+2 MEGAPIXELS 0.01
+2 BPP 24
+2 DPI 96
+0 @place00001@ PLAC
+1 NAME Smeltings
+0 @place00002@ PLAC
+1 NAME Hogwarts
+0 @place00003@ PLAC
+1 NAME Beauxbatons
+0 @place00004@ PLAC
+1 NAME Egypt
+0 @place00005@ PLAC
+1 NAME France
+0 @place00006@ PLAC
+1 NAME Romania
+0 @place00007@ PLAC
+1 NAME Diagon Alley
+0 @edu00001@ Education
+1 INSTITUTION Smeltings
+1 PLAC Smeltings
+2 _XREF @place00001@
+0 @edu00002@ Education
+1 INSTITUTION Smeltings
+1 PLAC Smeltings
+2 _XREF @place00001@
+1 NOTE The same year Harry started at Hogwarts, Dudley was enrolled at his fa
+2 CONC ther's old boarding school, Smeltings. Smeltings is described as a sno
+2 CONC bbish public school with absurd traditions.
+2 CONT 
+2 CONT 
+0 @edu00003@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @edu00004@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1984
+1 DATEEND 1991
+0 @edu00005@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1984
+1 DATEEND 1991
+1 NOTE He was a prefect and Quidditch Captain in which he was a legendary See
+2 CONC ker for Gryffindor Quidditch team.
+0 @edu00006@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE Draco plays a crucial role in Half-Blood Prince, when Lord Voldemort o
+2 CONC rders him to murder the Headmaster of Hogwarts, Albus Dumbledore. Like
+2 CONC  Regulus Black, Draco is infatuated by the Dark Arts and eagerly takes
+2 CONC  on the task as a chance for glory, of which he seems to get very litt
+2 CONC le. In an effort to prove himself, Draco works alone without the help 
+2 CONC of his cronies, Crabbe and Goyle, or his favourite professor, Severus 
+2 CONC Snape. Under his aunt Bellatrix Lestrange's instruction, Draco has bec
+2 CONC ome quite proficient in Occlumency, a skill that Harry has never maste
+2 CONC red.
+2 CONT 
+2 CONT 
+0 @edu00007@ Education
+1 INSTITUTION Beauxbatons
+1 PLAC Beauxbatons
+2 _XREF @place00003@
+0 @edu00008@ Education
+1 INSTITUTION Beauxbatons
+1 PLAC Beauxbatons
+2 _XREF @place00003@
+1 NOTE During the Triwizard Tournament, in which Fleur was the champion for B
+2 CONC eauxbatons, Gabrielle was chosen along with Cho Chang, Hermione Grange
+2 CONC r and Ron Weasley to be the underwater "bait" for the champions to res
+2 CONC cue. When Fleur did not manage to rescue Gabrielle, Harry Potter saved
+2 CONC  her.
+0 @edu00009@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1982
+1 DATEEND 1989
+1 NOTE Prefect and head boy
+0 @edu00010@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1987
+1 DATEEND 1994
+1 NOTE Head Boy and Prefect
+0 @edu00011@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1989
+1 DATEEND 1996
+1 NOTE School clowns and troublemakers, more interested in making new jokes t
+2 CONC han studying, although they show a high degree of knowledge and skill 
+2 CONC in creating magical jokes and tricks.
+0 @edu00013@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1991
+1 DATEEND 1998
+1 NOTE 
+2 CONT 
+2 CONT 
+0 @edu00014@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1992
+0 @edu00015@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1991
+1 DATEEND 1998
+1 NOTE Gifted wizard, excelling in Defense Against the Dark Arts and Quidditc
+2 CONC h, and capable leader of his house Griffyndor.
+0 @edu00016@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1991
+1 DATEEND 1998
+0 @edu00017@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1991
+1 DATEEND 1998
+1 NOTE Noted for being good at drawing and forging signatures
+0 @edu00018@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE He is the captain of the Quidditch team. Plays as a keeper. He is obse
+2 CONC ssed with Quidditch.
+0 @edu00019@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE Chaser for the Quidditch team.
+0 @edu00020@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1991
+1 DATEEND 1998
+1 NOTE Prefect for the Hufflpuff House
+0 @edu00023@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1991
+1 DATEEND 1998
+1 NOTE Prefect for Hufflepuff
+0 @edu00024@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE Chaser for the Hufflepuff Quidditch team
+0 @edu00025@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1990
+1 DATEEND 1997
+1 NOTE Seeker for the Ravenclaw Quidditch team
+0 @edu00026@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1992
+1 DATEEND 1999
+0 @edu00027@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE Captain of the Ravenclaw Quidditch team and is one of the Chasers
+0 @edu00028@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1991
+1 DATEEND 1998
+1 NOTE She became a Ravenclaw prefect in her 5th year.
+0 @edu00029@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE As Cho had a romantic interest in Harry Potter, who was at the centre 
+2 CONC of the Ministry's smear campaign, this left Marietta in a difficult po
+2 CONC sition. Marietta joined Dumbledore's Army entirely because of peer pre
+2 CONC ssure. Dumbledore's Army was doing the one thing the Ministry didn't w
+2 CONC ant to happen; training students in combat.
+2 CONT 
+2 CONT Eventually, Marietta betrayed the D.A. to Umbridge; however, the parch
+2 CONC ment that all members had signed had been jinxed by Hermione, so she b
+2 CONC roke out with pustules which spelled the word, "SNEAK". Umbridge took 
+2 CONC Marietta to testify against Harry, but Kingsley Shacklebolt swiftly mo
+2 CONC dified her memory, to keep Harry and his friends out of trouble.
+2 CONT 
+2 CONT 
+0 @edu00030@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE Penelope is a prefect.
+0 @edu00031@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1991
+1 DATEEND 1998
+1 NOTE Anthony becomes a prefect in 5th year
+0 @edu00032@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1990
+1 DATEEND 1997
+0 @edu00033@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE Captain of the Slytherin Quidditch team during Harry Potter's first th
+2 CONC ree years at Hogwart.
+2 CONT 
+2 CONT Marcus Flint is a sixth year student in Harry's first year and is stil
+2 CONC l in school two years later when he should have already finished schoo
+2 CONC l. Author J.K. Rowling explained this away by saying that he failed hi
+2 CONC s exams[1]. In later printings of the first book, however, he is a Fif
+2 CONC th Year. Explanation notwithstanding, Harry Potter fans have taken to 
+2 CONC calling minor textual errors in the series "flints," after this partic
+2 CONC ular mistake.
+2 CONT 
+2 CONT 
+0 @edu00034@ Education
+1 INSTITUTION Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1939
+0 @occu00001@ Occupation
+0 @occu00002@ Occupation
+1 TITL Headmaster
+1 COMPANY Hogwarts
+1 DATESTART 1956
+1 NOTE Enjoys chamber music and ten-pin bowling. Has a great affinity for swe
+2 CONC ets.
+0 @occu00003@ Occupation
+1 TITL Groundskeeper
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00004@ Occupation
+1 TITL Head of Detection and Confiscation of Counterfeit Defensive Spells and
+2 CONC  Protective Objects 
+1 COMPANY Ministry of magic
+1 NOTE 6th book. He is obsessed with learning about Muggle customs and invent
+2 CONC ions. (In particular, he is determined on discovering how airplanes st
+2 CONC ay aloft) 
+0 @occu00005@ Occupation
+1 TITL Curse breaker
+1 COMPANY Gringotts
+1 PLAC Egypt
+2 _XREF @place00004@
+0 @occu00006@ Occupation
+1 TITL Works with dragons
+1 PLAC Romania
+2 _XREF @place00006@
+0 @occu00007@ Occupation
+1 TITL Junior Assistant to the Minister of Magic
+1 COMPANY Ministry of magic
+1 NOTE This position prompted a personal and political dispute with his fathe
+2 CONC r, which resulted in Percy’s subsequent alienation from his family.
+0 @occu00008@ Occupation
+1 TITL Potions Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATEEND 1996
+1 NOTE Was Harry's teacher from 1st to 5th year
+0 @occu00010@ Occupation
+1 TITL Dog breeder
+0 @occu00011@ Occupation
+1 TITL Director
+1 COMPANY Drill-making company named "Grunnings"
+1 NOTE Seems to be successful in his career.
+0 @occu00012@ Occupation
+1 NOTE She obsessively follows news about divorced movie stars while sniffing
+2 CONC , "as if we're interested in their sordid affairs".
+2 CONT 
+2 CONT At some point she met Vernon Dursley and married him.  Petunia Dursley
+2 CONC  hadn't seen her sister for years and usually pretended she didn't hav
+2 CONC e one - The Evans sisters weren't talking as Lily Potter knew how her 
+2 CONC sister felt about her. However one day Petunia discovered her nephew H
+2 CONC arry Potter on her doorstep as she put out the milk bottles.
+2 CONT 
+2 CONT There was a note left with baby Harry by Albus Dumbledore, which expla
+2 CONC ined that his parents Lily and James had been killed by Lord Voldemort
+2 CONC , how Lily Potter had sacrificed herself to save her son's life and ho
+2 CONC w living with his only other relatives would protect him from Lord Vol
+2 CONC demort. Petunia and Vernon agreed to raise Harry, but kept him as down
+2 CONC trodden as possible in order to squash the magic out of him; they neve
+2 CONC r told him how his parents died, instead claiming they had died in a c
+2 CONC ar crash.
+2 CONT 
+2 CONT When Petunia and her husband, Vernon, attempted to throw Harry out of 
+2 CONC their house at the beginning of Order of the Phoenix, she receives a H
+2 CONC owler from Dumbledore – "Remember my last, Petunia", which JKR has con
+2 CONC firmed is referring to the note he left with one-year-old Harry on the
+2 CONC ir doorstep. Rowling has also said that Dumbledore had corresponded wi
+2 CONC th Petunia before that. Aunt Petunia has, therefore, more knowledge ab
+2 CONC out the wizarding world than she will admit. Furthermore, Petunia has 
+2 CONC proved she knows what dementors and Azkaban are, claiming to have over
+2 CONC heard a conversation between Lily and an "awful boy" that might have b
+2 CONC een James Potter. Petunia normally refers to James using his name, lea
+2 CONC ving the possibility that she has met other wizards.
+2 CONT 
+0 @occu00013@ Occupation
+1 TITL Headmaster
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00014@ Occupation
+1 TITL Auror
+1 NOTE She is a Metamorphmagus. She can alter her appearance at will and make
+2 CONC s heavy use of this knack, not only as a phenomenal gift in the art of
+2 CONC  disguise but for the lighter purposes of experimenting with her appea
+2 CONC rance and entertainment. She is notoriously clumsy and unskillful at h
+2 CONC ousehold spells.
+2 CONT 
+0 @occu00015@ Occupation
+1 TITL Governor
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE Lucius Malfoy was a governor of Hogwarts, until he was fired for black
+2 CONC mailing the other governors into suspending the school's headmaster. H
+2 CONC e is currently incarcerated at the island prison of Azkaban on charges
+2 CONC  of blackmail and Death Eater activity.
+2 CONT 
+0 @occu00016@ Occupation
+1 NOTE She was the one who blasted "blood traitors" off the family tapestry.
+2 CONT 
+0 @occu00017@ Occupation
+1 TITL Witch housewife
+1 NOTE Molly also homeschooled her seven children before they attended Hogwar
+2 CONC ts, apparently a common alternative to Muggle primary school in the wi
+2 CONC zarding world.
+0 @occu00018@ Occupation
+1 TITL Misuse of Muggle Artifacts office
+1 COMPANY Ministry of magic
+1 NOTE 1-5 books
+0 @occu00019@ Occupation
+1 TITL Owner of a joke shop
+1 COMPANY Weasleys' Wizard Wheezes
+1 PLAC Diagon Alley
+2 _XREF @place00007@
+0 @occu00020@ Occupation
+1 TITL Transfiguration Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1956
+0 @occu00021@ Occupation
+1 TITL Deputy Headmistress
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00022@ Occupation
+1 TITL Herbology Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00023@ Occupation
+1 TITL Charms Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00024@ Occupation
+1 TITL Headmistress
+1 COMPANY Hogswart
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1996
+1 DATEEND 1997
+1 NOTE After Dumbledore left Hogwarts, Umbridge was installed as Headmistress
+2 CONC . However, the Headmaster's office refused to open for her, and her te
+2 CONC nure as Headmistress was characterized by rebellion by most of the stu
+2 CONC dent body and faculty.
+2 CONT 
+2 CONT Her time in Hogwarts is characterized by cruelty and physical punishme
+2 CONC nts against students — she stands out especially for forcing Harry and
+2 CONC  Lee Jordan to write lines using a quill that magically causes the wor
+2 CONC ds to be cut into the skin on the back of the writer's hand, and uses 
+2 CONC his blood as ink. She also ordered the botched whipping of Fred and Ge
+2 CONC orge Weasley, and eventually even planned to use the Unforgivable Cruc
+2 CONC iatus Curse in order to extract information from Harry.
+2 CONT 
+0 @occu00025@ Occupation
+1 TITL Defense Against the Dark Arts Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1996
+1 DATEEND 1997
+1 NOTE Her class consists only of defensive magical theory, due to Fudge's pa
+2 CONC ranoia of Dumbledore using his students as an army to bring down the M
+2 CONC inistry. 
+2 CONT 
+2 CONT 
+2 CONT 
+0 @occu00026@ Occupation
+1 TITL High Inquisitor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1996
+1 DATEEND 1997
+1 NOTE Umbridge is appointed the first (and only) ever "Hogwarts High Inquisi
+2 CONC tor," in which position she is given extraordinary powers over the stu
+2 CONC dents, teachers and curriculum. Umbridge creates an Inquisitorial Squa
+2 CONC d, which is comprised entirely of Slytherins and rewards some students
+2 CONC  for reporting on others and sanctions them to act as enforcers of Umb
+2 CONC ridge's rules. By attempting to defame Harry Potter and censor word of
+2 CONC  the truth of Voldemort's return, Umbridge and Fudge frequently uninte
+2 CONC ntionally help the Dark Lord and his followers.
+0 @occu00027@ Occupation
+1 TITL Defense Against the Dark Arts Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1996
+1 DATEEND 1997
+0 @occu00028@ Occupation
+1 TITL History of Magic Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE He is the only ghost professor. He was very old when he had fallen asl
+2 CONC eep in front of the staff room fire and wake up next morning to teach 
+2 CONC leaving his body behind him. The only exciting thing happen in his cla
+2 CONC ss is when he appeared from the board.
+2 CONT 
+0 @occu00029@ Occupation
+1 TITL Head of Slytherin
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00030@ Occupation
+1 TITL Head of Hufflepuff
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00031@ Occupation
+1 TITL Head of Gryffindor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00032@ Occupation
+1 TITL Care of Magical Creatures Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE She substituted for Hagrid when he was away from Hogwarts.
+2 CONT she is a reasonably competent teacher, passing even Dolores Umbridge's
+2 CONC  inspection without incident. She seems always level-headed, cheerful 
+2 CONC and efficient, and fends off Umbridge's questions without losing her t
+2 CONC emper or incriminating anybody. She claims to be very happy with the w
+2 CONC ay Dumbledore runs the school. In Harry Potter and the Order of the Ph
+2 CONC oenix, Harry trusts her enough to ask her to heal his owl Hedwig when 
+2 CONC she is injured. Nevertheless, he is always somewhat annoyed by the fac
+2 CONC t that she is a much better teacher than Hagrid, to whom Harry remains
+2 CONC  loyal no matter how close to fatal his classes may be.
+2 CONT 
+0 @occu00033@ Occupation
+1 TITL Head of Ravenclaw
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00034@ Occupation
+1 TITL Care of Magical Creatures Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00035@ Occupation
+1 TITL Caretaker
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00036@ Occupation
+1 TITL Divination Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1996
+0 @occu00037@ Occupation
+1 TITL Flying Instructor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00038@ Occupation
+1 TITL Quidditch referee
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+0 @occu00039@ Occupation
+1 TITL Defense Against the Dark Arts Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1992
+1 DATEEND 1993
+1 NOTE Gilderoy Lockhart was exposed as a fraud when, trying to avoid travell
+2 CONC ing into the Chamber of Secrets, he revealed that he had not in fact p
+2 CONC erformed all the amazing feats described in his books — instead, he ha
+2 CONC d been stealing others' stories, placing memory charms on those people
+2 CONC  and taking credit for their accomplishments. 
+0 @occu00040@ Occupation
+1 TITL Defense Against the Dark Arts Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1993
+1 DATEEND 1994
+1 NOTE During his tenure, he gave Harry private lessons in casting the Patron
+2 CONC us Charm, the only known means of defence against Dementors. His stude
+2 CONC nts, excepting a few from Slytherin, held him in extremely high regard
+2 CONC  and loved the hands-on style of his classes. He was considered by Har
+2 CONC ry and his friends to have been their best Defence teacher, although h
+2 CONC is competition was hardly stiff in this regard.
+0 @occu00041@ Occupation
+1 TITL Librarian
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE She is compared to an "underfed vulture" and tries to protect her book
+2 CONC s from students by placing odd jinxes on them.
+2 CONT 
+0 @occu00042@ Occupation
+1 TITL Nurse
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE She is in charge of the hospital wing in the school of Hogwarts and is
+2 CONC  depicted as a stern and competent woman who takes her profession seri
+2 CONC ously.
+2 CONT 
+0 @occu00043@ Occupation
+1 TITL Defense Against the Dark Arts Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1991
+1 DATEEND 1992
+1 NOTE It is revealed that, during his travels, Quirrell had met a barely-ali
+2 CONC ve Voldemort. Voldemort, seeking to restore his physical form, entered
+2 CONC  Quirrell as a host body, using him in a plan to steal the Philosopher
+2 CONC 's Stone from vault 713 in Gringotts Bank, where it had been deposited
+2 CONC  for safekeeping by Albus Dumbledore. Fortunately, Hagrid had removed 
+2 CONC the Stone from the vault earlier that same day to take it to Hogwarts.
+2 CONC  
+2 CONT 
+2 CONT To conceal the fact that Lord Voldemort's face was on the back of his 
+2 CONC head, Quirrell decided to wear the turban, hiding its purpose with a s
+2 CONC tory that it had been given to him by an African prince as a thank-you
+2 CONC  for getting rid of a troublesome zombie. In order to keep Voldemort a
+2 CONC live, he started killing unicorns in the Forbidden Forest and drinking
+2 CONC  their blood.
+2 CONT 
+2 CONT On Halloween Quirrell let the troll in as a diversion, and went to the
+2 CONC  third-floor corridor where the Stone was now hidden. Severus Snape, w
+2 CONC ho already suspected Quirrell, went to the third floor in order to sto
+2 CONC p him. Snape was bitten by Fluffy.
+2 CONT 
+2 CONT In order to figure out how to get past Fluffy, Quirrell got Hagrid dru
+2 CONC nk, and gave him a dragon's egg, something Hagrid had always wanted. Q
+2 CONC uirrell sent a letter to Dumbledore, telling him to go to the Ministry
+2 CONC  of Magic; Quirrell took advantage of his absence to try to reach the 
+2 CONC Stone, and was pursued - unwittingly, as they thought they were pursui
+2 CONC ng Snape - by Harry, Ron and Hermione.
+2 CONT 
+2 CONT During Harry's final encounter with him - at which Voldemort reveals h
+2 CONC imself on the back of Quirrell's head and speaks directly to Harry - Q
+2 CONC uirrell is killed. Due to the lingering protection from Lily Potter's 
+2 CONC sacrifice of love for her son, Quirrell is unable to touch Harry witho
+2 CONC ut suffering extreme pain. Although Harry is rendered unconscious, he 
+2 CONC holds off Quirrell long enough for aid to arrive, at which point Volde
+2 CONC mort flees in his spirit form. His departure causes Quirrell's death, 
+2 CONC hence Dumbledore's comment that Voldemort is as merciless to his follo
+2 CONC wers as to his enemies. 
+2 CONT 
+2 CONT 
+0 @occu00044@ Occupation
+1 TITL Astronomy Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE Her classes are held at midnight on the top of the Astronomy Tower, th
+2 CONC e tallest tower of Hogwarts which is otherwise out of bounds for stude
+2 CONC nts.
+0 @occu00045@ Occupation
+1 TITL Head of Slytherin
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1930
+1 DATEEND 1980
+0 @occu00046@ Occupation
+1 TITL Potions Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1930
+1 DATEEND 1980
+1 NOTE During his long initial period of employment at Hogwarts, Slughorn tau
+2 CONC ght several of the main characters in the Harry Potter story. Among hi
+2 CONC s pupils were a young Severus Snape and Lily Evans, Harry's mother and
+2 CONC  one of Slughorn's favourite students, whom he repeatedly praises as "
+2 CONC one of the brightest I ever taught...vivacious...charming...cheeky". S
+2 CONC ignificantly, however, an earlier cohort of students included Tom Marv
+2 CONC olo Riddle. On one occasion, Riddle questioned Slughorn about Horcruxe
+2 CONC s, artifacts which could act as vessels for pieces of a person's soul 
+2 CONC in order to grant immortality. Having learnt of the nature of Horcruxe
+2 CONC s, Riddle went on to perform the necessary Dark magic to create his ow
+2 CONC n Horcruxes, which contributed to his formidable power in his later re
+2 CONC ign of terror under his assumed name of Lord Voldemort.
+0 @occu00047@ Occupation
+1 TITL Head of Slytherin
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1996
+1 DATEEND 1997
+0 @occu00048@ Occupation
+1 TITL Potions Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1996
+1 DATEEND 1997
+1 NOTE Slughorn is keen to build connections, and makes a habit of hosting re
+2 CONC gular receptions for students who are famous, related to famous people
+2 CONC , or gifted or talented in one way or another. Known as "The Slug Club
+2 CONC ", this coterie of students is at the core of Slughorn's constant roun
+2 CONC d of dinners, parties and receptions. In this way he also demonstrates
+2 CONC  that he is prone to show a large amount of favouritism
+0 @occu00049@ Occupation
+1 TITL Divination Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1979
+1 DURATION 17
+1 NOTE Harry and his friends Ron Weasley and Hermione Granger believe Trelawn
+2 CONC ey is a fraud, with which the teachers are inclined to agree. Her cred
+2 CONC ibility as a Seer is undermined by her habit of making repeated predic
+2 CONC tions each year that one of her students will die - pronouncements whi
+2 CONC ch have never yet come true.
+2 CONT 
+2 CONT In Harry's third year (his first in Divination), Trelawney began to pr
+2 CONC edict his imminent demise. During every class thereafter, she continue
+2 CONC d to insinuate that his death could come at any time, to the great irr
+2 CONC itation of Harry and his friends. Eventually, in part due to this habi
+2 CONC t of Trelawney's, Hermione dropped the class. Harry and Ron continued 
+2 CONC Divination studies until their fifth year, at the end of which they fa
+2 CONC iled the exams and could not continue further - although neither was u
+2 CONC pset about this.
+2 CONT 
+2 CONT In 1996, Professor Trelawney was put on probation by Dolores Umbridge,
+2 CONC  Hogwarts High Inquisitor. This news pushed Trelawney into a spiral of
+2 CONC  alcohol-induced paranoia, and she was subsequently seen around the sc
+2 CONC hool clutching a bottle of cooking sherry and moaning about her victim
+2 CONC isation at Umbridge's hands.
+2 CONT 
+2 CONT Her fears were proved justified when Umbridge dismissed Trelawney, alt
+2 CONC hough Dumbledore exercised his remaining authority as Headmaster to pr
+2 CONC event Umbridge from evicting Trelawney to boot. In Harry Potter and th
+2 CONC e Half-Blood Prince it is revealed that Dumbledore feared for Trelawne
+2 CONC y's safety if she ventured outside the school, since Lord Voldemort wo
+2 CONC uld probably want to obtain from her the prediction she made concernin
+2 CONC g him. Dumbledore employed a centaur named Firenze as Trelawney's repl
+2 CONC acement. Trelawney was reinstated after Umbridge was ousted from the s
+2 CONC chool and returned to the Ministry of Magic. Much to her displeasure, 
+2 CONC Trelawney now shared responsibility for teaching Divination with Firen
+2 CONC ze.
+0 @occu00050@ Occupation
+1 TITL Arithmancy Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE Since Harry doesn't take her subject, she appears very rarely, and has
+2 CONC  no spoken lines. She likes to give her pupils plenty of complicated h
+2 CONC omework. Arithmancy is Hermione's favourite subject.
+0 @occu00051@ Occupation
+1 TITL Apparation Teacher
+1 COMPANY Ministry of magic
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 NOTE Wilkie Twycross is a Ministry of Magic approved teacher, who teaches H
+2 CONC ogwarts students over the age of 17, or students that will turn 17 bef
+2 CONC ore the upcoming school year, a twelve week course in apparation. He i
+2 CONC s much despised by students. He is also famous for teaching the method
+2 CONC  of the three D's (Destination, Deliberation and Determination), which
+2 CONC  is almost as unpopular as Wilkie Twycross himself.
+2 CONT 
+2 CONT 
+2 CONT 
+0 @occu00052@ Occupation
+1 TITL Defense Against the Dark Arts Professor
+1 COMPANY Hogwarts
+1 PLAC Hogwarts
+2 _XREF @place00002@
+1 DATESTART 1994
+1 DATEEND 1995
+1 NOTE Moody was appointed as the Defence Against the Dark Arts teacher at Ho
+2 CONC gwarts. Before the school year began, however, he was locked up in a c
+2 CONC hest by Barty Crouch Jr, a faithful follower of Voldemort, who used a 
+2 CONC Polyjuice Potion to take his form in order to replace him. Moody owes 
+2 CONC his life to the fact that one ingredient of the Polyjuice Potion is a 
+2 CONC part of the person whose form is to be assumed, such as a tuft of hair
+2 CONC . Crouch Jr. needed to keep him alive, under the Imperius Curse, so he
+2 CONC  would be able to use his hair in the potion and question him. Moody's
+2 CONC  habit of carrying his own drink in a private hip flask allowed Crouch
+2 CONC  to take the Potion regularly without raising suspicion.
+0 @occu00053@ Occupation
+1 TITL Auror
+0 @occu00054@ Occupation
+1 TITL Message deliverer
+1 NOTE She is able to find and deliver a message to any person without any di
+2 CONC rections, and possesses humanlike personality and intelligence.
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Hostile
+1 ENTITY1 @ind00004@
+1 ENTITY2 @ind00001@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK HostileFused
+1 ENTITY1 @ind00001@
+1 ENTITY2 @ind00005@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Intimacy
+1 ENTITY1 @ind00001@
+1 ENTITY2 @ind00016@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Intimacy
+1 ENTITY1 @ind00001@
+1 ENTITY2 @ind00018@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Violence
+1 ENTITY1 @ind00005@
+1 ENTITY2 @ind00007@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Violence
+1 ENTITY1 @ind00005@
+1 ENTITY2 @ind00006@
+1 POSITION 
+2 POINTS 290,100,160,130
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Friendship
+1 ENTITY1 @ind00009@
+1 ENTITY2 @ind00006@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Friendship
+1 ENTITY1 @ind00010@
+1 ENTITY2 @ind00001@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Friendship
+1 ENTITY1 @ind00008@
+1 ENTITY2 @ind00001@
+1 POSITION 
+2 POINTS -80,-200
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Hostile
+1 ENTITY1 @ind00023@
+1 ENTITY2 @ind00006@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Hostile
+1 ENTITY1 @ind00023@
+1 ENTITY2 @ind00001@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK AbuseNeglect
+1 ENTITY1 @ind00003@
+1 ENTITY2 @ind00001@
+1 POSITION 
+2 POINTS -70,60
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Friendship
+1 ENTITY1 @ind00024@
+1 ENTITY2 @ind00001@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Discord
+1 ENTITY1 @ind00031@
+1 ENTITY2 @ind00029@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Hostile
+1 ENTITY1 @ind00030@
+1 ENTITY2 @ind00098@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Fused
+1 ENTITY1 @ind00032@
+1 ENTITY2 @ind00033@
+1 POSITION 
+2 POINTS 20,0
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK InLove
+1 ENTITY1 @ind00098@
+1 ENTITY2 @ind00035@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Hostile
+1 ENTITY1 @ind00034@
+1 ENTITY2 @ind00098@
+1 POSITION 
+2 POINTS 90,-120
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK InLove
+1 ENTITY1 @ind00118@
+1 ENTITY2 @ind00001@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Intimacy
+1 ENTITY1 @ind00119@
+1 ENTITY2 @ind00120@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Friendship
+1 ENTITY1 @ind00127@
+1 ENTITY2 @ind00121@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Limerence
+1 ENTITY1 @ind00127@
+1 ENTITY2 @ind00123@
+1 POSITION 
+2 POINTS 180,110
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Limerence
+1 ENTITY1 @ind00113@
+1 ENTITY2 @ind00112@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Abuse
+1 ENTITY1 @ind00114@
+1 ENTITY2 @ind00113@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Fan
+1 ENTITY1 @ind00133@
+1 ENTITY2 @ind00122@
+1 POSITION 
+2 POINTS 70,130
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Limerence
+1 ENTITY1 @ind00135@
+1 ENTITY2 @ind00122@
+1 POSITION 
+2 POINTS 120,130
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Friendship
+1 ENTITY1 @ind00150@
+1 ENTITY2 @ind00151@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Friendship
+1 ENTITY1 @ind00150@
+1 ENTITY2 @ind00149@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Friendship
+1 ENTITY1 @ind00155@
+1 ENTITY2 @ind00146@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Other
+1 ENTITY1 @ind00158@
+1 ENTITY2 @ind00157@
+1 POSITION 
+2 POINTS -580,100
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Other
+1 ENTITY1 @ind00159@
+1 ENTITY2 @ind00157@
+1 POSITION 
+2 POINTS -520,100
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Fused
+1 ENTITY1 @ind00189@
+1 ENTITY2 @ind00184@
+0 EMOTIONALRELATIONSHIP 
+1 EMOTIONALLINK Intimacy
+1 ENTITY1 @ind00191@
+1 ENTITY2 @ind00005@
+0 @twin00001@ Twin
+1 TWINLINK Identical
+1 FAMILY @fam00006@
+1 POSITION 23
+0 LABEL 
+1 POSITION -660,1650
+2 SIZE L
+2 GENOMAP Black
+2 WIDTH 260
+2 HEIGHT 120
+1 TEXT The Noble and Most Ancient House of Black
+2 CONT Toujours Pur
+2 PADDING 10
+1 DISPLAY 
+2 COLOR 
+3 TEXT #000000
+3 FILL #C0C0C0
+3 BORDER #000000
+0 @entity00001@ SocialEntity
+1 POSITION -150,75
+2 GENOMAP Hogwarts
+2 WIDTH 160
+2 HEIGHT 215
+1 TEXT Hogwarts School of Witchcraft and Wizardry
+2 CONT 
+2 CONT Location Scotland, United Kingdom
+2 CONT 
+2 CONT Established Circa. 1000 
+2 CONT 
+2 CONT Motto: Draco dormiens nunquam titillandus
+2 CONT (A Sleeping Dragon Must Never be Tickled) 
+2 PADDING 10
+2 ALIGNMENT 
+3 VERTICAL Top
+1 DISPLAY 
+2 COLOR 
+3 TEXT #000000
+3 FILL #B1B165
+3 BORDER #000000
+1 NOTE Head Albus Dumbledore [HP1] to [HP6] 
+2 CONT Enrollment Children with Magical potential are enrolled at birth for a
+2 CONC dmission at age 11. 
+2 CONT Students at Hogwarts are divided into four houses, each bearing the na
+2 CONC me of one of the school's original founders. Students are assigned to 
+2 CONC a house based on their particular academic and personal strengths and 
+2 CONC weaknesses. The houses are:
+2 CONT Gryffindor, characterised by valour and courage, founded by Godric Gry
+2 CONC ffindor; 
+2 CONT Hufflepuff, characterised by loyalty and fairness, founded by Helga Hu
+2 CONC fflepuff; 
+2 CONT Ravenclaw, characterised by wit and intellect, founded by Rowena Raven
+2 CONC claw; and 
+2 CONT Slytherin, characterised by ambition and cunning, founded by Salazar S
+2 CONC lytherin. 
+2 CONT 
+0 @entity00002@ SocialEntity
+1 POSITION 30,250
+2 SIZE L
+2 GENOMAP Hogwarts
+2 WIDTH 430
+2 HEIGHT 310
+1 TEXT Gryffindor House
+2 CONT Founded by Godric Gryffindor
+2 CONT Characterized by valour and courage
+2 PADDING 10
+2 ALIGNMENT 
+3 HORIZONTAL Left
+3 VERTICAL Top
+1 DISPLAY 
+2 COLOR 
+3 TEXT #000000
+3 FILL #B90000
+3 BORDER #C5B43A
+1 COLOURS Scarlet and gold
+1 HEAD_OF_HOUSE Minerva McGonegall
+1 HOUSE_GHOST Nearly Headless Nick
+1 VALUES Courage, chivalry and boldness
+1 EMBLEMATIC_ANIMAL Lion
+1 LOCATION Located in one of the castle's towers, the entrance to which is locate
+2 CONC d on the seventh floor
+0 @entity00003@ SocialEntity
+1 POSITION 30,-70
+2 SIZE L
+2 GENOMAP Hogwarts
+2 WIDTH 430
+2 HEIGHT 270
+1 TEXT Hufflepuff House
+2 CONT Founded by Helda Hufflepuff
+2 CONT Characterized by loyalty and a hard work ethic
+2 CONT 
+2 PADDING 10
+2 ALIGNMENT 
+3 HORIZONTAL Left
+3 VERTICAL Top
+1 DISPLAY 
+2 COLOR 
+3 TEXT #000000
+3 FILL #F0EB0F
+3 BORDER #000000
+1 COLOURS Yellow and black
+1 HEAD_OF_HOUSE Pomona Sprout
+1 HOUSE_GHOST Fat Friar
+1 VALUES Hard work, patience, friendship, justice and fair play
+1 EMBLEMATIC_ANIMAL Badger
+1 LOCATION Located somewhere in the basement, near the castle's kitchens
+0 @entity00004@ SocialEntity
+1 POSITION -620,250
+2 SIZE L
+2 GENOMAP Hogwarts
+2 WIDTH 460
+2 HEIGHT 310
+1 TEXT Slytherin House
+2 CONT Founded by Salazar Slytherin
+2 CONT Characterized by ambition and cunning
+2 CONT 
+2 PADDING 10
+2 ALIGNMENT 
+3 HORIZONTAL Left
+3 VERTICAL Top
+1 DISPLAY 
+2 COLOR 
+3 TEXT #000000
+3 FILL #99D771
+3 BORDER #C0C0C0
+1 COLOURS Green and silver
+1 HEAD_OF_HOUSE Severus Snape and Horace Slughorn
+1 HOUSE_GHOST Bloody Baron
+1 VALUES Ambition and cunning
+1 EMBLEMATIC_ANIMAL Snake
+1 LOCATION Located underneath the Hogwarts lake, and reached through a bare stone
+2 CONC  wall in the dungeons
+0 @entity00005@ SocialEntity
+1 POSITION -620,-70
+2 SIZE L
+2 GENOMAP Hogwarts
+2 WIDTH 460
+2 HEIGHT 270
+1 TEXT Ravenclaw House
+2 CONT Founded by Rowena Ravenclaw
+2 CONT Characterized by wit and intellect
+2 PADDING 10
+2 ALIGNMENT 
+3 HORIZONTAL Left
+3 VERTICAL Top
+1 DISPLAY 
+2 COLOR 
+3 TEXT #000000
+3 FILL #6FD0FF
+3 BORDER #808000
+1 COLOURS Blue and bronze
+1 HEAD_OF_HOUSE Filius Flitwick
+1 HOUSE_GHOST Grey Lady
+1 VALUES Intelligence, knowledge and wit
+1 EMBLEMATIC_ANIMAL Eagle
+1 LOCATION Located in a tower on the west side of the school
+0 @entity00006@ SocialEntity
+1 POSITION -350,-380
+2 SIZE L
+2 GENOMAP Hogwarts
+2 WIDTH 530
+2 HEIGHT 430
+1 TEXT Staff
+2 PADDING 10
+2 ALIGNMENT 
+3 HORIZONTAL Left
+3 VERTICAL Top
+1 DISPLAY 
+2 COLOR 
+3 TEXT #000000
+3 FILL #8BB491
+3 BORDER #000000
+0 @entity00007@ SocialEntity
+1 POSITION 80,-270
+2 WIDTH 330
+2 HEIGHT 80
+1 TEXT Note: Names and descriptions have been collected from the Harry Potter
+2 CONC  books written by J.K. Rowling and from Wikipedia, the free on-line en
+2 CONC cyclopedia (www.wikipedia.org)
+2 PADDING 10
+2 ALIGNMENT 
+3 VERTICAL Top
+1 DISPLAY 
+2 COLOR 
+3 TEXT #000000
+3 FILL #00FFFF
+3 BORDER #000000
+0 @entity00008@ SocialEntity
+1 POSITION -140,360
+2 SIZE L
+2 GENOMAP Hogwarts
+2 WIDTH 140
+2 HEIGHT 130
+1 TEXT Other residents
+2 PADDING 10
+2 ALIGNMENT 
+3 VERTICAL Top
+1 DISPLAY 
+2 COLOR 
+3 TEXT #000000
+3 FILL #FFB693
+3 BORDER #000000
+0 SOCIALRELATIONSHIP 
+1 CONNECTION Other
+1 ENTITY1 ind00008
+1 ENTITY2 ind00001
+1 DISPLAY 
+2 COLOR 
+3 LINE #008080
+2 ARROW 
+3 END Y
+1 NOTE Headmaster and friend to Harry Potter
+0 SOCIALRELATIONSHIP 
+1 CONNECTION Other
+1 ENTITY1 ind00117
+1 ENTITY2 ind00114
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+1 NOTE Ancestor of Marvolo Gaunt
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00185
+1 ENTITY2 ind00018
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00187
+1 ENTITY2 ind00016
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00186
+1 ENTITY2 ind00172
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00190
+1 ENTITY2 ind00008
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00192
+1 ENTITY2 ind00024
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00193
+1 ENTITY2 ind00118
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00194
+1 ENTITY2 ind00010
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00195
+1 ENTITY2 ind00010
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00196
+1 ENTITY2 ind00010
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00197
+1 ENTITY2 ind00010
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00198
+1 ENTITY2 ind00036
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00199
+1 ENTITY2 ind00010
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00200
+1 ENTITY2 ind00037
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00201
+1 ENTITY2 ind00001
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00202
+1 ENTITY2 ind00031
+1 POSITION 
+2 POINTS -50,-80
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00203
+1 ENTITY2 ind00029
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 SOCIALRELATIONSHIP 
+1 ENTITY1 ind00202
+1 ENTITY2 ind00028
+1 POSITION 
+2 POINTS 90,-80
+1 DISPLAY 
+2 COLOR 
+3 LINE #000000
+2 ARROW 
+3 END Y
+0 TRLR

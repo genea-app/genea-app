@@ -1,0 +1,1 @@
+https://unpkg.com/@hpcc-js/wasm@0.3.14/dist/index.min.js
