@@ -16,10 +16,28 @@ var Gedcom = (function() {
     Gedcom.prototype.parse = function(data) {
         var regex1 = /(?<level>[0-9]+)\s+(?<pointer>@[^@]+@ |)(?<tag>[_a-zA-Z0-9]+)(?: |)(?<value>[^\n\r]*)|(?<invalid>[^\n\r]*)/g;
         var regex2 = /(?<level>[0-9]+)\s+(?<pointer>@[^@]+@ |)(?<tag>[_a-zA-Z0-9]+)(?: |)(?<value>[^\n\r]*)|(?<invalid>[^\n\r]*)/;
+        /*
+        Firefox RegExp named groups fix:
+        var regex1 = /([0-9]+)\s+(@[^@]+@ |)([_a-zA-Z0-9]+)(?: |)([^\n\r]*)|([^\n\r]*)/g;
+        var regex2 = /([0-9]+)\s+(@[^@]+@ |)([_a-zA-Z0-9]+)(?: |)([^\n\r]*)|([^\n\r]*)/;
+        */
         // Parse individual rows into array, then parse each row into object{level, pointer(optional), tag, value(optional)}
         var dataArray = data
             .match(regex1) // Parse rows
             .map(row => row.match(regex2).groups) // Parse items
+            /*
+            Firefox RegExp named groups fix:
+            .map(function(row) {
+                var match = row.match(regex2);
+                return {
+                    level: match[1],
+                    pointer: match[2],
+                    tag: match[3],
+                    value: match[4],
+                    invalid: match[5]
+                };
+            })
+            */
             .reduce(function(rows, item) {
                 // Preprocess data in order to include all lines that are not in valid GEDCOM format, by concatenating their value to the previous line. Also process CONC and CONT tags.
                 if (item.tag == "CONC") {
