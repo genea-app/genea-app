@@ -14,17 +14,20 @@ Vue.component('relations', {
                         <ul class="collection with-header" :key="relation.id">
                             <li class="collection-header">
                                 <h4>
-                                    <a href="#!" class="black-text">{{relation.partner.caption}}</a>
-                                    <a href="#!" class="" style="float: right;" v-on:click="unlinkPartner(relation.id);" v-if="relation.children.length==0"><i class="material-icons">link_off</i></a>
+                                    <a href="#" class="black-text" v-on:click="openPerson(relation.partner.id)">{{relation.partner.caption}}</a>
+                                    <a href="#" style="float: right;" v-on:click="unlinkPartner(relation.id);" v-if="relation.children.length==0"><i class="material-icons">link_off</i></a>
                                 </h4>
                             </li>
                             <li v-for="(child, childIndex) in relation.children" :key="child.id" class="collection-item">
-                                <a href="#!">{{child.caption}}</a>
-                                <a href="#!" class="secondary-content" v-on:click="unlinkChild(child.id);"><i class="material-icons">link_off</i></a>
+                                <a href="#" v-on:click="openPerson(child.id)">{{child.caption}}</a>
+                                <a href="#" class="secondary-content" v-on:click="unlinkChild(child.id);"><i class="material-icons">link_off</i></a>
                             </li>
                         </ul>
                         <a class="waves-effect waves-light btn" v-on:click="addChild(index)"><i class="material-icons left">person_add</i>Add child</a>
                     </template>
+                    <div v-if="!person.relations || person.relations.length==0">
+                        No relations or children. Click the Add button to add a new relation.
+                    </div>
                 </div>
             </div>
 
@@ -179,6 +182,9 @@ Vue.component('relations', {
         },
         clearModal: function() {
             this.modalAdd = {};
+        },
+        openPerson: function(id) {
+            stamboom.select(id);
         }
     }
 });

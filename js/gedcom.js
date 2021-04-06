@@ -14,21 +14,22 @@ var Gedcom = (function() {
 
     // Parse a GEDCOM file into a javascript object
     Gedcom.prototype.parse = function(data) {
+        /*
+        Todo: Use this instead of below when Firefox finally fixes their RegExp engine.
         var regex1 = /(?<level>[0-9]+)\s+(?<pointer>@[^@]+@ |)(?<tag>[_a-zA-Z0-9]+)(?: |)(?<value>[^\n\r]*)|(?<invalid>[^\n\r]*)/g;
         var regex2 = /(?<level>[0-9]+)\s+(?<pointer>@[^@]+@ |)(?<tag>[_a-zA-Z0-9]+)(?: |)(?<value>[^\n\r]*)|(?<invalid>[^\n\r]*)/;
-        /*
-        Firefox RegExp named groups fix:
+        */
         var regex1 = /([0-9]+)\s+(@[^@]+@ |)([_a-zA-Z0-9]+)(?: |)([^\n\r]*)|([^\n\r]*)/g;
         var regex2 = /([0-9]+)\s+(@[^@]+@ |)([_a-zA-Z0-9]+)(?: |)([^\n\r]*)|([^\n\r]*)/;
-        */
         // Parse individual rows into array, then parse each row into object{level, pointer(optional), tag, value(optional)}
         var dataArray = data
             .match(regex1) // Parse rows
-            .map(row => row.match(regex2).groups) // Parse items
             /*
-            Firefox RegExp named groups fix:
+            Todo: Use this instead of below when Firefox finally fixes their RegExp engine.
+            .map(row => row.match(regex2).groups) // Parse items
+            */
             .map(function(row) {
-                var match = row.match(regex2);
+                var match = row.match(regex2); // Parse items
                 return {
                     level: match[1],
                     pointer: match[2],
@@ -37,7 +38,6 @@ var Gedcom = (function() {
                     invalid: match[5]
                 };
             })
-            */
             .reduce(function(rows, item) {
                 // Preprocess data in order to include all lines that are not in valid GEDCOM format, by concatenating their value to the previous line. Also process CONC and CONT tags.
                 if (item.tag == "CONC") {
@@ -168,7 +168,7 @@ var Gedcom = (function() {
 
     // Create a new person
     Gedcom.prototype.addPerson = function(givenName, surName, gender) {
-        var personId = "@I" + (this.data.filter(item => item.tag == "INDI").map(item => parseInt(item.pointer.replace(/[^\d]/g, ''))).reduce((a, b) => Math.max(a, b)) + 1) + "@";
+        var personId = "@I" + (this.data.filter(item => item.tag == "INDI").map(item => parseInt(item.pointer.replace(/[^\d]/g, ''))).reduce((a, b) => Math.max(a, b), []) + 1) + "@";
         this.data.push({
             "level": 0,
             "pointer": personId,
@@ -202,10 +202,9 @@ var Gedcom = (function() {
     }
 
     Gedcom.prototype.addRelation = function(partner1Id, partner2Id) {
-        var relationId = "@F" + (this.data.filter(item => item.tag == "FAM").map(item => parseInt(item.pointer.replace(/[^\d]/g, ''))).reduce((a, b) => Math.max(a, b)) + 1) + "@";
+        var relationId = "@F" + (this.data.filter(item => item.tag == "FAM").map(item => parseInt(item.pointer.replace(/[^\d]/g, ''))).reduce((a, b) => Math.max(a, b), []) + 1) + "@";
         var partner1 = this.person(partner1Id);
         var partner2 = this.person(partner2Id);
-        debugger;
         this.data.push({
             "level": 0,
             "pointer": relationId,
