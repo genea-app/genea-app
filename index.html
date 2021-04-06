@@ -5,6 +5,8 @@
     <title>Genea.app</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Genea is a free tool to author your family tree without an account. Genea gives you complete control over where to store your GEDCOM ancestry heritage data." />
+    <meta name="keywords" content="genea,genealogy,software,free,open source,gedcom,family tree,family lineage,heritage,myheritage,web based,online,genealogist,historian,ancestors,archive,ancestry,legacy,birth,death,funeral,marriage,privacy by design" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Dependencies -->
     <script src="resources/vuejs/vue.js"></script>
@@ -15,17 +17,89 @@
     <link href="resources/googlefonts/materialicons.css" rel="stylesheet">
     <link rel="stylesheet" href="resources/materialize/css/materialize.min.css">
     <!-- Genea.app -->
+    <link rel="stylesheet" href="css/style.css" />
     <script type="application/javascript" src="js/tags.js"></script>
     <script type="application/javascript" src="js/gedcom.js"></script>
     <script type="application/javascript" src="js/stamboom.js"></script>
     <script type="application/javascript" src="components/personaldetails.js"></script>
     <script type="application/javascript" src="components/relations.js"></script>
     <script type="application/javascript" src="components/debug.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
     <div id="genea">
+
+        <!-- Start -->
+        <div id="overlay" v-if="page=='start'" class="container" style="max-width: 600px;">
+            <h1 class="header">Genea.app</h1>
+            <div class="divider"></div>
+            <div class="section">
+                <h4 class="light">Build and edit your family tree; completely free!</h4>
+                <p style="text-align: justify;">
+                    Genea is a <a href="https://en.wikipedia.org/wiki/Privacy_by_design" target="_blank">privacy by design</a> and <a href="https://github.com/genea-app/genea-app" target="_blank">open source</a> tool anyone can use to author or edit their
+                    family tree. Your data is formatted following the <a href="https://www.gedcom.org/" target="_blank">GEDCOM</a> specifications so it can be exchanged with other genealogy services. All processing is done in the browser, leaving you
+                    in control on where to save your data, avoiding any type of vendor lock-in.
+                </p>
+                <p style="text-align: justify;">
+                    You can use Genea both on your mobile devices as well as on your desktop. The changes you make are persistently stored on your device. To transfer the data between devices, be sure to save the GEDCOM file when you are done and exchange it for example
+                    via e-mail or using a cloud service like Dropbox.
+                </p>
+            </div>
+            <div class="section" v-if="isLocalStorage()">
+                <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='chart'; loadLocalStorage()">
+                    <i class="material-icons left">sync</i>
+                    Continue with current family tree
+                </button>
+            </div>
+            <div class="section">
+                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('new')">
+                    <i class="material-icons left">create</i>
+                    Start new family tree
+                </button>
+                <label class="btn-large waves-effect waves-light">
+					<i class="material-icons left">get_app</i>
+					Load GEDCOM
+					<input type="file" style="display: none;" v-on:change="loadFile">
+				</label>
+            </div>
+            <div class="section">
+                <h4 class="light">Examples</h4>
+                <p>
+                    Explore Genea with these sample trees.
+                </p>
+            </div>
+            <div class="section">
+                <div class="collection left-align">
+                    <a href="#!" v-on:click="loadExample('royal92')" class="collection-item avatar">
+                        <span class="title">Royal '92</span>
+                        <img src="sample/royal92.png" alt="" class="circle">
+                        <p>Features the Kings and Queens of Europe, including Great Britain. Published back in 1992 by Denis R. Reid it is perhaps a little out of date, but it is a classic.</p>
+                    </a>
+                    <a href="#!" v-on:click="loadExample('pres2020')" class="collection-item avatar">
+                        <span class="title">Presidents 2020</span>
+                        <img src="sample/pres2020.png" alt="" class="circle">
+                        <p>An excellent collection of the presidents of the US, with their ancestors and descendants updated to 2020 by Paul Stobbe.</p>
+                    </a>
+                    <a href="#!" v-on:click="loadExample('harrypotter')" class="collection-item avatar">
+                        <span class="title">Harry Potter</span>
+                        <img src="sample/harrypotter.png" alt="" class="circle">
+                        <p>Fictional family tree for the Harry Potter series, created by famousfamilytrees.blogspot.com.</p>
+                    </a>
+                </div>
+            </div>
+            <div class="section" v-if="isDebug()">
+                <h4 class="light">Debug</h4>
+            </div>
+            <div class="section" v-if="isDebug()">
+                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('gedcom1')">Debug Example 1</button>
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <p>
+                    <a href="mailto:contact@genea.app" target="_blank">contact</a> - <a href="https://github.com/genea-app/genea-app" target="_blank">github</a> - <a href="https://github.com/genea-app/genea-app/blob/main/LICENSE" target="_blank">license</a>
+                </p>
+            </div>
+        </div>
 
         <!-- App -->
         <header v-show="Object.keys(person).length > 0">
@@ -117,54 +191,6 @@
                 <debug :debug="debug" />
             </div>
         </main>
-
-        <!-- Start -->
-        <div id="overlay" v-if="page=='start'" class="container" style="max-width: 600px;">
-            <h1 class="header">Genea.app</h1>
-            <div class="section">
-                <h4 class="light">Build and edit your family tree; completely free!</h4>
-                <p style="text-align: justify;">
-                    Genea is a <a href="https://en.wikipedia.org/wiki/Privacy_by_design" target="_blank">privacy by design</a> and <a href="https://github.com/genea-app/genea-app" target="_blank">open source</a> tool anyone can use to author or edit their
-                    family tree. Your data is formatted following the <a href="https://www.gedcom.org/" target="_blank">GEDCOM</a> specifications so it can be exchanged with other genealogy services. All processing is done in the browser, leaving you
-                    in control on where to save your data.
-                </p>
-                <p style="text-align: justify;">
-                    You can use Genea both on your mobile devices as well as on your desktop. The changes you make are persistently stored on your device. To transfer the data between devices, be sure to save the GEDCOM file when you are done and exchange it for example
-                    via e-mail or using a cloud service like Dropbox.
-                </p>
-            </div>
-            <div class="section" v-if="isLocalStorage()">
-                <button class="btn-large waves-effect waves-light" v-on:click="page='chart'; loadLocalStorage()">
-                    <i class="material-icons left">sync</i>
-                    Continue with current family tree
-                </button>
-            </div>
-            <div class="section">
-                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('new')">
-                    <i class="material-icons left">create</i>
-                    Start new family tree
-                </button>
-                <label class="btn-large waves-effect waves-light">
-					<i class="material-icons left">get_app</i>
-					Load GEDCOM
-					<input type="file" style="display: none;" v-on:change="loadFile">
-				</label>
-            </div>
-            <div class="section">
-                <h4 class="light">Examples</h4>
-                <p>
-                    Explore Genea using these sample trees.
-                </p>
-            </div>
-            <div class="section">
-                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('royal92')">Royal '92</button>
-                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('pres2020')">Presidents 2020</button>
-                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('harrypotter')">Harry Potter</button>
-            </div>
-            <div class="section" v-if="isDebug()">
-                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('gedcom1')">Debug Example 1</button>
-            </div>
-        </div>
 
     </div>
 
@@ -334,25 +360,28 @@
     <script type="application/javascript">
         M.AutoInit();
         M.Sidenav.init(document.querySelector('.sidenav'));
-        window.setTimeout(function() {
-            M.Autocomplete.init(document.querySelector('#search'), {
-                data: (function() {
-                    var persons = stamboom.getPersons();
-                    persons = Object.fromEntries(persons.map(person => [person.caption]));
-                    return persons;
-                })(),
-                onAutocomplete: function(selection) {
-                    var person = stamboom.getPersons().find(person => person.caption == selection);
-                    if (person && person.id) {
-                        genea.page = 'chart';
-                        stamboom.select(person.id);
-                    } else {
-                        alert("Person not found.");
+        document.addEventListener("click", function(e) {
+            if (e.target && e.target.id == "search") {
+                // (Re)populate data in Search autocomplete any time the field is activated
+                M.Autocomplete.init(document.querySelector('#search'), {
+                    data: (function() {
+                        var persons = stamboom.getPersons();
+                        persons = Object.fromEntries(persons.map(person => [person.caption]));
+                        return persons;
+                    })(),
+                    onAutocomplete: function(selection) {
+                        var person = stamboom.getPersons().find(person => person.caption == selection);
+                        if (person && person.id) {
+                            genea.page = 'chart';
+                            stamboom.select(person.id);
+                        } else {
+                            alert("Person not found.");
+                        }
+                        this.el.value = "";
                     }
-                    this.el.value = "";
-                }
-            });
-        }, 1000);
+                });
+            }
+        });
     </script>
 </body>
 
