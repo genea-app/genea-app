@@ -20,16 +20,17 @@ var Stamboom = (function() {
 
             var selectedPerson;
             var family;
-            var onclickCallback;
             var onselectCallback;
 
             var gedcom = new Gedcom();
 
             // Public properties
+            this.isLoaded = false;
 
             // Public methods
             Stamboom.prototype.load = function(data) {
                 gedcom.parse(data);
+                this.isLoaded = true;
             }
 
             Stamboom.prototype.save = function() {
@@ -86,10 +87,6 @@ var Stamboom = (function() {
             }
 
 
-            Stamboom.prototype.onclick = function(callback) {
-                onclickCallback = "Stamboom_onclick_" + Math.random();
-                window[onclickCallback] = callback;
-            }
             Stamboom.prototype.onselect = function(callback) {
                 onselectCallback = callback;
             }
@@ -119,7 +116,7 @@ var Stamboom = (function() {
                     draw: function(person) {
                         return `` +
                             `id="stamboom_${person.id}",` +
-                            (person.id ? `href="javascript:window['${onclickCallback}']('${person.id}');",` : ``) +
+                            (person.id ? `href="#/chart/${person.id}",` : ``) +
                             `color="${node.color(person)}",` +
                             (selectedPerson == person.id ? `style="filled,bold",fillcolor="white",` : ``) +
                             (selectedPerson == person.id ? `class="selectedPerson",` : ``) +
@@ -292,7 +289,9 @@ var Stamboom = (function() {
 			}).then(function (svg) {
 				this.chart.innerHTML = svg;
 				// Scroll selected person into center of the view
-				this.document.getElementsByClassName("selectedPerson")[0].scrollIntoView({ behavior: "auto", inline: "center", block: "center" });
+                if (this.document.getElementsByClassName("selectedPerson")[0]) {
+                    this.document.getElementsByClassName("selectedPerson")[0].scrollIntoView({ behavior: "auto", inline: "center", block: "center" });
+                }
 			}).catch(function (err) {
 				console.error(err.message)
 			});
