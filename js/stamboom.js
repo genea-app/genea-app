@@ -1,7 +1,7 @@
 var Stamboom = (function() {
             // Constructor
             function Stamboom(options) {
-                this.chart = options.chart;
+                this.tree = options.tree;
             }
 
             // Private variables
@@ -116,7 +116,7 @@ var Stamboom = (function() {
                     draw: function(person) {
                         return `` +
                             `id="stamboom_${person.id}",` +
-                            (person.id ? `href="#/chart/${person.id}",` : ``) +
+                            (person.id ? `href="#/tree/${person.id}",` : ``) +
                             `color="${node.color(person)}",` +
                             (selectedPerson == person.id ? `style="filled,bold",fillcolor="white",` : ``) +
                             (selectedPerson == person.id ? `class="selectedPerson",` : ``) +
@@ -287,7 +287,7 @@ var Stamboom = (function() {
 						{ path: "img/unknown.png", width: "512px", height: "682px" }
 					]
 			}).then(function (svg) {
-				this.chart.innerHTML = svg;
+				this.tree.innerHTML = svg;
 				// Scroll selected person into center of the view
                 if (this.document.getElementsByClassName("selectedPerson")[0]) {
                     this.document.getElementsByClassName("selectedPerson")[0].scrollIntoView({ behavior: "auto", inline: "center", block: "center" });
@@ -302,7 +302,7 @@ var Stamboom = (function() {
 
 // Dragging the stamboom
 document.addEventListener('DOMContentLoaded', function () {
-	var dragElement = document.getElementById("chartcontainer");
+	var dragElement = document.getElementById("treecontainer");
 	var dragPosition = { top: 0, left: 0, x: 0, y: 0 };
 	var dragStart = function (e) {
 		dragElement.style.cursor = 'grabbing';

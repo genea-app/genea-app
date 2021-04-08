@@ -46,7 +46,7 @@
                 </p>
             </div>
             <div class="section" v-if="isLocalStorage()">
-                <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='chart'; loadLocalStorage()">
+                <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='tree'; loadLocalStorage()">
                     <i class="material-icons left">sync</i>
                     Continue with current family tree
                 </button>
@@ -102,7 +102,7 @@
         </div>
 
         <!-- App -->
-        <header v-show="Object.keys(person).length > 0" v-cloak>
+        <header v-show="Object.keys(person).length > 0 && page!='start'" v-cloak>
             <a data-target="nav-mobile" class="top-nav sidenav-trigger btn-floating btn-large teal lighten-3 waves-effect waves-light hide-on-large-only" style="margin: 15px;">
                 <i class="material-icons">menu</i>
             </a>
@@ -135,11 +135,11 @@
                 <li>
                     <a class="subheader">View</a>
                 </li>
-                <li class="bold sidenav-close" :class="{active: page=='chart'}">
-                    <a :href="'#/chart/' + person.id" class="waves-effect waves-teal"><i class="material-icons">account_tree</i>Family Tree</a>
+                <li class="bold sidenav-close" :class="{active: page=='tree'}">
+                    <a :href="'#/tree/' + person.id" class="waves-effect waves-teal"><i class="material-icons">account_tree</i>Family Tree</a>
                 </li>
-                <li class="bold sidenav-close" :class="{active: page=='details'}">
-                    <a :href="'#/details/' + person.id" class="waves-effect waves-teal"><i class="material-icons">person</i>Personal Details</a>
+                <li class="bold sidenav-close" :class="{active: page=='personaldetails'}">
+                    <a :href="'#/personaldetails/' + person.id" class="waves-effect waves-teal"><i class="material-icons">person</i>Personal Details</a>
                 </li>
                 <li class="bold sidenav-close" :class="{active: page=='relations'}">
                     <a :href="'#/relations/' + person.id" class="waves-effect waves-teal"><i class="material-icons">people</i>Relations and Children</a>
@@ -168,13 +168,13 @@
             </ul>
         </header>
 
-        <main v-show="page=='chart'">
-            <div id="chartcontainer">
-                <div id="chart"></div>
+        <main v-show="page=='tree'">
+            <div id="treecontainer">
+                <div id="tree"></div>
             </div>
         </main>
 
-        <main v-show="page=='details'" class="container">
+        <main v-show="page=='personaldetails'" class="container">
             <div id="index-banner">
                 <personaldetails :person="person" />
             </div>
@@ -198,7 +198,7 @@
     <script type="application/javascript">
         // Bind stamboom
         var stamboom = new Stamboom({
-            chart: document.getElementById("chart")
+            tree: document.getElementById("tree")
         });
 
         // Register to stamboom events
@@ -226,7 +226,7 @@
             },
             mounted: function() {
                 if (this.isLocalStorage()) {
-                    this.page = "chart";
+                    this.page = "tree";
                     window.setTimeout(function() {
                         genea.loadLocalStorage();
                     }, 200);
@@ -248,7 +248,7 @@
             methods: {
                 loadExample: function(example) {
                     if (stamboom.isLoaded && window.confirm("This will clear the family tree you previously had open.")) {
-                        genea.page = "chart";
+                        genea.page = "tree";
                         if (example == "new") {
                             fetch("sample/empty.ged").then(function(response) {
                                 return response.text();
@@ -297,7 +297,7 @@
                         let reader = new FileReader();
                         reader.readAsText(file);
                         reader.onload = function() {
-                            genea.page = "chart";
+                            genea.page = "tree";
                             stamboom.load(reader.result);
                             stamboom.select();
                         };
@@ -360,8 +360,8 @@
         function router() {
             var url = document.location.hash.split("/");
             switch (url[1]) {
-                case "chart":
-                case "details":
+                case "tree":
+                case "personaldetails":
                 case "relations":
                     genea.page = url[1];
                     stamboom.select(url[2]);
@@ -398,7 +398,7 @@
                     onAutocomplete: function(selection) {
                         var person = stamboom.getPersons().find(person => person.caption == selection);
                         if (person && person.id) {
-                            genea.page = 'chart';
+                            genea.page = 'tree';
                             stamboom.select(person.id);
                         } else {
                             alert("Person not found.");
