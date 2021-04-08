@@ -21,6 +21,7 @@
     <script type="application/javascript" src="js/tags.js"></script>
     <script type="application/javascript" src="js/gedcom.js"></script>
     <script type="application/javascript" src="js/stamboom.js"></script>
+    <script type="application/javascript" src="components/tree.js"></script>
     <script type="application/javascript" src="components/personaldetails.js"></script>
     <script type="application/javascript" src="components/relations.js"></script>
     <script type="application/javascript" src="components/debug.js"></script>
@@ -45,7 +46,7 @@
                     via e-mail or using a cloud service like Dropbox.
                 </p>
             </div>
-            <div class="section" v-if="isLocalStorage()">
+            <div class="section" v-if="isLocalStorage()" v-cloak>
                 <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='tree'; loadLocalStorage()">
                     <i class="material-icons left">sync</i>
                     Continue with current family tree
@@ -169,27 +170,19 @@
         </header>
 
         <main v-show="page=='tree'">
-            <div id="treecontainer">
-                <div id="tree"></div>
-            </div>
+            <tree :person="person" />
         </main>
 
         <main v-show="page=='personaldetails'" class="container">
-            <div id="index-banner">
-                <personaldetails :person="person" />
-            </div>
+            <personaldetails :person="person" />
         </main>
 
         <main v-show="page=='relations'" class="container">
-            <div id="index-banner">
-                <relations :person="person" />
-            </div>
+            <relations :person="person" />
         </main>
 
         <main v-show="page=='debug'" class="container">
-            <div id="index-banner">
-                <debug :debug="debug" />
-            </div>
+            <debug :debug="debug" />
         </main>
 
     </div>
@@ -197,21 +190,7 @@
 
     <script type="application/javascript">
         // Bind stamboom
-        var stamboom = new Stamboom({
-            tree: document.getElementById("tree")
-        });
-
-        // Register to stamboom events
-        stamboom.onselect(function(id) {
-            genea.selectedPerson = id;
-            genea.person = stamboom.getPerson(id);
-            genea.person.relations = stamboom.getRelations(id);
-            if (genea.isDebug()) {
-                console.log("Person:", genea.person);
-                console.log("Relations:", genea.person.relations);
-            }
-            document.location.hash = "/" + genea.page + "/" + id
-        });
+        var stamboom = new Stamboom();
 
         // DOM bindings
         var genea = new Vue({
@@ -247,7 +226,7 @@
             },
             methods: {
                 loadExample: function(example) {
-                    if (stamboom.isLoaded && window.confirm("This will clear the family tree you previously had open.")) {
+                    if (!stamboom.isLoaded || window.confirm("This will clear the family tree you previously had open.")) {
                         genea.page = "tree";
                         if (example == "new") {
                             fetch("sample/empty.ged").then(function(response) {
@@ -292,7 +271,7 @@
                     }
                 },
                 loadFile: function(event) {
-                    if (stamboom.isLoaded && window.confirm("This will clear the family tree you previously had open.")) {
+                    if (!stamboom.isLoaded || window.confirm("This will clear the family tree you previously had open.")) {
                         let file = event.srcElement.files[0];
                         let reader = new FileReader();
                         reader.readAsText(file);
@@ -321,10 +300,12 @@
                 },
                 loadLocalStorage: function() {
                     var data = window.localStorage.getItem("stamboom");
-                    var selectedPerson = window.localStorage.getItem("selectedPerson");
                     stamboom.load(data);
-                    stamboom.select(selectedPerson);
                     router();
+                    if (!genea.person.id) {
+                        var selectedPerson = window.localStorage.getItem("selectedPerson");
+                        stamboom.select(selectedPerson);
+                    }
                     window.addEventListener('storage', function(e) {
                         if (e.key == "stamboom") {
                             stamboom.load(e.newValue);
