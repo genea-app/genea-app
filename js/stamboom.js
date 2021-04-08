@@ -1,7 +1,7 @@
 var Stamboom = (function() {
-            // Constructor
-            function Stamboom(options) {
-                this.chart = options.chart;
+
+            function Stamboom() {
+                // Constructor
             }
 
             // Private variables
@@ -20,16 +20,23 @@ var Stamboom = (function() {
 
             var selectedPerson;
             var family;
-            var onclickCallback;
             var onselectCallback;
 
             var gedcom = new Gedcom();
 
             // Public properties
+            this.isLoaded = false;
 
             // Public methods
+            Stamboom.prototype.register = function(options) {
+                this.treecontainer = options.treecontainer;
+                this.tree = options.tree;
+            }
+
             Stamboom.prototype.load = function(data) {
                 gedcom.parse(data);
+                this.isLoaded = true;
+                drag();
             }
 
             Stamboom.prototype.save = function() {
@@ -86,10 +93,6 @@ var Stamboom = (function() {
             }
 
 
-            Stamboom.prototype.onclick = function(callback) {
-                onclickCallback = "Stamboom_onclick_" + Math.random();
-                window[onclickCallback] = callback;
-            }
             Stamboom.prototype.onselect = function(callback) {
                 onselectCallback = callback;
             }
@@ -119,7 +122,7 @@ var Stamboom = (function() {
                     draw: function(person) {
                         return `` +
                             `id="stamboom_${person.id}",` +
-                            (person.id ? `href="javascript:window['${onclickCallback}']('${person.id}');",` : ``) +
+                            (person.id ? `href="#/tree/${person.id}",` : ``) +
                             `color="${node.color(person)}",` +
                             (selectedPerson == person.id ? `style="filled,bold",fillcolor="white",` : ``) +
                             (selectedPerson == person.id ? `class="selectedPerson",` : ``) +
@@ -134,7 +137,6 @@ var Stamboom = (function() {
                             `</td>` +
                             `</tr>` +
                             `</table>>`;
-
                     },
                     label: function(person) {
                         // Format name and split over multiple lines
@@ -238,106 +240,107 @@ var Stamboom = (function() {
                     `\n// ----- Siblings -----\n` +
                     `{rank=same;ParentsChildrenDot${family.siblings.map(function (sibling, x) { return `;Sibling${x}Dot`; }).join("")}}` + `\n` +
 
-			`ParentsChildrenDot` + family.siblings.map(function (sibling, x) { return ` -> Sibling${x}Dot`; }).join("") + `\n` +
-			`ParentsChildrenDot -> Current` + `\n` +
-			family.siblings.map(function (sibling, x) {
-				return `Sibling${x}Dot -> Sibling${x}`;
-			}).join("\n") + `\n` +
+                    `ParentsChildrenDot` + family.siblings.map(function (sibling, x) { return ` -> Sibling${x}Dot`; }).join("") + `\n` +
+                    `ParentsChildrenDot -> Current` + `\n` +
+                    family.siblings.map(function (sibling, x) {
+                        return `Sibling${x}Dot -> Sibling${x}`;
+                    }).join("\n") + `\n` +
 
-			`\n// ----- Relations -----\n` +
-			`{rank=same;Current${family.relations.map(function (relation, x) { return `;Relation${x}Dot;Relation${x}`; }).join("")}${family.siblings.map(function (sibling, x) { return `;Sibling${x}`; }).join("")}}` + `\n` +
+                    `\n// ----- Relations -----\n` +
+                    `{rank=same;Current${family.relations.map(function (relation, x) { return `;Relation${x}Dot;Relation${x}`; }).join("")}${family.siblings.map(function (sibling, x) { return `;Sibling${x}`; }).join("")}}` + `\n` +
 
-			(
-				family.relations.length > 0
-					?
-					`Current -> Relation0Dot` + `\n` +
-					`Relation0Dot -> Relation0` + `\n` +
-					family.relations.slice(1).map(function (relation, x) {
-						return `` +
-							`Relation${x} -> Relation${x + 1}Dot [color="gray",style="dashed"]` + `\n` +
-							`Relation${x + 1}Dot -> Relation${x + 1} [color="gray",style="dashed"]`;
-					}).join("\n") + `\n`
-					:
-					``
-			) +
+                    (
+                        family.relations.length > 0
+                            ?
+                            `Current -> Relation0Dot` + `\n` +
+                            `Relation0Dot -> Relation0` + `\n` +
+                            family.relations.slice(1).map(function (relation, x) {
+                                return `` +
+                                    `Relation${x} -> Relation${x + 1}Dot [color="gray",style="dashed"]` + `\n` +
+                                    `Relation${x + 1}Dot -> Relation${x + 1} [color="gray",style="dashed"]`;
+                            }).join("\n") + `\n`
+                            :
+                            ``
+                    ) +
 
-			`\n// ----- Children -----\n` +
-			(family.relations || []).map(function (relation, x) {
-				if (relation.children.length > 0) {
-					return `` +
-						`{rank=same${relation.children.map(function (child, y) { return `;Relation${x}Child${y}Dot`; }).join("")}}` + `\n` +
-						`{rank=same${relation.children.map(function (child, y) { return `;Relation${x}Child${y}`; }).join("")}}` + `\n` +
+                    `\n// ----- Children -----\n` +
+                    (family.relations || []).map(function (relation, x) {
+                        if (relation.children.length > 0) {
+                            return `` +
+                                `{rank=same${relation.children.map(function (child, y) { return `;Relation${x}Child${y}Dot`; }).join("")}}` + `\n` +
+                                `{rank=same${relation.children.map(function (child, y) { return `;Relation${x}Child${y}`; }).join("")}}` + `\n` +
 
-						`Relation${x}Dot -> Relation${x}Child${relation.children.length - 1}Dot` + `\n` +
+                                `Relation${x}Dot -> Relation${x}Child${relation.children.length - 1}Dot` + `\n` +
 
-						relation.children.map(function (child, y) { return `Relation${x}Child${y}Dot`; }).join(" -> ") + `\n` +
+                                relation.children.map(function (child, y) { return `Relation${x}Child${y}Dot`; }).join(" -> ") + `\n` +
 
-						(relation.children || []).map(function (child, y) {
-							return `Relation${x}Child${y}Dot:s -> Relation${x}Child${y}:n`;
-						}).join("\n")
-				}
-			}).join("\n") + `\n` +
+                                (relation.children || []).map(function (child, y) {
+                                    return `Relation${x}Child${y}Dot:s -> Relation${x}Child${y}:n`;
+                                }).join("\n")
+                        }
+                    }).join("\n") + `\n` +
 
-			`}
-			
-		`;
+                    `}
+                    
+                `;
 
-		// Render dot graph
-		hpccWasm.graphviz.layout(dot, "svg", "dot",
-			{
-				images:
-					[
-						{ path: "img/unknown.png", width: "512px", height: "682px" }
-					]
-			}).then(function (svg) {
-				this.chart.innerHTML = svg;
-				// Scroll selected person into center of the view
-				this.document.getElementsByClassName("selectedPerson")[0].scrollIntoView({ behavior: "auto", inline: "center", block: "center" });
-			}).catch(function (err) {
-				console.error(err.message)
-			});
-	}
+                // Render dot graph
+                hpccWasm.graphviz.layout(dot, "svg", "dot", {
+                    images:
+                        [
+                            { path: "img/unknown.png", width: "512px", height: "682px" }
+                        ]
+                }).then(function (svg) {
+                    this.tree.innerHTML = svg;
+                    // Scroll selected person into center of the view
+                    if (this.document.getElementsByClassName("selectedPerson")[0]) {
+                        this.document.getElementsByClassName("selectedPerson")[0].scrollIntoView({ behavior: "auto", inline: "center", block: "center" });
+                    }
+                }).catch(function (err) {
+                    console.error(err.message)
+                });
+            }
+
+            function drag() {
+                // Dragging the stamboom
+                var dragElement = this.treecontainer;
+                var dragPosition = { top: 0, left: 0, x: 0, y: 0 };
+                var dragStart = function (e) {
+                    dragElement.style.cursor = 'grabbing';
+                    dragElement.style.userSelect = 'none';
+                    dragPosition =
+                    {
+                        left: dragElement.scrollLeft,
+                        top: dragElement.scrollTop,
+                        // Get the current mouse position
+                        x: parseInt(e.clientX || e.touches[0].clientX),
+                        y: parseInt(e.clientY || e.touches[0].clientY),
+                    };
+                    document.addEventListener('mousemove', dragMove);
+                    document.addEventListener('touchmove', dragMove);
+                    document.addEventListener('mouseup', dragEnd);
+                    document.addEventListener('touchend', dragEnd);
+                };
+                var dragMove = function (e) {
+                    // How far the mouse has been moved
+                    const dx = parseInt(e.clientX || e.touches[0].clientX) - dragPosition.x;
+                    const dy = parseInt(e.clientY || e.touches[0].clientY) - dragPosition.y;
+                    // Scroll the element
+                    dragElement.scrollTop = dragPosition.top - dy;
+                    dragElement.scrollLeft = dragPosition.left - dx;
+                };
+                var dragEnd = function () {
+                    dragElement.style.cursor = 'grab';
+                    dragElement.style.removeProperty('user-select');
+                    document.removeEventListener('mousemove', dragMove);
+                    document.removeEventListener('touchmove', dragMove);
+                    document.removeEventListener('mouseup', dragEnd);
+                    document.removeEventListener('touchend', dragEnd);
+                };
+                // Attach the handler
+                dragElement.addEventListener('mousedown', dragStart);
+                dragElement.addEventListener('touchstart', dragStart);
+            }
 
 	return Stamboom;
 })();
-
-// Dragging the stamboom
-document.addEventListener('DOMContentLoaded', function () {
-	var dragElement = document.getElementById("chartcontainer");
-	var dragPosition = { top: 0, left: 0, x: 0, y: 0 };
-	var dragStart = function (e) {
-		dragElement.style.cursor = 'grabbing';
-		dragElement.style.userSelect = 'none';
-		dragPosition =
-		{
-			left: dragElement.scrollLeft,
-			top: dragElement.scrollTop,
-			// Get the current mouse position
-			x: parseInt(e.clientX || e.touches[0].clientX),
-			y: parseInt(e.clientY || e.touches[0].clientY),
-		};
-		document.addEventListener('mousemove', dragMove);
-        document.addEventListener('touchmove', dragMove);
-		document.addEventListener('mouseup', dragEnd);
-		document.addEventListener('touchend', dragEnd);
-	};
-	var dragMove = function (e) {
-		// How far the mouse has been moved
-		const dx = parseInt(e.clientX || e.touches[0].clientX) - dragPosition.x;
-		const dy = parseInt(e.clientY || e.touches[0].clientY) - dragPosition.y;
-		// Scroll the element
-		dragElement.scrollTop = dragPosition.top - dy;
-		dragElement.scrollLeft = dragPosition.left - dx;
-	};
-	var dragEnd = function () {
-		dragElement.style.cursor = 'grab';
-		dragElement.style.removeProperty('user-select');
-		document.removeEventListener('mousemove', dragMove);
-		document.removeEventListener('touchmove', dragMove);
-		document.removeEventListener('mouseup', dragEnd);
-		document.removeEventListener('touchend', dragEnd);
-	};
-	// Attach the handler
-	dragElement.addEventListener('mousedown', dragStart);
-	dragElement.addEventListener('touchstart', dragStart);
-});

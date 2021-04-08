@@ -1,36 +1,39 @@
-body
-{
-	/* overflow: hidden; */
+body {
+    /* overflow: hidden; */
 }
-#overlay
-{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-	background-color: #FFFFFF;
-	text-align: center;
+
+#overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #FFFFFF;
+    text-align: center;
 }
-#chartcontainer
-{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	bottom: 0px;
-	right: 0px;
-	background-color: white;
-	text-align: center;
-	vertical-align: middle;
-	background-color: white;
-	overflow-y: hidden;
-	overflow-x: hidden;
+
+#treecontainer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    background-color: white;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
-#chart
-{
-	padding: 8000px;
+
+#tree {
+    padding: 8000px;
 }
-#debug
-{
-	font-family: 'Courier New', Courier, monospace;
+
+#debug {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+[v-cloak] {
+    display: none;
 }

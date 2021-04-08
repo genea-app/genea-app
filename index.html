@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Genea.app</title>
+    <title>Genea.app - Build your family tree</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Genea is a free tool to author your family tree without an account. Genea gives you complete control over where to store your GEDCOM ancestry heritage data." />
@@ -21,6 +21,7 @@
     <script type="application/javascript" src="js/tags.js"></script>
     <script type="application/javascript" src="js/gedcom.js"></script>
     <script type="application/javascript" src="js/stamboom.js"></script>
+    <script type="application/javascript" src="components/tree.js"></script>
     <script type="application/javascript" src="components/personaldetails.js"></script>
     <script type="application/javascript" src="components/relations.js"></script>
     <script type="application/javascript" src="components/debug.js"></script>
@@ -45,8 +46,8 @@
                     via e-mail or using a cloud service like Dropbox.
                 </p>
             </div>
-            <div class="section" v-if="isLocalStorage()">
-                <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='chart'; loadLocalStorage()">
+            <div class="section" v-if="isLocalStorage()" v-cloak>
+                <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='tree'; loadLocalStorage()">
                     <i class="material-icons left">sync</i>
                     Continue with current family tree
                 </button>
@@ -70,17 +71,17 @@
             </div>
             <div class="section">
                 <div class="collection left-align">
-                    <a href="#!" v-on:click="loadExample('royal92')" class="collection-item avatar">
+                    <a href="#" v-on:click="loadExample('royal92')" class="collection-item avatar">
                         <span class="title">Royal '92</span>
                         <img src="sample/royal92.png" alt="" class="circle">
                         <p>Features the Kings and Queens of Europe, including Great Britain. Published back in 1992 by Denis R. Reid it is perhaps a little out of date, but it is a classic.</p>
                     </a>
-                    <a href="#!" v-on:click="loadExample('pres2020')" class="collection-item avatar">
+                    <a href="#" v-on:click="loadExample('pres2020')" class="collection-item avatar">
                         <span class="title">Presidents 2020</span>
                         <img src="sample/pres2020.png" alt="" class="circle">
                         <p>An excellent collection of the presidents of the US, with their ancestors and descendants updated to 2020 by Paul Stobbe.</p>
                     </a>
-                    <a href="#!" v-on:click="loadExample('harrypotter')" class="collection-item avatar">
+                    <a href="#" v-on:click="loadExample('harrypotter')" class="collection-item avatar">
                         <span class="title">Harry Potter</span>
                         <img src="sample/harrypotter.png" alt="" class="circle">
                         <p>Fictional family tree for the Harry Potter series, created by famousfamilytrees.blogspot.com.</p>
@@ -102,10 +103,10 @@
         </div>
 
         <!-- App -->
-        <header v-show="Object.keys(person).length > 0">
-            <!-- <div class="container"> -->
-            <a data-target="nav-mobile" class="top-nav sidenav-trigger btn-floating btn-large teal lighten-3 waves-effect waves-light hide-on-large-only" style="margin: 15px;"><i class="material-icons">menu</i></a>
-            <!-- </div> -->
+        <header v-show="Object.keys(person).length > 0 && page!='start'" v-cloak>
+            <a data-target="nav-mobile" class="top-nav sidenav-trigger btn-floating btn-large teal lighten-3 waves-effect waves-light hide-on-large-only" style="margin: 15px;">
+                <i class="material-icons">menu</i>
+            </a>
             <ul id="nav-mobile" class="sidenav sidenav-fixed">
                 <li>
                     <div class="user-view">
@@ -135,14 +136,14 @@
                 <li>
                     <a class="subheader">View</a>
                 </li>
-                <li class="bold sidenav-close" :class="{active: page=='chart'}">
-                    <a @click="page='chart'" href="#" class="waves-effect waves-teal"><i class="material-icons">account_tree</i>Family Tree</a>
+                <li class="bold sidenav-close" :class="{active: page=='tree'}">
+                    <a :href="'#/tree/' + person.id" class="waves-effect waves-teal"><i class="material-icons">account_tree</i>Family Tree</a>
                 </li>
-                <li class="bold sidenav-close" :class="{active: page=='details'}">
-                    <a @click="page='details'" href="#" class="waves-effect waves-teal"><i class="material-icons">person</i>Personal Details</a>
+                <li class="bold sidenav-close" :class="{active: page=='personaldetails'}">
+                    <a :href="'#/personaldetails/' + person.id" class="waves-effect waves-teal"><i class="material-icons">person</i>Personal Details</a>
                 </li>
                 <li class="bold sidenav-close" :class="{active: page=='relations'}">
-                    <a @click="page='relations'" href="#" class="waves-effect waves-teal"><i class="material-icons">people</i>Relations and Children</a>
+                    <a :href="'#/relations/' + person.id" class="waves-effect waves-teal"><i class="material-icons">people</i>Relations and Children</a>
                 </li>
                 <li>
                     <div class="divider"></div>
@@ -151,10 +152,10 @@
                     <a class="subheader">Actions</a>
                 </li>
                 <li class="bold sidenav-close">
-                    <a @click="saveFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">save_alt</i>Save GEDCOM</a>
+                    <a @click.prevent="saveFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">save_alt</i>Save GEDCOM</a>
                 </li>
                 <li class="bold sidenav-close">
-                    <a @click="page='start'; person={};" href="#" class="waves-effect waves-teal"><i class="material-icons">swap_horiz</i>Load GEDCOM</a>
+                    <a @click="person={};" href="#" class="waves-effect waves-teal"><i class="material-icons">swap_horiz</i>Load GEDCOM</a>
                 </li>
                 <li v-if="isDebug()">
                     <div class="divider"></div>
@@ -163,33 +164,25 @@
                     <a class="subheader">Development</a>
                 </li>
                 <li class="bold sidenav-close" :class="{active: page=='debug'}" v-if="isDebug()">
-                    <a @click="page='debug';debugUpdate();" href="#" class="waves-effect waves-teal"><i class="material-icons">adb</i>Debug</a>
+                    <a :href="'#/debug'" class="waves-effect waves-teal"><i class="material-icons">adb</i>Debug</a>
                 </li>
             </ul>
         </header>
 
-        <main v-show="page=='chart'">
-            <div id="chartcontainer">
-                <div id="chart"></div>
-            </div>
+        <main v-show="page=='tree'">
+            <tree :person="person" />
         </main>
 
-        <main v-show="page=='details'" class="container">
-            <div id="index-banner">
-                <personaldetails :person="person" />
-            </div>
+        <main v-show="page=='personaldetails'" class="container">
+            <personaldetails :person="person" />
         </main>
 
         <main v-show="page=='relations'" class="container">
-            <div id="index-banner">
-                <relations :person="person" />
-            </div>
+            <relations :person="person" />
         </main>
 
         <main v-show="page=='debug'" class="container">
-            <div id="index-banner">
-                <debug :debug="debug" />
-            </div>
+            <debug :debug="debug" />
         </main>
 
     </div>
@@ -197,23 +190,7 @@
 
     <script type="application/javascript">
         // Bind stamboom
-        var stamboom = new Stamboom({
-            chart: document.getElementById("chart")
-        });
-
-        // Register to stamboom events
-        stamboom.onclick(function(id) {
-            stamboom.select(id);
-        });
-        stamboom.onselect(function(id) {
-            genea.selectedPerson = id;
-            genea.person = stamboom.getPerson(id);
-            genea.person.relations = stamboom.getRelations(id);
-            if (genea.isDebug()) {
-                console.log("Person:", genea.person);
-                console.log("Relations:", genea.person.relations);
-            }
-        });
+        var stamboom = new Stamboom();
 
         // DOM bindings
         var genea = new Vue({
@@ -228,7 +205,7 @@
             },
             mounted: function() {
                 if (this.isLocalStorage()) {
-                    this.page = "chart";
+                    this.page = "tree";
                     window.setTimeout(function() {
                         genea.loadLocalStorage();
                     }, 200);
@@ -249,60 +226,64 @@
             },
             methods: {
                 loadExample: function(example) {
-                    genea.page = "chart";
-                    if (example == "new") {
-                        fetch("sample/empty.ged").then(function(response) {
-                            return response.text();
-                        }).then(function(data) {
-                            stamboom.load(data);
-                            stamboom.select();
-                        });
-                    }
-                    if (example == "gedcom1") {
-                        fetch("sample/gedcom1.ged").then(function(response) {
-                            return response.text();
-                        }).then(function(data) {
-                            stamboom.load(data);
-                            stamboom.select("@I3@");
-                        });
-                    }
-                    if (example == "royal92") {
-                        fetch("sample/royal92.ged").then(function(response) {
-                            return response.text();
-                        }).then(function(data) {
-                            stamboom.load(data);
-                            stamboom.select("@I52@");
-                        });
-                    }
-                    if (example == "pres2020") {
-                        fetch("sample/pres2020.ged").then(function(response) {
-                            return response.text();
-                        }).then(function(data) {
-                            stamboom.load(data);
-                            stamboom.select("@I2185@");
-                        });
-                    }
-                    if (example == "harrypotter") {
-                        fetch("sample/harrypotter.ged").then(function(response) {
-                            return response.text();
-                        }).then(function(data) {
-                            stamboom.load(data);
-                            stamboom.select("@ind00001@");
-                        });
+                    if (!stamboom.isLoaded || window.confirm("This will clear the family tree you previously had open.")) {
+                        genea.page = "tree";
+                        if (example == "new") {
+                            fetch("sample/empty.ged").then(function(response) {
+                                return response.text();
+                            }).then(function(data) {
+                                stamboom.load(data);
+                                stamboom.select();
+                            });
+                        }
+                        if (example == "gedcom1") {
+                            fetch("sample/gedcom1.ged").then(function(response) {
+                                return response.text();
+                            }).then(function(data) {
+                                stamboom.load(data);
+                                stamboom.select("@I3@");
+                            });
+                        }
+                        if (example == "royal92") {
+                            fetch("sample/royal92.ged").then(function(response) {
+                                return response.text();
+                            }).then(function(data) {
+                                stamboom.load(data);
+                                stamboom.select("@I52@");
+                            });
+                        }
+                        if (example == "pres2020") {
+                            fetch("sample/pres2020.ged").then(function(response) {
+                                return response.text();
+                            }).then(function(data) {
+                                stamboom.load(data);
+                                stamboom.select("@I2185@");
+                            });
+                        }
+                        if (example == "harrypotter") {
+                            fetch("sample/harrypotter.ged").then(function(response) {
+                                return response.text();
+                            }).then(function(data) {
+                                stamboom.load(data);
+                                stamboom.select("@ind00001@");
+                            });
+                        }
                     }
                 },
                 loadFile: function(event) {
-                    let file = event.srcElement.files[0];
-                    let reader = new FileReader();
-                    reader.readAsText(file);
-                    reader.onload = function() {
-                        genea.page = "chart";
-                        stamboom.load(reader.result);
-                        stamboom.select();
-                    };
-                    reader.onerror = function() {
-                        alert("Error reading selected file.");
-                    };
+                    if (!stamboom.isLoaded || window.confirm("This will clear the family tree you previously had open.")) {
+                        let file = event.srcElement.files[0];
+                        let reader = new FileReader();
+                        reader.readAsText(file);
+                        reader.onload = function() {
+                            genea.page = "tree";
+                            stamboom.load(reader.result);
+                            stamboom.select();
+                        };
+                        reader.onerror = function() {
+                            alert("Error reading selected file.");
+                        };
+                    }
                 },
                 saveFile: function() {
                     const a = document.createElement("a");
@@ -319,9 +300,12 @@
                 },
                 loadLocalStorage: function() {
                     var data = window.localStorage.getItem("stamboom");
-                    var selectedPerson = window.localStorage.getItem("selectedPerson");
                     stamboom.load(data);
-                    stamboom.select(selectedPerson);
+                    router();
+                    if (!genea.person.id) {
+                        var selectedPerson = window.localStorage.getItem("selectedPerson");
+                        stamboom.select(selectedPerson);
+                    }
                     window.addEventListener('storage', function(e) {
                         if (e.key == "stamboom") {
                             stamboom.load(e.newValue);
@@ -353,6 +337,29 @@
                 }
             }
         });
+
+        function router() {
+            var url = document.location.hash.split("/");
+            switch (url[1]) {
+                case "tree":
+                case "personaldetails":
+                case "relations":
+                    genea.page = url[1];
+                    stamboom.select(url[2]);
+                    document.title = `Genea.app - ${genea.person.name}`;
+                    break;
+                case "debug":
+                    genea.page = "debug";
+                    genea.debugUpdate();
+                    break;
+                default:
+                    // Unknown link, do nothing
+                    genea.page = "start";
+                    document.title = `Genea.app`;
+                    break;
+            }
+        }
+        window.addEventListener("hashchange", router);
     </script>
 
     <!-- Dependencies -->
@@ -372,7 +379,7 @@
                     onAutocomplete: function(selection) {
                         var person = stamboom.getPersons().find(person => person.caption == selection);
                         if (person && person.id) {
-                            genea.page = 'chart';
+                            genea.page = 'tree';
                             stamboom.select(person.id);
                         } else {
                             alert("Person not found.");
