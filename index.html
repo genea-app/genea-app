@@ -34,7 +34,7 @@
         <div id="overlay" v-if="page=='start'" class="container" style="max-width: 600px;">
             <h1 class="header">Genea.app</h1>
             <div class="divider"></div>
-            <div class="section">
+            <div class="section" v-if="!isNative()">
                 <h4 class="light">Build and edit your family tree; completely free!</h4>
                 <p style="text-align: justify;">
                     Genea is a <a href="https://en.wikipedia.org/wiki/Privacy_by_design" target="_blank">privacy by design</a> and <a href="https://github.com/genea-app/genea-app" target="_blank">open source</a> tool anyone can use to author or edit their
@@ -44,6 +44,12 @@
                 <p style="text-align: justify;">
                     You can use Genea both on your mobile devices as well as on your desktop. The changes you make are persistently stored on your device. To transfer the data between devices, be sure to save the GEDCOM file when you are done and exchange it for example
                     via e-mail or using a cloud service like Dropbox.
+                </p>
+            </div>
+            <div class="section" v-if="isNative()">
+                <h4 class="light">Build and edit your family tree</h4>
+                <p style="text-align: justify;">
+                    Create a new family tree from scratch, or start from a GEDCOM file previously exported from other services like MyHeritage, FamilySearch, or Ancestry.
                 </p>
             </div>
             <div class="section" v-if="isLocalStorage()" v-cloak>
@@ -94,8 +100,8 @@
             <div class="section" v-if="isDebug()">
                 <button class="btn-large waves-effect waves-light" v-on:click="loadExample('gedcom1')">Debug Example 1</button>
             </div>
-            <div class="divider"></div>
-            <div class="section">
+            <div class="divider" v-if="!isNative()"></div>
+            <div class="section" v-if="!isNative()">
                 <p>
                     <a href="mailto:contact@genea.app" target="_blank">contact</a> - <a href="https://github.com/genea-app/genea-app" target="_blank">github</a> - <a href="https://github.com/genea-app/genea-app/blob/main/LICENSE" target="_blank">license</a>
                 </p>
@@ -151,8 +157,11 @@
                 <li>
                     <a class="subheader">Actions</a>
                 </li>
-                <li class="bold sidenav-close">
+                <li class="bold sidenav-close" v-if="!isNative()">
                     <a @click.prevent="saveFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">save_alt</i>Save GEDCOM</a>
+                </li>
+                <li class="bold sidenav-close" v-if="isNative()">
+                    <a @click.prevent="shareFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">share</i>Share GEDCOM</a>
                 </li>
                 <li class="bold sidenav-close">
                     <a @click="person={};" href="#" class="waves-effect waves-teal"><i class="material-icons">swap_horiz</i>Load GEDCOM</a>
@@ -295,8 +304,27 @@
                     a.click();
                     URL.revokeObjectURL(a.href);
                 },
+                shareFile: function() {
+                    var file = new File([stamboom.save()], stamboom.getFilename(), {
+                        type: "text/plain"
+                    });
+                    var share = {
+                        title: "Family Tree",
+                        text: "Authored using Genea.app; https://www.genea.app/",
+                        files: [file]
+                    }
+                    try {
+                        navigator.share(share);
+                    } catch (e) {
+                        console.log("Error sharing file:", e);
+                        alert("Error sharing file");
+                    }
+                },
                 isLocalStorage: function() {
                     return window.localStorage.getItem("selectedPerson");
+                },
+                isNative: function() {
+                    return window.localStorage.getItem("isNative") == "true";
                 },
                 loadLocalStorage: function() {
                     var data = window.localStorage.getItem("stamboom");
@@ -348,6 +376,11 @@
                     stamboom.select(url[2]);
                     document.title = `Genea.app - ${genea.person.name}`;
                     break;
+                case "native":
+                    window.localStorage.setItem("isNative", "true");
+                    // Forward to start
+                    genea.page = "start";
+                    break;
                 case "debug":
                     genea.page = "debug";
                     genea.debugUpdate();
@@ -360,6 +393,7 @@
             }
         }
         window.addEventListener("hashchange", router);
+        router();
     </script>
 
     <!-- Dependencies -->
