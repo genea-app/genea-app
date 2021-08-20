@@ -14,6 +14,11 @@
     <script>
         var hpccWasm = window["@hpcc-js/wasm"];
     </script>
+    <script src="https://unpkg.com/@isomorphic-git/lightning-fs"></script>
+    <script src="https://unpkg.com/isomorphic-git@beta"></script>
+    <script type="module">
+        import http from 'https://unpkg.com/isomorphic-git@beta/http/web/index.js'; window.http = http; window.fs = new LightningFS('fs'); window.pfs = window.fs.promises;
+    </script>
     <link href="resources/googlefonts/materialicons.css" rel="stylesheet">
     <link rel="stylesheet" href="resources/materialize/css/materialize.min.css">
     <!-- Genea.app -->
@@ -65,8 +70,12 @@
                 </button>
                 <label class="btn-large waves-effect waves-light">
 					<i class="material-icons left">get_app</i>
-					Load GEDCOM
+					Upload GEDCOM
 					<input type="file" style="display: none;" v-on:change="loadFile">
+				</label>
+                <label class="btn-large waves-effect waves-light" v-on:click="loadGit()">
+					<i class="material-icons left">cloud_download</i>
+					Load from Git
 				</label>
             </div>
             <div class="section">
@@ -319,6 +328,82 @@
                         console.log("Error sharing file:", e);
                         alert("Error sharing file");
                     }
+                },
+                loadGit: async function() {
+                    // Load family tree from a git repository
+
+
+                    // Clean state
+                    window.fs = new LightningFS('fs', {
+                        wipe: true
+                    });
+                    window.pfs = window.fs.promises;
+
+
+                    // Create local file system
+                    window.dir = '/gedcom'
+                    await pfs.mkdir(dir);
+                    await git.clone({
+                        fs,
+                        http,
+                        dir,
+                        corsProxy: 'https://cors.isomorphic-git.org',
+                        url: 'https://github.com/genea-app/testrepo',
+                        ref: 'main',
+                        singleBranch: true,
+                        depth: 10,
+                        onAuth: () => ({
+                            username: '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'
+                        })
+                    });
+                    console.log(pfs.readdir(dir));
+
+                    // Update README
+                    await pfs.writeFile(`${dir}/README.md`, 'Very short README' + new Date(), 'utf8');
+                    console.log(await git.status({
+                        fs,
+                        dir,
+                        filepath: 'README.md'
+                    }));
+
+                    // Stage file
+                    await git.add({
+                        fs,
+                        dir,
+                        filepath: 'README.md'
+                    });
+                    console.log(await git.status({
+                        fs,
+                        dir,
+                        filepath: 'README.md'
+                    }));
+
+                    // Commit file
+                    let sha = await git.commit({
+                        fs,
+                        dir: '/gedcom',
+                        author: {
+                            name: 'Genea.app',
+                            email: 'git@genea.app',
+                        },
+                        message: 'Updated readme at ' + new Date()
+                    })
+                    console.log('Committed:', sha);
+
+                    // Push change
+                    let pushResult = await git.push({
+                        fs,
+                        http,
+                        dir: '/gedcom',
+                        remote: 'origin',
+                        ref: 'main',
+                        onAuth: () => ({
+                            username: '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'
+                        }),
+                    })
+                    console.log('Pushed:', pushResult)
+
+
                 },
                 isLocalStorage: function() {
                     return window.localStorage.getItem("selectedPerson");
