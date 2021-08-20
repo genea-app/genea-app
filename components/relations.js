@@ -89,7 +89,7 @@ Vue.component('relations', {
                     </template>
                 </div>
                 <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                    <a class="modal-close waves-effect waves-green btn-flat">Close</a>
                 </div>
             </div>
             <div style="position: fixed; bottom: 45px; right: 24px;">
