@@ -73,7 +73,7 @@
 					Upload GEDCOM
 					<input type="file" style="display: none;" v-on:change="loadFile">
 				</label>
-                <label class="btn-large waves-effect waves-light" v-on:click="loadGit()">
+                <label class="btn-large waves-effect waves-light" v-on:click="openGitModal()">
 					<i class="material-icons left">cloud_download</i>
 					Load from Git
 				</label>
@@ -203,6 +203,33 @@
             <debug :debug="debug" />
         </main>
 
+        <!-- Modals -->
+        <div id="modalGit" class="modal">
+            <div class="modal-content">
+                <h4>Git</h4>
+                <div class="input-field">
+                    <label for="gitRepository" class="active">Repository URL</label>
+                    <input id="gitRepository" type="text" v-model="git.repository" />
+                </div>
+                <div class="input-field">
+                    <label for="gitBranch" class="active">Branch</label>
+                    <input id="gitBranch" type="text" v-model="git.branch" />
+                </div>
+                <div class="input-field">
+                    <label for="gitPersonalAccessToken" class="active">Personal Access Token</label>
+                    <input id="gitPersonalAccessToken" type="text" v-model="git.personalAccessToken" />
+                </div>
+                <div class="input-field">
+                    <label for="gitCorsProxy" class="active">CORS Proxy</label>
+                    <input id="gitCorsProxy" type="text" v-model="git.corsProxy" />
+                </div>
+                <a class="btn waves-effect waves-light modal-close" v-on:click="loadGit();"><i class="material-icons left">link</i>Connect</a>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+
     </div>
 
 
@@ -219,6 +246,12 @@
                     dot: "",
                     gedcom: ""
                 },
+                git: {
+                    repository: null,
+                    branch: "main",
+                    personalAccessToken: null,
+                    corsProxy: "https://cors.isomorphic-git.org"
+                },
                 person: {}
             },
             mounted: function() {
@@ -230,6 +263,10 @@
                 } else {
                     this.page = "start";
                 }
+                // Load git connection details
+                if (window.localStorage.getItem("git")) {
+                    this.git = JSON.parse(window.localStorage.getItem("git"));
+                }
             },
             watch: {
                 person: {
@@ -238,6 +275,12 @@
                         window.autoSaveTimeout = window.setTimeout(function() {
                             genea.saveLocalStorage();
                         }, 1000);
+                    },
+                    deep: true
+                },
+                git: {
+                    handler: function(val, oldVal) {
+                        window.localStorage.setItem("git", JSON.stringify(this.git));
                     },
                     deep: true
                 }
@@ -329,35 +372,58 @@
                         alert("Error sharing file");
                     }
                 },
+                openGitModal: function() {
+                    var modal = M.Modal.init(document.querySelector("#modalGit"), {
+                        "onCloseEnd": function() {
+                            M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'));
+                        }
+                    });
+                    modal.open();
+                },
                 loadGit: async function() {
                     // Load family tree from a git repository
-
-
-                    // Clean state
-                    window.fs = new LightningFS('fs', {
-                        wipe: true
-                    });
-                    window.pfs = window.fs.promises;
-
-
-                    // Create local file system
-                    window.dir = '/gedcom'
-                    await pfs.mkdir(dir);
-                    await git.clone({
-                        fs,
-                        http,
-                        dir,
-                        corsProxy: 'https://cors.isomorphic-git.org',
-                        url: 'https://github.com/genea-app/testrepo',
-                        ref: 'main',
-                        singleBranch: true,
-                        depth: 10,
-                        onAuth: () => ({
-                            username: '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'
-                        })
-                    });
-                    console.log(pfs.readdir(dir));
-
+                    if (!this.git.repository || !this.git.branch || !this.git.personalAccessToken) {
+                        alert("Cannot connect to Git due to a missing Repository URL, Branch, or Personal Access Token.");
+                        return;
+                    }
+                    try {
+                        // Clean state
+                        window.fs = new LightningFS('fs', {
+                            wipe: true
+                        });
+                        window.pfs = window.fs.promises;
+                        // Create local file system
+                        window.dir = "/gedcom";
+                        await pfs.mkdir(dir);
+                        await git.clone({
+                            fs,
+                            http,
+                            dir,
+                            url: this.git.repository,
+                            corsProxy: this.git.corsProxy,
+                            ref: this.git.branch,
+                            singleBranch: true,
+                            depth: 10,
+                            onAuth: () => ({
+                                username: this.git.personalAccessToken
+                            })
+                        });
+                        // Load file
+                        var files = await pfs.readdir(dir);
+                        if (files.includes("genea.ged")) {
+                            var result = new TextDecoder().decode(await pfs.readFile(dir + '/genea.ged'));
+                            genea.page = "tree";
+                            stamboom.load(result);
+                            stamboom.select();
+                        } else {
+                            alert("Cannot load GEDCOM file. Ensure there is a file called 'genea.ged' in the root of the repository.");
+                        }
+                    } catch (e) {
+                        alert(`Error connecting to Git repository or loading GEDCOM file.\n\nMessage: ${e.message}`);
+                    }
+                },
+                saveGit: async function() {
+                    /*
                     // Update README
                     await pfs.writeFile(`${dir}/README.md`, 'Very short README' + new Date(), 'utf8');
                     console.log(await git.status({
@@ -398,12 +464,11 @@
                         remote: 'origin',
                         ref: 'main',
                         onAuth: () => ({
-                            username: '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'
+                            username: this.git.personalAccessToken
                         }),
                     })
                     console.log('Pushed:', pushResult)
-
-
+                    */
                 },
                 isLocalStorage: function() {
                     return window.localStorage.getItem("selectedPerson");
