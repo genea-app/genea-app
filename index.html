@@ -47,8 +47,8 @@
                     in control on where to save your data, avoiding any type of vendor lock-in.
                 </p>
                 <p style="text-align: justify;">
-                    You can use Genea both on your mobile devices as well as on your desktop. The changes you make are persistently stored on your device. To transfer the data between devices, be sure to save the GEDCOM file when you are done and exchange it for example
-                    via e-mail or using a cloud service like Dropbox.
+                    You can use Genea both on your mobile devices as well as on your desktop. The changes you make are persistently stored on your device. To work on your family tree from multiple devices, you can either save the GEDCOM file when you are done and exchange
+                    it for example via e-mail or a cloud service like Dropbox, or you can use the built in Git integration which lets you store your work in any private or public repository.
                 </p>
             </div>
             <div class="section" v-if="isNative()">
@@ -57,26 +57,26 @@
                     Create a new family tree from scratch, or start from a GEDCOM file previously exported from other services like MyHeritage, FamilySearch, or Ancestry.
                 </p>
             </div>
-            <div class="section" v-if="isLocalStorage()" v-cloak>
-                <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='tree'; loadLocalStorage()">
-                    <i class="material-icons left">sync</i>
-                    Continue with current family tree
-                </button>
-            </div>
             <div class="section">
                 <button class="btn-large waves-effect waves-light" v-on:click="loadExample('new')">
                     <i class="material-icons left">create</i>
                     Start new family tree
                 </button>
-                <label class="btn-large waves-effect waves-light">
-					<i class="material-icons left">get_app</i>
-					Upload GEDCOM
-					<input type="file" style="display: none;" v-on:change="loadFile">
-				</label>
                 <label class="btn-large waves-effect waves-light" v-on:click="openGitModal()">
 					<i class="material-icons left">cloud_download</i>
-					Load from Git
+					Open
 				</label>
+                <label class="btn-large waves-effect waves-light">
+					<i class="material-icons left">get_app</i>
+					Upload
+					<input type="file" style="display: none;" v-on:change="loadFile">
+				</label>
+            </div>
+            <div class="section" v-if="isLocalStorage()" v-cloak>
+                <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='tree'; loadLocalStorage()">
+                    <i class="material-icons left">sync</i>
+                    Continue with current family tree
+                </button>
             </div>
             <div class="section">
                 <h4 class="light">Examples</h4>
@@ -166,14 +166,17 @@
                 <li>
                     <a class="subheader">Actions</a>
                 </li>
+                <li class="bold sidenav-close">
+                    <a @click.prevent="saveGit();" href="#" class="waves-effect waves-teal"><i class="material-icons">cloud_upload</i>Save</a>
+                </li>
                 <li class="bold sidenav-close" v-if="!isNative()">
-                    <a @click.prevent="saveFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">save_alt</i>Save GEDCOM</a>
+                    <a @click.prevent="saveFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">save_alt</i>Download</a>
                 </li>
                 <li class="bold sidenav-close" v-if="isNative()">
-                    <a @click.prevent="shareFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">share</i>Share GEDCOM</a>
+                    <a @click.prevent="shareFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">share</i>Share</a>
                 </li>
                 <li class="bold sidenav-close">
-                    <a @click="person={};" href="#" class="waves-effect waves-teal"><i class="material-icons">swap_horiz</i>Load GEDCOM</a>
+                    <a @click="person={};" href="#" class="waves-effect waves-teal"><i class="material-icons">logout</i>Close</a>
                 </li>
                 <li v-if="isDebug()">
                     <div class="divider"></div>
@@ -206,22 +209,33 @@
         <!-- Modals -->
         <div id="modalGit" class="modal">
             <div class="modal-content">
-                <h4>Git</h4>
-                <div class="input-field">
-                    <label for="gitRepository" class="active">Repository URL</label>
-                    <input id="gitRepository" type="text" v-model="git.repository" />
+                <div class="row">
+                    <h4>Git Repository</h4>
                 </div>
-                <div class="input-field">
-                    <label for="gitBranch" class="active">Branch</label>
-                    <input id="gitBranch" type="text" v-model="git.branch" />
+                <div class="row">
+                    <p>Connect to a Git Repository to load or save your GEDCOM family tree. You can use a hosted service like <a href="https://github.com/" target="_blank">GitHub</a> or <a href="https://gitlab.com/" target="_blank">GitLab</a>, or connect
+                        to a self hosted repository like <a href="https://gitea.io/" target="_blank">Gitea</a>, <a href="https://gogs.io/" target="_blank">Gogs</a>, or <a href="https://github.com/gitbucket/gitbucket" target="_blank">GitBucket</a>.</p>
                 </div>
-                <div class="input-field">
-                    <label for="gitPersonalAccessToken" class="active">Personal Access Token</label>
-                    <input id="gitPersonalAccessToken" type="text" v-model="git.personalAccessToken" />
+                <div class="row">
+                    <h4>Connection Details</h4>
                 </div>
-                <div class="input-field">
-                    <label for="gitCorsProxy" class="active">CORS Proxy</label>
-                    <input id="gitCorsProxy" type="text" v-model="git.corsProxy" />
+                <div class="row">
+                    <div class="input-field">
+                        <label for="gitRepository" class="active">Repository URL</label>
+                        <input id="gitRepository" type="text" v-model="git.repository" />
+                    </div>
+                    <div class="input-field">
+                        <label for="gitBranch" class="active">Branch</label>
+                        <input id="gitBranch" type="text" v-model="git.branch" />
+                    </div>
+                    <div class="input-field">
+                        <label for="gitPersonalAccessToken" class="active">Personal Access Token</label>
+                        <input id="gitPersonalAccessToken" type="text" v-model="git.personalAccessToken" />
+                    </div>
+                    <div class="input-field">
+                        <label for="gitCorsProxy" class="active">CORS Proxy (optional)</label>
+                        <input id="gitCorsProxy" type="text" v-model="git.corsProxy" />
+                    </div>
                 </div>
                 <a class="btn waves-effect waves-light modal-close" v-on:click="loadGit();"><i class="material-icons left">link</i>Connect</a>
             </div>
