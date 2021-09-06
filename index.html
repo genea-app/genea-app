@@ -62,7 +62,7 @@
                     <i class="material-icons left">create</i>
                     Start new family tree
                 </button>
-                <label class="btn-large waves-effect waves-light" v-on:click="openGitModal()">
+                <label class="btn-large waves-effect waves-light" v-on:click="openGitModal('load')">
 					<i class="material-icons left">cloud_download</i>
 					Open
 				</label>
@@ -167,7 +167,8 @@
                     <a class="subheader">Actions</a>
                 </li>
                 <li class="bold sidenav-close">
-                    <a @click.prevent="saveGit();" href="#" class="waves-effect waves-teal"><i class="material-icons">cloud_upload</i>Save</a>
+                    <a @click.prevent="saveGit();" href="#" v-if="!git.outstandingChanges" class="waves-effect waves-teal grey-text"><i class="material-icons">published_with_changes</i>Up to date</a>
+                    <a @click.prevent="saveGit();" href="#" v-if="git.outstandingChanges" class="waves-effect waves-teal"><i class="material-icons">cloud_upload</i>Unsaved changes</a>
                 </li>
                 <li class="bold sidenav-close" v-if="!isNative()">
                     <a @click.prevent="saveFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">save_alt</i>Download</a>
@@ -237,7 +238,8 @@
                         <input id="gitCorsProxy" type="text" v-model="git.corsProxy" />
                     </div>
                 </div>
-                <a class="btn waves-effect waves-light modal-close" v-on:click="loadGit();"><i class="material-icons left">link</i>Connect</a>
+                <a class="btn waves-effect waves-light modal-close" v-if="git.operation=='load'" v-on:click="loadGitData();"><i class="material-icons left">link</i>Load</a>
+                <a class="btn waves-effect waves-light modal-close" v-if="git.operation=='save'" v-on:click="saveGitData();"><i class="material-icons left">link</i>Save</a>
             </div>
             <div class="modal-footer">
                 <a class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -264,7 +266,9 @@
                     repository: null,
                     branch: "main",
                     personalAccessToken: null,
-                    corsProxy: "https://cors.isomorphic-git.org"
+                    corsProxy: "https://cors.isomorphic-git.org",
+                    operation: null,
+                    outstandingChanges: false
                 },
                 person: {}
             },
@@ -285,10 +289,13 @@
             watch: {
                 person: {
                     handler: function(val, oldVal) {
-                        window.clearTimeout(window.autoSaveTimeout);
-                        window.autoSaveTimeout = window.setTimeout(function() {
-                            genea.saveLocalStorage();
-                        }, 1000);
+                        if (oldVal.id == val.id) {
+                            const isEqual = (...objects) => objects.every(obj => JSON.stringify(obj) === JSON.stringify(objects[0]));
+                            if (!isEqual(val, oldVal)) {
+                                this.git.outstandingChanges = true;
+                                this.autoSave();
+                            }
+                        }
                     },
                     deep: true
                 },
@@ -300,6 +307,21 @@
                 }
             },
             methods: {
+                autoSave: function() {
+                    // Save changes into local storage
+                    window.clearTimeout(window.autoSaveTimeout);
+                    window.autoSaveTimeout = window.setTimeout(function() {
+                        genea.saveLocalStorage();
+                    }, 1000);
+                    // If git is connected, save changes
+                    if (genea.isGitConnected()) {
+                        // Delay saving until no changes have been made for 10 seconds
+                        clearTimeout(genea.autoSaveTimeout);
+                        genea.autoSaveTimeout = setTimeout(function() {
+                            genea.saveGitData();
+                        }, 10 * 1000);
+                    }
+                },
                 loadExample: function(example) {
                     if (!stamboom.isLoaded || window.confirm("This will clear the family tree you previously had open.")) {
                         genea.page = "tree";
@@ -386,17 +408,28 @@
                         alert("Error sharing file");
                     }
                 },
-                openGitModal: function() {
+                openGitModal: function(operation) {
                     var modal = M.Modal.init(document.querySelector("#modalGit"), {
                         "onCloseEnd": function() {
                             M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'));
                         }
                     });
+                    this.git.operation = operation;
                     modal.open();
                 },
-                loadGit: async function() {
+                isGitConnected: function() {
+                    return this.git.repository && this.git.branch && this.git.personalAccessToken;
+                },
+                loadGit: function() {
+                    if (!this.isGitConnected()) {
+                        this.openGitModal("load");
+                    } else {
+                        this.loadGitData();
+                    }
+                },
+                loadGitData: async function() {
                     // Load family tree from a git repository
-                    if (!this.git.repository || !this.git.branch || !this.git.personalAccessToken) {
+                    if (!this.isGitConnected()) {
                         alert("Cannot connect to Git due to a missing Repository URL, Branch, or Personal Access Token.");
                         return;
                     }
@@ -436,53 +469,80 @@
                         alert(`Error connecting to Git repository or loading GEDCOM file.\n\nMessage: ${e.message}`);
                     }
                 },
-                saveGit: async function() {
-                    /*
-                    // Update README
-                    await pfs.writeFile(`${dir}/README.md`, 'Very short README' + new Date(), 'utf8');
-                    console.log(await git.status({
-                        fs,
-                        dir,
-                        filepath: 'README.md'
-                    }));
-
-                    // Stage file
-                    await git.add({
-                        fs,
-                        dir,
-                        filepath: 'README.md'
-                    });
-                    console.log(await git.status({
-                        fs,
-                        dir,
-                        filepath: 'README.md'
-                    }));
-
-                    // Commit file
-                    let sha = await git.commit({
-                        fs,
-                        dir: '/gedcom',
-                        author: {
-                            name: 'Genea.app',
-                            email: 'git@genea.app',
-                        },
-                        message: 'Updated readme at ' + new Date()
-                    })
-                    console.log('Committed:', sha);
-
-                    // Push change
-                    let pushResult = await git.push({
-                        fs,
-                        http,
-                        dir: '/gedcom',
-                        remote: 'origin',
-                        ref: 'main',
-                        onAuth: () => ({
-                            username: this.git.personalAccessToken
-                        }),
-                    })
-                    console.log('Pushed:', pushResult)
-                    */
+                saveGit: function() {
+                    if (!this.isGitConnected()) {
+                        this.openGitModal("save");
+                    } else {
+                        this.saveGitData();
+                    }
+                },
+                saveGitData: async function() {
+                    // Save family tree to a git repository
+                    if (!this.isGitConnected()) {
+                        alert("Cannot connect to Git due to a missing Repository URL, Branch, or Personal Access Token.");
+                        return;
+                    }
+                    try {
+                        // Clean state
+                        window.fs = new LightningFS('fs', {
+                            wipe: true
+                        });
+                        window.pfs = window.fs.promises;
+                        // Create local file system
+                        window.dir = "/gedcom";
+                        await pfs.mkdir(dir);
+                        await git.clone({
+                            fs,
+                            http,
+                            dir,
+                            url: this.git.repository,
+                            corsProxy: this.git.corsProxy,
+                            ref: this.git.branch,
+                            singleBranch: true,
+                            depth: 10,
+                            onAuth: () => ({
+                                username: this.git.personalAccessToken
+                            })
+                        });
+                        // Save file
+                        await pfs.writeFile(`${dir}/genea.ged`, stamboom.save(), "utf8");
+                        // Stage file
+                        await git.add({
+                            fs,
+                            dir,
+                            filepath: "genea.ged"
+                        });
+                        // Commit file
+                        let sha = await git.commit({
+                            fs,
+                            dir,
+                            author: {
+                                name: "Genea.app",
+                                email: "git@genea.app",
+                            },
+                            message: `Updated "genea.ged" at ${new Date().toISOString().replace("T", " ").replace("Z", "")}`
+                        })
+                        console.log("Committed:", sha);
+                        // Push change
+                        let pushResult = await git.push({
+                            fs,
+                            http,
+                            dir,
+                            remote: "origin",
+                            ref: this.git.branch,
+                            onAuth: () => ({
+                                username: this.git.personalAccessToken
+                            }),
+                        });
+                        console.log("Pushed:", pushResult)
+                        if (pushResult.ok) {
+                            this.git.outstandingChanges = false;
+                        } else {
+                            alert("Cannot save GEDCOM file.");
+                        }
+                    } catch (e) {
+                        alert(`Error connecting to Git repository or saving GEDCOM file.\n\nMessage: ${e.message}`);
+                    }
                 },
                 isLocalStorage: function() {
                     return window.localStorage.getItem("selectedPerson");
