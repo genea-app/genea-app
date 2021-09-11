@@ -70,6 +70,16 @@ var Stamboom = (function() {
             Stamboom.prototype.getRelations = function(id) {
                 return gedcom.relations(id);
             }
+            Stamboom.prototype.getParents = function(id) {
+                var parents = [];
+                if (gedcom.father(id).id) {
+                    parents.push(gedcom.father(id));
+                }
+                if (gedcom.mother(id).id) {
+                    parents.push(gedcom.mother(id));
+                }
+                return parents;
+            }
             Stamboom.prototype.getPersons = function() {
                 return gedcom.getPersons();
             }
@@ -81,8 +91,15 @@ var Stamboom = (function() {
             Stamboom.prototype.addRelation = function(parent1Id, parent2Id) {
                 return gedcom.addRelation(parent1Id, parent2Id);
             }
-            Stamboom.prototype.removeRelation = function(childId) {
-                gedcom.removeRelation(childId);
+            Stamboom.prototype.removeRelation = function(relationId) {
+                gedcom.removeRelation(relationId);
+            }
+
+            Stamboom.prototype.addSibling = function(personId, siblingId) {
+                return gedcom.addSibling(personId, siblingId);
+            }
+            Stamboom.prototype.removeSibling = function(siblingId) {
+                gedcom.removeSibling(siblingId);
             }
 
             Stamboom.prototype.addChild = function(relationId, childId) {

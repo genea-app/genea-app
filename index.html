@@ -320,6 +320,147 @@
                         alert("Error sharing file");
                     }
                 },
+                openGitModal: function(operation) {
+                    this.git.operation = operation;
+                    var modal = M.Modal.init(document.querySelector("#modalGit"), {
+                        "onCloseEnd": function() {
+                            M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'));
+                        }
+                    });
+                    modal.open();
+                },
+                isGitConnected: function() {
+                    return this.git.repository && this.git.branch && this.git.personalAccessToken;
+                },
+                loadGit: function() {
+                    if (!this.isGitConnected()) {
+                        this.openGitModal("load");
+                    } else {
+                        this.loadGitData();
+                    }
+                },
+                loadGitData: async function() {
+                    // Load family tree from a git repository
+                    if (!this.isGitConnected()) {
+                        alert("Cannot connect to Git due to a missing Repository URL, Branch, or Personal Access Token.");
+                        return;
+                    }
+                    try {
+                        // Clean state
+                        window.fs = new LightningFS('fs', {
+                            wipe: true
+                        });
+                        window.pfs = window.fs.promises;
+                        // Create local file system
+                        window.dir = "/gedcom";
+                        await pfs.mkdir(dir);
+                        await git.clone({
+                            fs,
+                            http,
+                            dir,
+                            url: this.git.repository,
+                            corsProxy: this.git.corsProxy,
+                            ref: this.git.branch,
+                            singleBranch: true,
+                            depth: 10,
+                            onAuth: () => ({
+                                username: this.git.personalAccessToken
+                            })
+                        });
+                        // Load file
+                        var files = await pfs.readdir(dir);
+                        if (files.includes("genea.ged")) {
+                            var result = new TextDecoder().decode(await pfs.readFile(dir + '/genea.ged'));
+                            genea.page = "tree";
+                            stamboom.load(result);
+                            router();
+                            if (!genea.person.id) {
+                                var selectedPerson = window.localStorage.getItem("selectedPerson");
+                                stamboom.select(selectedPerson);
+                            }
+                        } else {
+                            alert("Cannot load GEDCOM file. Ensure there is a file called 'genea.ged' in the root of the repository.");
+                        }
+                    } catch (e) {
+                        alert(`Error connecting to Git repository or loading GEDCOM file.\n\nMessage: ${e.message}`);
+                    }
+                },
+                saveGit: function() {
+                    if (!this.isGitConnected()) {
+                        this.openGitModal("save");
+                    } else {
+                        this.saveGitData();
+                    }
+                },
+                saveGitData: async function() {
+                    // Save family tree to a git repository
+                    if (!this.isGitConnected()) {
+                        alert("Cannot connect to Git due to a missing Repository URL, Branch, or Personal Access Token.");
+                        return;
+                    }
+                    try {
+                        // Clean state
+                        window.fs = new LightningFS('fs', {
+                            wipe: true
+                        });
+                        window.pfs = window.fs.promises;
+                        // Create local file system
+                        window.dir = "/gedcom";
+                        await pfs.mkdir(dir);
+                        await git.clone({
+                            fs,
+                            http,
+                            dir,
+                            url: this.git.repository,
+                            corsProxy: this.git.corsProxy,
+                            ref: this.git.branch,
+                            singleBranch: true,
+                            depth: 10,
+                            onAuth: () => ({
+                                username: this.git.personalAccessToken
+                            })
+                        });
+                        // Save file
+                        await pfs.writeFile(`${dir}/genea.ged`, stamboom.save(), "utf8");
+                        // Stage file
+                        await git.add({
+                            fs,
+                            dir,
+                            filepath: "genea.ged"
+                        });
+                        // Commit file
+                        let sha = await git.commit({
+                            fs,
+                            dir,
+                            author: {
+                                name: "Genea.app",
+                                email: "git@genea.app",
+                            },
+                            message: `Updated "genea.ged" at ${new Date().toISOString().replace("T", " ").replace("Z", "")}`
+                        })
+                        console.log("Committed:", sha);
+                        // Push change
+                        let pushResult = await git.push({
+                            fs,
+                            http,
+                            dir,
+                            remote: "origin",
+                            ref: this.git.branch,
+                            onAuth: () => ({
+                                username: this.git.personalAccessToken
+                            }),
+                        });
+                        console.log("Pushed:", pushResult);
+                        window.localStorage.removeItem("isGitSaving");
+                        if (pushResult.ok) {
+                            this.git.outstandingChanges = false;
+                        } else {
+                            alert("Cannot save GEDCOM file.");
+                        }
+                    } catch (e) {
+                        alert(`Error connecting to Git repository or saving GEDCOM file.\n\nMessage: ${e.message}`);
+                    }
+                },
                 isLocalStorage: function() {
                     return window.localStorage.getItem("selectedPerson");
                 },

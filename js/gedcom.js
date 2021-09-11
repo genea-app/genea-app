@@ -205,32 +205,37 @@ var Gedcom = (function() {
         var relationId = "@F" + (this.data.filter(item => item.tag == "FAM").map(item => parseInt(item.pointer.replace(/[^\d]/g, ''))).reduce((a, b) => Math.max(a, b), []) + 1) + "@";
         var partner1 = this.person(partner1Id);
         var partner2 = this.person(partner2Id);
+        var partnerItems = [{
+            "level": 1,
+            "tag": ((partner1.gender || "").substring(0, 1).toUpperCase() == "F" ? "WIFE" : "HUSB"),
+            "value": partner1.id
+        }]
+        if (partner2Id) {
+            partnerItems.push({
+                "level": 1,
+                "tag": ((partner2.gender || "").substring(0, 1).toUpperCase() == "F" ? "WIFE" : "HUSB"),
+                "value": partner2.id
+            });
+        }
         this.data.push({
             "level": 0,
             "pointer": relationId,
             "tag": "FAM",
-            "items": [{
-                    "level": 1,
-                    "tag": ((partner1.gender || "").substring(0, 1).toUpperCase() == "F" ? "WIFE" : "HUSB"),
-                    "value": partner1.id
-                },
-                {
-                    "level": 1,
-                    "tag": ((partner2.gender || "").substring(0, 1).toUpperCase() == "F" ? "WIFE" : "HUSB"),
-                    "value": partner2.id
-                }
-            ]
+            "items": partnerItems
         });
         this.data.find(item => item.tag == "INDI" && item.pointer == partner1Id).items.push({
             "level": 1,
             "tag": "FAMS",
             "value": relationId
         });
-        this.data.find(item => item.tag == "INDI" && item.pointer == partner2Id).items.push({
-            "level": 1,
-            "tag": "FAMS",
-            "value": relationId
-        });
+        if (partner2Id) {
+            this.data.find(item => item.tag == "INDI" && item.pointer == partner2Id).items.push({
+                "level": 1,
+                "tag": "FAMS",
+                "value": relationId
+            });
+        }
+        return relationId;
     }
 
     Gedcom.prototype.removeRelation = function(relationId) {
@@ -242,6 +247,15 @@ var Gedcom = (function() {
                 this.data.splice(index, 1);
             }
         })
+    }
+
+    Gedcom.prototype.addSibling = function(personId, siblingId) {
+        var relationId = this.data.find(fam => fam.tag == "FAM" && fam.items.find(member => member.tag == "CHIL" && member.value == personId)).pointer;
+        this.addChild(relationId, siblingId);
+
+    }
+    Gedcom.prototype.removeSibling = function(siblingId) {
+        this.removeChild(siblingId);
     }
 
     Gedcom.prototype.addChild = function(relationId, childId) {
@@ -276,8 +290,8 @@ var Gedcom = (function() {
     Gedcom.prototype.paternalgrandfather = function(id) {
         try {
             var fatherId = gedcom.father(id).id;
-            var paternalgrandfather = this.data.find(fam => fam.tag == "FAM" && fam.items.find(member => member.tag == "CHIL" && member.value == fatherId)).items.find(member => member.tag == "HUSB");
-            return gedcom.person(paternalgrandfather.value);
+            var paternalgrandfather = gedcom.father(fatherId).id;
+            return gedcom.person(paternalgrandfather);
         } catch {
             console.log(`No paternal grand father found for ${id}`);
             return {};
@@ -286,8 +300,8 @@ var Gedcom = (function() {
     Gedcom.prototype.paternalgrandmother = function(id) {
         try {
             var fatherId = gedcom.father(id).id;
-            var paternalgrandmother = this.data.find(fam => fam.tag == "FAM" && fam.items.find(member => member.tag == "CHIL" && member.value == fatherId)).items.find(member => member.tag == "WIFE");
-            return gedcom.person(paternalgrandmother.value);
+            var paternalgrandmother = gedcom.mother(fatherId).id;
+            return gedcom.person(paternalgrandmother);
         } catch {
             console.log(`No paternal grand father found for ${id}`);
             return {};
@@ -296,8 +310,8 @@ var Gedcom = (function() {
     Gedcom.prototype.maternalgrandfather = function(id) {
         try {
             var motherId = gedcom.mother(id).id;
-            var maternalgrandfather = this.data.find(fam => fam.tag == "FAM" && fam.items.find(member => member.tag == "CHIL" && member.value == motherId)).items.find(member => member.tag == "HUSB");
-            return gedcom.person(maternalgrandfather.value);
+            var maternalgrandfather = gedcom.father(motherId).id;
+            return gedcom.person(maternalgrandfather);
         } catch {
             console.log(`No paternal grand father found for ${id}`);
             return {};
@@ -306,8 +320,8 @@ var Gedcom = (function() {
     Gedcom.prototype.maternalgrandmother = function(id) {
         try {
             var motherId = gedcom.mother(id).id;
-            var maternalgrandmother = this.data.find(fam => fam.tag == "FAM" && fam.items.find(member => member.tag == "CHIL" && member.value == motherId)).items.find(member => member.tag == "WIFE");
-            return gedcom.person(maternalgrandmother.value);
+            var maternalgrandmother = gedcom.mother(motherId).id;
+            return gedcom.person(maternalgrandmother);
         } catch {
             console.log(`No paternal grand father found for ${id}`);
             return {};
@@ -347,7 +361,9 @@ var Gedcom = (function() {
                 var children = fam.items.filter(member => (member.tag == "CHIL"));
                 var output = {};
                 output.id = fam.pointer;
-                output.partner = gedcom.person(partner.value);
+                if (partner) {
+                    output.partner = gedcom.person(partner.value);
+                }
                 output.children = children.map(child => gedcom.person(child.value));
                 return output;
             });
@@ -364,7 +380,6 @@ var Gedcom = (function() {
         } catch {
             return null;
         }
-        return "AAA";
     }
 
     return Gedcom;
