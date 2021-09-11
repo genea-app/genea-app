@@ -15,12 +15,12 @@ Vue.component('relations', {
                             <li class="collection-header">
                                 <h4>
                                     <a :href="'#/relations/' + relation.partner.id" class="black-text">{{relation.partner.caption}}</a>
-                                    <a href="#" style="float: right;" v-on:click="unlinkPartner(relation.id);" v-if="relation.children.length==0"><i class="material-icons">link_off</i></a>
+                                    <a style="float: right;" v-on:click="unlinkPartner(relation.id);" v-if="relation.children.length==0"><i class="material-icons">link_off</i></a>
                                 </h4>
                             </li>
                             <li v-for="(child, childIndex) in relation.children" :key="child.id" class="collection-item">
                                 <a :href="'#/relations/' + child.id">{{child.caption}}</a>
-                                <a href="#" class="secondary-content" v-on:click="unlinkChild(child.id);"><i class="material-icons">link_off</i></a>
+                                <a class="secondary-content" v-on:click="unlinkChild(child.id);"><i class="material-icons">link_off</i></a>
                             </li>
                         </ul>
                         <a class="waves-effect waves-light btn" v-on:click="addChild(index)"><i class="material-icons left">person_add</i>Add child</a>
