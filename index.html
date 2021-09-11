@@ -167,17 +167,18 @@
                     <a class="subheader">Actions</a>
                 </li>
                 <li class="bold sidenav-close">
-                    <a @click.prevent="saveGit();" href="#" v-if="!git.outstandingChanges" class="waves-effect waves-teal grey-text"><i class="material-icons">published_with_changes</i>Up to date</a>
-                    <a @click.prevent="saveGit();" href="#" v-if="git.outstandingChanges" class="waves-effect waves-teal"><i class="material-icons">cloud_upload</i>Unsaved changes</a>
+                    <a @click.prevent="saveGit();" v-if="isGitConnected() && !git.outstandingChanges" class="waves-effect waves-teal grey-text"><i class="material-icons">published_with_changes</i>Up to date</a>
+                    <a @click.prevent="saveGit();" v-if="isGitConnected() && git.outstandingChanges" class="waves-effect waves-teal"><i class="material-icons">cloud_upload</i>Unsaved changes</a>
+                    <a @click.prevent="saveGit();" v-if="!isGitConnected()" class="waves-effect waves-teal"><i class="material-icons">cloud_upload</i>Save to Git</a>
                 </li>
                 <li class="bold sidenav-close" v-if="!isNative()">
-                    <a @click.prevent="saveFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">save_alt</i>Download</a>
+                    <a @click.prevent="saveFile();" class="waves-effect waves-teal"><i class="material-icons">save_alt</i>Download</a>
                 </li>
                 <li class="bold sidenav-close" v-if="isNative()">
-                    <a @click.prevent="shareFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">share</i>Share</a>
+                    <a @click.prevent="shareFile();" class="waves-effect waves-teal"><i class="material-icons">share</i>Share</a>
                 </li>
                 <li class="bold sidenav-close">
-                    <a @click="person={};" href="#" class="waves-effect waves-teal"><i class="material-icons">logout</i>Close</a>
+                    <a @click="close();" class="waves-effect waves-teal"><i class="material-icons">logout</i>Close</a>
                 </li>
                 <li v-if="isDebug()">
                     <div class="divider"></div>
@@ -238,8 +239,8 @@
                         <input id="gitCorsProxy" type="text" v-model="git.corsProxy" />
                     </div>
                 </div>
-                <a class="btn waves-effect waves-light modal-close" v-if="git.operation=='load'" v-on:click="loadGitData();"><i class="material-icons left">link</i>Load</a>
-                <a class="btn waves-effect waves-light modal-close" v-if="git.operation=='save'" v-on:click="saveGitData();"><i class="material-icons left">link</i>Save</a>
+                <a class="btn waves-effect waves-light modal-close" v-show="git.operation=='load'" v-on:click="loadGitData();"><i class="material-icons left">link</i>Load</a>
+                <a class="btn waves-effect waves-light modal-close" v-show="git.operation=='save'" v-on:click="saveGitData();"><i class="material-icons left">link</i>Save</a>
             </div>
             <div class="modal-footer">
                 <a class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -273,6 +274,9 @@
                 person: {}
             },
             mounted: function() {
+                if (window.localStorage.getItem("git")) {
+                    this.git = JSON.parse(window.localStorage.getItem("git"));
+                }
                 if (this.isLocalStorage()) {
                     this.page = "tree";
                     window.setTimeout(function() {
@@ -281,21 +285,23 @@
                 } else {
                     this.page = "start";
                 }
-                // Load git connection details
-                if (window.localStorage.getItem("git")) {
-                    this.git = JSON.parse(window.localStorage.getItem("git"));
+                if (this.isGitConnected()) {
+                    this.page = "tree";
+                    window.setTimeout(function() {
+                        genea.loadGitData();
+                    }, 200);
                 }
             },
             watch: {
                 person: {
                     handler: function(val, oldVal) {
-                        if (oldVal.id == val.id) {
-                            const isEqual = (...objects) => objects.every(obj => JSON.stringify(obj) === JSON.stringify(objects[0]));
-                            if (!isEqual(val, oldVal)) {
-                                this.git.outstandingChanges = true;
-                                this.autoSave();
-                            }
+                        //if (oldVal.id == val.id) {
+                        const isEqual = (...objects) => objects.every(obj => JSON.stringify(obj) === JSON.stringify(objects[0]));
+                        if (!isEqual(val, oldVal)) {
+                            this.git.outstandingChanges = true;
+                            this.autoSave();
                         }
+                        //}
                     },
                     deep: true
                 },
@@ -316,9 +322,15 @@
                     // If git is connected, save changes
                     if (genea.isGitConnected()) {
                         // Delay saving until no changes have been made for 10 seconds
-                        clearTimeout(genea.autoSaveTimeout);
-                        genea.autoSaveTimeout = setTimeout(function() {
-                            genea.saveGitData();
+                        clearTimeout(window.autoGitSaveTimeout);
+                        window.autoGitSaveTimeout = setTimeout(function() {
+                            // Let only one window auto save
+                            if (!window.localStorage.getItem("isGitSaving")) {
+                                window.localStorage.setItem("isGitSaving", true);
+                                genea.saveGitData();
+                            } else {
+                                this.git.outstandingChanges = false;
+                            }
                         }, 10 * 1000);
                     }
                 },
@@ -367,6 +379,15 @@
                         }
                     }
                 },
+                close: function() {
+                    if ((this.isGitConnected() && !this.git.outstandingChanges) || window.confirm("This will clear the family tree. Changes made will not be saved.")) {
+                        // Clear local storage
+                        window.localStorage.clear();
+                        // Go back to start
+                        document.location = document.location.origin + document.location.pathname;
+                    }
+                    return false;
+                },
                 loadFile: function(event) {
                     if (!stamboom.isLoaded || window.confirm("This will clear the family tree you previously had open.")) {
                         let file = event.srcElement.files[0];
@@ -409,12 +430,12 @@
                     }
                 },
                 openGitModal: function(operation) {
+                    this.git.operation = operation;
                     var modal = M.Modal.init(document.querySelector("#modalGit"), {
                         "onCloseEnd": function() {
                             M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'));
                         }
                     });
-                    this.git.operation = operation;
                     modal.open();
                 },
                 isGitConnected: function() {
@@ -434,6 +455,7 @@
                         return;
                     }
                     try {
+                        debugger
                         // Clean state
                         window.fs = new LightningFS('fs', {
                             wipe: true
@@ -461,7 +483,11 @@
                             var result = new TextDecoder().decode(await pfs.readFile(dir + '/genea.ged'));
                             genea.page = "tree";
                             stamboom.load(result);
-                            stamboom.select();
+                            router();
+                            if (!genea.person.id) {
+                                var selectedPerson = window.localStorage.getItem("selectedPerson");
+                                stamboom.select(selectedPerson);
+                            }
                         } else {
                             alert("Cannot load GEDCOM file. Ensure there is a file called 'genea.ged' in the root of the repository.");
                         }
@@ -534,7 +560,8 @@
                                 username: this.git.personalAccessToken
                             }),
                         });
-                        console.log("Pushed:", pushResult)
+                        console.log("Pushed:", pushResult);
+                        window.localStorage.removeItem("isGitSaving");
                         if (pushResult.ok) {
                             this.git.outstandingChanges = false;
                         } else {
