@@ -14,6 +14,11 @@
     <script>
         var hpccWasm = window["@hpcc-js/wasm"];
     </script>
+    <script src="https://unpkg.com/@isomorphic-git/lightning-fs"></script>
+    <script src="https://unpkg.com/isomorphic-git@beta"></script>
+    <script type="module">
+        import http from 'https://unpkg.com/isomorphic-git@beta/http/web/index.js'; window.http = http; window.fs = new LightningFS('fs'); window.pfs = window.fs.promises;
+    </script>
     <link href="resources/googlefonts/materialicons.css" rel="stylesheet">
     <link rel="stylesheet" href="resources/materialize/css/materialize.min.css">
     <!-- Genea.app -->
@@ -42,8 +47,8 @@
                     in control on where to save your data, avoiding any type of vendor lock-in.
                 </p>
                 <p style="text-align: justify;">
-                    You can use Genea both on your mobile devices as well as on your desktop. The changes you make are persistently stored on your device. To transfer the data between devices, be sure to save the GEDCOM file when you are done and exchange it for example
-                    via e-mail or using a cloud service like Dropbox.
+                    You can use Genea both on your mobile devices as well as on your desktop. The changes you make are persistently stored on your device. To work on your family tree from multiple devices, you can either save the GEDCOM file when you are done and exchange
+                    it for example via e-mail or a cloud service like Dropbox, or you can use the built in Git integration which lets you store your work in any private or public repository.
                 </p>
             </div>
             <div class="section" v-if="isNative()">
@@ -52,22 +57,26 @@
                     Create a new family tree from scratch, or start from a GEDCOM file previously exported from other services like MyHeritage, FamilySearch, or Ancestry.
                 </p>
             </div>
-            <div class="section" v-if="isLocalStorage()" v-cloak>
-                <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='tree'; loadLocalStorage()">
-                    <i class="material-icons left">sync</i>
-                    Continue with current family tree
-                </button>
-            </div>
             <div class="section">
                 <button class="btn-large waves-effect waves-light" v-on:click="loadExample('new')">
                     <i class="material-icons left">create</i>
                     Start new family tree
                 </button>
+                <label class="btn-large waves-effect waves-light" v-on:click="openGitModal('load')">
+					<i class="material-icons left">cloud_download</i>
+					Open
+				</label>
                 <label class="btn-large waves-effect waves-light">
 					<i class="material-icons left">get_app</i>
-					Load GEDCOM
+					Upload
 					<input type="file" style="display: none;" v-on:change="loadFile">
 				</label>
+            </div>
+            <div class="section" v-if="isLocalStorage()" v-cloak>
+                <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='tree'; loadLocalStorage()">
+                    <i class="material-icons left">sync</i>
+                    Continue with current family tree
+                </button>
             </div>
             <div class="section">
                 <h4 class="light">Examples</h4>
@@ -157,14 +166,19 @@
                 <li>
                     <a class="subheader">Actions</a>
                 </li>
+                <li class="bold sidenav-close">
+                    <a @click.prevent="saveGit();" v-if="isGitConnected() && !git.outstandingChanges" class="waves-effect waves-teal grey-text"><i class="material-icons">published_with_changes</i>Up to date</a>
+                    <a @click.prevent="saveGit();" v-if="isGitConnected() && git.outstandingChanges" class="waves-effect waves-teal"><i class="material-icons">cloud_upload</i>Unsaved changes</a>
+                    <a @click.prevent="saveGit();" v-if="!isGitConnected()" class="waves-effect waves-teal"><i class="material-icons">cloud_upload</i>Save to Git</a>
+                </li>
                 <li class="bold sidenav-close" v-if="!isNative()">
-                    <a @click.prevent="saveFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">save_alt</i>Save GEDCOM</a>
+                    <a @click.prevent="saveFile();" class="waves-effect waves-teal"><i class="material-icons">save_alt</i>Download</a>
                 </li>
                 <li class="bold sidenav-close" v-if="isNative()">
-                    <a @click.prevent="shareFile();" href="#" class="waves-effect waves-teal"><i class="material-icons">share</i>Share GEDCOM</a>
+                    <a @click.prevent="shareFile();" class="waves-effect waves-teal"><i class="material-icons">share</i>Share</a>
                 </li>
                 <li class="bold sidenav-close">
-                    <a @click="person={};" href="#" class="waves-effect waves-teal"><i class="material-icons">swap_horiz</i>Load GEDCOM</a>
+                    <a @click="close();" class="waves-effect waves-teal"><i class="material-icons">logout</i>Close</a>
                 </li>
                 <li v-if="isDebug()">
                     <div class="divider"></div>
@@ -194,6 +208,45 @@
             <debug :debug="debug" />
         </main>
 
+        <!-- Modals -->
+        <div id="modalGit" class="modal">
+            <div class="modal-content">
+                <div class="row">
+                    <h4>Git Repository</h4>
+                </div>
+                <div class="row">
+                    <p>Connect to a Git Repository to load or save your GEDCOM family tree. You can use a hosted service like <a href="https://github.com/" target="_blank">GitHub</a> or <a href="https://gitlab.com/" target="_blank">GitLab</a>, or connect
+                        to a self hosted repository like <a href="https://gitea.io/" target="_blank">Gitea</a>, <a href="https://gogs.io/" target="_blank">Gogs</a>, or <a href="https://github.com/gitbucket/gitbucket" target="_blank">GitBucket</a>.</p>
+                </div>
+                <div class="row">
+                    <h4>Connection Details</h4>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <label for="gitRepository" class="active">Repository URL</label>
+                        <input id="gitRepository" type="text" v-model="git.repository" />
+                    </div>
+                    <div class="input-field">
+                        <label for="gitBranch" class="active">Branch</label>
+                        <input id="gitBranch" type="text" v-model="git.branch" />
+                    </div>
+                    <div class="input-field">
+                        <label for="gitPersonalAccessToken" class="active">Personal Access Token</label>
+                        <input id="gitPersonalAccessToken" type="text" v-model="git.personalAccessToken" />
+                    </div>
+                    <div class="input-field">
+                        <label for="gitCorsProxy" class="active">CORS Proxy (optional)</label>
+                        <input id="gitCorsProxy" type="text" v-model="git.corsProxy" />
+                    </div>
+                </div>
+                <a class="btn waves-effect waves-light modal-close" v-show="git.operation=='load'" v-on:click="loadGitData();"><i class="material-icons left">link</i>Load</a>
+                <a class="btn waves-effect waves-light modal-close" v-show="git.operation=='save'" v-on:click="saveGitData();"><i class="material-icons left">link</i>Save</a>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+
     </div>
 
 
@@ -210,9 +263,20 @@
                     dot: "",
                     gedcom: ""
                 },
+                git: {
+                    repository: null,
+                    branch: "main",
+                    personalAccessToken: null,
+                    corsProxy: "https://cors.isomorphic-git.org",
+                    operation: null,
+                    outstandingChanges: false
+                },
                 person: {}
             },
             mounted: function() {
+                if (window.localStorage.getItem("git")) {
+                    this.git = JSON.parse(window.localStorage.getItem("git"));
+                }
                 if (this.isLocalStorage()) {
                     this.page = "tree";
                     window.setTimeout(function() {
@@ -221,19 +285,55 @@
                 } else {
                     this.page = "start";
                 }
+                if (this.isGitConnected()) {
+                    this.page = "tree";
+                    window.setTimeout(function() {
+                        genea.loadGitData();
+                    }, 200);
+                }
             },
             watch: {
                 person: {
                     handler: function(val, oldVal) {
-                        window.clearTimeout(window.autoSaveTimeout);
-                        window.autoSaveTimeout = window.setTimeout(function() {
-                            genea.saveLocalStorage();
-                        }, 1000);
+                        //if (oldVal.id == val.id) {
+                        const isEqual = (...objects) => objects.every(obj => JSON.stringify(obj) === JSON.stringify(objects[0]));
+                        if (!isEqual(val, oldVal)) {
+                            this.git.outstandingChanges = true;
+                            this.autoSave();
+                        }
+                        //}
+                    },
+                    deep: true
+                },
+                git: {
+                    handler: function(val, oldVal) {
+                        window.localStorage.setItem("git", JSON.stringify(this.git));
                     },
                     deep: true
                 }
             },
             methods: {
+                autoSave: function() {
+                    // Save changes into local storage
+                    window.clearTimeout(window.autoSaveTimeout);
+                    window.autoSaveTimeout = window.setTimeout(function() {
+                        genea.saveLocalStorage();
+                    }, 1000);
+                    // If git is connected, save changes
+                    if (genea.isGitConnected()) {
+                        // Delay saving until no changes have been made for 10 seconds
+                        clearTimeout(window.autoGitSaveTimeout);
+                        window.autoGitSaveTimeout = setTimeout(function() {
+                            // Let only one window auto save
+                            if (!window.localStorage.getItem("isGitSaving")) {
+                                window.localStorage.setItem("isGitSaving", true);
+                                genea.saveGitData();
+                            } else {
+                                this.git.outstandingChanges = false;
+                            }
+                        }, 10 * 1000);
+                    }
+                },
                 loadExample: function(example) {
                     if (!stamboom.isLoaded || window.confirm("This will clear the family tree you previously had open.")) {
                         genea.page = "tree";
@@ -278,6 +378,15 @@
                             });
                         }
                     }
+                },
+                close: function() {
+                    if ((this.isGitConnected() && !this.git.outstandingChanges) || window.confirm("This will clear the family tree. Changes made will not be saved.")) {
+                        // Clear local storage
+                        window.localStorage.clear();
+                        // Go back to start
+                        document.location = document.location.origin + document.location.pathname;
+                    }
+                    return false;
                 },
                 loadFile: function(event) {
                     if (!stamboom.isLoaded || window.confirm("This will clear the family tree you previously had open.")) {
