@@ -1,0 +1,1530 @@
+{
+  "id": "ffc3da90-97d6-4d7a-a127-c76b62a7479b",
+  "version": "2.0",
+  "name": "Doe Family",
+  "url": "https://www.genea.app",
+  "tests": [{
+    "id": "f8c1808c-3356-4c87-9477-c58b8fd9b5f2",
+    "name": "Joe Family",
+    "commands": [{
+      "id": "1ba510ea-c4ca-4929-8d6a-ac132bb9774e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3c6fa5ab-79dc-4837-83e3-625b3b8b9da7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1400x1100",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e58a452c-a38e-4904-a2ee-5c3ac574c272",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a3301014-4c38-4ce0-b122-b0b786d8d681",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "414ce890-ec03-41f2-b8ac-a58ec9d0a854",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modalAddPerson p:nth-child(2) span",
+      "targets": [
+        ["css=#modalAddPerson p:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Parent')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5942100f-cce6-4391-8501-3cd9bae91d0d",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(8) span",
+      "targets": [
+        ["css=p:nth-child(8) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[6]/label/span", "xpath:idRelative"],
+        ["xpath=//p[6]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ab7f562-3c0b-4b29-a5fa-5790e282900d",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7764bdae-4bf5-42df-9a02-5e6dffc49852",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Jane"
+    }, {
+      "id": "db6c836b-dd7c-4e8f-b2cb-eb6c74160c29",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Joe"
+    }, {
+      "id": "fd19478a-5edb-49e9-8a48-f3073f630b79",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "F"
+    }, {
+      "id": "6e0d1260-372f-43b2-bdad-b014adac4a8d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .btn",
+      "targets": [
+        ["css=.col > .btn", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ecdb9367-80ae-43a5-9cfd-a12293bd9091",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "66d2c6ed-4f9d-4751-8322-9d588c53486c",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "632f8328-da65-4eda-9ff8-dc5639d3bd3d",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modalAddPerson p:nth-child(2) span",
+      "targets": [
+        ["css=#modalAddPerson p:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Parent')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d4beb28-d0ff-4ba4-b6ee-db3c6793a26f",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(8) span",
+      "targets": [
+        ["css=p:nth-child(8) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[6]/label/span", "xpath:idRelative"],
+        ["xpath=//p[6]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f3a7bf6-1549-408e-8339-843880096016",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c6c6817-074e-4dc9-8306-33a6cf60853f",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Jack"
+    }, {
+      "id": "c8e83fcf-80f8-4f17-8267-6054634af3ba",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Doe"
+    }, {
+      "id": "223b1d07-3a6a-4e7a-b7e6-caa8d5ce96fc",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "M"
+    }, {
+      "id": "e0387a67-4ea0-4c57-b241-280fddb57d35",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .btn",
+      "targets": [
+        ["css=.col > .btn", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff15e6e9-adbf-47ec-beab-f092f3015994",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf7f5d15-d88d-4252-98cf-476011d74b5e",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eeaacebe-fc03-43a1-aaa7-8739de405dbd",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=div:nth-child(4) > .modal-trigger > .material-icons",
+      "targets": [
+        ["css=div:nth-child(4) > .modal-trigger > .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[4]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4133b18d-e6b1-45be-8639-af40bbfa0e8a",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(4) span",
+      "targets": [
+        ["css=p:nth-child(4) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[3]/label/span", "xpath:idRelative"],
+        ["xpath=//p[3]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Sibling')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "72f031c1-e4f4-4ce7-8c7e-ac4c3304cf02",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(8) span",
+      "targets": [
+        ["css=p:nth-child(8) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[6]/label/span", "xpath:idRelative"],
+        ["xpath=//p[6]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61547aa2-fb11-4f27-a1aa-78f837d5f7a8",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2d98320-29d7-4a1b-81d2-9a3887d7295f",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Jackson"
+    }, {
+      "id": "10cec294-3f93-45df-8e08-7eb707709114",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Doe"
+    }, {
+      "id": "ab8e60e3-30eb-4245-b7b3-585e201815a0",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "M"
+    }, {
+      "id": "3a0431d3-8a5d-460e-98a5-06aac95cedc2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .btn",
+      "targets": [
+        ["css=.col > .btn", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aed988d7-f101-44c8-a045-ec00419fa019",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bde869a0-a22d-434b-9fad-9caba6c25b8c",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7705759-c328-4c87-8af9-ec3fbaa6ea5e",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "99ef732c-ea23-4461-866f-18f882ebc4ef",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd34da2a-bd52-42d8-8c43-6ae91cef9386",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=div:nth-child(4) > .modal-trigger > .material-icons",
+      "targets": [
+        ["css=div:nth-child(4) > .modal-trigger > .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[4]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b3cabd5-e17f-464a-bff8-af082e80bbd8",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modalAddPerson p:nth-child(3) span",
+      "targets": [
+        ["css=#modalAddPerson p:nth-child(3) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[2]/label/span", "xpath:idRelative"],
+        ["xpath=//p[2]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Relation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "402df3a6-5085-4750-9f09-02388d436283",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(8) span",
+      "targets": [
+        ["css=p:nth-child(8) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[6]/label/span", "xpath:idRelative"],
+        ["xpath=//p[6]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6a92319-cd37-4405-9cf8-395d69c440ee",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ae69c70e-5613-4d16-89e3-8d5855e33b22",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Jenny"
+    }, {
+      "id": "c07725d5-3bac-4e05-bec6-7e39e074c9f6",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Jennings"
+    }, {
+      "id": "00a7cebb-675c-427b-b8f1-9e4eb79eb0b2",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "F"
+    }, {
+      "id": "da724f73-3c77-4474-b48d-51dfa277b347",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .btn",
+      "targets": [
+        ["css=.col > .btn", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b2947432-3a74-473f-aa8b-7f60963251d0",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44274f54-e722-4be4-9c35-b8d782ef4829",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "98b89e0a-1221-4df8-b021-4ce4d6dfea07",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "16294387-4234-41dd-b201-b31ca0fea4b1",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modalAddPerson p:nth-child(3) span",
+      "targets": [
+        ["css=#modalAddPerson p:nth-child(3) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[2]/label/span", "xpath:idRelative"],
+        ["xpath=//p[2]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Relation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c16fc51e-3974-40a1-a279-efa5e37db46c",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(8) span",
+      "targets": [
+        ["css=p:nth-child(8) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[6]/label/span", "xpath:idRelative"],
+        ["xpath=//p[6]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe3e45b9-5ab8-4207-b745-aca2bbb4c3df",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcaf3b09-8285-4803-8401-288ce22d1997",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a72f39d-cffe-4eba-a5ef-b1753b17c6f3",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Jasmine"
+    }, {
+      "id": "12ae1953-4186-4a0b-ba05-077acc871bb8",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Jones"
+    }, {
+      "id": "50fb83ec-d35e-464a-ad7a-9e049d1e254c",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "F"
+    }, {
+      "id": "961f1b7b-025f-4edb-a036-dcc5d9bf6bab",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .modal-close",
+      "targets": [
+        ["css=.col > .modal-close", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "341f1f58-acaa-4d6d-942c-9d9ffd5a851c",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "530a18ce-24af-4016-a93e-b4028f736369",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c78f2694-1ef0-434c-8104-5252d41966f2",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "79cd3267-1f75-4889-8d8a-bc8a709014ac",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=div:nth-child(4) > .modal-trigger > .material-icons",
+      "targets": [
+        ["css=div:nth-child(4) > .modal-trigger > .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[4]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "09f23201-bebe-46eb-ac55-335044092354",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(5) span",
+      "targets": [
+        ["css=p:nth-child(5) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[4]/label/span", "xpath:idRelative"],
+        ["xpath=//p[4]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Child')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f9e776a-bada-4927-8dd7-bab9a232591b",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(8) span",
+      "targets": [
+        ["css=p:nth-child(8) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[6]/label/span", "xpath:idRelative"],
+        ["xpath=//p[6]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Jenny Doe')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "02b930d7-423d-4f6e-99a7-7bdc6d5feb8a",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(11) span",
+      "targets": [
+        ["css=p:nth-child(11) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[8]/label/span", "xpath:idRelative"],
+        ["xpath=//p[8]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "333cf178-9007-4257-9472-8483dc18ae43",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "edb5af62-408c-4ed8-9a5f-ebdd2b8a048b",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Johnny"
+    }, {
+      "id": "b2195e21-28f1-40e6-be28-884e528c324b",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Doe"
+    }, {
+      "id": "e5f4aec7-788c-494e-92f8-aed41f0d8caa",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "M"
+    }, {
+      "id": "0973c937-b5c3-427f-89d4-44a87890a576",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .modal-close",
+      "targets": [
+        ["css=.col > .modal-close", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "676b1620-7363-4172-8269-8b4d7c477aaa",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "60f59223-ef70-4f4a-9517-4d3fbf058f0d",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(5) span",
+      "targets": [
+        ["css=p:nth-child(5) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[4]/label/span", "xpath:idRelative"],
+        ["xpath=//p[4]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Child')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "56076775-ef70-4ff1-a5f9-1b936e134b2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(8) span",
+      "targets": [
+        ["css=p:nth-child(8) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[6]/label/span", "xpath:idRelative"],
+        ["xpath=//p[6]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Jenny Doe')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "245f47a8-2600-4b1f-82c9-f6eda2f3d1bc",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(11) span",
+      "targets": [
+        ["css=p:nth-child(11) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[8]/label/span", "xpath:idRelative"],
+        ["xpath=//p[8]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce829ff9-b25b-4a35-8aec-998960ba504f",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2918a065-daab-437f-bf36-1cd1c9990385",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Jimmy"
+    }, {
+      "id": "87efde15-d567-4c27-adf0-72d9df53ba93",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Doe"
+    }, {
+      "id": "bf9813be-65cd-4b8f-ad2e-00e4d41e36bc",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "M"
+    }, {
+      "id": "12d212a6-bf2d-4a0b-b2e9-926860013613",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0fd27ec1-34c5-46c6-b6f3-4538d14ed96a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .modal-close",
+      "targets": [
+        ["css=.col > .modal-close", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f91b8be-c1d5-42e5-9ae1-acdb007222a7",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f2c2601-0e89-4425-849d-2adfc45e393b",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7308659-a6ea-4a16-87cd-9a12a73b590b",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=div:nth-child(4) > .modal-trigger > .material-icons",
+      "targets": [
+        ["css=div:nth-child(4) > .modal-trigger > .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[4]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c61a836-2d2c-4800-9eee-af550c2f398a",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(5) span",
+      "targets": [
+        ["css=p:nth-child(5) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[4]/label/span", "xpath:idRelative"],
+        ["xpath=//p[4]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Child')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f343c1f0-ef71-42c5-bb15-c87bfe4f4181",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(9) span",
+      "targets": [
+        ["css=p:nth-child(9) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[7]/label/span", "xpath:idRelative"],
+        ["xpath=//p[7]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Jasmine Joe')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d16ddd5b-f70c-4b86-8ec8-bce0653da107",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(11) span",
+      "targets": [
+        ["css=p:nth-child(11) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[8]/label/span", "xpath:idRelative"],
+        ["xpath=//p[8]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff582fe2-56ae-495e-83cf-b225e4e5c0dc",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b57734d-2f14-4ad8-a994-2b12f3c47b27",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Joanna"
+    }, {
+      "id": "d8c1f1bc-beed-4e71-a429-c3d3a469f717",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Doe"
+    }, {
+      "id": "158574c9-1c04-4379-95b4-ae464ad41276",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "F"
+    }, {
+      "id": "e162772b-5499-4e48-969a-d6de7837bcdb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .modal-close",
+      "targets": [
+        ["css=.col > .modal-close", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0886f94f-e476-4104-9fac-eb0217b18c73",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "53f888e5-96dd-4216-b342-b03a0306e0b4",
+      "comment": "",
+      "command": "click",
+      "target": "css=#a_stamboom_\\@I3\\@ text",
+      "targets": [
+        ["css=#a_stamboom_\\@I3\\@ text", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "c02b4544-8899-46bd-85ff-a559cde0d518",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44785936-2947-4a9b-a619-a22e3f69b660",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4725841c-be04-40f1-84d0-0f80a6260d2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modalAddPerson p:nth-child(2) span",
+      "targets": [
+        ["css=#modalAddPerson p:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Parent')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d933012d-1c3a-4310-a1cc-7a750b883585",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(8) span",
+      "targets": [
+        ["css=p:nth-child(8) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[6]/label/span", "xpath:idRelative"],
+        ["xpath=//p[6]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5df72491-d507-4728-8e3c-1d41e877b3e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f58ed683-a0b8-4dfa-be2a-91f7ae619b10",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Joseph"
+    }, {
+      "id": "2b6f1ea3-415d-4944-b49b-4b693937184a",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Joe"
+    }, {
+      "id": "b46fe3ab-417f-44ec-8264-411465ccceca",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "M"
+    }, {
+      "id": "cd44c642-8891-4af3-a991-e4537c3f0a07",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .modal-close",
+      "targets": [
+        ["css=.col > .modal-close", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fa2bb36-b744-4c66-aab9-9666bcb08f2e",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d325d995-91f1-4e85-b634-c573af88b477",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modalAddPerson p:nth-child(2) span",
+      "targets": [
+        ["css=#modalAddPerson p:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Parent')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c2f8bc7-e42b-4c4a-8b43-4be382f6adc3",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(8) span",
+      "targets": [
+        ["css=p:nth-child(8) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[6]/label/span", "xpath:idRelative"],
+        ["xpath=//p[6]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "313a6bcd-5373-46bd-8f98-4cfbfa4b79ab",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a13a9828-3bfb-4524-84a0-79d26f75a898",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Julia"
+    }, {
+      "id": "5b92567f-6a5b-4224-a538-bf9a421a011b",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Johnson"
+    }, {
+      "id": "859fb7a2-afad-484c-8470-471420ac5854",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "F"
+    }, {
+      "id": "fd1f90b7-648d-4e14-a67e-b86480260bf5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .modal-close",
+      "targets": [
+        ["css=.col > .modal-close", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ee97f14-da1a-4b69-8246-a48ce080e3da",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cacfe112-c920-45a1-8d9b-cd5d2f671e58",
+      "comment": "",
+      "command": "click",
+      "target": "css=#a_stamboom_\\@I2\\@ text",
+      "targets": [
+        ["css=#a_stamboom_\\@I2\\@ text", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "35703710-bf38-4dc1-b1bb-68bd8f02375c",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf6fc3b6-642d-468e-8ea9-a4c159d99705",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4772846c-4629-43ae-9742-0697a932c55e",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modalAddPerson p:nth-child(2) span",
+      "targets": [
+        ["css=#modalAddPerson p:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Parent')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c2f06cf-b498-46db-bb3a-0cc9411b9a2c",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(8) span",
+      "targets": [
+        ["css=p:nth-child(8) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[6]/label/span", "xpath:idRelative"],
+        ["xpath=//p[6]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "19eaa3f7-9963-4b3c-8327-9d7cbb8d28d2",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c6a03ab6-f8bb-43c7-bb5b-861b4797b02e",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91108dfe-2b75-455d-8836-546475669b99",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Jacob"
+    }, {
+      "id": "ebf374dd-ead2-48ee-90b3-6c440ba8c363",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Joe"
+    }, {
+      "id": "01f8ed5c-0116-4c5b-981c-1f5e3ce33fbb",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "M"
+    }, {
+      "id": "7e865d08-f360-4214-b9fe-272b4989e96d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .modal-close",
+      "targets": [
+        ["css=.col > .modal-close", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a16eda87-12a7-41b7-bef8-74d8d3b7fa96",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61ba79b9-86d6-4a4c-8fab-300baf302a3a",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .material-icons",
+      "targets": [
+        ["css=div:nth-child(3) .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[3]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "49d770d0-8d67-437b-8623-278615cdfdb5",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=div:nth-child(4) > .modal-trigger > .material-icons",
+      "targets": [
+        ["css=div:nth-child(4) > .modal-trigger > .material-icons", "css:finder"],
+        ["xpath=//div[@id='genea']/main/div/div[4]/button/i", "xpath:idRelative"],
+        ["xpath=//button/i", "xpath:position"],
+        ["xpath=//i[contains(.,'add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3b0ca48-86ea-41a9-bee6-a222e0d80352",
+      "comment": "",
+      "command": "click",
+      "target": "css=#modalAddPerson p:nth-child(2) span",
+      "targets": [
+        ["css=#modalAddPerson p:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Parent')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "85ea5126-fcf3-4f39-bac0-e62c548ff8de",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(8) span",
+      "targets": [
+        ["css=p:nth-child(8) span", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/p[6]/label/span", "xpath:idRelative"],
+        ["xpath=//p[6]/label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create new person')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e87e330-f828-431b-ae0f-27f9f76657fa",
+      "comment": "",
+      "command": "click",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d33b1ab-0d1e-4f4b-9736-84e4857fb97e",
+      "comment": "",
+      "command": "type",
+      "target": "id=givenName",
+      "targets": [
+        ["id=givenName", "id"],
+        ["css=#givenName", "css:finder"],
+        ["xpath=//input[@id='givenName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "Josie"
+    }, {
+      "id": "15881459-ecaf-4f84-9bb1-ffa221036395",
+      "comment": "",
+      "command": "type",
+      "target": "id=surName",
+      "targets": [
+        ["id=surName", "id"],
+        ["css=#surName", "css:finder"],
+        ["xpath=//input[@id='surName']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "June"
+    }, {
+      "id": "01e8b313-a243-4b5b-ae7d-901d7df5332d",
+      "comment": "",
+      "command": "type",
+      "target": "id=sex",
+      "targets": [
+        ["id=sex", "id"],
+        ["css=#sex", "css:finder"],
+        ["xpath=//input[@id='sex']", "xpath:attributes"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "F"
+    }, {
+      "id": "a57a93aa-5c5a-47e0-9835-1c878b851b2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .modal-close",
+      "targets": [
+        ["css=.col > .modal-close", "css:finder"],
+        ["xpath=//div[@id='modalAddPerson']/div/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7959438b-03a1-414f-8fc3-d3dad87110c3",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "197e1d59-6201-430f-9af2-d1b3d5af594b",
+      "comment": "",
+      "command": "click",
+      "target": "css=#a_stamboom_\\@I1\\@ text",
+      "targets": [
+        ["css=#a_stamboom_\\@I1\\@ text", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5818d02-dc9c-4603-bba7-352f5b41bd94",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3770934f-ab53-4767-9aa0-20234849ab63",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f8c1808c-3356-4c87-9477-c58b8fd9b5f2"]
+  }],
+  "urls": ["https://www.genea.app/"],
+  "plugins": []
+}
