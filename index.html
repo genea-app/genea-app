@@ -30,6 +30,7 @@
     <script type="application/javascript" src="components/personaldetails.js"></script>
     <script type="application/javascript" src="components/relations.js"></script>
     <script type="application/javascript" src="components/debug.js"></script>
+    <script type="application/javascript" src="modals/new-person.js"></script>
 </head>
 
 <body>
@@ -217,6 +218,7 @@
         </main>
 
         <!-- Modals -->
+        <new-person :person="person" ref="modalNewPerson" />
         <div id="modalGit" class="modal">
             <div class="modal-content">
                 <div class="row">
