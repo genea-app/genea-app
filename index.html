@@ -30,6 +30,7 @@
     <script type="application/javascript" src="components/personaldetails.js"></script>
     <script type="application/javascript" src="components/relations.js"></script>
     <script type="application/javascript" src="components/debug.js"></script>
+    <script type="application/javascript" src="modals/new-person.js"></script>
 </head>
 
 <body>
@@ -46,6 +47,11 @@
                     family tree. Your data is formatted following the <a href="https://www.gedcom.org/" target="_blank">GEDCOM</a> specifications so it can be exchanged with other genealogy services. All processing is done in the browser, leaving you
                     in control on where to save your data, avoiding any type of vendor lock-in.
                 </p>
+                <p>
+                    <a href="screenshots/doe_family.mp4" target="_blank">
+                        <img src="screenshots/doe_family.png" title="Family tree preview" class="responsive-img" />
+                    </a>
+                </p>
                 <p style="text-align: justify;">
                     You can use Genea both on your mobile devices as well as on your desktop. The changes you make are persistently stored on your device. To work on your family tree from multiple devices, you can either save the GEDCOM file when you are done and exchange
                     it for example via e-mail or a cloud service like Dropbox, or you can use the built in Git integration which lets you store your work in any private or public repository.
@@ -57,8 +63,14 @@
                     Create a new family tree from scratch, or start from a GEDCOM file previously exported from other services like MyHeritage, FamilySearch, or Ancestry.
                 </p>
             </div>
+            <div class="section" v-if="isLocalStorage()" v-cloak>
+                <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='tree'; loadLocalStorage()">
+                    <i class="material-icons left">sync</i>
+                    Continue with current family tree
+                </button>
+            </div>
             <div class="section">
-                <button class="btn-large waves-effect waves-light" v-on:click="loadExample('new')">
+                <button class="btn-large waves-effect waves-light teal darken-3" v-on:click="loadExample('new')">
                     <i class="material-icons left">create</i>
                     Start new family tree
                 </button>
@@ -69,14 +81,8 @@
                 <label class="btn-large waves-effect waves-light">
 					<i class="material-icons left">get_app</i>
 					Upload
-					<input type="file" style="display: none;" v-on:change="loadFile">
+					<input type="file" style="display: none;" accept=".gedcom,.ged,.txt" v-on:change="loadFile">
 				</label>
-            </div>
-            <div class="section" v-if="isLocalStorage()" v-cloak>
-                <button class="btn-large waves-effect waves-light  red lighten-2" v-on:click="page='tree'; loadLocalStorage()">
-                    <i class="material-icons left">sync</i>
-                    Continue with current family tree
-                </button>
             </div>
             <div class="section">
                 <h4 class="light">Examples</h4>
@@ -112,7 +118,10 @@
             <div class="divider" v-if="!isNative()"></div>
             <div class="section" v-if="!isNative()">
                 <p>
-                    <a href="mailto:contact@genea.app" target="_blank">contact</a> - <a href="https://github.com/genea-app/genea-app" target="_blank">github</a> - <a href="https://github.com/genea-app/genea-app/blob/main/LICENSE" target="_blank">license</a>
+                    <a href="mailto:contact@genea.app" target="_blank">contact</a> -
+                    <a href="https://github.com/genea-app/genea-app/issues" target="_blank">issues</a> -
+                    <a href="https://github.com/genea-app/genea-app" target="_blank">github</a> -
+                    <a href="https://github.com/genea-app/genea-app/blob/main/LICENSE" target="_blank">license</a>
                 </p>
             </div>
         </div>
@@ -209,6 +218,7 @@
         </main>
 
         <!-- Modals -->
+        <new-person :person="person" ref="modalNewPerson" />
         <div id="modalGit" class="modal">
             <div class="modal-content">
                 <div class="row">
