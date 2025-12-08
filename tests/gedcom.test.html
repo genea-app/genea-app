@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GEDCOM Engine Tests</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .test-suite {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 20px 0;
+            padding: 15px;
+        }
+        .test-case {
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #ccc;
+            background: #f9f9f9;
+        }
+        .test-case.pass {
+            border-left-color: #4CAF50;
+            background: #f1f8f4;
+        }
+        .test-case.fail {
+            border-left-color: #f44336;
+            background: #fef1f0;
+        }
+        .test-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .test-error {
+            color: #d32f2f;
+            font-family: monospace;
+            margin-top: 5px;
+            white-space: pre-wrap;
+        }
+        .summary {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .summary.pass {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .summary.fail {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <h1>GEDCOM Engine Test Suite</h1>
+    <div id="results"></div>
+
+    <script src="../js/tags.js"></script>
+    <script src="../js/gedcom.js"></script>
+
+    <script>
+        // Simple test framework
+        class TestRunner {
+            constructor() {
+                this.tests = [];
+                this.results = [];
+            }
+
+            describe(suiteName, testFn) {
+                this.currentSuite = suiteName;
+                testFn();
+            }
+
+            it(testName, testFn) {
+                this.tests.push({
+                    suite: this.currentSuite,
+                    name: testName,
+                    fn: testFn
+                });
+            }
+
+            async run() {
+                for (let test of this.tests) {
+                    try {
+                        await test.fn();
+                        this.results.push({
+                            suite: test.suite,
+                            name: test.name,
+                            passed: true
+                        });
+                    } catch (error) {
+                        this.results.push({
+                            suite: test.suite,
+                            name: test.name,
+                            passed: false,
+                            error: error.message
+                        });
+                    }
+                }
+                this.displayResults();
+            }
+
+            displayResults() {
+                const resultsDiv = document.getElementById('results');
+                const suites = {};
+
+                // Group results by suite
+                this.results.forEach(result => {
+                    if (!suites[result.suite]) {
+                        suites[result.suite] = [];
+                    }
+                    suites[result.suite].push(result);
+                });
+
+                // Display results
+                let totalTests = this.results.length;
+                let passedTests = this.results.filter(r => r.passed).length;
+                let failedTests = totalTests - passedTests;
+
+                const summaryClass = failedTests === 0 ? 'pass' : 'fail';
+                resultsDiv.innerHTML += `
+                    <div class="summary ${summaryClass}">
+                        Total: ${totalTests} | Passed: ${passedTests} | Failed: ${failedTests}
+                    </div>
+                `;
+
+                Object.keys(suites).forEach(suiteName => {
+                    const suiteResults = suites[suiteName];
+                    let suiteHtml = `<div class="test-suite">
+                        <h2>${suiteName}</h2>`;
+
+                    suiteResults.forEach(result => {
+                        const status = result.passed ? 'pass' : 'fail';
+                        const icon = result.passed ? '✓' : '✗';
+                        suiteHtml += `
+                            <div class="test-case ${status}">
+                                <div class="test-name">${icon} ${result.name}</div>
+                                ${result.error ? `<div class="test-error">${result.error}</div>` : ''}
+                            </div>
+                        `;
+                    });
+
+                    suiteHtml += `</div>`;
+                    resultsDiv.innerHTML += suiteHtml;
+                });
+            }
+        }
+
+        function assert(condition, message) {
+            if (!condition) {
+                throw new Error(message || 'Assertion failed');
+            }
+        }
+
+        function assertEqual(actual, expected, message) {
+            if (actual !== expected) {
+                throw new Error(message || `Expected ${expected} but got ${actual}`);
+            }
+        }
+
+        function assertDeepEqual(actual, expected, message) {
+            if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+                throw new Error(message || `Expected ${JSON.stringify(expected)} but got ${JSON.stringify(actual)}`);
+            }
+        }
+
+        // Test Suite
+        const runner = new TestRunner();
+
+        runner.describe('GEDCOM Parser', () => {
+            runner.it('should parse a simple GEDCOM file', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME John /Doe/
+2 GIVN John
+2 SURN Doe
+1 SEX M
+0 TRLR`;
+                gedcom.parse(data);
+                assert(gedcom.data, 'GEDCOM data should be parsed');
+                assert(gedcom.data.length > 0, 'GEDCOM data should have elements');
+            });
+
+            runner.it('should parse individual records correctly', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME John /Doe/
+2 GIVN John
+2 SURN Doe
+1 SEX M
+1 BIRT
+2 DATE 1 JAN 1980
+2 PLAC New York
+0 TRLR`;
+                gedcom.parse(data);
+                const person = gedcom.person('@I1@');
+                assertEqual(person.name, 'John Doe', 'Name should be parsed correctly');
+                assertEqual(person.gender, 'M', 'Gender should be parsed correctly');
+                assertEqual(person.birth, '1 JAN 1980', 'Birth date should be parsed correctly');
+            });
+
+            runner.it('should handle CONC tags correctly', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME John /Doe/
+1 NOTE This is a very long note that needs to be
+2 CONC  concatenated together without spaces
+0 TRLR`;
+                gedcom.parse(data);
+                const person = gedcom.person('@I1@');
+                const note = person.items.find(item => item.tag === 'NOTE');
+                assert(note.value.includes('concatenated together without spaces'), 'CONC should concatenate without spaces');
+            });
+
+            runner.it('should handle CONT tags correctly', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME John /Doe/
+1 NOTE First line of note
+2 CONT Second line of note
+0 TRLR`;
+                gedcom.parse(data);
+                const person = gedcom.person('@I1@');
+                const note = person.items.find(item => item.tag === 'NOTE');
+                assert(note.value.includes('\n'), 'CONT should add a newline');
+                assert(note.value.includes('Second line'), 'CONT should include the next line');
+            });
+
+            runner.it('should parse nested structures correctly', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME John /Doe/
+1 BIRT
+2 DATE 1 JAN 1980
+2 PLAC New York, NY
+0 TRLR`;
+                gedcom.parse(data);
+                const person = gedcom.person('@I1@');
+                const birth = person.items.find(item => item.tag === 'BIRT');
+                assert(birth, 'Birth event should exist');
+                assert(birth.items, 'Birth event should have child items');
+                const date = birth.items.find(item => item.tag === 'DATE');
+                assertEqual(date.value, '1 JAN 1980', 'Birth date should be nested correctly');
+            });
+        });
+
+        runner.describe('GEDCOM Stringifier', () => {
+            runner.it('should stringify a simple GEDCOM structure', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME John /Doe/
+1 SEX M
+0 TRLR`;
+                gedcom.parse(data);
+                const output = gedcom.stringify();
+                assert(output.includes('0 HEAD'), 'Output should contain header');
+                assert(output.includes('0 @I1@ INDI'), 'Output should contain individual');
+                assert(output.includes('1 NAME John /Doe/'), 'Output should contain name');
+            });
+
+            runner.it('should handle long values with CONC correctly', () => {
+                const gedcom = new Gedcom();
+                const longText = 'A'.repeat(250);
+                gedcom.data = [{
+                    level: 0,
+                    pointer: '@I1@',
+                    tag: 'INDI',
+                    items: [{
+                        level: 1,
+                        tag: 'NOTE',
+                        value: longText,
+                        items: []
+                    }]
+                }];
+                const output = gedcom.stringify();
+                assert(output.includes('CONC'), 'Long values should be split with CONC');
+            });
+        });
+
+        runner.describe('GEDCOM Person Operations', () => {
+            runner.it('should add a new person correctly', () => {
+                const gedcom = new Gedcom();
+                gedcom.data = [];
+                const person = gedcom.addPerson('Jane', 'Smith', 'F');
+                assert(person.id, 'New person should have an ID');
+                assert(person.name, 'New person should have a name');
+                assertEqual(person.gender, 'F', 'New person should have correct gender');
+            });
+
+            runner.it('should get all persons from GEDCOM', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME John /Doe/
+1 SEX M
+0 @I2@ INDI
+1 NAME Jane /Smith/
+1 SEX F
+0 TRLR`;
+                gedcom.parse(data);
+                const persons = gedcom.getPersons();
+                assertEqual(persons.length, 2, 'Should return all persons');
+            });
+
+            runner.it('should get person caption correctly', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME John /Doe/
+1 BIRT
+2 DATE 1 JAN 1980
+1 DEAT
+2 DATE 31 DEC 2050
+0 TRLR`;
+                gedcom.parse(data);
+                const person = gedcom.person('@I1@');
+                assert(person.caption, 'Person should have a caption');
+                assert(person.caption.includes('John Doe'), 'Caption should include name');
+                assert(person.caption.includes('1980'), 'Caption should include birth year');
+            });
+        });
+
+        runner.describe('GEDCOM Relationship Operations', () => {
+            runner.it('should add a new relation correctly', () => {
+                const gedcom = new Gedcom();
+                gedcom.data = [];
+                const person1 = gedcom.addPerson('John', 'Doe', 'M');
+                const person2 = gedcom.addPerson('Jane', 'Smith', 'F');
+                const relationId = gedcom.addRelation(person1.id, person2.id);
+                assert(relationId, 'Relation should have an ID');
+                const family = gedcom.data.find(item => item.tag === 'FAM' && item.pointer === relationId);
+                assert(family, 'Family record should be created');
+            });
+
+            runner.it('should add a child to a relation correctly', () => {
+                const gedcom = new Gedcom();
+                gedcom.data = [];
+                const person1 = gedcom.addPerson('John', 'Doe', 'M');
+                const person2 = gedcom.addPerson('Jane', 'Smith', 'F');
+                const child = gedcom.addPerson('Junior', 'Doe', 'M');
+                const relationId = gedcom.addRelation(person1.id, person2.id);
+                gedcom.addChild(relationId, child.id);
+                
+                const family = gedcom.data.find(item => item.tag === 'FAM' && item.pointer === relationId);
+                const childRef = family.items.find(item => item.tag === 'CHIL');
+                assert(childRef, 'Child reference should be added to family');
+                assertEqual(childRef.value, child.id, 'Child reference should point to child ID');
+            });
+
+            runner.it('should get relations correctly', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME John /Doe/
+1 SEX M
+1 FAMS @F1@
+0 @I2@ INDI
+1 NAME Jane /Smith/
+1 SEX F
+1 FAMS @F1@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+0 TRLR`;
+                gedcom.parse(data);
+                const relations = gedcom.relations('@I1@');
+                assertEqual(relations.length, 1, 'Should find one relation');
+                assert(relations[0].partner, 'Relation should have a partner');
+                assertEqual(relations[0].partner.id, '@I2@', 'Partner should be correct person');
+            });
+
+            runner.it('should get father correctly', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME John /Doe/
+1 SEX M
+0 @I2@ INDI
+1 NAME Junior /Doe/
+1 SEX M
+1 FAMC @F1@
+0 @F1@ FAM
+1 HUSB @I1@
+1 CHIL @I2@
+0 TRLR`;
+                gedcom.parse(data);
+                const father = gedcom.father('@I2@');
+                assert(father.id, 'Father should be found');
+                assertEqual(father.id, '@I1@', 'Father should be correct person');
+            });
+
+            runner.it('should get mother correctly', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME Jane /Doe/
+1 SEX F
+0 @I2@ INDI
+1 NAME Junior /Doe/
+1 SEX M
+1 FAMC @F1@
+0 @F1@ FAM
+1 WIFE @I1@
+1 CHIL @I2@
+0 TRLR`;
+                gedcom.parse(data);
+                const mother = gedcom.mother('@I2@');
+                assert(mother.id, 'Mother should be found');
+                assertEqual(mother.id, '@I1@', 'Mother should be correct person');
+            });
+
+            runner.it('should get siblings correctly', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME Child1 /Doe/
+1 FAMC @F1@
+0 @I2@ INDI
+1 NAME Child2 /Doe/
+1 FAMC @F1@
+0 @I3@ INDI
+1 NAME Child3 /Doe/
+1 FAMC @F1@
+0 @F1@ FAM
+1 CHIL @I1@
+1 CHIL @I2@
+1 CHIL @I3@
+0 TRLR`;
+                gedcom.parse(data);
+                const siblings = gedcom.siblings('@I1@');
+                assertEqual(siblings.length, 2, 'Should find two siblings');
+            });
+
+            runner.it('should get grandparents correctly', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME Grandpa /Doe/
+1 SEX M
+0 @I2@ INDI
+1 NAME Father /Doe/
+1 SEX M
+1 FAMC @F1@
+0 @I3@ INDI
+1 NAME Child /Doe/
+1 FAMC @F2@
+0 @F1@ FAM
+1 HUSB @I1@
+1 CHIL @I2@
+0 @F2@ FAM
+1 HUSB @I2@
+1 CHIL @I3@
+0 TRLR`;
+                gedcom.parse(data);
+                const grandpa = gedcom.paternalgrandfather('@I3@');
+                assert(grandpa.id, 'Grandfather should be found');
+                assertEqual(grandpa.id, '@I1@', 'Grandfather should be correct person');
+            });
+        });
+
+        runner.describe('GEDCOM Edge Cases', () => {
+            runner.it('should handle missing person gracefully', () => {
+                const gedcom = new Gedcom();
+                gedcom.data = [];
+                const person = gedcom.person('@NONEXISTENT@');
+                assert(typeof person === 'object', 'Should return an object');
+                assert(!person.id, 'Missing person should not have an ID');
+            });
+
+            runner.it('should handle missing family members gracefully', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME Orphan /Child/
+0 TRLR`;
+                gedcom.parse(data);
+                const father = gedcom.father('@I1@');
+                assert(typeof father === 'object', 'Should return an object');
+                assert(!father.id, 'Missing father should not have an ID');
+            });
+
+            runner.it('should handle empty relations', () => {
+                const gedcom = new Gedcom();
+                const data = `0 HEAD
+1 GEDC
+2 VERS 5.5.5
+0 @I1@ INDI
+1 NAME Single /Person/
+0 TRLR`;
+                gedcom.parse(data);
+                const relations = gedcom.relations('@I1@');
+                assertEqual(relations.length, 0, 'Should return empty array for no relations');
+            });
+        });
+
+        // Run the tests
+        runner.run();
+    </script>
+</body>
+</html>
