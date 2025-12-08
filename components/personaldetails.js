@@ -114,63 +114,59 @@ Vue.component('personaldetails', {
     },
     methods: {
         addItem: function(item) {
-            if (item == "NAME") {
-                this.person.items.push({ 'level': 1, 'tag': 'NAME', 'value': '', 'items': [{ 'level': 2, 'tag': 'GIVN', 'value': '' }, { 'level': 2, 'tag': 'SURN', 'value': '' }] });
-            } else if (item == "BIRTH") {
-                this.person.items.push({ 'level': 1, 'tag': 'BIRT', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
-            } else if (item == "DEATH") {
-                this.person.items.push({ 'level': 1, 'tag': 'DEAT', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
-            } else if (item == "BURIAL") {
-                this.person.items.push({ 'level': 1, 'tag': 'BURI', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
-            } else if (item == "BAPM") {
-                this.person.items.push({ 'level': 1, 'tag': 'BAPM', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
-            } else if (item == "CHR") {
-                this.person.items.push({ 'level': 1, 'tag': 'CHR', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
-            } else if (item == "CENS") {
-                this.person.items.push({ 'level': 1, 'tag': 'CENS', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
-            } else if (item == "CREM") {
-                this.person.items.push({ 'level': 1, 'tag': 'CREM', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
-            } else if (item == "GRAD") {
-                this.person.items.push({ 'level': 1, 'tag': 'GRAD', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
-            } else if (item == "EMIG") {
-                this.person.items.push({ 'level': 1, 'tag': 'EMIG', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
-            } else if (item == "IMMI") {
-                this.person.items.push({ 'level': 1, 'tag': 'IMMI', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
-            } else if (item == "NATU") {
-                this.person.items.push({ 'level': 1, 'tag': 'NATU', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
-            } else if (item == "RETI") {
-                this.person.items.push({ 'level': 1, 'tag': 'RETI', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }] });
-            } else if (item == "PROB") {
-                this.person.items.push({ 'level': 1, 'tag': 'PROB', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }] });
-            } else if (item == "WILL") {
-                this.person.items.push({ 'level': 1, 'tag': 'WILL', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }] });
-            } else if (item == "OCCU") {
-                this.person.items.push({ 'level': 1, 'tag': 'OCCU', 'value': '', 'items': [] });
-            } else if (item == "EDUC") {
-                this.person.items.push({ 'level': 1, 'tag': 'EDUC', 'value': '', 'items': [] });
-            } else if (item == "RELI") {
-                this.person.items.push({ 'level': 1, 'tag': 'RELI', 'value': '', 'items': [] });
-            } else if (item == "RESI") {
-                this.person.items.push({ 'level': 1, 'tag': 'RESI', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'ADDR', 'value': '' }] });
-            } else if (item == "NATI") {
-                this.person.items.push({ 'level': 1, 'tag': 'NATI', 'value': '', 'items': [] });
-            } else if (item == "CAST") {
-                this.person.items.push({ 'level': 1, 'tag': 'CAST', 'value': '', 'items': [] });
-            } else if (item == "DSCR") {
-                this.person.items.push({ 'level': 1, 'tag': 'DSCR', 'value': '', 'items': [] });
-            } else if (item == "NICK") {
-                this.person.items.push({ 'level': 1, 'tag': 'NICK', 'value': '', 'items': [] });
-            } else if (item == "IDNO") {
-                this.person.items.push({ 'level': 1, 'tag': 'IDNO', 'value': '', 'items': [] });
-            } else if (item == "SSN") {
-                this.person.items.push({ 'level': 1, 'tag': 'SSN', 'value': '', 'items': [] });
-            } else if (item == "NOTES") {
-                this.person.items.push({ 'level': 1, 'tag': 'NOTE', 'value': '', 'items': [] });
-            } else if (item == "TEXT") {
-                this.person.items.push({ 'level': 1, 'tag': 'TEXT', 'value': '', 'items': [] });
-            } else if (item == "CUSTOM") {
+            // Helper function to create item structure
+            const createItem = (tag, items = []) => {
+                return { 'level': 1, 'tag': tag, 'value': '', 'items': items };
+            };
+            
+            const createSubItem = (tag, value = '') => {
+                return { 'level': 2, 'tag': tag, 'value': value, 'items': [] };
+            };
+            
+            // Events with DATE and PLAC
+            const eventWithDatePlace = ['BIRTH', 'DEATH', 'BURIAL', 'BAPM', 'CHR', 'CENS', 'CREM', 'GRAD', 'EMIG', 'IMMI', 'NATU'];
+            // Events with only DATE
+            const eventWithDateOnly = ['RETI', 'PROB', 'WILL'];
+            // Simple attributes (no children)
+            const simpleAttributes = ['OCCU', 'EDUC', 'RELI', 'NATI', 'CAST', 'DSCR', 'NICK', 'IDNO', 'SSN'];
+            
+            // Map item name to tag (if different)
+            const tagMap = {
+                'BIRTH': 'BIRT',
+                'DEATH': 'DEAT',
+                'BURIAL': 'BURI',
+                'NOTES': 'NOTE',
+                'TEXT': 'TEXT'
+            };
+            
+            const tag = tagMap[item] || item;
+            
+            if (item === "NAME") {
+                this.person.items.push(createItem('NAME', [
+                    createSubItem('GIVN'),
+                    createSubItem('SURN')
+                ]));
+            } else if (eventWithDatePlace.includes(item)) {
+                this.person.items.push(createItem(tag, [
+                    createSubItem('DATE'),
+                    createSubItem('PLAC')
+                ]));
+            } else if (eventWithDateOnly.includes(item)) {
+                this.person.items.push(createItem(tag, [
+                    createSubItem('DATE')
+                ]));
+            } else if (item === "RESI") {
+                this.person.items.push(createItem('RESI', [
+                    createSubItem('DATE'),
+                    createSubItem('ADDR')
+                ]));
+            } else if (simpleAttributes.includes(item)) {
+                this.person.items.push(createItem(tag));
+            } else if (item === "NOTES" || item === "TEXT") {
+                this.person.items.push(createItem(tag));
+            } else if (item === "CUSTOM") {
                 this.advancedMode = true;
-                this.person.items.push({ 'level': 1, 'tag': '', 'value': '', 'items': [] });
+                this.person.items.push(createItem(''));
                 var rootField = this.$children[0];
                 window.setTimeout(function() { rootField.$children[rootField.$children.length - 1].editItem(); }, 200);
             }
