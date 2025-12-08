@@ -51,6 +51,29 @@ Vue.component('personaldetails', {
                         <li class="collection-item modal-close" v-on:click="addItem('BIRTH')">Birth<a class="secondary-content"><i class="material-icons">add</i></a></li>
                         <li class="collection-item modal-close" v-on:click="addItem('DEATH')">Death<a class="secondary-content"><i class="material-icons">add</i></a></li>
                         <li class="collection-item modal-close" v-on:click="addItem('BURIAL')">Burial<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-header"><h5>Life Events</h5></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('BAPM')">Baptism<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('CHR')">Christening<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('CENS')">Census<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('CREM')">Cremation<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('GRAD')">Graduation<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('EMIG')">Emigration<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('IMMI')">Immigration<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('NATU')">Naturalization<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('RETI')">Retirement<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('PROB')">Probate<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('WILL')">Will<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-header"><h5>Attributes</h5></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('OCCU')">Occupation<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('EDUC')">Education<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('RELI')">Religion<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('RESI')">Residence<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('NATI')">Nationality<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('CAST')">Caste<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('DSCR')">Physical Description<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('NICK')">Nickname<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('IDNO')">Identification Number<a class="secondary-content"><i class="material-icons">add</i></a></li>
+                        <li class="collection-item modal-close" v-on:click="addItem('SSN')">Social Security Number<a class="secondary-content"><i class="material-icons">add</i></a></li>
                         <li class="collection-header"><h5>Annotation</h5></li>
                         <li class="collection-item modal-close" v-on:click="addItem('NOTES')">Notes<a class="secondary-content"><i class="material-icons">add</i></a></li>
                         <li class="collection-item modal-close" v-on:click="addItem('TEXT')">Text<a class="secondary-content"><i class="material-icons">add</i></a></li>
@@ -99,6 +122,48 @@ Vue.component('personaldetails', {
                 this.person.items.push({ 'level': 1, 'tag': 'DEAT', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
             } else if (item == "BURIAL") {
                 this.person.items.push({ 'level': 1, 'tag': 'BURI', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
+            } else if (item == "BAPM") {
+                this.person.items.push({ 'level': 1, 'tag': 'BAPM', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
+            } else if (item == "CHR") {
+                this.person.items.push({ 'level': 1, 'tag': 'CHR', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
+            } else if (item == "CENS") {
+                this.person.items.push({ 'level': 1, 'tag': 'CENS', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
+            } else if (item == "CREM") {
+                this.person.items.push({ 'level': 1, 'tag': 'CREM', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
+            } else if (item == "GRAD") {
+                this.person.items.push({ 'level': 1, 'tag': 'GRAD', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
+            } else if (item == "EMIG") {
+                this.person.items.push({ 'level': 1, 'tag': 'EMIG', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
+            } else if (item == "IMMI") {
+                this.person.items.push({ 'level': 1, 'tag': 'IMMI', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
+            } else if (item == "NATU") {
+                this.person.items.push({ 'level': 1, 'tag': 'NATU', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'PLAC', 'value': '' }] });
+            } else if (item == "RETI") {
+                this.person.items.push({ 'level': 1, 'tag': 'RETI', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }] });
+            } else if (item == "PROB") {
+                this.person.items.push({ 'level': 1, 'tag': 'PROB', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }] });
+            } else if (item == "WILL") {
+                this.person.items.push({ 'level': 1, 'tag': 'WILL', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }] });
+            } else if (item == "OCCU") {
+                this.person.items.push({ 'level': 1, 'tag': 'OCCU', 'value': '', 'items': [] });
+            } else if (item == "EDUC") {
+                this.person.items.push({ 'level': 1, 'tag': 'EDUC', 'value': '', 'items': [] });
+            } else if (item == "RELI") {
+                this.person.items.push({ 'level': 1, 'tag': 'RELI', 'value': '', 'items': [] });
+            } else if (item == "RESI") {
+                this.person.items.push({ 'level': 1, 'tag': 'RESI', 'value': '', 'items': [{ 'level': 2, 'tag': 'DATE', 'value': '' }, { 'level': 2, 'tag': 'ADDR', 'value': '' }] });
+            } else if (item == "NATI") {
+                this.person.items.push({ 'level': 1, 'tag': 'NATI', 'value': '', 'items': [] });
+            } else if (item == "CAST") {
+                this.person.items.push({ 'level': 1, 'tag': 'CAST', 'value': '', 'items': [] });
+            } else if (item == "DSCR") {
+                this.person.items.push({ 'level': 1, 'tag': 'DSCR', 'value': '', 'items': [] });
+            } else if (item == "NICK") {
+                this.person.items.push({ 'level': 1, 'tag': 'NICK', 'value': '', 'items': [] });
+            } else if (item == "IDNO") {
+                this.person.items.push({ 'level': 1, 'tag': 'IDNO', 'value': '', 'items': [] });
+            } else if (item == "SSN") {
+                this.person.items.push({ 'level': 1, 'tag': 'SSN', 'value': '', 'items': [] });
             } else if (item == "NOTES") {
                 this.person.items.push({ 'level': 1, 'tag': 'NOTE', 'value': '', 'items': [] });
             } else if (item == "TEXT") {
@@ -210,8 +275,44 @@ Vue.component('personaldetails-item', {
                 <template v-else-if="detail.tag=='BURI'">
                     <div class="col s6">
                         <div class="input-field">
-                            <label :for="id" class="active">Place of Burial</label>
-                            <input :id="id" type="text" v-model="(detail.items[detail.items.findIndex(x => x.tag=='PLAC')] || {}).value"/>
+                            <label :for="id + '1'" class="active">Date of Burial</label>
+                            <input :id="id + '1'" type="text" v-model="(detail.items[detail.items.findIndex(x => x.tag=='DATE')] || {}).value"/>
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <div class="input-field">
+                            <label :for="id + '2'" class="active">Place of Burial</label>
+                            <input :id="id + '2'" type="text" v-model="(detail.items[detail.items.findIndex(x => x.tag=='PLAC')] || {}).value"/>
+                        </div>
+                    </div>
+                </template>
+
+                <template v-else-if="['BAPM','CHR','CENS','CREM','GRAD','EMIG','IMMI','NATU'].includes(detail.tag)">
+                    <div class="col s6">
+                        <div class="input-field">
+                            <label :for="id + '1'" class="active">Date of {{tag(detail.tag).name}}</label>
+                            <input :id="id + '1'" type="text" v-model="(detail.items[detail.items.findIndex(x => x.tag=='DATE')] || {}).value"/>
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <div class="input-field">
+                            <label :for="id + '2'" class="active">Place of {{tag(detail.tag).name}}</label>
+                            <input :id="id + '2'" type="text" v-model="(detail.items[detail.items.findIndex(x => x.tag=='PLAC')] || {}).value"/>
+                        </div>
+                    </div>
+                </template>
+
+                <template v-else-if="detail.tag=='RESI'">
+                    <div class="col s6">
+                        <div class="input-field">
+                            <label :for="id + '1'" class="active">Date of Residence</label>
+                            <input :id="id + '1'" type="text" v-model="(detail.items[detail.items.findIndex(x => x.tag=='DATE')] || {}).value"/>
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <div class="input-field">
+                            <label :for="id + '2'" class="active">Address</label>
+                            <textarea :id="id + '2'" class="materialize-textarea" v-model="(detail.items[detail.items.findIndex(x => x.tag=='ADDR')] || {}).value"></textarea>
                         </div>
                     </div>
                 </template>
