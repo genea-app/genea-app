@@ -84,6 +84,26 @@ var Stamboom = (function() {
                 return gedcom.getPersons();
             }
 
+            Stamboom.prototype.father = function(id) {
+                return gedcom.father(id);
+            }
+
+            Stamboom.prototype.mother = function(id) {
+                return gedcom.mother(id);
+            }
+
+            Stamboom.prototype.relations = function(id) {
+                return gedcom.relations(id);
+            }
+
+            Stamboom.prototype.siblings = function(id) {
+                return gedcom.siblings(id);
+            }
+
+            Stamboom.prototype.person = function(id) {
+                return gedcom.person(id);
+            }
+
             Stamboom.prototype.addPerson = function(givenName, surName, gender) {
                 return gedcom.addPerson(givenName, surName, gender);
             }

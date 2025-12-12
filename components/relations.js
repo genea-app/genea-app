@@ -85,9 +85,9 @@ Vue.component('relations', {
                                     </span>
                                 </div>
                                 <div v-if="step.relationship" style="margin-left: 20px; margin-top: 5px; color: #546e7a;">
-                                    <i class="material-icons tiny" style="vertical-align: middle;">arrow_downward</i>
+                                    <i class="material-icons tiny" style="vertical-align: middle;">arrow_upward</i>
                                     <span style="font-style: italic;">{{step.relationship}}</span>
-                                    <i class="material-icons tiny" style="vertical-align: middle;">arrow_downward</i>
+                                    <i class="material-icons tiny" style="vertical-align: middle;">arrow_upward</i>
                                 </div>
                             </div>
                             <div v-if="relationshipSummary" style="margin-top: 20px; padding: 10px; background: white; border-radius: 4px;">
