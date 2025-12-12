@@ -2,18 +2,22 @@ var Gedcom = (function() {
     // Constructor
     function Gedcom() {
         gedcom = this;
+        this.data = [];
     }
 
     // Private variables
     var gedcom;
 
     // Public properties
-    this.data = null;
 
     // Public methods
 
     // Parse a GEDCOM file into a javascript object
     Gedcom.prototype.parse = function(data) {
+        if (!data) {
+            this.data = [];
+            return;
+        }
         /*
         Todo: Use this instead of below when Firefox finally fixes their RegExp engine.
         var regex1 = /(?<level>[0-9]+)\s+(?<pointer>@[^@]+@ |)(?<tag>[_a-zA-Z0-9]+)(?: |)(?<value>[^\n\r]*)|(?<invalid>[^\n\r]*)/g;
@@ -134,17 +138,20 @@ var Gedcom = (function() {
 
     // Return the id of the first person in the GEDCOM file
     Gedcom.prototype.firstPerson = function() {
+        if (!this.data || this.data.length == 0) return null;
         return this.data.find(item => item.level == 0 && item.tag == "INDI").pointer;
     }
 
     // Return a list of every person in the GEDCOM file
     Gedcom.prototype.getPersons = function() {
+        if (!this.data) return [];
         var persons = this.data.filter(item => item.level == 0 && item.tag == "INDI").map(item => gedcom.person(item.pointer));
         return persons;
     }
 
     // Return full details about person
     Gedcom.prototype.person = function(id) {
+        if (!this.data) return null;
         var person = this.data.find(item => item.level == 0 && item.pointer == id && item.tag == "INDI");
         if (person && person.items) {
             var name = ((person.items.find(item => item.tag == "NAME") || {}).value || "Unknown").replace(/\//g, "");
