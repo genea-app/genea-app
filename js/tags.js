@@ -161,7 +161,8 @@ var tags = {
     "ADDR": {
         name: "Address",
         description: "The contemporary place, usually required for postal purposes, of an individual, a submitter of information, a repository, a business, a school, or a company.",
-        visible: false
+        visible: true,
+        field: "textarea"
     },
     "ADR1": {
         name: "Address 1",
@@ -231,7 +232,7 @@ var tags = {
     "BAPM": {
         name: "Baptism",
         description: "The event of baptism (not LDS), performed in infancy or later. (See also BAPL and CHR)",
-        visible: false
+        visible: true
     },
     "BARM": {
         name: "Bar Mitzvah",
@@ -256,7 +257,7 @@ var tags = {
     "BURI": {
         name: "Burial",
         description: "The event of the proper disposing of the mortal remains of a deceased person.",
-        visible: false
+        visible: true
     },
     "CALN": {
         name: "Call Number",
@@ -266,17 +267,17 @@ var tags = {
     "CAST": {
         name: "Caste",
         description: "The name of an individual's rank or status in society, based on racial or religious differences, or differences in wealth, inherited rank, profession, occupation, etc.",
-        visible: false
+        visible: true
     },
     "CAUS": {
         name: "Cause",
         description: "A description of the cause of the associated event or fact, such as the cause of death.",
-        visible: false
+        visible: true
     },
     "CENS": {
         name: "Census",
         description: "The event of the periodic count of the population for a designated locality, such as a national or state Census.",
-        visible: false
+        visible: true
     },
     "CHAN": {
         name: "Change",
@@ -296,7 +297,7 @@ var tags = {
     "CHR": {
         name: "Christening",
         description: "The religious event (not LDS) of baptizing and/or naming a child.",
-        visible: false
+        visible: true
     },
     "CHRA": {
         name: "Adult Christening",
@@ -341,7 +342,7 @@ var tags = {
     "CREM": {
         name: "Cremation",
         description: "Disposal of the remains of a person's body by fire.",
-        visible: false
+        visible: true
     },
     "CTRY": {
         name: "Country",
@@ -376,12 +377,12 @@ var tags = {
     "DSCR": {
         name: "Physical Description",
         description: "The physical characteristics of a person, place, or thing.",
-        visible: false
+        visible: true
     },
     "EDUC": {
         name: "Education",
         description: "Indicator of a level of education attained.",
-        visible: false
+        visible: true
     },
     "EMAIL": {
         name: "Email",
@@ -391,7 +392,7 @@ var tags = {
     "EMIG": {
         name: "Emigration",
         description: "An event of leaving one's homeland with the intent of residing elsewhere.",
-        visible: false
+        visible: true
     },
     "ENDL": {
         name: "Endowment",
@@ -436,7 +437,7 @@ var tags = {
     "GRAD": {
         name: "Graduation",
         description: "An event of awarding educational diplomas or degrees to individuals.",
-        visible: false
+        visible: true
     },
     "HEAD": {
         name: "Header",
@@ -451,12 +452,12 @@ var tags = {
     "IDNO": {
         name: "Identification Number",
         description: "A number assigned to identify a person within some significant external system.",
-        visible: false
+        visible: true
     },
     "IMMI": {
         name: "Immigration",
         description: "An event of entering into a new locality with the intent of residing there.",
-        visible: false
+        visible: true
     },
     "INDI": {
         name: "Individual",
@@ -521,12 +522,12 @@ var tags = {
     "NATI": {
         name: "Nationality",
         description: "The national heritage of an individual.",
-        visible: false
+        visible: true
     },
     "NATU": {
         name: "Naturalization",
         description: "The event of obtaining citizenship.",
-        visible: false
+        visible: true
     },
     "NCHI": {
         name: "Children Count",
@@ -536,7 +537,7 @@ var tags = {
     "NICK": {
         name: "Nickname",
         description: "A descriptive or familiar that is used instead of, or in addition to, one's proper name.",
-        visible: false
+        visible: true
     },
     "NMR": {
         name: "Marriage Count",
@@ -556,7 +557,7 @@ var tags = {
     "OCCU": {
         name: "Occupation",
         description: "The type of work or profession of an individual.",
-        visible: false
+        visible: true
     },
     "ORDI": {
         name: "Ordinance",
@@ -586,7 +587,7 @@ var tags = {
     "PROB": {
         name: "Probate",
         description: "An event of judicial determination of the validity of a will. May indicate several related court activities over several dates.",
-        visible: false
+        visible: true
     },
     "PROP": {
         name: "Property",
@@ -616,7 +617,7 @@ var tags = {
     "RELI": {
         name: "Religion",
         description: "A religious denomination to which a person is affiliated or for which a record applies.",
-        visible: false
+        visible: true
     },
     "REPO": {
         name: "Repository",
@@ -626,7 +627,7 @@ var tags = {
     "RESI": {
         name: "Residence",
         description: "The act of dwelling at an address for a period of time.",
-        visible: false
+        visible: true
     },
     "RESN": {
         name: "Restriction",
@@ -636,7 +637,7 @@ var tags = {
     "RETI": {
         name: "Retirement",
         description: "An event of exiting an occupational relationship with an employer after a qualifying time period.",
-        visible: false
+        visible: true
     },
     "RFN": {
         name: "Record File Number",
@@ -666,7 +667,7 @@ var tags = {
     "SSN": {
         name: "Social Security Number",
         description: "A number assigned by the United States Social Security Administration. Used for tax identification purposes.",
-        visible: false
+        visible: true
     },
     "STAE": {
         name: "State",
@@ -726,7 +727,7 @@ var tags = {
     "WILL": {
         name: "Will",
         description: "A legal document treated as an event, by which a person disposes of his or her estate, to take effect after death. The event date is the date the will was signed while the person was alive. (See also PROBate)",
-        visible: false
+        visible: true
     },
 
 }

@@ -84,6 +84,26 @@ var Stamboom = (function() {
                 return gedcom.getPersons();
             }
 
+            Stamboom.prototype.father = function(id) {
+                return gedcom.father(id);
+            }
+
+            Stamboom.prototype.mother = function(id) {
+                return gedcom.mother(id);
+            }
+
+            Stamboom.prototype.relations = function(id) {
+                return gedcom.relations(id);
+            }
+
+            Stamboom.prototype.siblings = function(id) {
+                return gedcom.siblings(id);
+            }
+
+            Stamboom.prototype.person = function(id) {
+                return gedcom.person(id);
+            }
+
             Stamboom.prototype.addPerson = function(givenName, surName, gender) {
                 return gedcom.addPerson(givenName, surName, gender);
             }
@@ -134,6 +154,15 @@ var Stamboom = (function() {
             }
 
             function draw() {
+                function hasFamily(person) {
+                    if (!person || !person.id) return false;
+                    var rels = gedcom.relations(person.id);
+                    if (rels && rels.length > 0) return true;
+                    for (var i = 0; i < rels.length; i++) {
+                        if (rels[i].children && rels[i].children.length > 0) return true;
+                    }
+                    return false;
+                }
                 // Node drawing
                 var node = {
                     draw: function(person) {
@@ -143,14 +172,17 @@ var Stamboom = (function() {
                             `color="${node.color(person)}",` +
                             (selectedPerson == person.id ? `style="filled,bold",fillcolor="white",` : ``) +
                             (selectedPerson == person.id ? `class="selectedPerson",` : ``) +
-                            `tooltip=" ",` +
+                            `tooltip="${node.tooltip(person)}",` +
                             `label=<<table border="2" cellspacing="0" cellpadding="0" fixedsize="true" height="55" width="122">` +
                             `<tr>` +
                             `<td border="0" fixedsize="true" height="53" width="45">` +
                             `<img src="${node.image(person)}" scale="both" />` +
                             `</td>` +
-                            `<td border="0" fixedsize="true" align="left">` +
+                            `<td border="0" fixedsize="true" align="left" width="65">` +
                             `<b>${node.label(person)}</b>` +
+                            `</td>` +
+                            `<td border="0" fixedsize="true" align="right" width="0" valign="bottom">` +
+                            `${node.icon(person) ? '<img src="' + node.icon(person) + '" />' : ''}` +
                             `</td>` +
                             `</tr>` +
                             `</table>>`;
@@ -189,6 +221,31 @@ var Stamboom = (function() {
                     },
                     image: function(person) {
                         return "img/unknown.png";
+                    },
+                    icon: function(person) {
+                        if (!person || !person.id) return '';
+                        var rels = gedcom.relations(person.id);
+                        var hasSpouse = rels && rels.length > 0;
+                        var hasChildren = false;
+                        for (var i = 0; i < rels.length; i++) {
+                            if (rels[i].children && rels[i].children.length > 0) {
+                                hasChildren = true;
+                                break;
+                            }
+                        }
+                        if (hasSpouse && hasChildren) return 'img/tree-spouse-children.png';
+                        if (hasSpouse) return 'img/tree-spouse.png';
+                        if (hasChildren) return 'img/tree-children.png';
+                        return '';
+                    },
+                    tooltip: function(person) {
+                        var tooltip = person.name || '';
+                        var birth = person.birth || '';
+                        var death = person.death || '';
+                        if (birth || death) {
+                            tooltip += '\n' + birth + ' - ' + death;
+                        }
+                        return tooltip;
                     }
                 }
 
@@ -305,7 +362,10 @@ var Stamboom = (function() {
                 hpccWasm.graphviz.layout(dot, "svg", "dot", {
                     images:
                         [
-                            { path: "img/unknown.png", width: "512px", height: "682px" }
+                            { path: "img/unknown.png", width: "512px", height: "682px" },
+                            { path: "img/tree-spouse.png", width: "16px", height: "16px" },
+                            { path: "img/tree-spouse-children.png", width: "16px", height: "16px" },
+                            { path: "img/tree-children.png", width: "16px", height: "16px" }
                         ]
                 }).then(function (svg) {
                     this.tree.innerHTML = svg;
