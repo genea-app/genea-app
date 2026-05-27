@@ -75,7 +75,7 @@ Vue.component('relations', {
                             {{p.caption}}
                         </a>
                     </div>
-                    <div v-if="relationshipPath && relationshipPath.length > 0" class="card blue-grey lighten-5" style="margin-top: 20px;">
+                    <div v-if="relationshipPath && relationshipPath.length > 0 && relationshipFinderQuery.trim() !== ''" class="card blue-grey lighten-5" style="margin-top: 20px;">
                         <div class="card-content">
                             <span class="card-title">Relationship Path</span>
                             <div v-for="(step, index) in relationshipPath" :key="index" style="margin-bottom: 15px;">

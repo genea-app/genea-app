@@ -20,3 +20,6 @@ Thumbs.db
 # Build artifacts
 dist/
 build/
+
+# Data folder
+data/

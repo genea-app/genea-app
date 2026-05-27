@@ -37,7 +37,7 @@
     <div id="genea">
 
         <!-- Start -->
-        <div id="overlay" v-if="page=='start'" class="container" style="max-width: 600px;">
+        <div id="overlay" v-if="page=='start'" class="container" style="max-width: 800px;">
             <h1 class="header">Genea.app</h1>
             <div class="divider"></div>
             <div class="section" v-if="!isNative()">
@@ -74,14 +74,18 @@
                     <i class="material-icons left">create</i>
                     Start new family tree
                 </button>
-                <label class="btn-large waves-effect waves-light" v-on:click="openGitModal('load')">
+                <label class="btn-large waves-effect waves-light" title="Open the saved tree in Git repository" v-on:click="openGitModal('load')">
 					<i class="material-icons left">cloud_download</i>
-					Open
+					Open <small>Git</small>
 				</label>
-                <label class="btn-large waves-effect waves-light">
+                <label class="btn-large waves-effect waves-light" title="Upload from device">
 					<i class="material-icons left">get_app</i>
 					Upload
 					<input type="file" style="display: none;" accept=".gedcom,.ged,.txt" v-on:change="loadFile">
+				</label>
+                <label class="btn-large waves-effect waves-light" title="Load from saved file in the server" v-on:click="loadServerFile()">
+					<i class="material-icons left">storage</i>
+					Load
 				</label>
             </div>
             <div class="section">
@@ -219,7 +223,6 @@
         </main>
 
         <!-- Modals -->
-        <new-person :person="person" ref="modalNewPerson" />
         <div id="modalGit" class="modal">
             <div class="modal-content">
                 <div class="row">
@@ -227,7 +230,7 @@
                 </div>
                 <div class="row">
                     <p>Connect to a Git Repository to load or save your GEDCOM family tree. You can use a hosted service like <a href="https://github.com/" target="_blank">GitHub</a> or <a href="https://gitlab.com/" target="_blank">GitLab</a>, or connect
-                        to a self hosted repository like <a href="https://gitea.io/" target="_blank">Gitea</a>, <a href="https://gogs.io/" target="_blank">Gogs</a>, or <a href="https://github.com/gitbucket/gitbucket" target="_blank">GitBucket</a>.</p>
+                        to a self hosted repository like <a href="https://gitea.io/" target="_blank">Gitea</a>, <a href="https://gogs.io/" target="_blank">Gogs</a>, <a href="https://github.com/gitbucket/gitbucket" target="_blank">GitBucket</a>, or <a href="https://forgejo.org/" target="_blank">Forgejo</a>.</p>
                 </div>
                 <div class="row">
                     <h4>Connection Details</h4>
@@ -257,6 +260,8 @@
                 <a class="modal-close waves-effect waves-green btn-flat">Close</a>
             </div>
         </div>
+
+        <new-person :person="person" ref="modalNewPerson" />
 
     </div>
 
@@ -353,7 +358,7 @@
                                 return response.text();
                             }).then(function(data) {
                                 stamboom.load(data);
-                                stamboom.select();
+                                stamboom.select("@I1@");
                             });
                         }
                         if (example == "gedcom1") {
@@ -388,6 +393,20 @@
                                 stamboom.select("@ind00001@");
                             });
                         }
+                    }
+                },
+                // Added functionality : Load GEDCOM file from the server
+                loadServerFile: function() {
+                    if (!stamboom.isLoaded || window.confirm("This will clear the family tree you previously had open.")) {
+                        genea.page = "tree";
+                        fetch("data/genea.app.ged").then(function(response) {
+                            return response.text();
+                        }).then(function(data) {
+                            stamboom.load(data);
+                            stamboom.select("@I1@");
+                        }).catch(function(error) {
+                            alert("Error reading file from server.")
+                        });
                     }
                 },
                 close: function() {

@@ -104,8 +104,8 @@ var Stamboom = (function() {
                 return gedcom.person(id);
             }
 
-            Stamboom.prototype.addPerson = function(givenName, surName, gender) {
-                return gedcom.addPerson(givenName, surName, gender);
+            Stamboom.prototype.addPerson = function(givenName, surName, dateOfBirth, placeOfBirth, gender) {
+                return gedcom.addPerson(givenName, surName, dateOfBirth, placeOfBirth, gender);
             }
 
             Stamboom.prototype.addRelation = function(parent1Id, parent2Id) {
@@ -129,9 +129,12 @@ var Stamboom = (function() {
                 gedcom.removeChild(childId);
             }
 
-
             Stamboom.prototype.onselect = function(callback) {
                 onselectCallback = callback;
+            }
+
+            Stamboom.prototype.downloadTree = function(){
+                downloadTree();
             }
 
             // Private methods
@@ -163,6 +166,7 @@ var Stamboom = (function() {
                     }
                     return false;
                 }
+                
                 // Node drawing
                 var node = {
                     draw: function(person) {
@@ -193,7 +197,14 @@ var Stamboom = (function() {
                         if (!person.name) {
                             person.name = "";
                         }
+                        if(!person.birth){
+                            person.birth = "";
+                        }
+                        if(!person.death){
+                            person.death = "";
+                        }
                         var parts = person.name.split(" ");
+                        var birthAndDeath = `${parseDate(person.birth).getFullYear() || "?"} - ${parseDate(person.death).getFullYear() || ""}`;
                         var output = [""];
                         for (var i = 0; i < parts.length; i++) {
                             if (parts[i].length + (output[output.length - 1]).length > maxLength) {
@@ -202,8 +213,10 @@ var Stamboom = (function() {
                                 output[output.length - 1] = output[output.length - 1] + " " + parts[i];
                             }
                         }
-                        output = output.map(part => { return (part.length < maxLength ? part : part.substr(0, maxLength) + "...") });
-                        return output.join("<br/>");
+                        output = output.map(part => { return (part.length < maxLength ? part : part.substr(0, maxLength) + "...") }).join("<br/>");
+                        output = output.concat("<br/>"); // Empty line to create vertical spacing
+                        output = output.concat(`<br/>${birthAndDeath}`);
+                        return output;
                     },
                     color: function(person) {
                         switch ((person.gender || "").substring(0, 1).toUpperCase()) {
@@ -378,6 +391,186 @@ var Stamboom = (function() {
                 });
             }
 
+            function downloadTree() {  
+                // Node drawing
+                var node = {
+                    draw: function(person) {
+                        return `` +
+                            `id="stamboom_${person.id}",` +
+                            `color="${node.color(person)}",` +
+                            `label=<<table border="2" cellspacing="0" cellpadding="0" fixedsize="true" height="55" width="122">` +
+                            `<tr>` +
+                            `<td border="0" fixedsize="true" height="53" width="45">` +
+                            `<img src="${node.image(person)}" scale="both" />` +
+                            `</td>` +
+                            `<td border="0" fixedsize="true" align="left" width="65">` +
+                            `<b>${node.label(person)}</b>` +
+                            `</td>` +
+                            `<td border="0" fixedsize="true" align="right" width="0" valign="bottom">` +
+                            `${node.icon(person) ? '<img src="' + node.icon(person) + '" />' : ''}` +
+                            `</td>` +
+                            `</tr>` +
+                            `</table>>`;
+                    },
+                    label: function(person) {
+                        // Format name and split over multiple lines
+                        var maxLength = 15;
+                        if (!person.name) person.name = "";
+                        if(!person.birth) person.birth = "";
+                        if(!person.death) person.death = "";
+
+                        var parts = person.name.split(" ");
+                        var birthAndDeath = `${parseDate(person.birth).getFullYear() || "?"} - ${parseDate(person.death).getFullYear() || ""}`;
+                        var output = [""];
+                        for (var i = 0; i < parts.length; i++) {
+                            if (parts[i].length + (output[output.length - 1]).length > maxLength) {
+                                output.push(parts[i]);
+                            } else {
+                                output[output.length - 1] = output[output.length - 1] + " " + parts[i];
+                            }
+                        }
+                        output = output.map(part => { return (part.length < maxLength ? part : part.substr(0, maxLength) + "...") }).join("<br/>");
+                        output = output.concat("<br/>"); // Empty line to create vertical spacing
+                        output = output.concat(`<br/>${birthAndDeath}`);
+                        return output;
+                    },
+                    color: function(person) {
+                        switch ((person.gender || "").substring(0, 1).toUpperCase()) {
+                            case "F":
+                                return "pink";
+                            case "M":
+                                return "lightblue";
+                            case "U":
+                                return "lightgray";
+                            case "":
+                                return "lightgray";
+                            default:
+                                return "olivedrab3";
+                        }
+                    },
+                    image: function(person) {
+                        return "img/unknown.png";
+                    },
+                    icon: function(person) {
+                        if (!person || !person.id) return '';
+                        var rels = gedcom.relations(person.id);
+                        var hasSpouse = rels && rels.length > 0;
+                        var hasChildren = false;
+                        for (var i = 0; i < rels.length; i++) {
+                            if (rels[i].children && rels[i].children.length > 0) {
+                                hasChildren = true;
+                                break;
+                            }
+                        }
+                        if (hasSpouse && hasChildren) return 'img/tree-spouse-children.png';
+                        if (hasSpouse) return 'img/tree-spouse.png';
+                        if (hasChildren) return 'img/tree-children.png';
+                        return '';
+                    }
+                }
+
+                function getId(id){
+                    return (id || "").replace(/@/g, "");
+                }
+
+                var persons = gedcom.getPersons();
+
+                // Dot graph definition              
+                var dotToPrint =
+                    `digraph G {` + `\n` +
+                    `graph [nodesep=0.15,splines=polyline,ranksep=0.35]` + `\n` +
+                    `node [shape=box,fontname=Helvetica,fontsize=8,fixedsize=true,width=1.7,height=0.75,style=filled]` + `\n`;
+                
+                // Draw each person
+                persons.forEach(person => {
+                    if(!person || !person.id) return;
+                    const id = getId(person.id); 
+                    dotToPrint += `Person_${id} [${node.draw(person)}]` + `\n`;
+                });
+                
+                // Draw each relation
+                dotToPrint += 
+                `\n// ----- Settings -----\n` +
+                `node[color=green, label="", width=0, height=0];` + `\n` +
+                `edge[arrowtail=none, arrowhead=none, color=cornflowerblue];` + `\n`;
+
+                dotToPrint += `\n// ----- Relations -----\n`;
+                var drawnRelations = [];
+
+                persons.forEach(function(person) {
+                    if (!person || !person.id) return;
+                    var relations = gedcom.relations(person.id);
+                    if (!relations || relations.length === 0) return;
+
+                    relations.forEach(function(relation, x) {
+                        if (!relation.partner || !relation.partner.id) return;
+
+                        // Prevent duplicate couple rendering
+                        var personId = getId(person.id);
+                        var partnerId = getId(relation.partner.id);
+                        var relationKey = [personId, partnerId].sort().join("_");
+                        if (drawnRelations.includes(relationKey)) return;
+                        drawnRelations.push(relationKey);
+
+                        //var relationDot = `Relation${relationKey}Dot_${personId}_${partnerId}`;
+                        var relationDot = `Relation${relationKey}Dot`;
+                        // Draw spouses next to each other
+                        dotToPrint += `{rank=same;Person_${personId};${relationDot};Person_${partnerId}}` + `\n`;
+                        dotToPrint += `Person_${personId} -> ${relationDot} -> Person_${partnerId}` + `\n`;
+
+                        // Draw children
+                        if (relation.children && relation.children.length > 0) {
+
+                            relation.children.forEach(function(child, y) {
+                                if (!child || !child.id) return;
+                                var childId = getId(child.id);
+                                var childDot = `ChildDot_${relationKey}_${childId}`;
+
+                                dotToPrint += `${childDot} [label="",width=0,height=0,style=invis]\n`;
+                                dotToPrint += `${relationDot} -> ${childDot}` + `\n`;
+                                dotToPrint += `${childDot} -> Person_${childId}` + `\n`;
+                            });
+                        }
+                    });
+                });
+                dotToPrint += `}`;
+
+                // Render dot graph
+                hpccWasm.graphviz.layout(dotToPrint, "svg", "dot", {
+                    images:
+                        [
+                            { path: "img/unknown.png", width: "512px", height: "682px" },
+                            { path: "img/tree-spouse.png", width: "16px", height: "16px" },
+                            { path: "img/tree-spouse-children.png", width: "16px", height: "16px" },
+                            { path: "img/tree-children.png", width: "16px", height: "16px" }
+                        ]
+                }).then(async function (svg) {
+                    imagesToEmbed = [
+                        "img/unknown.png",
+                        "img/tree-spouse.png",
+                        "img/tree-spouse-children.png",
+                        "img/tree-children.png"
+                    ];
+
+                    let embeddedSvg = svg;
+                    for (const image of imagesToEmbed){
+                        if(embeddedSvg.includes(image)) {
+                            const base64Image = await toBase64(image);
+                            embeddedSvg = embeddedSvg.split(image).join(base64Image);
+                        }
+                    }
+                    
+                    const blob = new Blob([embeddedSvg], { type: "image/svg+xml;charset=utf-8" });
+                    const svgUrl = URL.createObjectURL(blob);
+                    var downloadLink = document.createElement("a");
+                    downloadLink.href = svgUrl;
+                    downloadLink.download = "family-tree.svg";
+                    downloadLink.click();
+                }).catch(function (err) {
+                    console.error(err.message)
+                });
+            }
+
             function drag() {
                 // Dragging the stamboom
                 var dragElement = this.treecontainer;
@@ -417,6 +610,48 @@ var Stamboom = (function() {
                 // Attach the handler
                 dragElement.addEventListener('mousedown', dragStart);
                 dragElement.addEventListener('touchstart', dragStart);
+            }
+
+            // Private methods
+            function parseDate(date) {
+                try {
+                    return new Date(date);
+                } catch {
+                    return null;
+                }
+            }
+
+            function printSvg(svg){
+                const printWindow = window.open("", "_blank");
+                printWindow.document.title = "Family tree";
+                if(!printWindow){
+                    alert("Popups are blocked. Please allow them before starting the print.");
+                }
+
+                // initialize svg element
+                const container = printWindow.document.createElement('div');
+                container.innerHTML = svg;
+                printWindow.document.body.appendChild(container);
+
+                setTimeout(function() {
+                    printWindow.focus();
+                    printWindow.print();
+                }, 500);
+            }
+
+            async function toBase64(url){
+                try {
+                    const response = await fetch(url);
+                    const blob = await response.blob();
+                    return new Promise((resolve) => {
+                        const reader = new FileReader();
+                        reader.onloadend = () => resolve(reader.result);
+                        reader.readAsDataURL(blob);
+                    });
+                } catch (e){
+                    console.error("Failed to fetch image for embedding: " + url, e);
+                    return url; // fallback to original path if fetch failed
+                }
             }
 
 	return Stamboom;

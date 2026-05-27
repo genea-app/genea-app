@@ -147,9 +147,10 @@ describe('GEDCOM Person Operations', () => {
     test('should add a new person correctly', () => {
         const gedcom = new Gedcom();
         gedcom.data = [];
-        const person = gedcom.addPerson('Jane', 'Smith', 'F');
+        const person = gedcom.addPerson('Jane', 'Smith', '1 JAN 1950', 'New York, NY, USA', 'F');
         expect(person.id).toBeDefined();
         expect(person.name).toBeDefined();
+        expect(person.birth).toBeDefined();
         expect(person.gender).toBe('F');
     });
 

@@ -174,7 +174,7 @@ var Gedcom = (function() {
     }
 
     // Create a new person
-    Gedcom.prototype.addPerson = function(givenName, surName, gender) {
+    Gedcom.prototype.addPerson = function(givenName, surName, dateOfBirth, placeOfBirth, gender) {
         var personId = "@I" + (this.data.filter(item => item.tag == "INDI").map(item => parseInt(item.pointer.replace(/[^\d]/g, ''))).reduce((a, b) => Math.max(a, b), []) + 1) + "@";
         this.data.push({
             "level": 0,
@@ -202,6 +202,23 @@ var Gedcom = (function() {
                     "level": 1,
                     "tag": "SEX",
                     "value": gender
+                },
+                {
+                    "level": 1,
+                    "tag": "BIRT",
+                    "items": [{
+                            "level": 2,
+                            "tag": "DATE",
+                            "value": dateOfBirth,
+                            "items": []
+                        },
+                        {
+                            "level": 2,
+                            "tag": "PLAC",
+                            "value": placeOfBirth,
+                            "items": []
+                        }
+                    ]
                 }
             ]
         });

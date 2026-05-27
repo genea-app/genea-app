@@ -2,10 +2,37 @@
 
 Genea allows visually building and editing a family tree online. It consumes and saves genealogy data in the GEDCOM format without any server side components.
 
+# Fork additional features
+
+* Containerfile (Dockerfile equivalent but platform-agnostic) & podman-compose file.
+  * `podman build -t genea-app .` 
+* Load GEDCOM mounted file. The folder containing the file must be mounted when running the container.
+* Fix relationship finder clearing results when the field is empty.
+* Add date and place of birth fields when adding a new person.
+* Gender selection is no longer a field but a choice button.
+* Birth and death dates are visible in the tree.
+* Save to git or load from git is fixed.
+* Download the whole tree (assisted by AI). The downloaded tree isn't as well drawn as the main tree. Accepting help on this feature.
+* Updated tests to reflect new changes.
+* Published docker image.
+
+Automatically saving the mounted GEDCOM file is not possible. As an alternative, either download the file and manually copy it to the mounted folder or use git.
+
+# Docker usage
+Start genea container using this command (either with docker or podman):
+```
+podman run -d --name genea-app -p 3010:3010 -v /path/to/your/data:/usr/share/nginx/html/data:ro ghcr.io/netsho/genea-app:latest
+```
+Alternatively, use the provided [podman-compose.yml](https://github.com/netsho/genea-app/blob/main/podman-compose.yml) from the Git repository.
+
+Then open `http://localhost:8080` in your browser.
+
+The mounted directory must contain your GEDCOM file named `genea.app.ged`.
+
 # Demo
 
 * [Genea.app](https://www.genea.app/)
-* [Android](https://play.google.com/store/apps/details?id=com.genea.app)
+* [Android](https://play.google.com/store/apps/details?id=com.genea.app) - No longer exists
 * [Screenshots](#screenshots-and-video)
 
 # Installation

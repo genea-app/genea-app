@@ -540,10 +540,11 @@ describe('GEDCOM 5.5.5 Grammar Rules', () => {
     test('should add person with valid structure', () => {
       const gedcom = new Gedcom();
       gedcom.data = [];
-      const person = gedcom.addPerson('John', 'Doe', 'M');
+      const person = gedcom.addPerson('John', 'Doe', '1 JAN 1980', 'New York', 'M');
       expect(person.id).toBeDefined();
       expect(person.id).toMatch(/@I\d+@/);
       expect(person.name).toBe('John Doe');
+      expect(person.birth).toBe('1 JAN 1980');
       expect(person.gender).toBe('M');
     });
 

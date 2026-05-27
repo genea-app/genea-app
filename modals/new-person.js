@@ -76,8 +76,33 @@ Vue.component('new-person', {
                         </div>
                         <div class="col s6">
                             <div class="input-field">
+                                <label for="dateOfBirth" class="active">Date of Birth</label>
+                                <input id="dateOfBirth" v-model="newPerson.dateOfBirth" type="text"/>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <label for="placeOfBirth" class="active">Place of Birth</label>
+                                <input id="placeOfBirth" v-model="newPerson.placeOfBirth" type="text"/>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
                                 <label for="sex" class="active">Sex</label>
-                                <input id="sex" v-model="newPerson.sex" class="autocomplete" type="text"/>
+                                <div class="radio-group">
+                                    <label class="radio-options">
+                                        <input type="radio" value="M" v-model="newPerson.sex" />
+                                        <span>Male</span>
+                                    </label>
+                                    <label class="radio-options">
+                                        <input type="radio" value="F" v-model="newPerson.sex" />
+                                        <span>Female</span>
+                                    </label>
+                                    <label >
+                                        <input type="radio" value="Other" v-model="newPerson.sex" />
+                                        <span>Other</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="col s12">
@@ -145,7 +170,7 @@ Vue.component('new-person', {
             modal.open();
         },
         create: function() {
-            var newPerson = stamboom.addPerson(this.newPerson.givenName, this.newPerson.surName, this.newPerson.sex);
+            var newPerson = stamboom.addPerson(this.newPerson.givenName, this.newPerson.surName, this.newPerson.dateOfBirth, this.newPerson.placeOfBirth, this.newPerson.sex);
             if (this.newPerson.type == "parent") {
                 var relationId = null;
                 if (stamboom.getParents(this.person.id).length == 0) {

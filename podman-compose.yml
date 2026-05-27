@@ -1,0 +1,8 @@
+services:
+    genea:
+        image: ghcr.io/netsho/genea-app:latest
+        container_name: genea
+        volumes:
+          - /etc/genea/data:/usr/share/nginx/html/data
+        ports:
+          - 3010:3010
